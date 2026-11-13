@@ -14,31 +14,125 @@
             <img src="elements/Arcade.webp" alt="Arcade" class="title__arcade">
             <div class="title__arcade-tint" aria-hidden="true"></div>
 
-            <div class="title__super" aria-label="SUPER">
-                <span class="mario-char mario-char--blue mario-char--s" aria-hidden="true">S</span>
-                <span class="mario-char mario-char--yellow mario-char--u" aria-hidden="true">U</span>
-                <span class="mario-char mario-char--red mario-char--p" aria-hidden="true">P</span>
-                <span class="mario-char mario-char--green mario-char--e" aria-hidden="true">E</span>
-                <span class="mario-char mario-char--yellow mario-char--r" aria-hidden="true">R</span>
-            </div>
+            <div class="title__text-group" role="heading" aria-level="1" aria-label="SUPER BSCS 1A">
+                <div class="title__super" aria-hidden="true">
+                    <span class="mario-char mario-char--blue mario-char--s">S</span>
+                    <span class="mario-char mario-char--yellow mario-char--u">U</span>
+                    <span class="mario-char mario-char--red mario-char--p">P</span>
+                    <span class="mario-char mario-char--green mario-char--e">E</span>
+                    <span class="mario-char mario-char--yellow mario-char--r">R</span>
+                </div>
 
-            <div class="title__bscs" aria-label="BSCS 1A">
-                <span class="title__word">
-                    <span class="mario-char mario-char--blue mario-char--b" aria-hidden="true">B</span>
-                    <span class="mario-char mario-char--yellow mario-char--s1" aria-hidden="true">S</span>
-                    <span class="mario-char mario-char--red mario-char--c" aria-hidden="true">C</span>
-                    <span class="mario-char mario-char--green mario-char--s2" aria-hidden="true">S</span>
-                </span>
-                <span class="title__space" aria-hidden="true"></span>
-                <span class="title__word">
-                    <span class="mario-char mario-char--yellow mario-char--1" aria-hidden="true">1</span>
-                    <span class="mario-char mario-char--red mario-char--a" aria-hidden="true">A</span>
-                </span>
+                <div class="title__bscs" aria-hidden="true">
+                    <span class="title__word">
+                        <span class="mario-char mario-char--blue mario-char--b">B</span>
+                        <span class="mario-char mario-char--yellow mario-char--s1">S</span>
+                        <span class="mario-char mario-char--red mario-char--c">C</span>
+                        <span class="mario-char mario-char--green mario-char--s2">S</span>
+                    </span>
+                    <span class="title__space"></span>
+                    <span class="title__word">
+                        <span class="mario-char mario-char--yellow mario-char--1">1</span>
+                        <span class="mario-char mario-char--red mario-char--a">A</span>
+                    </span>
+                </div>
             </div>
 
             <div class="title__arcade-patterns" aria-hidden="true"></div>
             <div class="title__stars title__stars--far" aria-hidden="true"></div>
             <div class="title__stars title__stars--near" aria-hidden="true"></div>
+
+            <!-- Subtle Mario Stars in the background -->
+            <div class="title__mario-stars" aria-hidden="true">
+                <div class="mario-star mario-star--1">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--2">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--3">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--4">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--5">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--6">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--7">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="mario-star mario-star--8">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="mario-star__body"
+                            d="M16 2.5 L19.7 11.2 L29 11.9 L22 18 L24 27.2 L16 22.4 L8 27.2 L10 18 L3 11.9 L12.3 11.2 Z"
+                            fill="#ffd100" stroke="#261800" stroke-width="1.3" stroke-linejoin="round" />
+                        <ellipse class="mario-star__eye" cx="13.6" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="13.6" cy="15.3" r="0.45" fill="#ffffff" />
+                        <ellipse class="mario-star__eye" cx="18.4" cy="16.5" rx="1.1" ry="2.4" fill="#150d00" />
+                        <circle class="mario-star__shine" cx="18.4" cy="15.3" r="0.45" fill="#ffffff" />
+                    </svg>
+                </div>
+            </div>
         </section>
     </main>
 </body>
