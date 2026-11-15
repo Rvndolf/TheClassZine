@@ -388,7 +388,6 @@ body {
   animation: screen-pulse 4.8s ease-in-out infinite alternate;
 }
 
-<<<<<<< HEAD
 .title__stars {
   position: absolute;
   inset: -50%;
@@ -398,7 +397,8 @@ body {
   animation:
     star-drift 90s linear infinite,
     star-twinkle 5s ease-in-out infinite alternate;
-=======
+}
+
 .title__stars,
 .about__stars,
 .select__stars {
@@ -408,7 +408,6 @@ body {
     pointer-events: none;
     background-repeat: repeat;
     animation: star-drift 90s linear infinite, star-twinkle 5s ease-in-out infinite alternate;
->>>>>>> origin/harron
 }
 
 .title__arcade-patterns {
@@ -434,7 +433,6 @@ body {
   animation: pattern-float 24s ease-in-out infinite alternate;
 }
 
-<<<<<<< HEAD
 .title__stars {
   z-index: 0;
   mix-blend-mode: screen;
