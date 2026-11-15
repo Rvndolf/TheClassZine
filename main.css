@@ -485,19 +485,22 @@ body {
 .title__mario-stars {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 4;
   pointer-events: none;
   overflow: hidden;
 }
 
 .mario-star {
   position: absolute;
+  pointer-events: auto;
+}
+
+.mario-star:not(.mario-star--hero) {
   width: clamp(15px, 1.6vw, 24px);
   height: clamp(15px, 1.6vw, 24px);
   opacity: 0.52;
   filter: drop-shadow(0 0 3px rgba(252, 209, 0, 0.35));
   animation: mario-star-blink 5.2s ease-in-out infinite;
-  pointer-events: auto;
   cursor: default;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -511,8 +514,8 @@ body {
   display: block;
 }
 
-/* Subtle Interactive Hover */
-.mario-star:hover {
+/* Subtle Interactive Hover for Small Background Stars */
+.mario-star:not(.mario-star--hero):hover {
   opacity: 0.95 !important;
   filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.95))
     drop-shadow(0 0 16px rgba(252, 209, 0, 0.6)) !important;
@@ -648,6 +651,188 @@ body {
 }
 
 /* ==========================================================================
+   Featured Hero Floating Mario Stars (Bigger, Closer to Arcade, Disaligned)
+   ========================================================================== */
+.mario-star--hero {
+  position: absolute;
+  width: clamp(58px, 6.2vw, 88px);
+  height: clamp(58px, 6.2vw, 88px);
+  opacity: 0.96;
+  pointer-events: none;
+  cursor: default;
+  z-index: 4;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Left Hero Star: Closer to Arcade, Positioned High near Marquee */
+.mario-star--hero-left {
+  top: clamp(17%, 21vh, 25%);
+  left: calc(50% - min(33vw, 385px));
+  animation: mario-space-float-left 6.8s ease-in-out infinite;
+}
+
+/* Right Hero Star: Closer to Arcade, Disaligned Lower near Screen/Deck */
+.mario-star--hero-right {
+  top: clamp(35%, 40vh, 46%);
+  left: calc(50% + min(24vw, 290px));
+  animation: mario-space-float-right 7.6s ease-in-out infinite;
+  animation-delay: -2.3s;
+}
+
+/* Organic zero-gravity floating in space */
+@keyframes mario-space-float-left {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-14deg);
+  }
+  25% {
+    transform: translate3d(6px, -14px, 0) rotate(-9deg);
+  }
+  50% {
+    transform: translate3d(12px, -6px, 0) rotate(-4deg);
+  }
+  75% {
+    transform: translate3d(4px, 10px, 0) rotate(-10deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-14deg);
+  }
+}
+
+@keyframes mario-space-float-right {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(18deg);
+  }
+  30% {
+    transform: translate3d(-8px, -16px, 0) rotate(13deg);
+  }
+  55% {
+    transform: translate3d(-12px, 5px, 0) rotate(8deg);
+  }
+  80% {
+    transform: translate3d(-3px, 12px, 0) rotate(15deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(18deg);
+  }
+}
+
+.mario-star__hitbox,
+.mario-star__mover {
+  width: 100%;
+  height: 100%;
+}
+
+/* Star Sparkle: Body Blinking & Twinkle */
+.mario-star__sparkle {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.75))
+    drop-shadow(0 0 24px rgba(255, 175, 0, 0.45));
+}
+
+.mario-star--hero-left .mario-star__sparkle {
+  animation: mario-star-sparkle-blink 4.2s ease-in-out infinite;
+}
+
+.mario-star--hero-right .mario-star__sparkle {
+  animation: mario-star-sparkle-blink 4.8s ease-in-out infinite;
+  animation-delay: -2.1s;
+}
+
+/* Blinking twinkle glow keyframes */
+@keyframes mario-star-sparkle-blink {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 11px rgba(255, 215, 0, 0.7))
+      drop-shadow(0 0 22px rgba(255, 175, 0, 0.4));
+    opacity: 0.92;
+  }
+  36% {
+    filter: drop-shadow(0 0 18px rgba(255, 235, 80, 0.95))
+      drop-shadow(0 0 34px rgba(255, 200, 0, 0.75))
+      brightness(1.18);
+    opacity: 1;
+  }
+  42% {
+    filter: drop-shadow(0 0 7px rgba(252, 209, 0, 0.35))
+      brightness(0.92);
+    opacity: 0.74;
+  }
+  48% {
+    filter: drop-shadow(0 0 22px rgba(255, 245, 120, 1))
+      drop-shadow(0 0 42px rgba(255, 215, 0, 0.85))
+      brightness(1.26);
+    opacity: 1;
+  }
+  56% {
+    filter: drop-shadow(0 0 11px rgba(255, 215, 0, 0.7))
+      drop-shadow(0 0 22px rgba(255, 175, 0, 0.4));
+    opacity: 0.92;
+  }
+}
+
+/* Eye Blink Animation for Hero Stars */
+.mario-star--hero-left .mario-star__eye {
+  transform-origin: 16px 16.5px;
+  animation: mario-hero-eye-blink 4.4s ease-in-out infinite;
+}
+
+.mario-star--hero-right .mario-star__eye {
+  transform-origin: 16px 16.5px;
+  animation: mario-hero-eye-blink 5s ease-in-out infinite;
+  animation-delay: -1.7s;
+}
+
+.mario-star--hero-left .mario-star__shine {
+  transform-origin: 16px 16.5px;
+  animation: mario-hero-shine-blink 4.4s ease-in-out infinite;
+}
+
+.mario-star--hero-right .mario-star__shine {
+  transform-origin: 16px 16.5px;
+  animation: mario-hero-shine-blink 5s ease-in-out infinite;
+  animation-delay: -1.7s;
+}
+
+@keyframes mario-hero-eye-blink {
+  0%,
+  42%,
+  48%,
+  100% {
+    transform: scaleY(1);
+  }
+  45% {
+    transform: scaleY(0.08);
+  }
+  51% {
+    transform: scaleY(0.08);
+  }
+  54% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes mario-hero-shine-blink {
+  0%,
+  42%,
+  48%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45%,
+  51% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  54% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
    Responsive Media Queries
    ========================================================================== */
 
@@ -676,6 +861,21 @@ body {
 
   .mario-char {
     -webkit-text-stroke: clamp(2.5px, 0.45vw, 4.5px) var(--mario-black);
+  }
+
+  .mario-star--hero {
+    width: clamp(48px, 5.5vw, 68px);
+    height: clamp(48px, 5.5vw, 68px);
+  }
+
+  .mario-star--hero-left {
+    top: clamp(16%, 20vh, 24%);
+    left: calc(50% - min(38vw, 330px));
+  }
+
+  .mario-star--hero-right {
+    top: clamp(32%, 36vh, 42%);
+    left: calc(50% + min(27vw, 245px));
   }
 }
 
@@ -748,9 +948,24 @@ body {
   }
 
   /* Gentle mobile stars adjustment */
-  .mario-star {
+  .mario-star:not(.mario-star--hero) {
     width: clamp(12px, 3.2vw, 17px);
     height: clamp(12px, 3.2vw, 17px);
+  }
+
+  .mario-star--hero {
+    width: clamp(38px, 9vw, 50px);
+    height: clamp(38px, 9vw, 50px);
+  }
+
+  .mario-star--hero-left {
+    top: 5.5%;
+    left: calc(50% - min(43vw, 155px));
+  }
+
+  .mario-star--hero-right {
+    top: 9%;
+    left: calc(50% + min(36vw, 130px));
   }
 
   .mario-star--7 {
@@ -824,9 +1039,14 @@ body {
     width: 0.3em;
   }
 
-  .mario-star {
+  .mario-star:not(.mario-star--hero) {
     width: 12px;
     height: 12px;
+  }
+
+  .mario-star--hero {
+    width: clamp(32px, 8.5vw, 42px);
+    height: clamp(32px, 8.5vw, 42px);
   }
 }
 
@@ -856,6 +1076,21 @@ body {
   .mario-char {
     -webkit-text-stroke: 1.8px var(--mario-black);
   }
+
+  .mario-star--hero {
+    width: clamp(32px, 7.5vh, 46px);
+    height: clamp(32px, 7.5vh, 46px);
+  }
+
+  .mario-star--hero-left {
+    top: 18%;
+    left: calc(50% - min(36vw, 240px));
+  }
+
+  .mario-star--hero-right {
+    top: 32%;
+    left: calc(50% + min(28vw, 190px));
+  }
 }
 
 /* Accessibility: Reduced Motion */
@@ -865,13 +1100,21 @@ body {
   .title__arcade-patterns::before,
   .title__text-group,
   .mario-star,
-  .mario-star__eye {
-    animation: none;
+  .mario-star__eye,
+  .mario-star__shine,
+  .mario-star--hero,
+  .mario-star__sparkle,
+  .mario-star--hero-left,
+  .mario-star--hero-right {
+    animation: none !important;
   }
   .title__text-group {
     transform: translateX(-50%) translateY(0);
   }
-  .mario-star {
+  .mario-star:not(.mario-star--hero) {
     opacity: 0.5;
+  }
+  .mario-star--hero {
+    opacity: 0.95;
   }
 }
