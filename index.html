@@ -182,8 +182,9 @@
 
         <!-- Brick separator: every click pops a coin (pure CSS) -->
         <section class="separator" aria-label="Lucky block separator">
-            <input class="separator__toggle visually-hidden" type="checkbox" id="lucky-block">
-            <label class="separator__block" for="lucky-block">
+            <audio id="lucky-block-audio" src="elements/mario_coin_sound.mp3" preload="auto" class="visually-hidden"></audio>
+            <input class="separator__toggle visually-hidden" type="checkbox" id="lucky-block" onkeydown="if(event.key===' '||event.key==='Enter'){var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()}">
+            <label class="separator__block" for="lucky-block" onclick="var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()">
                 <img src="elements/lucky-block.webp" alt="" class="separator__face">
                 <span class="separator__flash" aria-hidden="true"></span>
                 <span class="separator__coin separator__coin--a" aria-hidden="true">
