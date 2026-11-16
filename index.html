@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSCS 1A: The Class Zine</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -193,51 +193,34 @@
             <p class="separator__hint" aria-hidden="true">Spam the ? block!</p>
         </section>
 
-        <!-- About: placeholder section, swap the copy and photo when ready -->
+        <!-- About Section -->
         <section class="about" id="about" aria-labelledby="about-title">
-            <div class="about__glow" aria-hidden="true"></div>
-            <div class="about__stars about__stars--far" aria-hidden="true"></div>
-            <div class="about__stars about__stars--near" aria-hidden="true"></div>
-
             <div class="about__inner">
                 <header class="about__header">
                     <p class="about__eyebrow">BSCS 1A &middot; The Class Zine</p>
-                    <h2 class="about__title" id="about-title">
-                        <span class="about__title-top">About</span>
-                        <span class="about__title-main">BSCS 1A</span>
+                    <h2 class="about__title" id="about-title" role="heading" aria-level="2" aria-label="About Us">
+                        <span class="about__word" aria-hidden="true">
+                            <span class="mario-char mario-char--blue mario-char--about-a">A</span>
+                            <span class="mario-char mario-char--yellow mario-char--about-b">B</span>
+                            <span class="mario-char mario-char--red mario-char--about-o">O</span>
+                            <span class="mario-char mario-char--green mario-char--about-u">U</span>
+                            <span class="mario-char mario-char--yellow mario-char--about-t">T</span>
+                        </span>
+                        <span class="about__space" aria-hidden="true"></span>
+                        <span class="about__word" aria-hidden="true">
+                            <span class="mario-char mario-char--red mario-char--about-u2">U</span>
+                            <span class="mario-char mario-char--green mario-char--about-s">S</span>
+                        </span>
                     </h2>
-                    <p class="about__lede">This is where our class story will live. For now it&rsquo;s a placeholder level &mdash; the real intro is still loading.</p>
                 </header>
 
-                <div class="about__grid">
-                    <article class="about__panel">
-                        <p class="about__panel-label">World 1-1</p>
-                        <h3 class="about__panel-title">Your class story goes here</h3>
-                        <p class="about__panel-copy">Soon this panel will hold a short intro to BSCS 1A &mdash; who we are, what we build, and the games we play. Drop in the class lore, a favorite memory, or a message from the block.</p>
-
-                        <ul class="about__facts" role="list">
-                            <li>
-                                <span>Course</span>
-                                <strong>BSCS</strong>
-                            </li>
-                            <li>
-                                <span>Section</span>
-                                <strong>1A</strong>
-                            </li>
-                            <li>
-                                <span>Players</span>
-                                <strong>08</strong>
-                            </li>
-                        </ul>
-                    </article>
-
-                    <figure class="about__photo">
-                        <div class="about__photo-frame">
-                            <span class="about__photo-mark" aria-hidden="true">?</span>
-                            <span class="about__photo-label">Class photo coming soon</span>
-                        </div>
-                        <figcaption class="about__photo-caption">Swap this frame for a group photo of BSCS 1A.</figcaption>
-                    </figure>
+                <div class="about__content">
+                    <p class="about__text">
+                        Welcome to BSCS 1A: The Class Zine! This is our dedicated space where our class story, achievements, and memories come together. We are a community of passionate first-year Computer Science students embarking on our quest through coding, collaboration, and creativity.
+                    </p>
+                    <p class="about__text">
+                        From late-night debugging sessions to multiplayer game nights and innovative tech projects, this space captures the spirit and memories of our section. More class lore, achievements, and player highlights will unlock as we level up throughout the school year!
+                    </p>
                 </div>
             </div>
         </section>
@@ -257,7 +240,7 @@
             </header>
 
             <!-- Placeholder roster: swap each href="#" for a classmate's page when ready -->
-            <ul class="players" role="list">
+                        <ul class="players" role="list">
                 <li class="players__item">
                     <a class="player-card" href="#">
                         <span class="player-card__arrow" aria-hidden="true"></span>
@@ -358,6 +341,448 @@
                         </span>
                         <span class="player-card__info">
                             <span class="player-card__name">Player 08</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P9</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 09</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P10</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 10</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P11</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 11</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P12</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 12</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P13</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 13</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P14</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 14</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P15</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 15</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P16</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 16</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P17</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 17</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P18</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 18</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P19</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 19</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P20</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 20</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P21</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 21</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P22</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 22</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P23</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 23</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P24</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 24</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P25</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 25</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P26</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 26</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P27</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 27</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P28</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 28</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P29</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 29</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P30</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 30</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P31</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 31</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P32</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 32</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P33</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 33</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P34</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 34</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P35</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 35</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P36</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 36</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P37</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 37</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P38</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 38</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P39</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 39</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P40</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 40</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P41</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 41</span>
+                            <span class="player-card__status">Page coming soon</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="players__item">
+                    <a class="player-card" href="#">
+                        <span class="player-card__arrow" aria-hidden="true"></span>
+                        <span class="player-card__portrait">
+                            <span class="player-card__badge">P42</span>
+                            <span class="player-card__mark" aria-hidden="true">?</span>
+                        </span>
+                        <span class="player-card__info">
+                            <span class="player-card__name">Player 42</span>
                             <span class="player-card__status">Page coming soon</span>
                         </span>
                     </a>
