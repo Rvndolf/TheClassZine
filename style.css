@@ -1981,6 +1981,7 @@ body {
 
 /* Paragraph text written directly on the blue background, white font, no shadow */
 .about__text,
+.about_text,
 .about p {
   font-family: var(--about-font-body);
   font-size: clamp(0.95rem, 1.22vw, 1.14rem);
@@ -1991,8 +1992,30 @@ body {
   text-shadow: none;
 }
 
-.about__text + .about__text {
+.about__text + .about__text,
+.about_text + .about_text {
   margin-top: 1.25rem;
+}
+
+/* Pure CSS scroll-driven opacity transition (no JS) */
+@keyframes about-text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .about__text,
+  .about_text {
+    animation: about-text-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 45%;
+  }
 }
 
 /* ==========================================================================
@@ -2026,4 +2049,167 @@ body {
   .about__title .mario-char:hover {
     transform: none !important;
   }
+
+  .about__text,
+  .about_text {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
+
+/* ==========================================================================
+   Lore Section
+   - Positioned after the Players section
+   - Sized as big as the "About Us" section (full viewport height)
+   - Uses luckyblockbg.webp as background
+   - Wall separators stacked horizontally at the top & bottom
+   - Platform standing on bottom-right on top of the wall separator
+   - Responsive group in the middle with nintendo.webp and slanted mariohat.webp
+   ========================================================================== */
+.lore {
+  --lore-separator-h: clamp(34px, 4.4vw, 54px);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Lucky Block Background */
+  background-color: #f7a81b;
+  background-image: url("elements/luckyblockbg.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Atmospheric depth overlay */
+.lore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 55%,
+    rgba(2, 6, 17, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+/* Wall brick separators stacked horizontally at top and bottom */
+.lore__separator {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: var(--lore-separator-h);
+  background-color: #020611;
+  background-image: url("elements/vecteezy_wall-vector-icon-design_16498179.jpg");
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: auto 110%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.lore__separator--top {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.65);
+}
+
+.lore__separator--bottom {
+  border-top: 2px solid rgba(0, 0, 0, 0.65);
+}
+
+/* Platform placed on the bottom right, resting directly on top of the wall separator */
+.lore__platform {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3.5rem);
+  bottom: calc(var(--lore-separator-h) - 6px);
+  width: clamp(110px, 15vw, 195px);
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  filter:
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* Centered container holding the logo group */
+.lore__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+/* Responsive logo group holding nintendo.webp and mariohat.webp */
+.lore__logo-group {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(88vw, 760px);
+  max-width: 100%;
+}
+
+/* Nintendo logo - bigger, centered, without hover animation */
+.lore__nintendo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 14px 28px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Mario hat perched and slanted on the left top tip of the Nintendo logo */
+.lore__mario-hat {
+  position: absolute;
+  z-index: 4;
+  top: -13%;
+  left: -1%;
+  width: 30%;
+  height: auto;
+  transform: rotate(-14deg);
+  transform-origin: bottom center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 680px) {
+  .lore {
+    min-height: 85vh;
+    min-height: 85dvh;
+    --lore-separator-h: clamp(28px, 4.5vw, 40px);
+  }
+
+  .lore__logo-group {
+    width: min(92vw, 460px);
+  }
+
+  .lore__platform {
+    width: clamp(85px, 20vw, 130px);
+    right: clamp(0.5rem, 2.5vw, 1.5rem);
+  }
+}
+
