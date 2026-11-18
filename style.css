@@ -2248,6 +2248,7 @@ body {
 
 /* Paragraph text written directly on the blue background, white font, no shadow */
 .about__text,
+.about_text,
 .about p {
   font-family: var(--about-font-body);
   font-size: clamp(0.95rem, 1.22vw, 1.14rem);
@@ -2258,8 +2259,30 @@ body {
   text-shadow: none;
 }
 
-.about__text + .about__text {
+.about__text + .about__text,
+.about_text + .about_text {
   margin-top: 1.25rem;
+}
+
+/* Pure CSS scroll-driven opacity transition (no JS) */
+@keyframes about-text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .about__text,
+  .about_text {
+    animation: about-text-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 45%;
+  }
 }
 
 /* ==========================================================================
@@ -2293,4 +2316,279 @@ body {
   .about__title .mario-char:hover {
     transform: none !important;
   }
+
+  .about__text,
+  .about_text {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
+
+/* ==========================================================================
+   Lore Section
+   - Positioned after the Players section
+   - Sized as big as the "About Us" section (full viewport height)
+   - Uses luckyblockbg.webp as background
+   - Wall separators stacked horizontally at the top & bottom
+   - Platform standing on bottom-right on top of the wall separator
+   - Responsive group in the middle with nintendo.webp and slanted mariohat.webp
+   ========================================================================== */
+.lore {
+  --lore-separator-h: clamp(34px, 4.4vw, 54px);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Lucky Block Background */
+  background-color: #f7a81b;
+  background-image: url("elements/luckyblockbg.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Atmospheric depth overlay */
+.lore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 55%,
+    rgba(2, 6, 17, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+/* Wall brick separators stacked horizontally at top and bottom */
+.lore__separator {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: var(--lore-separator-h);
+  background-color: #020611;
+  background-image: url("elements/vecteezy_wall-vector-icon-design_16498179.jpg");
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: auto 110%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.lore__separator--top {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.65);
+}
+
+.lore__separator--bottom {
+  border-top: 2px solid rgba(0, 0, 0, 0.65);
+}
+
+/* Mario animated gif on the bottom left, resting on top of the wall separator */
+.lore__mario {
+  position: absolute;
+  left: clamp(1rem, 4vw, 3.5rem);
+  bottom: calc(var(--lore-separator-h) - 4px);
+  width: clamp(85px, 11vw, 150px);
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter:
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* Platform placed on the bottom right, resting directly on top of the wall separator */
+.lore__platform {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3.5rem);
+  bottom: calc(var(--lore-separator-h) - 6px);
+  width: clamp(110px, 15vw, 195px);
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  filter:
+    drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* Centered container holding the logo group */
+.lore__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+/* Responsive logo group holding nintendo.webp, mariohat.webp and the carousel */
+.lore__logo-group {
+  position: relative;
+  display: grid;
+  width: min(88vw, 760px);
+  max-width: 100%;
+}
+
+/* The Nintendo image defines the group's box; the carousel is positioned
+   inside its black screen and follows the group when it moves. */
+.lore__logo-group > .lore__nintendo {
+  grid-area: 1 / 1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Nintendo console image - bigger, centered, without hover animation */
+.lore__nintendo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 14px 28px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Mario hat perched and slanted on the left top tip of the Nintendo logo */
+.lore__mario-hat {
+  position: absolute;
+  z-index: 4;
+  top: -13%;
+  left: -1%;
+  width: 30%;
+  height: auto;
+  transform: rotate(-14deg);
+  transform-origin: bottom center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* ==========================================================================
+   Lore Carousel
+   - Fits the black screen of nintendo.webp (source image pixels
+     x 313–1112, y 51–537 of 1412×591), so the console frame stays visible
+   - 5 slides, one every 3s (15s loop), sliding in from the right and
+     out to the left so the sequence reads as a scrolling carousel
+   ========================================================================== */
+.lore__carousel {
+  position: absolute;
+  z-index: 2;
+  top: 8.63%;
+  left: 22.17%;
+  width: 56.66%;
+  height: 82.23%;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: clamp(2px, 0.35vw, 6px);
+  background: #060608;
+}
+
+/* Subtle screen-depth shading above the slides */
+.lore__carousel::after {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  content: "";
+  pointer-events: none;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.55);
+}
+
+.lore__slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(100%);
+  animation: lore-carousel-slide 15s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Each slide is already in place on load and hands off to the next every 3s.
+   The extra -0.8s offsets the slide-in duration so the container is never blank. */
+.lore__slide:nth-of-type(1) { animation-delay: -0.8s; }
+.lore__slide:nth-of-type(2) { animation-delay: -12.8s; }
+.lore__slide:nth-of-type(3) { animation-delay: -9.8s; }
+.lore__slide:nth-of-type(4) { animation-delay: -6.8s; }
+.lore__slide:nth-of-type(5) { animation-delay: -3.8s; }
+
+/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image. */
+@keyframes lore-carousel-slide {
+  0% {
+    transform: translateX(100%);
+    animation-timing-function: cubic-bezier(0.22, 0.75, 0.3, 1);
+  }
+  5.333% {
+    transform: translateX(0);
+    animation-timing-function: linear;
+  }
+  20% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.25);
+  }
+  25.333%,
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 680px) {
+  .lore {
+    min-height: 85vh;
+    min-height: 85dvh;
+    --lore-separator-h: clamp(28px, 4.5vw, 40px);
+  }
+
+  .lore__logo-group {
+    width: min(92vw, 460px);
+  }
+
+  .lore__platform {
+    width: clamp(85px, 20vw, 130px);
+    right: clamp(0.5rem, 2.5vw, 1.5rem);
+  }
+
+  .lore__mario {
+    width: clamp(65px, 16vw, 100px);
+    left: clamp(0.5rem, 2.5vw, 1.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lore__slide {
+    animation: none;
+    transform: none;
+  }
+
+  .lore__slide:not(:first-of-type) {
+    display: none;
+  }
+}
+
