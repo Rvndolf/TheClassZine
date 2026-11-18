@@ -1419,10 +1419,109 @@ body {
     overflow: hidden;
     padding: clamp(3.5rem, 7vw, 6.5rem) clamp(1.15rem, 4vw, 3rem) clamp(4rem, 7vw, 5.5rem);
     background:
-        radial-gradient(ellipse at 50% 0%, rgb(31 84 165 / 38%), transparent 62%),
-        #020611;
+        radial-gradient(ellipse at 50% -10%, rgb(255 255 255 / 30%), transparent 54%),
+        linear-gradient(180deg, #74c3ff 0%, #59aaf5 30%, #418be5 64%, #2c6bc8 100%);
     color: #fff;
     text-align: center;
+}
+
+/* Pixel clouds extracted from the supplied Mario artwork. They are spread
+   around the header like the original layout, but every cloud is anchored
+   inside the section and only drifts inward. That keeps each one whole at
+   every point of the animation instead of slicing it on a section edge. */
+.select__clouds {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.select__cloud {
+    position: absolute;
+    height: auto;
+    image-rendering: pixelated;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: drop-shadow(0 10px 9px rgb(12 58 124 / 14%));
+    animation: select-cloud-drift var(--cloud-duration, 32s) ease-in-out infinite alternate;
+    animation-delay: var(--cloud-delay, 0s);
+    will-change: transform;
+}
+
+@keyframes select-cloud-drift {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(var(--cloud-drift, 10px), var(--cloud-lift, 3px), 0); }
+}
+
+/* A small set of pixel clouds drifts through the section. The largest
+   pieces sit low so the header stays calm, and the mid pair only appears
+   on wide screens where the side gutters leave it fully visible. */
+.select__cloud--hero {
+    left: clamp(12px, 1.7vw, 32px);
+    bottom: clamp(.75rem, 1.2vw, 1.25rem);
+    width: clamp(260px, 30vw, 480px);
+    --cloud-drift: 12px;
+    --cloud-duration: 34s;
+}
+
+.select__cloud--large {
+    right: clamp(12px, 1.7vw, 34px);
+    bottom: clamp(1rem, 1.6vw, 1.75rem);
+    width: clamp(180px, 15.5vw, 300px);
+    --cloud-drift: -12px;
+    --cloud-duration: 38s;
+    --cloud-delay: -9s;
+}
+
+.select__cloud--small-a {
+    left: clamp(12px, 1.4vw, 24px);
+    top: clamp(150px, 17vw, 250px);
+    width: clamp(110px, 10vw, 150px);
+    --cloud-drift: 9px;
+    --cloud-duration: 41s;
+    --cloud-delay: -11s;
+}
+
+.select__cloud--small-b {
+    right: clamp(14px, 1.7vw, 28px);
+    top: clamp(190px, 20vw, 280px);
+    width: clamp(95px, 9vw, 135px);
+    --cloud-drift: -9px;
+    --cloud-duration: 45s;
+    --cloud-delay: -17s;
+}
+
+.select__cloud--mid-left,
+.select__cloud--mid-right {
+    display: none;
+}
+
+@media (min-width: 1440px) {
+    .select__cloud--mid-left,
+    .select__cloud--mid-right {
+        display: block;
+        opacity: .9;
+    }
+
+    .select__cloud--mid-left {
+        left: clamp(16px, 1.4vw, 28px);
+        top: 44%;
+        width: clamp(76px, 6vw, 110px);
+        --cloud-drift: 7px;
+        --cloud-duration: 52s;
+        --cloud-delay: -8s;
+    }
+
+    .select__cloud--mid-right {
+        right: clamp(16px, 1.4vw, 28px);
+        top: 58%;
+        width: clamp(74px, 5.5vw, 105px);
+        --cloud-drift: -7px;
+        --cloud-duration: 57s;
+        --cloud-delay: -21s;
+    }
 }
 
 .select__glow {
@@ -1431,9 +1530,13 @@ body {
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(ellipse at 50% 12%, rgb(64 156 255 / 18%), transparent 55%),
-        radial-gradient(ellipse at 50% 100%, rgb(20 70 140 / 35%), transparent 58%),
-        radial-gradient(ellipse at 50% 50%, transparent 45%, rgb(0 0 0 / 26%) 100%);
+        radial-gradient(circle at 50% 6%, rgb(255 255 220 / 42%), transparent 44%),
+        linear-gradient(180deg, transparent 58%, rgb(16 55 115 / 18%) 100%);
+}
+
+/* The daytime sky replaces the old star field. */
+.select__stars {
+    display: none;
 }
 
 .select__header {
@@ -1443,7 +1546,7 @@ body {
     justify-items: center;
     gap: .9rem;
     max-width: 48rem;
-    margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+    margin: 0 auto clamp(1.9rem, 3vw, 2.6rem);
 }
 
 .select__eyebrow {
@@ -1454,59 +1557,150 @@ body {
     letter-spacing: .4em;
     text-indent: .4em;
     text-transform: uppercase;
-    color: #8ec5ff;
-    text-shadow: 0 0 12px rgb(75 157 255 / 50%);
+    color: #fff;
+    text-shadow:
+        0 2px 0 rgb(9 45 100 / 70%),
+        0 0 14px rgb(12 55 112 / 55%);
 }
 
 .select__title {
-    display: grid;
-    gap: .18em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2em;
     margin: 0;
     font-family: 'Super Mario 256', system-ui, sans-serif;
     font-size: clamp(1.9rem, 5.4vw, 4.1rem);
     font-weight: 900;
     line-height: 1;
-    letter-spacing: .01em;
+    letter-spacing: -.04em;
     text-transform: uppercase;
-    paint-order: stroke fill;
-    -webkit-text-stroke: clamp(2px, .3vw, 4px) #000;
+    white-space: nowrap;
+    user-select: none;
+    width: max-content;
+    max-width: 96vw;
+    animation: select-title-levitate 4.6s ease-in-out infinite alternate;
+    transition:
+        transform .3s cubic-bezier(.34, 1.56, .64, 1),
+        filter .3s ease;
+}
+
+.select__title .select__word .mario-char {
+    margin-right: .05em;
+}
+
+.select__title .select__word .mario-char:last-child {
+    margin-right: 0;
+}
+
+/* Same isometric 3D extrusion used by SUPER BSCS 1A and ABOUT US. */
+.select__title .mario-char {
     text-shadow:
-        0 .07em 0 #000,
-        0 .14em 0 #000,
-        0 .21em 0 #000,
-        0 .26em .35em rgb(0 0 0 / 60%),
-        0 0 .9em rgb(62 158 255 / 35%);
+        -2px 0 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        0 2px 0 #000,
+        0.015em 0.025em 0 #000,
+        0.03em 0.05em 0 #000,
+        0.045em 0.075em 0 #000,
+        0.06em 0.1em 0 #000,
+        0.075em 0.125em 0 #000,
+        0.09em 0.15em 0 #000,
+        0.105em 0.175em 0 #000,
+        0.12em 0.2em 0 #000,
+        0.135em 0.225em 0 #000,
+        0.15em 0.25em 0 #000;
+}
+
+@keyframes select-title-levitate {
+    0% {
+        transform: translateY(0);
+        filter: drop-shadow(0 14px 10px rgb(0 0 0 / 42%))
+            drop-shadow(0 24px 20px rgb(0 0 0 / 22%))
+            drop-shadow(0 0 10px rgb(255 255 255 / 30%))
+            drop-shadow(0 0 24px rgb(28 92 190 / 45%));
+    }
+    100% {
+        transform: translateY(-11px);
+        filter: drop-shadow(0 26px 15px rgb(0 0 0 / 32%))
+            drop-shadow(0 42px 30px rgb(0 0 0 / 18%))
+            drop-shadow(0 0 14px rgb(255 255 255 / 38%))
+            drop-shadow(0 0 34px rgb(28 92 190 / 55%));
+    }
+}
+
+.select__title:hover {
+    transform: translateY(-14px) scale(1.02);
+    filter: drop-shadow(0 32px 20px rgb(0 0 0 / 32%))
+        drop-shadow(0 50px 34px rgb(0 0 0 / 18%))
+        drop-shadow(0 0 18px rgb(255 255 255 / 45%))
+        drop-shadow(0 0 36px rgb(28 92 190 / 60%));
+}
+
+.select__title-top,
+.select__title-main,
+.select__title .select__word {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .select__title-top {
-    font-size: .58em;
-    letter-spacing: .12em;
-    text-indent: .12em;
-    color: #fff;
+    font-size: .66em;
 }
 
 .select__title-main {
-    color: var(--mario-yellow);
+    font-size: 1em;
+}
+
+.select__space {
+    display: inline-block;
+    width: .6em;
+}
+
+/* Bouncy arcade tilt across each word. */
+.select__title .select__word .mario-char:nth-child(odd) {
+    transform: rotate(-3deg) translateY(1px);
+}
+
+.select__title .select__word .mario-char:nth-child(even) {
+    transform: rotate(3deg) translateY(-2px);
+}
+
+.select__title .select__word .mario-char:hover {
+    transform: rotate(0deg) translateY(-9px) scale(1.1) !important;
+    z-index: 10;
 }
 
 .select__lede {
     max-width: 34rem;
     margin: 0;
+    padding: .55rem .9rem;
+    border: 2px solid rgb(255 255 255 / 18%);
+    border-radius: 8px;
+    background: rgb(5 29 66 / 55%);
+    box-shadow: 0 4px 0 rgb(4 24 55 / 25%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     font-family: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
     font-size: clamp(.78rem, 1.1vw, .95rem);
+    font-weight: 500;
     line-height: 1.6;
-    color: rgb(203 224 255 / 78%);
+    color: #fff;
+    text-shadow:
+        0 2px 0 rgb(9 45 100 / 72%),
+        0 0 14px rgb(9 45 100 / 50%);
 }
 
 .players {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, 1.8vw, 1.5rem);
-    width: min(100%, 1180px);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(.65rem, 1vw, 1rem);
+    width: min(100%, 1220px);
     margin: 0 auto;
-    padding: 1.75rem 0 0;
+    padding: 1.15rem 0 0;
     list-style: none;
 }
 
@@ -1518,9 +1712,9 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: .65rem;
+    gap: .5rem;
     height: 100%;
-    padding: .6rem;
+    padding: .5rem;
     text-decoration: none;
     color: #fff;
     background: linear-gradient(180deg, rgb(17 42 79 / 92%), rgb(6 16 35 / 96%));
@@ -1576,15 +1770,15 @@ body {
 
 .player-card__badge {
     position: absolute;
-    top: .55rem;
-    left: .55rem;
+    top: .4rem;
+    left: .4rem;
     z-index: 1;
-    padding: .18rem .38rem;
+    padding: .14rem .32rem;
     border: 2px solid rgb(255 255 255 / 25%);
     border-radius: 4px;
     background: rgb(0 0 0 / 45%);
     font-family: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
-    font-size: .6rem;
+    font-size: .52rem;
     font-weight: 700;
     letter-spacing: .12em;
     color: #8ec5ff;
@@ -1593,11 +1787,11 @@ body {
 .player-card__mark {
     position: relative;
     font-family: 'Super Mario 256', system-ui, sans-serif;
-    font-size: clamp(4rem, 8vw, 6.2rem);
+    font-size: clamp(2.6rem, 4.4vw, 3.8rem);
     line-height: 1;
     color: var(--mario-yellow);
     paint-order: stroke fill;
-    -webkit-text-stroke: clamp(3px, .35vw, 5px) #000;
+    -webkit-text-stroke: clamp(2px, .28vw, 4px) #000;
     text-shadow:
         0 .08em 0 #000,
         0 .16em 0 #000,
@@ -1619,14 +1813,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .25rem;
-    padding: .15rem .2rem .45rem;
+    gap: .15rem;
+    padding: .1rem .15rem .35rem;
     text-align: center;
 }
 
 .player-card__name {
     font-family: 'Super Mario 256', system-ui, sans-serif;
-    font-size: clamp(.8rem, 1.2vw, 1rem);
+    font-size: clamp(.72rem, 1vw, .92rem);
     line-height: 1.2;
     letter-spacing: .05em;
     color: #fff;
@@ -1635,8 +1829,8 @@ body {
 
 .player-card__status {
     font-family: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
-    font-size: clamp(.55rem, .75vw, .65rem);
-    letter-spacing: .16em;
+    font-size: clamp(.5rem, .68vw, .62rem);
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--mario-yellow);
 }
@@ -1680,7 +1874,10 @@ body {
     font-family: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
     font-size: clamp(.7rem, .95vw, .85rem);
     letter-spacing: .08em;
-    color: rgb(179 209 255 / 70%);
+    color: #fff;
+    text-shadow:
+        0 2px 0 rgb(9 45 100 / 72%),
+        0 0 14px rgb(9 45 100 / 50%);
 }
 
 .select__note-coin {
@@ -1705,9 +1902,55 @@ body {
     }
 }
 
+@media (max-width: 760px) {
+    /* Reserve a taller sky band so the whole cloud field sits above the
+       heading and never hides behind the lede panel. Extra bottom padding
+       keeps the large clouds below the footnote on narrow screens. */
+    .select {
+        padding-top: 13.5rem;
+        padding-bottom: 9rem;
+    }
+
+    .select__cloud--hero {
+        left: 8px;
+        bottom: 12px;
+        width: clamp(170px, 54vw, 300px);
+        --cloud-drift: 8px;
+    }
+
+    .select__cloud--large {
+        right: 8px;
+        bottom: 12px;
+        width: clamp(100px, 30vw, 160px);
+        --cloud-drift: -8px;
+    }
+
+    .select__cloud--small-a {
+        left: 8px;
+        top: 10px;
+        width: clamp(86px, 28vw, 120px);
+        --cloud-drift: 7px;
+    }
+
+    .select__cloud--small-b {
+        right: 8px;
+        top: 74px;
+        width: clamp(78px, 24vw, 105px);
+        --cloud-drift: -7px;
+    }
+}
+
 @media (max-width: 680px) {
     .players {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .select__title {
+        font-size: clamp(1.8rem, 10vw, 3.1rem);
+    }
+
+    .select__title-top {
+        font-size: .7em;
     }
 
     .separator__hint {
@@ -1730,9 +1973,30 @@ body {
     .player-card__portrait {
         aspect-ratio: 5 / 4;
     }
+
+    .select__cloud--hero {
+        bottom: 10px;
+        width: 172px;
+    }
+
+    .select__cloud--large {
+        bottom: 10px;
+        width: 100px;
+    }
+
+    .select__cloud--small-a {
+        width: 86px;
+    }
+
+    .select__cloud--small-b {
+        top: 66px;
+        width: 76px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .select__cloud,
+    .select__title,
     .select__stars,
     .select__note-coin,
     .player-card__arrow {
@@ -1779,7 +2043,10 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  min-height: 100dvh;
+  /* Show the full Mario ground/grass strip instead of cropping it. The
+     section grows with the artwork's 2000x1333 aspect ratio, which also
+     gives the Select section breathing room below it. */
+  min-height: min(max(100dvh, 66.65vw), 140dvh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1792,7 +2059,7 @@ body {
   background-color: #020611;
   background-image: url("elements/about.webp");
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;
