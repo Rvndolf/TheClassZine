@@ -203,7 +203,8 @@
 
         <!-- Brick separator: every click pops a coin -->
         <section class="separator" aria-label="Lucky block separator">
-            <button type="button" class="separator__block" id="lucky-block" aria-label="Hit the question block to pop a coin">
+            <a class="separator__block" href="elements/coin-sound.html" target="coin-sound-frame"
+                aria-label="Hit the question block to pop a coin">
                 <img src="elements/lucky-block.webp" alt="" class="separator__face">
                 <span class="separator__flash" aria-hidden="true"></span>
                 <span class="separator__coin" aria-hidden="true">
@@ -211,10 +212,13 @@
                     <span class="separator__spark separator__spark--a" aria-hidden="true"></span>
                     <span class="separator__spark separator__spark--b" aria-hidden="true"></span>
                 </span>
-            </button>
+            </a>
 
             <p class="separator__hint" aria-hidden="true">Spam the ? block!</p>
         </section>
+
+        <iframe class="coin-sound-frame" name="coin-sound-frame" title="Coin sound" allow="autoplay"
+            src="about:blank" hidden></iframe>
 
         <!-- About Section -->
         <section class="about" id="about" aria-labelledby="about-title">
@@ -927,57 +931,6 @@
         </section>
     </main>
 
-    <script>
-        // Swap the ordinary portrait cursor for the reaction cutout while a
-        // primary button/touch is held down.
-        (() => {
-            const root = document.documentElement;
-            let releaseTimer;
-
-            const press = (event) => {
-                if (event.button !== 0) return;
-                window.clearTimeout(releaseTimer);
-                root.classList.add('cursor-pressed');
-            };
-
-            const release = () => {
-                window.clearTimeout(releaseTimer);
-                // Keep the clicked expression visible briefly after quick taps.
-                releaseTimer = window.setTimeout(() => {
-                    root.classList.remove('cursor-pressed');
-                }, 250);
-            };
-
-            window.addEventListener('pointerdown', press, { passive: true });
-            window.addEventListener('pointerup', release, { passive: true });
-            window.addEventListener('pointercancel', release, { passive: true });
-            window.addEventListener('blur', release);
-            window.addEventListener('contextmenu', release);
-        })();
-
-        // Lucky question block: spawns a coin on click without firing on page load
-        (() => {
-            const block = document.querySelector('.separator__block');
-            const coin = document.querySelector('.separator__coin');
-            if (!block || !coin) return;
-
-            block.addEventListener('click', () => {
-                // Play Mario coin sound (fresh Audio instance per click so spam clicks overlap)
-                const sound = new Audio('elements/mario_coin_sound_trimmed.mp3');
-                sound.currentTime = 0;
-                sound.play().catch(() => {});
-
-                // Retrigger coin pop animation
-                coin.classList.remove('is-popping');
-                void coin.offsetWidth;
-                coin.classList.add('is-popping');
-            });
-
-            coin.addEventListener('animationend', () => {
-                coin.classList.remove('is-popping');
-            });
-        })();
-    </script>
 </body>
 
 </html>
