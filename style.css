@@ -31,6 +31,26 @@ body {
     background: #020611;
 }
 
+/* Custom player-avatar cursor: the whole image, die-cut on transparency.
+   The face is the click hotspot, and 64px stays under browser cursor limits. */
+html {
+    cursor: url("elements/cursor.png") 32 25, auto;
+}
+
+a,
+button,
+label,
+summary,
+[role="button"] {
+    cursor: url("elements/cursor.png") 32 25, pointer;
+}
+
+/* While the mouse is held down, swap the portrait for the reaction cutout. */
+html.cursor-pressed,
+html.cursor-pressed * {
+    cursor: url("elements/cursor-click.png") 32 23, auto !important;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -146,7 +166,6 @@ body {
   text-transform: uppercase;
   white-space: nowrap;
   user-select: none;
-  cursor: default;
   width: max-content;
   max-width: 95vw;
   animation: title-levitate 4.6s ease-in-out infinite alternate;
@@ -546,7 +565,6 @@ body {
   opacity: 0.52;
   filter: drop-shadow(0 0 3px rgba(252, 209, 0, 0.35));
   animation: mario-star-blink 5.2s ease-in-out infinite;
-  cursor: default;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
     filter 0.3s ease,
@@ -704,7 +722,6 @@ body {
   height: clamp(58px, 6.2vw, 88px);
   opacity: 0.96;
   pointer-events: none;
-  cursor: default;
   z-index: 4;
   user-select: none;
   -webkit-user-select: none;
@@ -1199,7 +1216,6 @@ body {
     height: 108%;
     aspect-ratio: 1;
     transform: translate(-50%, -50%);
-    cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
@@ -1271,11 +1287,11 @@ body {
 }
 
 /* Every click flips the checkbox, so one of the two coins always replays */
-.separator__toggle:checked ~ .separator__block .separator__coin--a {
+.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a {
     animation: coin-pop-a .9s cubic-bezier(.22, .8, .3, 1) forwards;
 }
 
-.separator__toggle:not(:checked) ~ .separator__block .separator__coin--b {
+.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b {
     animation: coin-pop-b .9s cubic-bezier(.22, .8, .3, 1) forwards;
 }
 
@@ -1359,13 +1375,13 @@ body {
     width: clamp(6px, .8vw, 10px);
 }
 
-.separator__toggle:checked ~ .separator__block .separator__coin--a .separator__spark,
-.separator__toggle:not(:checked) ~ .separator__block .separator__coin--b .separator__spark {
+.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a .separator__spark,
+.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b .separator__spark {
     animation: coin-sparkle .75s ease-out .26s forwards;
 }
 
-.separator__toggle:checked ~ .separator__block .separator__coin--a .separator__spark--b,
-.separator__toggle:not(:checked) ~ .separator__block .separator__coin--b .separator__spark--b {
+.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a .separator__spark--b,
+.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b .separator__spark--b {
     animation-delay: .38s;
 }
 
@@ -2003,8 +2019,8 @@ body {
         animation: none;
     }
 
-    .separator__toggle:checked ~ .separator__block .separator__coin--a,
-    .separator__toggle:not(:checked) ~ .separator__block .separator__coin--b {
+    .separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a,
+    .separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b {
         animation: none;
         bottom: 105%;
         opacity: 1;
@@ -2132,7 +2148,6 @@ body {
   text-transform: uppercase;
   white-space: nowrap;
   user-select: none;
-  cursor: default;
   width: max-content;
   max-width: 95vw;
   animation: about-levitate 4.6s ease-in-out infinite alternate;

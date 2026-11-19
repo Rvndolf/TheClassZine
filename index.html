@@ -219,7 +219,7 @@
         <!-- Brick separator: every click pops a coin (pure CSS) -->
         <section class="separator" aria-label="Lucky block separator">
             <audio id="lucky-block-audio" src="elements/mario_coin_sound.mp3" preload="auto" class="visually-hidden"></audio>
-            <input class="separator__toggle visually-hidden" type="checkbox" id="lucky-block" onkeydown="if(event.key===' '||event.key==='Enter'){var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()}">
+            <input class="separator__toggle visually-hidden" type="checkbox" id="lucky-block" onchange="this.dataset.played='true'" onkeydown="if(event.key===' '||event.key==='Enter'){var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()}">
             <label class="separator__block" for="lucky-block" onclick="var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()">
                 <img src="elements/lucky-block.webp" alt="" class="separator__face">
                 <span class="separator__flash" aria-hidden="true"></span>
@@ -913,6 +913,35 @@
             <div class="lore__separator lore__separator--bottom" aria-hidden="true"></div>
         </section>
     </main>
+
+    <script>
+        // Swap the ordinary portrait cursor for the reaction cutout while a
+        // primary button/touch is held down.
+        (() => {
+            const root = document.documentElement;
+            let releaseTimer;
+
+            const press = (event) => {
+                if (event.button !== 0) return;
+                window.clearTimeout(releaseTimer);
+                root.classList.add('cursor-pressed');
+            };
+
+            const release = () => {
+                window.clearTimeout(releaseTimer);
+                // Keep the clicked expression visible briefly after quick taps.
+                releaseTimer = window.setTimeout(() => {
+                    root.classList.remove('cursor-pressed');
+                }, 250);
+            };
+
+            window.addEventListener('pointerdown', press, { passive: true });
+            window.addEventListener('pointerup', release, { passive: true });
+            window.addEventListener('pointercancel', release, { passive: true });
+            window.addEventListener('blur', release);
+            window.addEventListener('contextmenu', release);
+        })();
+    </script>
 </body>
 
 </html>
