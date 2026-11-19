@@ -9,6 +9,42 @@
 </head>
 
 <body>
+    <audio class="background-music" src="elements/SUPER MARIO BROS. - Main Theme By Koji Kondo _ Nintendo - (320 Kbps).mp3"
+        autoplay loop preload="auto" playsinline hidden aria-hidden="true"></audio>
+    <script>
+        // Browsers block audible autoplay until the visitor interacts with the
+        // page. Try immediately, then start the loop on the first gesture.
+        (() => {
+            const music = document.querySelector('.background-music');
+            if (!music) return;
+
+            music.volume = 0.35;
+
+            const startMusic = () => {
+                if (!music.paused) return;
+                music.play().catch(() => {});
+            };
+
+            const unlock = () => {
+                startMusic();
+                if (!music.paused) {
+                    document.removeEventListener('pointerdown', unlock);
+                    document.removeEventListener('touchstart', unlock);
+                    document.removeEventListener('touchend', unlock);
+                    document.removeEventListener('click', unlock);
+                    document.removeEventListener('keydown', unlock);
+                }
+            };
+
+            startMusic();
+            document.addEventListener('pointerdown', unlock, { passive: true });
+            document.addEventListener('touchstart', unlock, { passive: true });
+            document.addEventListener('touchend', unlock, { passive: true });
+            document.addEventListener('click', unlock);
+            document.addEventListener('keydown', unlock);
+        })();
+    </script>
+
     <main>
         <section class="title" id="title" aria-label="Title">
             <img src="elements/Arcade.webp" alt="Arcade" class="title__arcade">
@@ -242,11 +278,51 @@
             <div class="select__stars select__stars--far" aria-hidden="true"></div>
             <div class="select__stars select__stars--near" aria-hidden="true"></div>
 
+            <div class="select__clouds" aria-hidden="true">
+                <img class="select__cloud select__cloud--small-a" src="elements/select-cloud-top-left.webp" alt=""
+                    draggable="false">
+                <img class="select__cloud select__cloud--small-b" src="elements/select-cloud-top-right.webp" alt=""
+                    draggable="false">
+                <img class="select__cloud select__cloud--mid-left" src="elements/select-cloud-mid-left.webp" alt=""
+                    draggable="false">
+                <img class="select__cloud select__cloud--mid-right" src="elements/select-cloud-mid-right.webp" alt=""
+                    draggable="false">
+                <img class="select__cloud select__cloud--hero" src="elements/select-cloud-wide.webp" alt=""
+                    draggable="false">
+                <img class="select__cloud select__cloud--large" src="elements/select-cloud-tall.webp" alt=""
+                    draggable="false">
+            </div>
+
             <header class="select__header">
                 <p class="select__eyebrow">BSCS 1A &middot; Class Roster</p>
-                <h2 class="select__title" id="select-title">
-                    <span class="select__title-top">Select your</span>
-                    <span class="select__title-main">Player</span>
+                <h2 class="select__title" id="select-title" aria-label="Select your Player">
+                    <span class="select__title-top" aria-hidden="true">
+                        <span class="select__word">
+                            <span class="mario-char mario-char--blue">S</span>
+                            <span class="mario-char mario-char--yellow">E</span>
+                            <span class="mario-char mario-char--red">L</span>
+                            <span class="mario-char mario-char--green">E</span>
+                            <span class="mario-char mario-char--blue">C</span>
+                            <span class="mario-char mario-char--yellow">T</span>
+                        </span>
+                        <span class="select__space" aria-hidden="true"></span>
+                        <span class="select__word">
+                            <span class="mario-char mario-char--red">Y</span>
+                            <span class="mario-char mario-char--green">O</span>
+                            <span class="mario-char mario-char--yellow">U</span>
+                            <span class="mario-char mario-char--blue">R</span>
+                        </span>
+                    </span>
+                    <span class="select__title-main" aria-hidden="true">
+                        <span class="select__word">
+                            <span class="mario-char mario-char--yellow">P</span>
+                            <span class="mario-char mario-char--blue">L</span>
+                            <span class="mario-char mario-char--red">A</span>
+                            <span class="mario-char mario-char--green">Y</span>
+                            <span class="mario-char mario-char--yellow">E</span>
+                            <span class="mario-char mario-char--blue">R</span>
+                        </span>
+                    </span>
                 </h2>
                 <p class="select__lede">Choose a classmate to jump into their page. Player links are unlocking soon.</p>
             </header>
