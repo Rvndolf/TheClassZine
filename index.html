@@ -9,41 +9,26 @@
 </head>
 
 <body>
-    <audio class="background-music" src="elements/SUPER MARIO BROS. - Main Theme By Koji Kondo _ Nintendo - (320 Kbps).mp3"
-        autoplay loop preload="auto" playsinline hidden aria-hidden="true"></audio>
-    <script>
-        // Browsers block audible autoplay until the visitor interacts with the
-        // page. Try immediately, then start the loop on the first gesture.
-        (() => {
-            const music = document.querySelector('.background-music');
-            if (!music) return;
-
-            music.volume = 0.35;
-
-            const startMusic = () => {
-                if (!music.paused) return;
-                music.play().catch(() => {});
-            };
-
-            const unlock = () => {
-                startMusic();
-                if (!music.paused) {
-                    document.removeEventListener('pointerdown', unlock);
-                    document.removeEventListener('touchstart', unlock);
-                    document.removeEventListener('touchend', unlock);
-                    document.removeEventListener('click', unlock);
-                    document.removeEventListener('keydown', unlock);
-                }
-            };
-
-            startMusic();
-            document.addEventListener('pointerdown', unlock, { passive: true });
-            document.addEventListener('touchstart', unlock, { passive: true });
-            document.addEventListener('touchend', unlock, { passive: true });
-            document.addEventListener('click', unlock);
-            document.addEventListener('keydown', unlock);
-        })();
-    </script>
+    <!-- Background music: an arcade-screen play/pause button. The native audio
+         control is scaled and clipped down to just its button, so no JS is needed. -->
+    <div class="music">
+        <div class="music__screen">
+            <div class="music__scaler">
+                <audio class="music__audio"
+                    src="elements/SUPER MARIO RUN (OFFICIAL TRAP REMIX) - (320 Kbps).mp3"
+                    autoplay loop preload="auto" playsinline controls aria-label="Background music"></audio>
+            </div>
+            <span class="music__scan" aria-hidden="true"></span>
+        </div>
+        <span class="music__info" aria-hidden="true">
+            <span class="music__label">Music</span>
+            <span class="music__eq">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </span>
+    </div>
 
     <main>
         <section class="title" id="title" aria-label="Title">
@@ -216,25 +201,18 @@
             </div>
         </section>
 
-        <!-- Brick separator: every click pops a coin (pure CSS) -->
+        <!-- Brick separator: every click pops a coin -->
         <section class="separator" aria-label="Lucky block separator">
-            <audio id="lucky-block-audio" src="elements/mario_coin_sound.mp3" preload="auto" class="visually-hidden"></audio>
-            <input class="separator__toggle visually-hidden" type="checkbox" id="lucky-block" onchange="this.dataset.played='true'" onkeydown="if(event.key===' '||event.key==='Enter'){var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()}">
-            <label class="separator__block" for="lucky-block" onclick="var a=new Audio('elements/mario_coin_sound.mp3');try{a.currentTime=0.33}catch(e){}a.play()">
+            <button type="button" class="separator__block" id="lucky-block" aria-label="Hit the question block to pop a coin">
                 <img src="elements/lucky-block.webp" alt="" class="separator__face">
                 <span class="separator__flash" aria-hidden="true"></span>
-                <span class="separator__coin separator__coin--a" aria-hidden="true">
+                <span class="separator__coin" aria-hidden="true">
                     <img src="elements/coin.png" alt="">
                     <span class="separator__spark separator__spark--a" aria-hidden="true"></span>
                     <span class="separator__spark separator__spark--b" aria-hidden="true"></span>
                 </span>
-                <span class="separator__coin separator__coin--b" aria-hidden="true">
-                    <img src="elements/coin.png" alt="">
-                    <span class="separator__spark separator__spark--a" aria-hidden="true"></span>
-                    <span class="separator__spark separator__spark--b" aria-hidden="true"></span>
-                </span>
-                <span class="visually-hidden">Hit the question block to pop a coin</span>
-            </label>
+            </button>
+
             <p class="separator__hint" aria-hidden="true">Spam the ? block!</p>
         </section>
 
@@ -294,7 +272,6 @@
             </div>
 
             <header class="select__header">
-                <p class="select__eyebrow">BSCS 1A &middot; Class Roster</p>
                 <h2 class="select__title" id="select-title" aria-label="Select your Player">
                     <span class="select__title-top" aria-hidden="true">
                         <span class="select__word">
@@ -940,6 +917,29 @@
             window.addEventListener('pointercancel', release, { passive: true });
             window.addEventListener('blur', release);
             window.addEventListener('contextmenu', release);
+        })();
+
+        // Lucky question block: spawns a coin on click without firing on page load
+        (() => {
+            const block = document.querySelector('.separator__block');
+            const coin = document.querySelector('.separator__coin');
+            if (!block || !coin) return;
+
+            block.addEventListener('click', () => {
+                // Play Mario coin sound (fresh Audio instance per click so spam clicks overlap)
+                const sound = new Audio('elements/mario_coin_sound_trimmed.mp3');
+                sound.currentTime = 0;
+                sound.play().catch(() => {});
+
+                // Retrigger coin pop animation
+                coin.classList.remove('is-popping');
+                void coin.offsetWidth;
+                coin.classList.add('is-popping');
+            });
+
+            coin.addEventListener('animationend', () => {
+                coin.classList.remove('is-popping');
+            });
         })();
     </script>
 </body>

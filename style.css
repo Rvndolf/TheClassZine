@@ -45,10 +45,299 @@ summary,
     cursor: url("elements/cursor.png") 32 25, pointer;
 }
 
-/* While the mouse is held down, swap the portrait for the reaction cutout. */
-html.cursor-pressed,
-html.cursor-pressed * {
+/* While the mouse is held down, swap the portrait for the reaction cutout.
+   :active on the root keeps working without any JavaScript. */
+html:active,
+html:active *,
+a:active,
+button:active,
+label:active,
+summary:active,
+[role="button"]:active {
     cursor: url("elements/cursor-click.png") 32 23, auto !important;
+}
+
+/* Background music: arcade mini-player fixed in the bottom-right corner.
+   The plain browser audio controls are made invisible while retaining their native hit target,
+   presenting a custom 3D retro arcade push-button, CRT scanlines, and animated sound equalizer. */
+.music {
+    position: fixed;
+    bottom: clamp(.75rem, 2vw, 1.4rem);
+    right: clamp(.75rem, 2vw, 1.4rem);
+    left: auto;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .4rem .9rem .4rem .4rem;
+    border: 2px solid var(--mario-yellow);
+    border-radius: 8px;
+    background-color: #060b17;
+    background-image:
+        linear-gradient(180deg, #121c36 0%, #080f1e 55%, #030610 100%),
+        repeating-linear-gradient(0deg,
+            rgb(255 255 255 / 3%) 0 1px,
+            transparent 1px 3px);
+    box-shadow:
+        0 0 0 2px #000,
+        0 5px 0 2px #000,
+        0 8px 24px rgb(0 0 0 / 75%),
+        0 0 18px rgb(252 209 0 / 22%);
+    color: #fff;
+    font-family: 'Super Mario 256', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: box-shadow .2s ease, transform .12s ease;
+}
+
+.music:hover {
+    box-shadow:
+        0 0 0 2px #000,
+        0 5px 0 2px #000,
+        0 8px 24px rgb(0 0 0 / 80%),
+        0 0 26px rgb(252 209 0 / 45%);
+}
+
+/* Custom 3D arcade push-button / CRT screen */
+.music__screen {
+    position: relative;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 2px solid #000;
+    background: radial-gradient(circle at 45% 35%, #1d2c52 0%, #0a1122 70%, #03060f 100%);
+    box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 30%),
+        inset 0 -2px 4px rgb(0 0 0 / 85%),
+        0 0 0 1px rgb(252 209 0 / 50%);
+    cursor: url("elements/cursor.png") 32 25, pointer;
+    transition: transform .08s steps(2, end), box-shadow .15s ease, border-color .15s ease;
+}
+
+/* Custom retro arcade Play triangle */
+.music__screen::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 14px;
+    border-color: transparent transparent transparent var(--mario-yellow);
+    filter:
+        drop-shadow(2px 2px 0 #000)
+        drop-shadow(0 0 6px rgb(252 209 0 / 75%));
+    transition: transform .15s cubic-bezier(0.34, 1.56, 0.64, 1), filter .15s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.music:hover .music__screen::before {
+    transform: translate(-50%, -50%) scale(1.15);
+    filter:
+        drop-shadow(2px 2px 0 #000)
+        drop-shadow(0 0 12px #fcd100);
+}
+
+.music__screen:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 2px 4px rgb(0 0 0 / 90%),
+        0 0 0 1px rgb(252 209 0 / 40%);
+}
+
+.music__screen:active::before {
+    transform: translate(-50%, -46%) scale(0.95);
+}
+
+/* Invisible native audio hit area covering the arcade button */
+.music__scaler {
+    position: absolute;
+    top: -24px;
+    left: -16px;
+    width: 280px;
+    height: 56px;
+    transform: scale(1.85);
+    transform-origin: top left;
+    opacity: 0.001; /* Hides the plain browser player completely while preserving clickability */
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.music__audio {
+    display: block;
+    width: 280px;
+    height: 56px;
+    cursor: url("elements/cursor.png") 32 25, pointer;
+}
+
+/* Arcade CRT scanlines and glass gloss sheen */
+.music__scan {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 4px;
+    background-image:
+        linear-gradient(135deg, rgb(255 255 255 / 22%) 0%, rgb(255 255 255 / 4%) 45%, transparent 45%),
+        repeating-linear-gradient(0deg,
+            rgb(0 0 0 / 32%) 0 1px,
+            transparent 1px 2px);
+    box-shadow:
+        inset 0 0 8px rgb(0 0 0 / 90%),
+        inset 0 0 0 1px rgb(255 255 255 / 14%);
+    transition: box-shadow .15s ease;
+    z-index: 3;
+}
+
+.music:hover .music__scan {
+    box-shadow:
+        inset 0 0 10px rgb(0 0 0 / 80%),
+        inset 0 0 0 1px rgb(252 209 0 / 45%);
+}
+
+.music:has(.music__audio:focus-visible) {
+    outline: 3px solid var(--mario-yellow);
+    outline-offset: 3px;
+    box-shadow:
+        0 0 0 2px #000,
+        0 5px 0 2px #000,
+        0 0 22px var(--mario-yellow);
+}
+
+/* Sound info and retro status LED */
+.music__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 64px;
+}
+
+.music__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--mario-yellow);
+    font-size: .72rem;
+    line-height: 1;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000, 0 0 8px rgb(252 209 0 / 35%);
+}
+
+/* Blinking 8-bit arcade power LED */
+.music__label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #39ff14;
+    box-shadow:
+        0 0 6px #39ff14,
+        0 0 0 1px #000;
+    animation: music-led 1.8s steps(2, start) infinite;
+}
+
+@keyframes music-led {
+    0%, 65% {
+        opacity: 1;
+        box-shadow: 0 0 6px #39ff14, 0 0 0 1px #000;
+    }
+    66%, 100% {
+        opacity: .35;
+        box-shadow: 0 0 1px #39ff14, 0 0 0 1px #000;
+    }
+}
+
+/* Stepped 8-bit arcade equalizer bars */
+.music__eq {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 14px;
+}
+
+.music__eq span {
+    width: 4px;
+    height: var(--eq-height, 4px);
+    background: var(--mario-green);
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 4px rgb(67 176 71 / 65%);
+    animation: music-eq .7s steps(4, end) infinite alternate;
+}
+
+.music__eq span:nth-child(1) {
+    --eq-height: 9px;
+    animation-delay: -.18s;
+    animation-duration: .65s;
+}
+
+.music__eq span:nth-child(2) {
+    --eq-height: 14px;
+    background: var(--mario-yellow);
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 4px rgb(252 209 0 / 65%);
+    animation-delay: -.35s;
+    animation-duration: .52s;
+}
+
+.music__eq span:nth-child(3) {
+    --eq-height: 10px;
+    background: var(--mario-red);
+    box-shadow:
+        0 0 0 1px #000,
+        0 0 4px rgb(229 37 33 / 65%);
+    animation-delay: -.08s;
+    animation-duration: .75s;
+}
+
+.music:hover .music__eq span {
+    animation-duration: .32s;
+}
+
+@keyframes music-eq {
+    from {
+        height: 3px;
+    }
+
+    to {
+        height: var(--eq-height);
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .music {
+        bottom: .6rem;
+        right: .6rem;
+        gap: .5rem;
+        padding: .3rem .65rem .3rem .3rem;
+    }
+
+    .music__screen {
+        width: 42px;
+        height: 42px;
+    }
+
+    .music__scaler {
+        top: -20px;
+        left: -14px;
+        transform: scale(1.6);
+    }
+
+    .music__screen::before {
+        border-width: 7px 0 7px 12px;
+    }
+
+    .music__label {
+        font-size: .62rem;
+    }
 }
 
 .visually-hidden {
@@ -1220,6 +1509,10 @@ html.cursor-pressed * {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: url("elements/cursor.png") 32 25, pointer;
 }
 
 .separator__face {
@@ -1239,7 +1532,7 @@ html.cursor-pressed * {
     transform: translateY(4px) scale(.99);
 }
 
-.separator__toggle:focus-visible ~ .separator__block {
+.separator__block:focus-visible {
     outline: 4px solid var(--mario-yellow);
     outline-offset: 6px;
     border-radius: 8px;
@@ -1286,16 +1579,12 @@ html.cursor-pressed * {
     image-rendering: pixelated;
 }
 
-/* Every click flips the checkbox, so one of the two coins always replays */
-.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a {
-    animation: coin-pop-a .9s cubic-bezier(.22, .8, .3, 1) forwards;
+/* Spawns only when clicked via the .is-popping class (never on page load) */
+.separator__coin.is-popping {
+    animation: coin-pop .9s cubic-bezier(.22, .8, .3, 1) forwards;
 }
 
-.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b {
-    animation: coin-pop-b .9s cubic-bezier(.22, .8, .3, 1) forwards;
-}
-
-@keyframes coin-pop-a {
+@keyframes coin-pop {
     0% {
         bottom: 22%;
         opacity: 0;
@@ -1324,35 +1613,6 @@ html.cursor-pressed * {
     }
 }
 
-@keyframes coin-pop-b {
-    0% {
-        bottom: 22%;
-        opacity: 0;
-        transform: translateX(-50%) translateX(0) scale(.3) rotate(0);
-    }
-    8% {
-        opacity: 1;
-    }
-    34% {
-        bottom: 110%;
-        transform: translateX(-50%) translateX(14px) scale(1.08) rotate(6deg);
-    }
-    50% {
-        bottom: 102%;
-        transform: translateX(-50%) translateX(20px) scale(1) rotate(-2deg);
-    }
-    66% {
-        bottom: 111%;
-        opacity: 1;
-        transform: translateX(-50%) translateX(26px) scale(1.02) rotate(3deg);
-    }
-    100% {
-        bottom: 140%;
-        opacity: 0;
-        transform: translateX(-50%) translateX(36px) scale(.8) rotate(12deg);
-    }
-}
-
 .separator__spark {
     position: absolute;
     width: clamp(8px, 1vw, 14px);
@@ -1375,13 +1635,11 @@ html.cursor-pressed * {
     width: clamp(6px, .8vw, 10px);
 }
 
-.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a .separator__spark,
-.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b .separator__spark {
+.separator__coin.is-popping .separator__spark {
     animation: coin-sparkle .75s ease-out .26s forwards;
 }
 
-.separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a .separator__spark--b,
-.separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b .separator__spark--b {
+.separator__coin.is-popping .separator__spark--b {
     animation-delay: .38s;
 }
 
@@ -1563,20 +1821,6 @@ html.cursor-pressed * {
     gap: .9rem;
     max-width: 48rem;
     margin: 0 auto clamp(1.9rem, 3vw, 2.6rem);
-}
-
-.select__eyebrow {
-    margin: 0;
-    font-family: ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
-    font-size: clamp(.62rem, 1vw, .8rem);
-    font-weight: 700;
-    letter-spacing: .4em;
-    text-indent: .4em;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow:
-        0 2px 0 rgb(9 45 100 / 70%),
-        0 0 14px rgb(12 55 112 / 55%);
 }
 
 .select__title {
@@ -2019,8 +2263,7 @@ html.cursor-pressed * {
         animation: none;
     }
 
-    .separator__toggle[data-played="true"]:checked ~ .separator__block .separator__coin--a,
-    .separator__toggle[data-played="true"]:not(:checked) ~ .separator__block .separator__coin--b {
+    .separator__coin.is-popping {
         animation: none;
         bottom: 105%;
         opacity: 1;
