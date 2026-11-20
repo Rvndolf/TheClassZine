@@ -2949,9 +2949,9 @@ summary:active,
   overflow: hidden;
   isolation: isolate;
 
-  /* Section background using background.jpg */
+  /* Section background using optimized background.webp (reduced from 2.2MB to 343KB) */
   background-color: #2bc8f3;
-  background-image: url("elements/background.jpg");
+  background-image: url("elements/background.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3172,7 +3172,7 @@ summary:active,
   z-index: 2;
   width: 100%;
   height: var(--forum-separator-h);
-  background-image: url("elements/brokenbrick.png");
+  background-image: url("elements/brokenbrick.webp");
   background-repeat: repeat-x;
   background-position: center center;
   background-size: auto 100%;
@@ -3181,6 +3181,8 @@ summary:active,
 
 .forum__separator--bottom {
   border-top: 2px solid rgba(0, 0, 0, 0.55);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* Responsive adjustments */
@@ -3211,6 +3213,7 @@ summary:active,
     min-height: 85vh;
     min-height: 85dvh;
     --forum-separator-h: clamp(28px, 4.5vw, 40px);
+    background-image: url("elements/background-sm.webp");
   }
 
   .forum__body {
@@ -3270,6 +3273,922 @@ summary:active,
     animation: none;
   }
 }
+
+/* ==========================================================================
+   Credits Section
+   - Positioned directly below the Forum section
+   - min-height: 100vh / 100dvh
+   - Top half: Sky gradient
+   - Bottom half: grassblock.png stretched to fit the bottom half section
+   - Cards: tallcard.webp in middle (elevated, bigger, fits ~70% of section),
+     flanked by smallcard.webp on left and right
+   ========================================================================== */
+.credits {
+  position: relative;
+  width: 100%;
+  min-height: 135vh;
+  min-height: 135dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  border-top: 4px solid #161616;
+
+  /* Sky gradient: rich Mario blue sky filling the top half */
+  background-color: #5da5f8;
+  background: linear-gradient(
+    180deg,
+    #5da5f8 0%,
+    #7bbcfb 26%,
+    #a2d5fd 48%,
+    #cae8fe 52%,
+    #dff2ff 100%
+  );
+}
+
+/* Atmospheric subtle vignette for depth */
+.credits::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 30%,
+    transparent 65%,
+    rgba(14, 42, 92, 0.12) 100%
+  );
+  z-index: 1;
+}
+
+/* Pixel clouds drifting through the sky part (matching the select section style) */
+.credits__clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.credits__cloud {
+  position: absolute;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 10px 10px rgba(12, 58, 124, 0.18));
+  animation: credits-cloud-drift var(--cloud-duration, 34s) ease-in-out infinite alternate;
+  animation-delay: var(--cloud-delay, 0s);
+  will-change: transform;
+}
+
+@keyframes credits-cloud-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--cloud-drift, 12px), var(--cloud-lift, 3px), 0);
+  }
+}
+
+.credits__cloud--top-left {
+  top: clamp(20px, 4vh, 65px);
+  left: clamp(14px, 3.5vw, 65px);
+  width: clamp(110px, 12vw, 175px);
+  --cloud-drift: 12px;
+  --cloud-duration: 38s;
+  --cloud-delay: -5s;
+}
+
+.credits__cloud--top-right {
+  top: clamp(25px, 5vh, 80px);
+  right: clamp(18px, 4vw, 75px);
+  width: clamp(100px, 11vw, 160px);
+  --cloud-drift: -12px;
+  --cloud-duration: 42s;
+  --cloud-delay: -14s;
+}
+
+.credits__cloud--mid-left {
+  top: clamp(150px, 18vh, 260px);
+  left: clamp(8px, 2vw, 36px);
+  width: clamp(80px, 8vw, 125px);
+  --cloud-drift: 9px;
+  --cloud-duration: 46s;
+  --cloud-delay: -18s;
+}
+
+.credits__cloud--mid-right {
+  top: clamp(160px, 20vh, 280px);
+  right: clamp(10px, 2.5vw, 42px);
+  width: clamp(85px, 8.5vw, 130px);
+  --cloud-drift: -9px;
+  --cloud-duration: 50s;
+  --cloud-delay: -9s;
+}
+
+.credits__cloud--hero {
+  bottom: clamp(15px, 3vh, 45px);
+  left: clamp(24px, 5vw, 95px);
+  width: clamp(220px, 22vw, 380px);
+  opacity: 0.95;
+  --cloud-drift: 15px;
+  --cloud-duration: 36s;
+  --cloud-delay: -12s;
+}
+
+.credits__cloud--large {
+  bottom: clamp(25px, 4vh, 60px);
+  right: clamp(24px, 5vw, 90px);
+  width: clamp(160px, 14vw, 250px);
+  opacity: 0.95;
+  --cloud-drift: -14px;
+  --cloud-duration: 44s;
+  --cloud-delay: -22s;
+}
+
+/* Bottom half grass block container */
+.credits__ground-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* grassblock.png stretched across the bottom half section */
+.credits__ground {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+}
+
+/* Animated Piranha Plant balanced in between left border and Mario card, planted on grass */
+.credits__piranha {
+  position: absolute;
+  left: clamp(2rem, calc((50vw - min(46vw, 540px)) / 2), 15rem);
+  bottom: 50%;
+  transform: translate(-39%, 18%);
+  width: clamp(125px, 12vw, 185px);
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.28));
+  will-change: transform;
+}
+
+/* Top part: Wooden sign header container - lowered for clearance and sky border */
+.credits__header {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(4.5rem, 8.5vh, 7.5rem);
+  padding-bottom: clamp(0.8rem, 2vh, 1.8rem);
+  box-sizing: border-box;
+}
+
+/* Outer wooden sign wrapper: handles ropes and gentle bobbing */
+.credits__sign {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: min(96vw, 1140px);
+  padding: 0 clamp(24px, 3.5vw, 54px);
+  box-sizing: border-box;
+  animation: credits-sign-bob 4.4s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes credits-sign-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+/* Hanging ropes on left and right sides of the wooden sign */
+.credits__sign-rope {
+  position: absolute;
+  top: -34px;
+  bottom: -28px;
+  width: clamp(12px, 1.3vw, 18px);
+  z-index: 3;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f3deab 0px,
+    #f3deab 6px,
+    #bd8d4e 7px,
+    #7a501c 10px
+  );
+  border: 2.5px solid #3d2309;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.credits__sign-rope--left {
+  left: clamp(28px, 4.2vw, 52px);
+}
+
+.credits__sign-rope--right {
+  right: clamp(28px, 4.2vw, 52px);
+}
+
+.credits__sign-rope::before,
+.credits__sign-rope::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(18px, 2vw, 26px);
+  height: 11px;
+  border-radius: 6px;
+  background: #7a501c;
+  border: 2.5px solid #3d2309;
+}
+
+.credits__sign-rope::before {
+  top: -5px;
+}
+
+.credits__sign-rope::after {
+  bottom: -5px;
+}
+
+/* Wooden board itself: elongated horizontal planks made with pure CSS */
+.credits__sign-board {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: clamp(340px, 62vw, 920px);
+  padding: clamp(1.1rem, 2.2vw, 1.85rem) clamp(3.2rem, 7vw, 6.4rem);
+  box-sizing: border-box;
+
+  /* Wood plank horizontal seams & natural grain tones */
+  background-color: #f5d68d;
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.3) 0px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 5px,
+      transparent 32px,
+      rgba(130, 58, 10, 0.45) 33px,
+      rgba(55, 22, 4, 0.7) 35px,
+      rgba(255, 240, 180, 0.35) 36px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(110, 45, 8, 0.18) 0%,
+      transparent 6%,
+      transparent 94%,
+      rgba(110, 45, 8, 0.18) 100%
+    ),
+    linear-gradient(180deg, #fce1a6 0%, #f4d385 50%, #ebbf6a 100%);
+
+  /* Rich carved wood frame */
+  border: clamp(8px, 1.1vw, 14px) solid #7c350a;
+  border-radius: clamp(18px, 2.2vw, 30px);
+  box-shadow:
+    inset 0 0 0 clamp(3px, 0.38vw, 5px) #be621a,
+    inset 0 0 0 clamp(6px, 0.72vw, 9px) #5c2606,
+    0 18px 34px rgba(0, 0, 0, 0.35),
+    0 6px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* "Meet The Crew" Title Typography matching "Super BSCS 1A" */
+.credits__title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "Super Mario 256", system-ui, sans-serif;
+  font-size: clamp(2.4rem, 5.4vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.credits__word {
+  display: inline-flex;
+  align-items: center;
+}
+
+.credits__word:last-child .mario-char:last-child {
+  margin-right: 0;
+}
+
+.credits__space {
+  display: inline-block;
+  width: 0.35em;
+}
+
+/* 3D Isometric Extrusion matching SUPER & BSCS 1A headers */
+.credits__title .mario-char {
+  text-shadow:
+    -2px 0 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    0 2px 0 #000,
+    0.015em 0.025em 0 #000,
+    0.03em 0.05em 0 #000,
+    0.045em 0.075em 0 #000,
+    0.06em 0.1em 0 #000,
+    0.075em 0.125em 0 #000,
+    0.09em 0.15em 0 #000,
+    0.105em 0.175em 0 #000,
+    0.12em 0.2em 0 #000,
+    0.135em 0.225em 0 #000,
+    0.15em 0.25em 0 #000;
+  /* Hover effects removed per user request */
+}
+
+/* Individual playful letter angles for MEET THE CREW */
+.credits-char--m  { transform: rotate(-5deg) translateY(1px); }
+.credits-char--e1 { transform: rotate(4deg) translateY(-2px); }
+.credits-char--e2 { transform: rotate(-3deg) translateY(0); }
+.credits-char--t1 { transform: rotate(5deg) translateY(-1px); }
+
+.credits-char--t2 { transform: rotate(-4deg) translateY(1px); }
+.credits-char--h  { transform: rotate(3deg) translateY(-2px); }
+.credits-char--e3 { transform: rotate(-5deg) translateY(0); }
+
+.credits-char--c  { transform: rotate(4deg) translateY(-1px); }
+.credits-char--r  { transform: rotate(-4deg) translateY(1px); }
+.credits-char--e4 { transform: rotate(3deg) translateY(-2px); }
+.credits-char--w  { transform: rotate(-5deg) translateY(1px); }
+
+/* Centered body container for credits cards */
+.credits__body {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: clamp(0.5rem, 2vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+/* Cards row group */
+.credits__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3.5vw, 48px);
+  width: min(96vw, 1280px);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Base card styling (HTML & CSS) */
+.credits__card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #f6c800;
+  background-image: linear-gradient(
+    180deg,
+    #fce038 0%,
+    #f6c800 22%,
+    #f2be00 82%,
+    #e6b000 100%
+  );
+  border: clamp(8px, 1.1vw, 14px) solid #b84000;
+  border-radius: clamp(24px, 3.8vw, 42px) clamp(24px, 3.8vw, 42px) clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 28px);
+  box-shadow:
+    inset 0 clamp(3px, 0.45vw, 6px) 0 0 rgba(255, 255, 255, 0.45),
+    inset clamp(3px, 0.45vw, 6px) 0 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 clamp(-3px, -0.45vw, -6px) 0 0 rgba(180, 110, 0, 0.35),
+    0 16px 26px rgba(0, 0, 0, 0.28),
+    0 4px 8px rgba(0, 0, 0, 0.18);
+  user-select: none;
+  -webkit-user-select: none;
+  /* Hover animations removed per user request */
+}
+
+/* Character wrapper: elevated slightly above card and overlapping the top */
+.credits__card-character-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -22%);
+  width: 90%;
+  height: 56%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Center tall card character (Princess Peach) */
+.credits__card--tall .credits__card-character-wrap {
+  height: 62%;
+  transform: translate(-50%, -24%);
+}
+
+/* Individual character image styling */
+.credits__card-character {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+  will-change: transform;
+}
+
+.credits__card-character--mario {
+  transform: scale(1.02);
+}
+
+.credits__card-character--princess {
+  transform: scale(1.04);
+}
+
+.credits__card-character--luigi {
+  transform: scale(1.02);
+}
+
+/* Inner slot for card content, text, or avatars placed under the character */
+.credits__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Card content container holding role header and names - positioned under character */
+.credits__card-content {
+  position: absolute;
+  top: 45.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 clamp(0.5rem, 1.2vw, 1.4rem);
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.credits__card--tall .credits__card-content {
+  top: 49%;
+}
+
+/* Role header: Development, Editors, Integration */
+.credits__card-role {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "Super Mario 256", system-ui, sans-serif;
+  font-size: clamp(1.35rem, 2.35vw, 2.15rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.credits__card--tall .credits__card-role {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  letter-spacing: 0.035em;
+}
+
+/* 3D Isometric Extrusion matching Super BSCS 1A */
+.credits__card-role .mario-char {
+  text-shadow:
+    -1.5px 0 0 #000,
+    1.5px 0 0 #000,
+    0 -1.5px 0 #000,
+    0 1.5px 0 #000,
+    0.015em 0.025em 0 #000,
+    0.03em 0.05em 0 #000,
+    0.045em 0.075em 0 #000,
+    0.06em 0.1em 0 #000,
+    0.075em 0.125em 0 #000,
+    0.09em 0.15em 0 #000,
+    0.105em 0.175em 0 #000,
+    0.12em 0.2em 0 #000;
+}
+
+/* Names list under role header */
+.credits__card-names {
+  list-style: none;
+  margin: clamp(1.15rem, 2.4vh, 1.85rem) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(7px, 1.3vh, 15px);
+  width: 100%;
+}
+
+.credits__card--tall .credits__card-names {
+  margin-top: clamp(1.35rem, 2.7vh, 2.2rem);
+  gap: clamp(9px, 1.5vh, 18px);
+}
+
+/* Names using the same font as the About Us description (ui-monospace) */
+.credits__card-name {
+  font-family: var(--about-font-body);
+  font-size: clamp(0.95rem, 1.42vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #2b1100;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.018em;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.credits__card--tall .credits__card-name {
+  font-size: clamp(1.04rem, 1.62vw, 1.42rem);
+}
+
+/* Pixel sparkle star positioned over the top-right corner */
+.credits__card-star {
+  position: absolute;
+  top: clamp(-8px, -1vw, -14px);
+  right: clamp(-6px, -0.8vw, -12px);
+  width: clamp(34px, 4.4vw, 54px);
+  height: clamp(34px, 4.4vw, 54px);
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
+}
+
+.credits__card-star svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Center tall card: bigger, elevated, fits about 70% of section */
+.credits__card--tall {
+  height: clamp(340px, 70vh, 720px);
+  max-height: 70dvh;
+  aspect-ratio: 340 / 612;
+  transform: translateY(-28px);
+  z-index: 4;
+  animation: credits-float-tall 2s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Side small cards: smaller and lower */
+.credits__card--small {
+  height: clamp(270px, 55vh, 560px);
+  max-height: 55dvh;
+  aspect-ratio: 338 / 527;
+  transform: translateY(12px);
+  z-index: 3;
+  animation: credits-float-small 2s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Symmetrical gentle offset between center and flanking cards */
+.credits__card--left,
+.credits__card--right {
+  animation-delay: -0.6s;
+}
+
+/* Slow floating effect: 2s transition up, 2s transition down */
+@keyframes credits-float-tall {
+  from {
+    transform: translateY(-28px);
+  }
+  to {
+    transform: translateY(-42px);
+  }
+}
+
+@keyframes credits-float-small {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .credits {
+    min-height: 125vh;
+    min-height: 125dvh;
+  }
+
+  .credits__header {
+    padding-top: clamp(3.2rem, 6.5vh, 5rem);
+    padding-bottom: clamp(0.5rem, 1.2vh, 1.2rem);
+  }
+
+  .credits__sign {
+    max-width: 98vw;
+    padding: 0 clamp(14px, 2.5vw, 28px);
+  }
+
+  .credits__sign-board {
+    min-width: auto;
+    padding: clamp(0.9rem, 2.5vw, 1.4rem) clamp(2rem, 4.8vw, 3.8rem);
+    border-width: 8px;
+  }
+
+  .credits__title {
+    font-size: clamp(1.75rem, 5.8vw, 3rem);
+  }
+
+  .credits__sign-rope {
+    top: -26px;
+    bottom: -22px;
+    width: 13px;
+  }
+
+  .credits__sign-rope--left {
+    left: clamp(16px, 2.8vw, 32px);
+  }
+
+  .credits__sign-rope--right {
+    right: clamp(16px, 2.8vw, 32px);
+  }
+
+  .credits__cards {
+    gap: clamp(8px, 2vw, 20px);
+  }
+
+  .credits__card-character-wrap {
+    height: 54%;
+    transform: translate(-50%, -20%);
+  }
+
+  .credits__card--tall .credits__card-character-wrap {
+    height: 60%;
+    transform: translate(-50%, -22%);
+  }
+
+  .credits__piranha {
+    width: clamp(85px, 13vw, 125px);
+    left: clamp(0.4rem, 2vw, 1.5rem);
+    transform: translate(-20%, 16%);
+  }
+
+  .credits__card-content {
+    top: 45.5%;
+    padding: 0 clamp(0.35rem, 1vw, 0.8rem);
+  }
+
+  .credits__card--tall .credits__card-content {
+    top: 49%;
+  }
+
+  .credits__card-role {
+    font-size: clamp(1.05rem, 2.8vw, 1.48rem);
+    letter-spacing: 0.015em;
+  }
+
+  .credits__card--tall .credits__card-role {
+    font-size: clamp(1.28rem, 3.4vw, 1.85rem);
+    letter-spacing: 0.025em;
+  }
+
+  .credits__card-names {
+    margin-top: clamp(10px, 1.8vh, 18px);
+    gap: clamp(5px, 1vh, 11px);
+  }
+
+  .credits__card--tall .credits__card-names {
+    margin-top: clamp(12px, 2.1vh, 22px);
+    gap: clamp(6px, 1.2vh, 13px);
+  }
+
+  .credits__card-name {
+    font-size: clamp(0.74rem, 1.75vw, 1.02rem);
+  }
+
+  .credits__card--tall .credits__card-name {
+    font-size: clamp(0.82rem, 1.95vw, 1.12rem);
+  }
+
+  .credits__card--tall {
+    height: clamp(260px, 68vh, 520px);
+    transform: translateY(-18px);
+  }
+
+  .credits__card--small {
+    height: clamp(200px, 52vh, 410px);
+    transform: translateY(8px);
+  }
+
+  @keyframes credits-float-tall {
+    from {
+      transform: translateY(-18px);
+    }
+    to {
+      transform: translateY(-28px);
+    }
+  }
+
+  @keyframes credits-float-small {
+    from {
+      transform: translateY(8px);
+    }
+    to {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .credits {
+    min-height: 120vh;
+    min-height: 120dvh;
+  }
+
+  .credits__header {
+    padding-top: clamp(2.6rem, 5.5vh, 4rem);
+    padding-bottom: 0.4rem;
+  }
+
+  .credits__sign {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+
+  .credits__sign-board {
+    min-width: 0;
+    padding: 0.75rem 1.15rem;
+    border-width: 6px;
+    border-radius: 14px;
+  }
+
+  .credits__title {
+    font-size: clamp(1.2rem, 6.8vw, 1.85rem);
+    letter-spacing: -0.05em;
+  }
+
+  .credits__sign-rope {
+    width: 9px;
+    top: -20px;
+    bottom: -16px;
+  }
+
+  .credits__sign-rope--left {
+    left: 10px;
+  }
+
+  .credits__sign-rope--right {
+    right: 10px;
+  }
+
+  .credits__card-character-wrap {
+    height: 52%;
+    transform: translate(-50%, -18%);
+  }
+
+  .credits__card--tall .credits__card-character-wrap {
+    height: 58%;
+    transform: translate(-50%, -20%);
+  }
+
+  .credits__piranha {
+    width: clamp(70px, 16vw, 95px);
+    left: clamp(0.2rem, 1vw, 0.6rem);
+    transform: translate(-10%, 14%);
+  }
+
+  .credits__card-content {
+    top: 45.5%;
+    padding: 0 0.25rem;
+  }
+
+  .credits__card--tall .credits__card-content {
+    top: 49%;
+  }
+
+  .credits__card-role {
+    font-size: clamp(0.8rem, 3.4vw, 1.15rem);
+    letter-spacing: 0.01em;
+  }
+
+  .credits__card--tall .credits__card-role {
+    font-size: clamp(0.95rem, 4vw, 1.35rem);
+    letter-spacing: 0.02em;
+  }
+
+  .credits__card-names {
+    margin-top: clamp(6px, 1.4vh, 12px);
+    gap: clamp(3px, 0.7vh, 6px);
+  }
+
+  .credits__card--tall .credits__card-names {
+    margin-top: clamp(8px, 1.7vh, 14px);
+    gap: clamp(3px, 0.8vh, 7px);
+  }
+
+  .credits__card-name {
+    font-size: clamp(0.54rem, 2.3vw, 0.78rem);
+    letter-spacing: -0.02em;
+  }
+
+  .credits__card--tall .credits__card-name {
+    font-size: clamp(0.58rem, 2.5vw, 0.84rem);
+  }
+
+  .credits__cards {
+    gap: clamp(4px, 1.5vw, 12px);
+  }
+
+  .credits__card--tall {
+    height: clamp(220px, 64vh, 420px);
+    transform: translateY(-12px);
+  }
+
+  .credits__card--small {
+    height: clamp(170px, 48vh, 320px);
+    transform: translateY(6px);
+  }
+
+  @keyframes credits-float-tall {
+    from {
+      transform: translateY(-12px);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes credits-float-small {
+    from {
+      transform: translateY(6px);
+    }
+    to {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .credits__cloud,
+  .credits__sign,
+  .credits__card--tall,
+  .credits__card--small {
+    animation: none !important;
+  }
+
+  .credits__title .mario-char {
+    transition: none !important;
+  }
+}
+
 
 
 

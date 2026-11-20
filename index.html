@@ -14,8 +14,7 @@
     <div class="music">
         <div class="music__screen">
             <div class="music__scaler">
-                <audio class="music__audio"
-                    src="elements/SUPER MARIO RUN (OFFICIAL TRAP REMIX) - (320 Kbps).mp3"
+                <audio class="music__audio" src="elements/SUPER MARIO RUN (OFFICIAL TRAP REMIX) - (320 Kbps).mp3"
                     autoplay loop preload="auto" playsinline controls aria-label="Background music"></audio>
             </div>
             <span class="music__scan" aria-hidden="true"></span>
@@ -217,8 +216,8 @@
             <p class="separator__hint" aria-hidden="true">Click the ? block!</p>
         </section>
 
-        <iframe class="coin-sound-frame" name="coin-sound-frame" title="Coin sound" allow="autoplay"
-            src="about:blank" hidden></iframe>
+        <iframe class="coin-sound-frame" name="coin-sound-frame" title="Coin sound" allow="autoplay" src="about:blank"
+            hidden></iframe>
 
         <!-- About Section -->
         <section class="about" id="about" aria-labelledby="about-title">
@@ -871,22 +870,30 @@
             <div class="lore__body">
                 <h2 class="visually-hidden">Lore</h2>
                 <div class="lore__logo-group">
-                    <img src="elements/mariohat.webp" alt="" class="lore__mario-hat" aria-hidden="true" draggable="false">
-                    <img src="elements/nintendo.webp" alt="Nintendo" class="lore__nintendo" loading="lazy" decoding="async" draggable="false">
+                    <img src="elements/mariohat.webp" alt="" class="lore__mario-hat" aria-hidden="true"
+                        draggable="false">
+                    <img src="elements/nintendo.webp" alt="Nintendo" class="lore__nintendo" loading="lazy"
+                        decoding="async" draggable="false">
 
                     <!-- Carousel shares the Nintendo image's exact grid cell, so it moves with it -->
                     <div class="lore__carousel" role="group" aria-label="Placeholder slideshow">
-                        <img src="elements/placeholder-1.svg" alt="Placeholder slide 1" class="lore__slide" draggable="false">
-                        <img src="elements/placeholder-2.svg" alt="Placeholder slide 2" class="lore__slide" draggable="false">
-                        <img src="elements/placeholder-3.svg" alt="Placeholder slide 3" class="lore__slide" draggable="false">
-                        <img src="elements/placeholder-4.svg" alt="Placeholder slide 4" class="lore__slide" draggable="false">
-                        <img src="elements/placeholder-5.svg" alt="Placeholder slide 5" class="lore__slide" draggable="false">
+                        <img src="elements/placeholder-1.svg" alt="Placeholder slide 1" class="lore__slide"
+                            draggable="false">
+                        <img src="elements/placeholder-2.svg" alt="Placeholder slide 2" class="lore__slide"
+                            draggable="false">
+                        <img src="elements/placeholder-3.svg" alt="Placeholder slide 3" class="lore__slide"
+                            draggable="false">
+                        <img src="elements/placeholder-4.svg" alt="Placeholder slide 4" class="lore__slide"
+                            draggable="false">
+                        <img src="elements/placeholder-5.svg" alt="Placeholder slide 5" class="lore__slide"
+                            draggable="false">
                     </div>
                 </div>
             </div>
 
             <!-- Mario gif on the bottom left sitting on top of the wall separator -->
-            <img src="elements/mario.gif" alt="Mario" class="lore__mario" loading="lazy" decoding="async" aria-hidden="true" draggable="false">
+            <img src="elements/mario.gif" alt="Mario" class="lore__mario" loading="lazy" decoding="async"
+                aria-hidden="true" draggable="false">
 
             <!-- Platform on the bottom right sitting on top of the wall separator -->
             <img src="elements/platform.webp" alt="" class="lore__platform" aria-hidden="true" draggable="false">
@@ -922,12 +929,209 @@
                     </div>
 
                     <!-- Toad pointing, mirrored towards the bubble, shifted to the right and lower -->
-                    <img src="elements/toadpointing.jpeg" alt="Toad" class="forum__toad" loading="lazy" decoding="async" draggable="false">
+                    <img src="elements/toadpointing.webp" alt="Toad" class="forum__toad" loading="lazy" decoding="async"
+                        draggable="false">
                 </div>
             </div>
 
             <!-- Bottom separator using brokenbrick.png, matching Lore section method -->
             <div class="forum__separator forum__separator--bottom" aria-hidden="true"></div>
+        </section>
+
+        <!-- Credits Section -->
+        <section class="credits" id="credits" aria-labelledby="credits-title">
+            <!-- Sky pixel clouds matching the select section -->
+            <div class="credits__clouds" aria-hidden="true">
+                <img class="credits__cloud credits__cloud--top-left" src="elements/select-cloud-top-left.webp" alt=""
+                    draggable="false">
+                <img class="credits__cloud credits__cloud--top-right" src="elements/select-cloud-top-right.webp" alt=""
+                    draggable="false">
+                <img class="credits__cloud credits__cloud--mid-left" src="elements/select-cloud-mid-left.webp" alt=""
+                    draggable="false">
+                <img class="credits__cloud credits__cloud--mid-right" src="elements/select-cloud-mid-right.webp" alt=""
+                    draggable="false">
+                <img class="credits__cloud credits__cloud--hero" src="elements/select-cloud-wide.webp" alt=""
+                    draggable="false">
+                <img class="credits__cloud credits__cloud--large" src="elements/select-cloud-tall.webp" alt=""
+                    draggable="false">
+            </div>
+
+            <!-- Grass block stretched to fit the bottom half section -->
+            <div class="credits__ground-wrap" aria-hidden="true">
+                <img src="elements/grassblock.png" alt="" class="credits__ground" draggable="false">
+            </div>
+
+            <!-- Animated Piranha Plant planted on top of the grass to the left of Mario -->
+            <img src="elements/piranha-plant-mario.gif" alt="Piranha Plant" class="credits__piranha" loading="lazy"
+                decoding="async" aria-hidden="true" draggable="false">
+
+            <!-- Wooden sign banner with Meet The Crew in the top part of the section -->
+            <div class="credits__header">
+                <div class="credits__sign">
+                    <!-- Left and right hanging ropes -->
+                    <span class="credits__sign-rope credits__sign-rope--left" aria-hidden="true"></span>
+                    <span class="credits__sign-rope credits__sign-rope--right" aria-hidden="true"></span>
+
+                    <!-- Wooden board with Meet The Crew title -->
+                    <div class="credits__sign-board">
+                        <h2 class="credits__title" id="credits-title" role="heading" aria-level="2"
+                            aria-label="Meet The Crew">
+                            <span class="credits__word" aria-hidden="true">
+                                <span class="mario-char mario-char--blue credits-char--m">M</span>
+                                <span class="mario-char mario-char--yellow credits-char--e1">E</span>
+                                <span class="mario-char mario-char--red credits-char--e2">E</span>
+                                <span class="mario-char mario-char--green credits-char--t1">T</span>
+                            </span>
+                            <span class="credits__space" aria-hidden="true"></span>
+                            <span class="credits__word" aria-hidden="true">
+                                <span class="mario-char mario-char--yellow credits-char--t2">T</span>
+                                <span class="mario-char mario-char--red credits-char--h">H</span>
+                                <span class="mario-char mario-char--blue credits-char--e3">E</span>
+                            </span>
+                            <span class="credits__space" aria-hidden="true"></span>
+                            <span class="credits__word" aria-hidden="true">
+                                <span class="mario-char mario-char--yellow credits-char--c">C</span>
+                                <span class="mario-char mario-char--red credits-char--r">R</span>
+                                <span class="mario-char mario-char--green credits-char--e4">E</span>
+                                <span class="mario-char mario-char--blue credits-char--w">W</span>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards row: tall card in center, flanked by small cards left and right -->
+            <div class="credits__body">
+                <div class="credits__cards" role="region" aria-label="Credits Cards">
+                    <!-- Left Small Card: Mario -->
+                    <div class="credits__card credits__card--small credits__card--left">
+                        <span class="credits__card-star" aria-hidden="true">
+                            <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
+                                <rect x="3" y="0" width="1" height="7" fill="#b84000" />
+                                <rect x="0" y="3" width="7" height="1" fill="#b84000" />
+                                <rect x="2" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="2" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="3" y="2" width="1" height="3" fill="#ffe600" />
+                                <rect x="2" y="3" width="3" height="1" fill="#ffe600" />
+                                <rect x="3" y="3" width="1" height="1" fill="#fff566" />
+                            </svg>
+                        </span>
+                        <!-- Character: Mario overlapping top of the card -->
+                        <div class="credits__card-character-wrap">
+                            <img src="elements/mario.webp" alt="Mario"
+                                class="credits__card-character credits__card-character--mario" draggable="false">
+                        </div>
+                        <div class="credits__card-inner">
+                            <div class="credits__card-content">
+                                <h3 class="credits__card-role" aria-label="Development">
+                                    <span class="mario-char mario-char--blue">D</span>
+                                    <span class="mario-char mario-char--yellow">E</span>
+                                    <span class="mario-char mario-char--red">V</span>
+                                    <span class="mario-char mario-char--green">E</span>
+                                    <span class="mario-char mario-char--blue">L</span>
+                                    <span class="mario-char mario-char--yellow">O</span>
+                                    <span class="mario-char mario-char--red">P</span>
+                                    <span class="mario-char mario-char--green">M</span>
+                                    <span class="mario-char mario-char--blue">E</span>
+                                    <span class="mario-char mario-char--yellow">N</span>
+                                    <span class="mario-char mario-char--red">T</span>
+                                </h3>
+                                <ul class="credits__card-names" aria-label="Development Team">
+                                    <li class="credits__card-name">Harron Melgar</li>
+                                    <li class="credits__card-name">Randolf Amaranto</li>
+                                    <li class="credits__card-name">Jacken Ismael Mendoza</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Tall Card: Princess Peach (elevated, bigger, fits ~70% of section) -->
+                    <div class="credits__card credits__card--tall credits__card--center">
+                        <span class="credits__card-star" aria-hidden="true">
+                            <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
+                                <rect x="3" y="0" width="1" height="7" fill="#b84000" />
+                                <rect x="0" y="3" width="7" height="1" fill="#b84000" />
+                                <rect x="2" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="2" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="3" y="2" width="1" height="3" fill="#ffe600" />
+                                <rect x="2" y="3" width="3" height="1" fill="#ffe600" />
+                                <rect x="3" y="3" width="1" height="1" fill="#fff566" />
+                            </svg>
+                        </span>
+                        <!-- Character: Princess Peach overlapping top of the card -->
+                        <div class="credits__card-character-wrap">
+                            <img src="elements/princess.webp" alt="Princess Peach"
+                                class="credits__card-character credits__card-character--princess" draggable="false">
+                        </div>
+                        <div class="credits__card-inner">
+                            <div class="credits__card-content">
+                                <h3 class="credits__card-role" aria-label="Editors">
+                                    <span class="mario-char mario-char--blue">E</span>
+                                    <span class="mario-char mario-char--yellow">D</span>
+                                    <span class="mario-char mario-char--red">I</span>
+                                    <span class="mario-char mario-char--green">T</span>
+                                    <span class="mario-char mario-char--blue">O</span>
+                                    <span class="mario-char mario-char--yellow">R</span>
+                                    <span class="mario-char mario-char--red">S</span>
+                                </h3>
+                                <ul class="credits__card-names" aria-label="Editors Team">
+                                    <li class="credits__card-name">Alyanna Pulido</li>
+                                    <li class="credits__card-name">Jeanne Mikaela Raneses</li>
+                                    <li class="credits__card-name">Trixie Yoingco</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Small Card: Luigi -->
+                    <div class="credits__card credits__card--small credits__card--right">
+                        <span class="credits__card-star" aria-hidden="true">
+                            <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
+                                <rect x="3" y="0" width="1" height="7" fill="#b84000" />
+                                <rect x="0" y="3" width="7" height="1" fill="#b84000" />
+                                <rect x="2" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="2" width="1" height="1" fill="#b84000" />
+                                <rect x="2" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="4" y="4" width="1" height="1" fill="#b84000" />
+                                <rect x="3" y="2" width="1" height="3" fill="#ffe600" />
+                                <rect x="2" y="3" width="3" height="1" fill="#ffe600" />
+                                <rect x="3" y="3" width="1" height="1" fill="#fff566" />
+                            </svg>
+                        </span>
+                        <!-- Character: Luigi overlapping top of the card -->
+                        <div class="credits__card-character-wrap">
+                            <img src="elements/luigi.webp" alt="Luigi"
+                                class="credits__card-character credits__card-character--luigi" draggable="false">
+                        </div>
+                        <div class="credits__card-inner">
+                            <div class="credits__card-content">
+                                <h3 class="credits__card-role" aria-label="Integration">
+                                    <span class="mario-char mario-char--blue">I</span>
+                                    <span class="mario-char mario-char--yellow">N</span>
+                                    <span class="mario-char mario-char--red">T</span>
+                                    <span class="mario-char mario-char--green">E</span>
+                                    <span class="mario-char mario-char--blue">G</span>
+                                    <span class="mario-char mario-char--yellow">R</span>
+                                    <span class="mario-char mario-char--red">A</span>
+                                    <span class="mario-char mario-char--green">T</span>
+                                    <span class="mario-char mario-char--blue">I</span>
+                                    <span class="mario-char mario-char--yellow">O</span>
+                                    <span class="mario-char mario-char--red">N</span>
+                                </h3>
+                                <ul class="credits__card-names" aria-label="Integration Team">
+                                    <li class="credits__card-name">Jasper Vince Nuyles</li>
+                                    <li class="credits__card-name">Jacken Ismael Mendoza</li>
+                                    <li class="credits__card-name">Jaime Banares</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
