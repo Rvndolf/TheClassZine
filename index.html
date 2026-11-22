@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSCS 1A: The Class Zine</title>
+    <!-- Google Fonts: Montserrat (for all p texts) & Retro Pixel Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Minecraft Font -->
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,7 +21,7 @@
         <div class="holo-nav__panel">
             <a href="#title" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--yellow" aria-hidden="true"></span>
-                <span class="holo-nav__label">TITLE</span>
+                <span class="holo-nav__label">HOME</span>
             </a>
             <a href="#about" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--red" aria-hidden="true"></span>
@@ -23,19 +29,19 @@
             </a>
             <a href="#select" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--blue" aria-hidden="true"></span>
-                <span class="holo-nav__label">SELECT</span>
+                <span class="holo-nav__label">PLAYERS</span>
             </a>
             <a href="#lore" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--green" aria-hidden="true"></span>
-                <span class="holo-nav__label">LORE</span>
+                <span class="holo-nav__label">QUESTS</span>
             </a>
             <a href="#forum" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--yellow" aria-hidden="true"></span>
-                <span class="holo-nav__label">FORUM</span>
+                <span class="holo-nav__label">LORE</span>
             </a>
             <a href="#credits" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--red" aria-hidden="true"></span>
-                <span class="holo-nav__label">CREDITS</span>
+                <span class="holo-nav__label">CREW</span>
             </a>
         </div>
 
@@ -89,11 +95,24 @@
                 <div class="title__arcade-tint" aria-hidden="true"></div>
 
                 <!-- Screen container matching the rounded edge of the arcade screen, like lore section -->
-                <div class="title__arcade-screen">
+                <div class="title__arcade-screen" tabindex="0" role="region" aria-label="BSCS 1A Class Picture Arcade Screen">
                     <img src="elements/classpic.jpeg" alt="BSCS 1A Class Picture" class="title__arcade-photo">
                     <div class="title__arcade-screen-glare" aria-hidden="true"></div>
                     <div class="title__arcade-screen-scanlines" aria-hidden="true"></div>
                 </div>
+
+                <!-- Mario Head: sits on top of the photo, bigger than the photo, no aura -->
+                <div class="title__arcade-mario-wrap" aria-hidden="true">
+                    <img src="elements/mariohead.gif" alt="Mario Head" class="title__arcade-mario" draggable="false">
+                </div>
+            </div>
+
+            <!-- Darkening dimmer overlay when photo is hovered to emphasize photo & subtitle -->
+            <div class="title__focus-dimmer" aria-hidden="true"></div>
+
+            <!-- Sleek subtitle style typewriter caption below the section -->
+            <div class="title__arcade-caption" aria-hidden="true">
+                <span class="title__arcade-typewriter">the beginning of a story</span>
             </div>
 
             <div class="title__text-group" role="heading" aria-level="1" aria-label="SUPER BSCS 1A">
@@ -366,7 +385,7 @@
                         </span>
                     </span>
                 </h2>
-                <p class="select__lede">Choose a classmate to jump into their page. Player links are unlocking soon.</p>
+                <p class="select__lede">Choose a classmate to jump into their page.</p>
             </header>
 
             <!-- Placeholder roster: swap each href="#" for a classmate's page when ready -->
@@ -931,6 +950,7 @@
 
             <div class="lore__body">
                 <h2 class="visually-hidden">Lore</h2>
+                <p class="lore__tagline">recent quests...</p>
                 <div class="lore__logo-group">
                     <img src="elements/mariohat.webp" alt="" class="lore__mario-hat" aria-hidden="true"
                         draggable="false">
@@ -938,17 +958,19 @@
                         decoding="async" draggable="false">
 
                     <!-- Carousel shares the Nintendo image's exact grid cell, so it moves with it -->
-                    <div class="lore__carousel" role="group" aria-label="Placeholder slideshow">
-                        <img src="elements/placeholder-1.svg" alt="Placeholder slide 1" class="lore__slide"
-                            draggable="false">
-                        <img src="elements/placeholder-2.svg" alt="Placeholder slide 2" class="lore__slide"
-                            draggable="false">
-                        <img src="elements/placeholder-3.svg" alt="Placeholder slide 3" class="lore__slide"
-                            draggable="false">
-                        <img src="elements/placeholder-4.svg" alt="Placeholder slide 4" class="lore__slide"
-                            draggable="false">
-                        <img src="elements/placeholder-5.svg" alt="Placeholder slide 5" class="lore__slide"
-                            draggable="false">
+                    <div class="lore__carousel" role="group" aria-label="Quest slideshow">
+                        <img src="elements/quest1.jpg" alt="Quest slide 1" class="lore__slide"
+                            draggable="false" loading="lazy">
+                        <img src="elements/quest2.jpg" alt="Quest slide 2" class="lore__slide"
+                            draggable="false" loading="lazy">
+                        <img src="elements/quest3.JPG" alt="Quest slide 3" class="lore__slide"
+                            draggable="false" loading="lazy">
+                        <img src="elements/quest4.jpg" alt="Quest slide 4" class="lore__slide"
+                            draggable="false" loading="lazy">
+                        <img src="elements/quest5.JPG" alt="Quest slide 5" class="lore__slide"
+                            draggable="false" loading="lazy">
+                        <img src="elements/quest6.jpg" alt="Quest slide 6" class="lore__slide"
+                            draggable="false" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -989,6 +1011,9 @@
                             <span class="mario-char mario-char--green forum-char--d">D</span>
                         </div>
                     </div>
+
+                    <!-- Spark message on the bottom part of the white bubble area -->
+                    <p class="forum__bubble-text">spark messages for the players to see!</p>
 
                     <!-- Toad pointing, mirrored towards the bubble, shifted to the right and lower -->
                     <img src="elements/toadpointing.webp" alt="Toad" class="forum__toad" loading="lazy" decoding="async"

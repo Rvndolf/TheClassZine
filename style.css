@@ -1,3 +1,18 @@
+/* Google Fonts: Montserrat (for all p tags) & Retro Pixel / Minecraft Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+/* Global Paragraph Font: Fredoka (Nintendo-style rounded sans-serif) */
+p {
+  font-family: "Fredoka", "Montserrat", system-ui, -apple-system, sans-serif !important;
+  font-weight: 300 !important;
+}
+
+p strong,
+p b {
+  font-weight: 600 !important;
+}
+
 @font-face {
   font-family: "Super Mario 256";
   src:
@@ -377,6 +392,8 @@ summary:active,
   transform-origin: center bottom;
   pointer-events: none;
   z-index: 2;
+  perspective: 1200px;
+  transform-style: preserve-3d;
   transition:
     transform 0.3s ease,
     width 0.3s ease,
@@ -393,6 +410,9 @@ summary:active,
   filter: brightness(1.04) saturate(1.04)
     drop-shadow(0 0 28px rgb(73 164 255 / 30%));
   pointer-events: none;
+  transition:
+    opacity 0.45s ease,
+    filter 0.45s ease;
 }
 
 .title__arcade-tint {
@@ -413,7 +433,7 @@ summary:active,
    - Fits the CRT screen of elements/Arcade.webp with exact pixel precision
      (Source image pixels: x: 293–1289 [64.47%], y: 778–1546 [38.42%])
    - Matches the subtle rounded CRT screen bezel edge
-   - Enhanced CRT illumination and phosphor glow without hover animation
+   - Interactive 3D pop-up hover effect with CRT phosphor illumination
    -------------------------------------------------------------------------- */
 .title__arcade-screen {
   position: absolute;
@@ -426,13 +446,20 @@ summary:active,
   isolation: isolate;
   border-radius: clamp(4px, 0.9vw, 12px);
   background: #040810;
+  /* Illuminates edges strictly inside the screen perimeter; NO outer illumination behind it */
   box-shadow:
-    0 0 clamp(20px, 3.2vw, 48px) rgba(64, 185, 255, 0.72),
-    0 0 clamp(42px, 6vw, 92px) rgba(30, 140, 255, 0.48),
-    0 0 clamp(70px, 9.5vw, 140px) rgba(15, 100, 255, 0.3),
-    inset 0 0 clamp(20px, 3.2vw, 42px) rgba(110, 225, 255, 0.58),
-    inset 0 0 clamp(8px, 1.2vw, 18px) rgba(255, 255, 255, 0.42);
-  animation: crtScreenIlluminate 4s ease-in-out infinite alternate;
+    inset 0 0 clamp(10px, 1.6vw, 22px) rgba(64, 185, 255, 0.65),
+    inset 0 0 clamp(2px, 0.35vw, 6px) rgba(200, 240, 255, 0.55),
+    inset 0 3px 6px rgba(0, 0, 0, 0.85),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  animation: crtEdgeFlicker 3.8s ease-in-out infinite;
+  pointer-events: auto;
+  cursor: url("elements/cursor.png") 32 25, pointer;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+    filter 0.4s ease;
+  will-change: transform, box-shadow;
 }
 
 /* Subtle CRT inner bezel depth shading matching rounded corners, like lore section */
@@ -444,21 +471,52 @@ summary:active,
   pointer-events: none;
   border-radius: inherit;
   box-shadow:
-    inset 0 0 10px rgba(0, 0, 0, 0.82),
-    inset 0 2px 5px rgba(0, 0, 0, 0.92);
+    inset 0 0 10px rgba(0, 0, 0, 0.85),
+    inset 0 2px 5px rgba(0, 0, 0, 0.95);
+  transition: opacity 0.35s ease;
 }
 
-/* Highly Illuminated Class Picture filling the CRT screen */
+/* Interactive Pop-Up Hover Effect: ONLY illuminate from behind it AFTER it is hovered */
+.title__arcade-screen:hover,
+.title__arcade-screen:focus-visible,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-screen {
+  z-index: 25;
+  transform: translateY(-18px) scale(1.35) rotate(-1.5deg);
+  animation-name: crtHoverBacklight;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(64, 185, 255, 0.92),
+    0 0 75px rgba(30, 140, 255, 0.68),
+    0 0 120px rgba(15, 100, 255, 0.42),
+    inset 0 0 clamp(16px, 2.6vw, 36px) rgba(110, 225, 255, 0.8),
+    inset 0 0 clamp(4px, 0.6vw, 8px) rgba(255, 255, 255, 0.7);
+}
+
+.title__arcade-screen:active {
+  transform: translateY(-10px) scale(1.28) rotate(-1deg);
+  cursor: url("elements/cursor-click.png") 32 23, auto !important;
+}
+
+/* Highly Illuminated Class Picture: Naturally set inside the CRT tube with subtle random flicker */
 .title__arcade-photo {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
+  object-fit: fill;
+  object-position: center center;
   border-radius: inherit;
-  filter: brightness(1.28) contrast(1.12) saturate(1.36);
+  filter: brightness(1.18) contrast(1.08) saturate(1.22);
+  animation: crtPhotoFlicker 3.8s ease-in-out infinite;
+  transition: filter 0.35s ease;
+}
+
+.title__arcade-screen:hover .title__arcade-photo,
+.title__arcade-screen:focus-visible .title__arcade-photo,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-photo {
+  filter: brightness(1.3) contrast(1.12) saturate(1.35);
+  animation-play-state: paused;
 }
 
 /* CRT Screen Scanlines Overlay */
@@ -500,34 +558,333 @@ summary:active,
   mix-blend-mode: screen;
 }
 
-/* Radiant CRT phosphor screen illumination breathing */
-@keyframes crtScreenIlluminate {
+/* --------------------------------------------------------------------------
+   Mario Head Mascot: Sits on top of the photo, bigger than the photo, no aura
+   -------------------------------------------------------------------------- */
+.title__arcade-mario-wrap {
+  position: absolute;
+  top: 38.92%;
+  left: 50%;
+  transform: translate(-50%, -75%) scale(0.85) scaleX(calc(1 / 1.16)) translateZ(30px);
+  transform-origin: center bottom;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.5s ease,
+    transform 0.55s cubic-bezier(0.34, 1.3, 0.64, 1);
+  will-change: transform, opacity;
+}
+
+.title__arcade-mario {
+  display: block;
+  /* Colossal Mario Head sitting high atop the photo */
+  width: clamp(540px, 160%, 960px);
+  height: auto;
+  aspect-ratio: 200 / 168;
+  object-fit: contain;
+  image-rendering: auto;
+  filter: none !important; /* NO aura behind it */
+}
+
+/* Hover on photo: Mario head appears sitting on top of the elevated photo */
+.title__arcade-screen:hover ~ .title__arcade-mario-wrap,
+.title__arcade-screen:focus-visible ~ .title__arcade-mario-wrap,
+.title:has(.title__arcade-screen:hover) .title__arcade-mario-wrap,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-mario-wrap,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-mario-wrap {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 35;
+  transform: translate(-50%, -86%) scale(1.1) scaleX(calc(1 / 1.16)) rotate(-1.5deg) translateZ(40px);
+}
+
+/* --------------------------------------------------------------------------
+   Section Spotlight Dimmer: Darkens the title section when photo is hovered
+   - Focuses and spotlights both the illuminated photo and subtitle text
+   - Radial vignette effect creates dramatic theater/arcade ambiance
+   -------------------------------------------------------------------------- */
+.title__focus-dimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(
+      ellipse 72% 65% at 50% 55%,
+      rgba(2, 6, 17, 0.65) 0%,
+      rgba(2, 6, 17, 0.88) 55%,
+      rgba(1, 3, 10, 0.97) 100%
+    );
+  transition: opacity 0.45s ease;
+}
+
+/* Lower opacity and darken background elements when photo is hovered */
+.title:has(.title__arcade-screen:hover) .title__focus-dimmer,
+.title:has(.title__arcade-screen:focus-visible) .title__focus-dimmer,
+.title:has(.title__arcade-mario-wrap:hover) .title__focus-dimmer {
+  opacity: 1;
+}
+
+.title:has(.title__arcade-screen:hover) .title__arcade-stage,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-stage,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-stage {
+  z-index: 20;
+}
+
+.title:has(.title__arcade-screen:hover) .title__text-group,
+.title:has(.title__arcade-screen:focus-visible) .title__text-group,
+.title:has(.title__arcade-mario-wrap:hover) .title__text-group,
+.title:has(.title__arcade-screen:hover) .title__stars,
+.title:has(.title__arcade-screen:focus-visible) .title__stars,
+.title:has(.title__arcade-mario-wrap:hover) .title__stars,
+.title:has(.title__arcade-screen:hover) .title__arcade-patterns,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-patterns,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-patterns,
+.title:has(.title__arcade-screen:hover) .title__mario-stars,
+.title:has(.title__arcade-screen:focus-visible) .title__mario-stars,
+.title:has(.title__arcade-mario-wrap:hover) .title__mario-stars {
+  opacity: 0.28;
+  filter: brightness(0.35);
+  transition:
+    opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.title:has(.title__arcade-screen:hover) .title__arcade,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade {
+  opacity: 0.28;
+  filter: brightness(0.35) contrast(0.9);
+  transition:
+    opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.title:has(.title__arcade-screen:hover) .title__arcade-tint,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-tint,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-tint {
+  opacity: 0.08;
+  transition: opacity 0.45s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Sleek Subtitle Typewriter: "the beginning of a story"
+   - Sleek subtitle style below the section / photo
+   - No background, no box, no border ("dont put a background on it")
+   - Pure Minecraft text with crisp subtitle drop shadow for high contrast
+   - Types out over 5 slow seconds (24 steps for 24 characters) on photo hover
+   -------------------------------------------------------------------------- */
+.title__arcade-caption {
+  position: absolute;
+  bottom: clamp(1.2rem, 3.8vh, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  width: max-content;
+  max-width: 92vw;
+  transition: opacity 0.45s ease;
+  will-change: opacity;
+}
+
+.title__arcade-typewriter {
+  display: inline-block;
+  font-family: "Minecraft", "Minecraftia", "Silkscreen", "Press Start 2P", monospace;
+  font-size: clamp(1.05rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px #000000,
+    0 0 10px rgba(0, 0, 0, 0.95),
+    0 0 22px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  box-sizing: content-box;
+  border-right: 2.5px solid transparent;
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding-right: 2px;
+}
+
+/* Hover on photo reveals subtitle text & triggers slow 5-second typewriter */
+.title:has(.title__arcade-screen:hover) .title__arcade-caption,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-caption,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-caption {
+  opacity: 1;
+}
+
+.title:has(.title__arcade-screen:hover) .title__arcade-typewriter,
+.title:has(.title__arcade-screen:focus-visible) .title__arcade-typewriter,
+.title:has(.title__arcade-mario-wrap:hover) .title__arcade-typewriter {
+  animation:
+    arcadeTypewriter 5s steps(24, end) forwards,
+    arcadeCursorBlink 0.65s step-end infinite;
+}
+
+@keyframes arcadeTypewriter {
   0% {
+    width: 0;
+  }
+  100% {
+    width: 24ch;
+  }
+}
+
+@keyframes arcadeCursorBlink {
+  0%, 100% {
+    border-right-color: #55ff55;
+  }
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+/* Random, subtle CRT edge phosphor glow flicker (strictly inset, no outer glow) */
+@keyframes crtEdgeFlicker {
+  0%, 100% {
     box-shadow:
-      0 0 clamp(18px, 2.8vw, 40px) rgba(64, 185, 255, 0.65),
-      0 0 clamp(36px, 5.2vw, 80px) rgba(30, 140, 255, 0.4),
-      0 0 clamp(60px, 8vw, 120px) rgba(15, 100, 255, 0.24),
-      inset 0 0 clamp(18px, 2.8vw, 36px) rgba(100, 220, 255, 0.5),
-      inset 0 0 clamp(8px, 1.2vw, 16px) rgba(255, 255, 255, 0.35);
-    filter: brightness(1.02);
+      inset 0 0 clamp(10px, 1.6vw, 22px) rgba(64, 185, 255, 0.65),
+      inset 0 0 clamp(2px, 0.35vw, 6px) rgba(200, 240, 255, 0.55),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  7% {
+    box-shadow:
+      inset 0 0 clamp(9px, 1.4vw, 19px) rgba(50, 165, 245, 0.55),
+      inset 0 0 clamp(2px, 0.35vw, 5px) rgba(180, 230, 255, 0.45),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  10% {
+    box-shadow:
+      inset 0 0 clamp(12px, 1.9vw, 26px) rgba(75, 205, 255, 0.75),
+      inset 0 0 clamp(3px, 0.45vw, 7px) rgba(225, 250, 255, 0.68),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  27% {
+    box-shadow:
+      inset 0 0 clamp(8px, 1.3vw, 18px) rgba(45, 155, 235, 0.5),
+      inset 0 0 clamp(2px, 0.3vw, 5px) rgba(170, 220, 255, 0.4),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  30% {
+    box-shadow:
+      inset 0 0 clamp(11px, 1.7vw, 24px) rgba(70, 195, 255, 0.7),
+      inset 0 0 clamp(2px, 0.35vw, 6px) rgba(210, 245, 255, 0.6),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  53% {
+    box-shadow:
+      inset 0 0 clamp(12px, 1.8vw, 25px) rgba(72, 200, 255, 0.72),
+      inset 0 0 clamp(2px, 0.4vw, 6px) rgba(215, 245, 255, 0.62),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  76% {
+    box-shadow:
+      inset 0 0 clamp(8px, 1.3vw, 17px) rgba(45, 150, 230, 0.48),
+      inset 0 0 clamp(2px, 0.3vw, 5px) rgba(165, 215, 255, 0.38),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  79% {
+    box-shadow:
+      inset 0 0 clamp(13px, 2vw, 27px) rgba(80, 210, 255, 0.78),
+      inset 0 0 clamp(3px, 0.45vw, 7px) rgba(230, 250, 255, 0.7),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+  82% {
+    box-shadow:
+      inset 0 0 clamp(10px, 1.6vw, 22px) rgba(64, 185, 255, 0.65),
+      inset 0 0 clamp(2px, 0.35vw, 6px) rgba(200, 240, 255, 0.55),
+      inset 0 3px 6px rgba(0, 0, 0, 0.85),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.65);
+  }
+}
+
+/* Subtle, organic CRT photo brightness & contrast micro-flicker */
+@keyframes crtPhotoFlicker {
+  0%, 100% {
+    filter: brightness(1.18) contrast(1.08) saturate(1.22);
+    opacity: 1;
+  }
+  7% {
+    filter: brightness(1.12) contrast(1.06) saturate(1.18);
+    opacity: 0.98;
+  }
+  10% {
+    filter: brightness(1.23) contrast(1.1) saturate(1.26);
+    opacity: 1;
+  }
+  27% {
+    filter: brightness(1.1) contrast(1.05) saturate(1.17);
+    opacity: 0.97;
+  }
+  30% {
+    filter: brightness(1.22) contrast(1.09) saturate(1.24);
+    opacity: 1;
+  }
+  53% {
+    filter: brightness(1.21) contrast(1.09) saturate(1.24);
+    opacity: 0.99;
+  }
+  76% {
+    filter: brightness(1.11) contrast(1.05) saturate(1.18);
+    opacity: 0.97;
+  }
+  79% {
+    filter: brightness(1.24) contrast(1.11) saturate(1.27);
+    opacity: 1;
+  }
+  82% {
+    filter: brightness(1.18) contrast(1.08) saturate(1.22);
+    opacity: 1;
+  }
+}
+
+/* Lifted 3D CRT Backlight Illumination: ONLY illuminates from behind when hovered */
+@keyframes crtHoverBacklight {
+  0%, 100% {
+    box-shadow:
+      0 20px 48px rgba(0, 0, 0, 0.9),
+      0 0 35px rgba(64, 185, 255, 0.92),
+      0 0 75px rgba(30, 140, 255, 0.68),
+      0 0 120px rgba(15, 100, 255, 0.42),
+      inset 0 0 clamp(16px, 2.6vw, 36px) rgba(110, 225, 255, 0.8),
+      inset 0 0 clamp(4px, 0.6vw, 8px) rgba(255, 255, 255, 0.7);
   }
   50% {
     box-shadow:
-      0 0 clamp(28px, 4vw, 60px) rgba(90, 210, 255, 0.85),
-      0 0 clamp(54px, 7.6vw, 115px) rgba(45, 165, 255, 0.58),
-      0 0 clamp(85px, 11.5vw, 165px) rgba(20, 125, 255, 0.38),
-      inset 0 0 clamp(24px, 3.6vw, 48px) rgba(130, 235, 255, 0.7),
-      inset 0 0 clamp(10px, 1.6vw, 22px) rgba(255, 255, 255, 0.52);
-    filter: brightness(1.08);
-  }
-  100% {
-    box-shadow:
-      0 0 clamp(20px, 3vw, 44px) rgba(64, 185, 255, 0.7),
-      0 0 clamp(40px, 5.8vw, 88px) rgba(30, 140, 255, 0.44),
-      0 0 clamp(66px, 8.8vw, 130px) rgba(15, 100, 255, 0.28),
-      inset 0 0 clamp(20px, 3vw, 40px) rgba(105, 225, 255, 0.55),
-      inset 0 0 clamp(8px, 1.2vw, 18px) rgba(255, 255, 255, 0.38);
-    filter: brightness(1.04);
+      0 22px 52px rgba(0, 0, 0, 0.92),
+      0 0 42px rgba(75, 200, 255, 0.96),
+      0 0 85px rgba(35, 150, 255, 0.74),
+      0 0 135px rgba(20, 115, 255, 0.48),
+      inset 0 0 clamp(18px, 2.8vw, 40px) rgba(125, 235, 255, 0.85),
+      inset 0 0 clamp(5px, 0.7vw, 10px) rgba(255, 255, 255, 0.75);
   }
 }
 
@@ -597,7 +954,8 @@ summary:active,
   animation: title-levitate 4.6s ease-in-out infinite alternate;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter 0.3s ease;
+    filter 0.45s ease,
+    opacity 0.45s ease;
 }
 
 /* 3D Isometric Extrusion block shared across both SUPER & BSCS 1A */
@@ -867,6 +1225,7 @@ summary:active,
   letter-spacing: 2.8rem;
   text-shadow: 0 0 12px rgb(75 157 255 / 34%);
   opacity: 0.62;
+  transition: opacity 0.45s ease;
 }
 
 .title__arcade-patterns::before {
@@ -883,6 +1242,7 @@ summary:active,
   z-index: 0;
   mix-blend-mode: screen;
   opacity: 0.4;
+  transition: opacity 0.45s ease;
 }
 
 .title__stars--far {
@@ -980,6 +1340,7 @@ summary:active,
   z-index: 4;
   pointer-events: none;
   overflow: hidden;
+  transition: opacity 0.45s ease;
 }
 
 .mario-star {
@@ -1330,6 +1691,48 @@ summary:active,
     transform: translateX(-50%) scaleX(1);
   }
 
+  .title__arcade-photo {
+    object-fit: contain;
+  }
+
+  .title__arcade-screen:hover,
+  .title__arcade-screen:focus-visible {
+    transform: translateY(-10px) scale(1.12);
+  }
+
+  .title__arcade-screen:active {
+    transform: translateY(-6px) scale(1.08);
+  }
+
+  .title__arcade-caption {
+    bottom: clamp(1rem, 3.2vh, 2.4rem);
+    max-width: 94vw;
+  }
+
+  .title__arcade-typewriter {
+    font-size: clamp(0.92rem, 2.2vw, 1.45rem);
+    letter-spacing: 0.06em;
+  }
+
+  .title__arcade-mario-wrap {
+    transform: translate(-50%, -75%) scale(0.85) scaleX(1) translateZ(30px);
+  }
+
+  .title__arcade-screen:hover ~ .title__arcade-mario-wrap,
+  .title__arcade-screen:focus-visible ~ .title__arcade-mario-wrap,
+  .title:has(.title__arcade-screen:hover) .title__arcade-mario-wrap,
+  .title:has(.title__arcade-screen:focus-visible) .title__arcade-mario-wrap,
+  .title:has(.title__arcade-mario-wrap:hover) .title__arcade-mario-wrap {
+    transform: translate(-50%, -85%) scale(1) scaleX(1) translateZ(40px);
+  }
+
+  .title__arcade-mario {
+    width: clamp(380px, 135%, 720px);
+    height: auto;
+    aspect-ratio: 200 / 168;
+    filter: none !important;
+  }
+
   .title__text-group {
     top: clamp(2rem, 5vh, 3.8rem);
     max-width: 96vw;
@@ -1386,6 +1789,44 @@ summary:active,
     transform: translateX(-50%) scaleX(1);
     bottom: 0;
     left: 50%;
+  }
+
+  .title__arcade-screen:hover,
+  .title__arcade-screen:focus-visible {
+    transform: translateY(-8px) scale(1.08);
+  }
+
+  .title__arcade-screen:active {
+    transform: translateY(-4px) scale(1.04);
+  }
+
+  .title__arcade-caption {
+    bottom: clamp(0.75rem, 2.2vh, 1.5rem);
+    max-width: 96vw;
+  }
+
+  .title__arcade-typewriter {
+    font-size: clamp(0.68rem, 3.1vw, 1.02rem);
+    letter-spacing: 0.04em;
+  }
+
+  .title__arcade-mario-wrap {
+    transform: translate(-50%, -72%) scale(0.85) scaleX(1);
+  }
+
+  .title__arcade-screen:hover ~ .title__arcade-mario-wrap,
+  .title__arcade-screen:focus-visible ~ .title__arcade-mario-wrap,
+  .title:has(.title__arcade-screen:hover) .title__arcade-mario-wrap,
+  .title:has(.title__arcade-screen:focus-visible) .title__arcade-mario-wrap,
+  .title:has(.title__arcade-mario-wrap:hover) .title__arcade-mario-wrap {
+    transform: translate(-50%, -82%) scale(1) scaleX(1);
+  }
+
+  .title__arcade-mario {
+    width: clamp(300px, 125%, 520px);
+    height: auto;
+    aspect-ratio: 200 / 168;
+    filter: none !important;
   }
 
   /* Positioned lower so it sits exactly on the top of the arcade machine */
@@ -1575,6 +2016,7 @@ summary:active,
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .title__arcade-screen,
+  .title__arcade-photo,
   .title__stars,
   .title::after,
   .title__arcade-patterns::before,
@@ -1587,6 +2029,23 @@ summary:active,
   .mario-star--hero-left,
   .mario-star--hero-right {
     animation: none !important;
+  }
+  .title__arcade-screen,
+  .title__arcade-screen:hover,
+  .title__arcade-screen:focus-visible,
+  .title__arcade-screen:active {
+    transform: none !important;
+    transition: none !important;
+  }
+  .title__arcade-caption,
+  .title__arcade-mario-wrap {
+    transform: translateX(-50%) !important;
+    transition: none !important;
+  }
+  .title__arcade-typewriter {
+    animation: none !important;
+    width: auto !important;
+    border-right: none !important;
   }
   .title__text-group {
     transform: translateX(-50%) translateY(0);
@@ -1789,7 +2248,7 @@ summary:active,
   background: rgb(2 6 17 / 80%);
   box-shadow: 0 3px 0 rgb(0 0 0 / 50%);
   color: #fff;
-  font-family: "Super Mario 256", system-ui, sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
   font-size: clamp(0.55rem, 0.8vw, 0.78rem);
   line-height: 1.2;
   letter-spacing: 0.06em;
@@ -1984,7 +2443,8 @@ summary:active,
   animation: select-title-levitate 4.6s ease-in-out infinite alternate;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter 0.3s ease;
+    filter 0.45s ease,
+    opacity 0.45s ease;
 }
 
 .select__title .select__word .mario-char {
@@ -2084,9 +2544,9 @@ summary:active,
   box-shadow: 0 4px 0 rgb(4 24 55 / 25%);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  font-family: ui-monospace, "Cascadia Mono", "Courier New", monospace;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
   font-size: clamp(0.78rem, 1.1vw, 0.95rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.6;
   color: #fff;
   text-shadow:
@@ -2292,8 +2752,9 @@ summary:active,
   align-items: center;
   gap: 0.55rem;
   margin: clamp(2.5rem, 4vw, 3.5rem) 0 0;
-  font-family: ui-monospace, "Cascadia Mono", "Courier New", monospace;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
   font-size: clamp(0.7rem, 0.95vw, 0.85rem);
+  font-weight: 300;
   letter-spacing: 0.08em;
   color: #fff;
   text-shadow:
@@ -2447,7 +2908,7 @@ summary:active,
 
 :root {
   --about-font-heading: "Super Mario 256", system-ui, sans-serif;
-  --about-font-body: ui-monospace, "Cascadia Mono", "Courier New", monospace;
+  --about-font-body: "Montserrat", system-ui, -apple-system, sans-serif;
   --mario-blue: #009cd9;
   --mario-yellow: #fcd100;
   --mario-red: #e71e07;
@@ -2557,7 +3018,8 @@ summary:active,
   animation: about-levitate 4.6s ease-in-out infinite alternate;
   transition:
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    filter 0.3s ease;
+    filter 0.45s ease,
+    opacity 0.45s ease;
 }
 
 .about__word {
@@ -2706,7 +3168,7 @@ summary:active,
 .about p {
   font-family: var(--about-font-body);
   font-size: clamp(0.95rem, 1.22vw, 1.14rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.85;
   color: #ffffff;
   margin: 0;
@@ -2880,17 +3342,31 @@ summary:active,
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
-/* Centered container holding the logo group */
+/* Centered container holding the logo group and simple tagline */
 .lore__body {
   position: relative;
   z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
   box-sizing: border-box;
+}
+
+/* Simple Montserrat text for recent quests (smaller, no shadow) */
+.lore__tagline {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300 !important;
+  font-size: clamp(0.72rem, 1.25vw, 0.98rem);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-shadow: none !important;
+  margin: 0 0 clamp(0.5rem, 1.5vh, 1rem) 0;
+  text-align: center;
+  user-select: none;
 }
 
 /* Responsive logo group holding nintendo.webp, mariohat.webp and the carousel */
@@ -2942,7 +3418,7 @@ summary:active,
    Lore Carousel
    - Fits the black screen of nintendo.webp (source image pixels
      x 313–1112, y 51–537 of 1412×591), so the console frame stays visible
-   - 5 slides, one every 3s (15s loop), sliding in from the right and
+   - 6 slides, one every 3s (18s loop), sliding in from the right and
      out to the left so the sequence reads as a scrolling carousel
    ========================================================================== */
 .lore__carousel {
@@ -2976,44 +3452,47 @@ summary:active,
   height: 100%;
   object-fit: cover;
   transform: translateX(100%);
-  animation: lore-carousel-slide 15s linear infinite;
+  animation: lore-carousel-slide 18s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
 
-/* Each slide is already in place on load and hands off to the next every 3s.
+/* Each slide is already in place on load and hands off to the next every 3s in an 18s loop (6 slides).
    The extra -0.8s offsets the slide-in duration so the container is never blank. */
 .lore__slide:nth-of-type(1) {
   animation-delay: -0.8s;
 }
 .lore__slide:nth-of-type(2) {
-  animation-delay: -12.8s;
+  animation-delay: -15.8s;
 }
 .lore__slide:nth-of-type(3) {
-  animation-delay: -9.8s;
+  animation-delay: -12.8s;
 }
 .lore__slide:nth-of-type(4) {
-  animation-delay: -6.8s;
+  animation-delay: -9.8s;
 }
 .lore__slide:nth-of-type(5) {
+  animation-delay: -6.8s;
+}
+.lore__slide:nth-of-type(6) {
   animation-delay: -3.8s;
 }
 
-/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image. */
+/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in an 18s loop. */
 @keyframes lore-carousel-slide {
   0% {
     transform: translateX(100%);
     animation-timing-function: cubic-bezier(0.22, 0.75, 0.3, 1);
   }
-  5.333% {
+  4.444% {
     transform: translateX(0);
     animation-timing-function: linear;
   }
-  20% {
+  16.667% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.25);
   }
-  25.333%,
+  21.111%,
   100% {
     transform: translateX(-100%);
   }
@@ -3136,6 +3615,27 @@ summary:active,
   user-select: none;
   -webkit-user-select: none;
   pointer-events: none;
+}
+
+/* Spark messages positioned higher up on the white bubble area */
+.forum__bubble-text {
+  position: absolute;
+  z-index: 5;
+  bottom: clamp(16%, 5vw, 24%);
+  left: 54%;
+  transform: translateX(-50%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300 !important;
+  font-size: clamp(0.78rem, 1.5vw, 1.15rem);
+  letter-spacing: 0;
+  color: #111827;
+  text-shadow: none !important;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Toad character - toadpointing mirrored, bigger, placed further right and lower, no hover animation */
@@ -3371,6 +3871,17 @@ summary:active,
     right: -9%;
     bottom: -15%;
     max-width: 52%;
+  }
+
+  .forum__bubble-text {
+    bottom: clamp(13%, 3.8vw, 18%);
+    left: 52%;
+    font-size: clamp(0.62rem, 2.2vw, 0.88rem);
+    letter-spacing: 0;
+    max-width: 78%;
+    white-space: normal;
+    text-wrap: balance;
+    line-height: 1.25;
   }
 }
 
@@ -3912,7 +4423,7 @@ summary:active,
   justify-content: center;
   margin: 0;
   font-family: "Super Mario 256", system-ui, sans-serif;
-  font-size: clamp(1.35rem, 2.35vw, 2.15rem);
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: 0.02em;
@@ -3922,9 +4433,23 @@ summary:active,
   -webkit-user-select: none;
 }
 
+/* Made Development and Integration texts smaller to fit the small cards */
+.credits__card-role[aria-label="Development"],
+.credits__card-role[aria-label="Integration"],
+.credits__card--small .credits__card-role {
+  font-size: clamp(0.85rem, 1.35vw, 1.22rem);
+  letter-spacing: 0.01em;
+}
+
+.credits__card-role[aria-label="Development"] .mario-char,
+.credits__card-role[aria-label="Integration"] .mario-char,
+.credits__card--small .credits__card-role .mario-char {
+  -webkit-text-stroke: clamp(1.6px, 0.22vw, 2.6px) var(--mario-black);
+}
+
 .credits__card--tall .credits__card-role {
-  font-size: clamp(1.75rem, 3.5vw, 3rem);
-  letter-spacing: 0.035em;
+  font-size: clamp(1.45rem, 2.8vw, 2.35rem);
+  letter-spacing: 0.03em;
 }
 
 /* 3D Isometric Extrusion matching Super BSCS 1A */
@@ -3947,26 +4472,26 @@ summary:active,
 /* Names list under role header */
 .credits__card-names {
   list-style: none;
-  margin: clamp(1.15rem, 2.4vh, 1.85rem) 0 0;
+  margin: clamp(0.85rem, 1.8vh, 1.45rem) 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(7px, 1.3vh, 15px);
+  gap: clamp(5px, 1vh, 11px);
   width: 100%;
 }
 
 .credits__card--tall .credits__card-names {
-  margin-top: clamp(1.35rem, 2.7vh, 2.2rem);
-  gap: clamp(9px, 1.5vh, 18px);
+  margin-top: clamp(1.05rem, 2.2vh, 1.75rem);
+  gap: clamp(6px, 1.2vh, 13px);
 }
 
-/* Names using the same font as the About Us description (ui-monospace) */
+/* Names using the same font as the About Us description (Montserrat) - scaled smaller to fit better */
 .credits__card-name {
   font-family: var(--about-font-body);
-  font-size: clamp(0.95rem, 1.42vw, 1.28rem);
-  font-weight: 700;
+  font-size: clamp(0.72rem, 1.02vw, 0.94rem);
+  font-weight: 600;
   line-height: 1.35;
   color: #2b1100;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -3974,13 +4499,13 @@ summary:active,
   padding: 0;
   text-align: center;
   white-space: nowrap;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.015em;
   user-select: text;
   -webkit-user-select: text;
 }
 
 .credits__card--tall .credits__card-name {
-  font-size: clamp(1.04rem, 1.62vw, 1.42rem);
+  font-size: clamp(0.78rem, 1.15vw, 1.04rem);
 }
 
 /* Pixel sparkle star positioned over the top-right corner */
@@ -4119,31 +4644,38 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(1.05rem, 2.8vw, 1.48rem);
+    font-size: clamp(0.92rem, 2.3vw, 1.25rem);
     letter-spacing: 0.015em;
   }
 
+  .credits__card-role[aria-label="Development"],
+  .credits__card-role[aria-label="Integration"],
+  .credits__card--small .credits__card-role {
+    font-size: clamp(0.68rem, 1.65vw, 0.92rem);
+    letter-spacing: 0.008em;
+  }
+
   .credits__card--tall .credits__card-role {
-    font-size: clamp(1.28rem, 3.4vw, 1.85rem);
+    font-size: clamp(1.12rem, 2.8vw, 1.55rem);
     letter-spacing: 0.025em;
   }
 
   .credits__card-names {
-    margin-top: clamp(10px, 1.8vh, 18px);
-    gap: clamp(5px, 1vh, 11px);
+    margin-top: clamp(8px, 1.5vh, 14px);
+    gap: clamp(4px, 0.9vh, 9px);
   }
 
   .credits__card--tall .credits__card-names {
-    margin-top: clamp(12px, 2.1vh, 22px);
-    gap: clamp(6px, 1.2vh, 13px);
+    margin-top: clamp(10px, 1.8vh, 17px);
+    gap: clamp(5px, 1.1vh, 11px);
   }
 
   .credits__card-name {
-    font-size: clamp(0.74rem, 1.75vw, 1.02rem);
+    font-size: clamp(0.56rem, 1.2vw, 0.76rem);
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.82rem, 1.95vw, 1.12rem);
+    font-size: clamp(0.62rem, 1.35vw, 0.84rem);
   }
 
   .credits__card--tall {
@@ -4243,32 +4775,39 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(0.8rem, 3.4vw, 1.15rem);
+    font-size: clamp(0.68rem, 2.8vw, 0.95rem);
     letter-spacing: 0.01em;
   }
 
+  .credits__card-role[aria-label="Development"],
+  .credits__card-role[aria-label="Integration"],
+  .credits__card--small .credits__card-role {
+    font-size: clamp(0.52rem, 2.1vw, 0.72rem);
+    letter-spacing: 0.005em;
+  }
+
   .credits__card--tall .credits__card-role {
-    font-size: clamp(0.95rem, 4vw, 1.35rem);
-    letter-spacing: 0.02em;
+    font-size: clamp(0.82rem, 3.2vw, 1.15rem);
+    letter-spacing: 0.018em;
   }
 
   .credits__card-names {
+    margin-top: clamp(5px, 1.2vh, 10px);
+    gap: clamp(3px, 0.6vh, 5px);
+  }
+
+  .credits__card--tall .credits__card-names {
     margin-top: clamp(6px, 1.4vh, 12px);
     gap: clamp(3px, 0.7vh, 6px);
   }
 
-  .credits__card--tall .credits__card-names {
-    margin-top: clamp(8px, 1.7vh, 14px);
-    gap: clamp(3px, 0.8vh, 7px);
-  }
-
   .credits__card-name {
-    font-size: clamp(0.54rem, 2.3vw, 0.78rem);
+    font-size: clamp(0.42rem, 1.75vw, 0.58rem);
     letter-spacing: -0.02em;
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.58rem, 2.5vw, 0.84rem);
+    font-size: clamp(0.46rem, 1.9vw, 0.64rem);
   }
 
   .credits__cards {
