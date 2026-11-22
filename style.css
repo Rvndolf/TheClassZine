@@ -2590,6 +2590,7 @@ summary:active,
     transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
     border-color 0.22s ease,
     box-shadow 0.22s ease;
+  container-type: inline-size;
 }
 
 .player-card:hover,
@@ -2716,18 +2717,43 @@ summary:active,
   gap: 0.15rem;
   padding: 0.1rem 0.15rem 0.35rem;
   text-align: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .player-card__name {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: "Super Mario 256", system-ui, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.92rem);
+  font-size: clamp(0.65rem, 0.9vw, 0.92rem);
+  font-size: clamp(0.65rem, 8cqi, 0.92rem);
   line-height: 1.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #fff;
   text-shadow: 0 2px 0 #000;
 }
 
+/* Scaled font sizes so long and extra-long names fit strictly on one line */
+.player-card__name--long {
+  font-size: clamp(0.52rem, 0.72vw, 0.74rem);
+  font-size: clamp(0.52rem, 6.4cqi, 0.74rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1.5px 0 #000;
+}
+
+.player-card__name--xl {
+  font-size: clamp(0.44rem, 0.58vw, 0.62rem);
+  font-size: clamp(0.44rem, 5cqi, 0.62rem);
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 #000;
+}
+
 .player-card__status {
+  white-space: nowrap;
   font-family: ui-monospace, "Cascadia Mono", "Courier New", monospace;
   font-size: clamp(0.5rem, 0.68vw, 0.62rem);
   letter-spacing: 0.12em;
