@@ -3398,7 +3398,7 @@ summary:active,
 .lore__logo-group {
   position: relative;
   display: grid;
-  width: min(88vw, 760px);
+  width: min(94vw, 1260px, 168vh);
   max-width: 100%;
 }
 
@@ -3530,8 +3530,12 @@ summary:active,
     --lore-separator-h: clamp(28px, 4.5vw, 40px);
   }
 
+  .lore__body {
+    padding: clamp(1rem, 2.5vh, 1.75rem) clamp(0.5rem, 2vw, 1rem);
+  }
+
   .lore__logo-group {
-    width: min(92vw, 460px);
+    width: min(97vw, 620px);
   }
 
   .lore__platform {
