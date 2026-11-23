@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page fit phone screens instead of showing a tiny zoomed-out desktop page -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Short description of the page, used by search engines -->
+  <meta name="description" content="About George N. Iglesia, a first-year BSCS student.">
+  <title>About George</title>
+  <!-- Connects this page to style.css, which controls how everything looks -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER: my name (the only h1), my program, a short intro line, and the menu -->
+  <header>
+    <h1>George N. Iglesia</h1>
+
+    <p>1st Year BSCS Student</p>
+
+    <p>Looking for experiences to enjoy.</p>
+
+    <!-- NAV: the menu. Each link jumps to the section whose id matches the # name.
+         The CSS keeps this bar fixed at the top while scrolling. -->
+    <nav aria-label="Main menu">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hello">Hello</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#path">Path</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a class="back-to-home" href="../../index.html">Back to Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ABOUT ME: my photo (with caption and credit) beside a short introduction -->
+    <section id="about">
+      <h2>About Me</h2>
+
+      <!-- figure + figcaption keep the photo and its caption/credit together.
+           alt describes the photo for people who can't see it. -->
+      <figure class="photo">
+        <img src="images/profile.jpg" alt="Picture of George N. Iglesia." width="200" height="200">
+        <figcaption>Photo by George.</figcaption>
+      </figure>
+
+      <p>
+        Hello. My name is <strong>George N. Iglesia</strong>. I am a first-year BSCS
+        student at Bicol University. The reason why I chose Computer Science is because
+        it aligned with some of my interests. I am hoping to learn about the basics of 
+        programming and other things.
+      </p>
+    </section>
+
+    <!-- HELLO: what to call me and a bit about how I decide things -->
+    <section id="hello">
+      <h2>Hello</h2>
+
+      <p>
+        You can call me George. I'm a first year student in BS Computer Science. I am someone who relies on my feelings to decide on whether or not to do anything.
+      </p>
+    </section>
+
+    <!-- HOBBIES: bulleted list of what I do for fun (order doesn't matter, so ul) -->
+    <section id="hobbies">
+      <h2>My Hobbies</h2>
+
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Reading manhwa, manhua, and manga.</li>
+        <li>Watching anime.</li>
+        <li>Drawing.</li>
+      </ul>
+    </section>
+
+    <!-- MY PATH INTO COMPUTING: why I chose this course -->
+    <section id="path">
+      <h2>My Path Into Computing</h2>
+
+      <p>
+        The reason why I chose Computer Science is because it aligned with some of my interests.
+        Ever since I started playing video games as a child I've always been curious about how they work and how they are made.
+        Even as I grew older both games and technology only became more interesting to me, specifically in the aspect of entertainment.
+        So the main reason why I chose to pursue a degree is to make a game I can enjoy.
+      </p>
+    </section>
+
+    <!-- GOALS: what I hope to learn and do (numbered list, because the goals are in order) -->
+    <section id="goals">
+      <h2>Goals</h2>
+
+      <p>I am hoping to learn about the basics of programming and other things.</p>
+
+      <h3>My Top 3 Goals</h3>
+      <ol>
+        <li>Be happy.</li>
+        <li>Get a source of income.</li>
+        <li>Create my own game.</li>
+      </ol>
+    </section>
+
+    <!-- FAVORITES: a table of websites I use. Each website name is a link that opens in a new tab.
+         The table-wrap div lets the table scroll sideways inside its box on small phones. -->
+    <section id="favorites">
+      <h2>My Favorites</h2>
+
+      <div class="table-wrap">
+        <table>
+          <!-- thead holds the column titles, tbody holds the rows of data -->
+          <thead>
+            <tr>
+              <th>Website</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></td>
+              <td>A site/app where I watch longer forms of videos ranging from 30 minutes to 3+ hours.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></td>
+              <td>A site/app where I watch short entertaining videos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Some of the websites I enjoy visiting are
+        <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a> and
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>.
+        YouTube because that is where I watch longer educational and entertaining videos and TikTok is solely focused on entertainment.
+      </p>
+    </section>
+
+    <!-- REFLECTION: what I learned and what I improved from my About Me activity -->
+    <section id="reflection">
+      <h2>Reflection</h2>
+
+      <p>
+        While making this I learned that web design is harder than I thought especially when combined with my poor creativity.
+        Layout is harder than it looks and every screen is different so I have to make designs for many sizes. 
+        Knowing what to make is also hard, sometimes planning what content to put and its structure is harder than the code itself.
+      </p>
+      <p>
+        Compared to my About Me activity, I added a gradient background and turned the nav links to pill-style buttons
+        along with making it follow as you scroll and a couple of other changes.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: my name, plus a second Back to Home link in case the menu is crowded on a phone -->
+  <footer>
+    <p>Made by George N. Iglesia for CS 101, Bicol University 2026.</p>
+    <p></p>
+  </footer>
+
+</body>
+</html>

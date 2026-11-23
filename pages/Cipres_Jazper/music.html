@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jax.exe | Music & Songwriting</title>
+    <!-- Pixelated / Retro font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 50%;
+            width: 80px;
+            border-right: 3px dashed var(--primary-red);
+            border-left: 3px dashed var(--primary-red);
+            transform: translateX(-50%);
+            z-index: 1;
+            background: repeating-linear-gradient(
+                135deg,
+                transparent,
+                transparent 15px,
+                var(--primary-red) 15px,
+                var(--primary-red) 18px
+            );
+            mask-image: linear-gradient(to bottom, black, black);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-img-box {
+            width: 150px;
+            height: 200px;
+            background-color: #2b2b2b;
+            border: 2px dashed var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.9rem;
+            text-align: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .timeline-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .timeline-text {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border: 1px solid #333333;
+            border-radius: 6px;
+        }
+
+        .achievement-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border: 1px solid #333333;
+            border-radius: 6px;
+        }
+
+        .achievement-img-box {
+            width: 240px;
+            height: 180px;
+            background-color: #2b2b2b;
+            border: 2px solid var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.85rem;
+            text-align: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .achievement-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .song-card {
+            background-color: #141414;
+            border: 1px solid var(--primary-red);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .song-title-link {
+            font-family: var(--font-pixel);
+            font-size: 1.5rem;
+            color: var(--light-red);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .song-title-link:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .social-link {
+            color: #ff6666;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Music & Songwriting Journey</h1>
+        <p class="subtitle">Deep Dive: My Story, Achievements, Original Songs & Socials</p>
+        <nav class="navbar">
+            <a href="index.html">Main Page</a>
+            <a href="index.html#hobbies">Back to Hobbies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>My Musical Journey Timeline</h2>
+            <div class="timeline-container">
+                
+                <div class="timeline-item">
+                    <div class="timeline-img-box">
+                        <img src="images/Young me.jpg" alt="Parents teaching me how to sing" />
+                    </div>
+                    <div class="timeline-text">
+                        <h3>1. Family Roots & First Steps (Age 4)</h3>
+                        <p>
+                            At the age of 4, my parents taught me how to sing since my family loves music so much and they all love to sing. That early exposure built the foundation for my passion.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reverse">
+                    <div class="timeline-img-box">
+                        <img src="images/Younggme.jpg" alt="HOT FM Singing Contest" />
+                    </div>
+                    <div class="timeline-text">
+                        <h3>2. First Singing Contest & Radio Features (Age 5)</h3>
+                        <p>
+                            My first singing contest was way back when I was 5 years old—a competition in HOT FM radio station here in Tabaco City, and I won that competition! After that victory, radio stations always asked me to be a guest singer in their segments.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-img-box">
+                        <img src="images/Intermission.jpg" alt="Elementary and High School Music Days" />
+                    </div>
+                    <div class="timeline-text">
+                        <h3>3. Elementary & High School Days</h3>
+                        <p>
+                            In this part of my life, I didn't focus as much on music. I still sang and practiced, but not as intensely as when I was a kid. I joined competitions occasionally, though it wasn't my main priority anymore. Even so, my passion stayed alive—I even won Battle of the Bands with my friends in 2025!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reverse">
+                    <div class="timeline-img-box">
+                        <img src="images/college.jpg" alt="College Era & Dream of Singer-Songwriter" />
+                    </div>
+                    <div class="timeline-text">
+                        <h3>4. College Era: Rediscovery & Dreams</h3>
+                        <p>
+                            This part of my life is still new to me—new environment, new people, and new things to learn. But I want to rediscover something that isn't new to me: music. That's why I'm making songs and covering tracks on my social media accounts, hoping to someday become a full-fledged singer-songwriter—a title I've always dreamt of holding.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Musical Achievements</h2>
+            
+            <div class="achievement-item">
+                <div class="achievement-img-box">
+                    <img src="images/Hot FM.jpg" alt="HOT FM 1st Place" />
+                </div>
+                <div>
+                    <h3>1st Place &mdash; HOT FM Singing Competition</h3>
+                    <p>Tabaco City (Won at 5 years old)</p>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-img-box">
+                    <img src="images/StaCruz.jpg" alt="Sta. Cruz 2019 Open" />
+                </div>
+                <div>
+                    <h3>2nd Runner Up &mdash; Sta. Cruz 2019 Open Singing Competition</h3>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-img-box">
+                    <img src="images/Gigs.jpg" alt="Intermissions and Gigs" />
+                </div>
+                <div>
+                    <h3>Intermissions & Live Gigs</h3>
+                    <p>Guest performances and local event appearances.</p>
+                </div>
+            </div>
+
+            <div class="achievement-item">
+                <div class="achievement-img-box">
+                    <img src="images/BOTB.jpg" alt="Battle of the Bands Champion" />
+                </div>
+                <div>
+                    <h3>Champion &mdash; Battle of the Bands 2025</h3>
+                    <p>Lead Vocalist for Bandalismo</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Original Songs & Works</h2>
+            <p>Click on any title to listen to the song directly on BandLab:</p>
+            <br />
+
+            <div class="song-card">
+                <a href="https://www.bandlab.com/post/087a1971-bb87-f011-b480-6045bd35f0e2" target="_blank" class="song-title-link">Di Pa Rin &rarr;</a>
+                <p>
+                    The song centers on the lingering pain of discovering that the person you love harbors feelings for someone else. While there is a faint, vulnerable wish to be prioritized ("can't it be me first?"), it quickly dissolves into heartbreaking resignation: accepting that the partner has already chosen someone else, leaving the singer alone to grieve the broken promises.
+                </p>
+            </div>
+
+            <div class="song-card">
+                <a href="https://www.bandlab.com/post/e158f0ee-17c7-4211-87d3-013b89f6e53c" target="_blank" class="song-title-link">Harana ng Wika &rarr;</a>
+                <p>
+                    The song follows someone using playful Tagalog lessons to charm their English-speaking crush. By translating everyday words into cute flirting, the singer promises to teach them to love the Filipino language—and hopefully fall for them too.
+                </p>
+            </div>
+
+            <div class="song-card">
+                <a href="https://www.bandlab.com/post/85d6ec61-5588-f011-b480-6045bd35f0e2" target="_blank" class="song-title-link">Halika Na &rarr;</a>
+                <p>
+                    The song captures a moment of pure fascination and enchantment upon watching someone arrive. The singer describes how the person's presence instantly brightens the surroundings, comparing their beauty to blooming roses that move gracefully with the wind, ending with an eager invitation to come closer.
+                </p>
+            </div>
+
+            <div class="song-card">
+                <a href="https://www.bandlab.com/post/35994f4b-ee4f-4814-91d3-9a4f30d746da" target="_blank" class="song-title-link">Clinging &rarr;</a>
+                <p>
+                    The song captures the desperate heartbreak of watching a relationship end, driven by a yearning to turn back time. The singer struggles to accept the breakup, begging for one more chance while painfully recognizing that the happiness they shared is gone and their ex is not coming back.
+                </p>
+            </div>
+
+            <div class="song-card">
+                <a href="https://www.bandlab.com/post/98e6bce4-36d5-48e1-8682-f3dea7d57ec5" target="_blank" class="song-title-link">Kalsada &rarr;</a>
+                <p>
+                    The song details a bittersweet back-and-forth between former lovers facing unresolved feelings. The girl tries to avoid him while secretly longing to turn back time, while the boy warns her to stay safe from the rush of his emotions—both questioning if loving each other again is wrong.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Connect & Listen</h2>
+            <ul>
+                <li><strong>BandLab:</strong> <a href="https://www.bandlab.com/jaz5252" target="_blank" class="social-link">@jaz5252</a></li>
+                <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@_jaxxout" target="_blank" class="social-link">@_jaxxout</a></li>
+            </ul>
+
+            <a href="index.html#hobbies" class="close-btn">&larr; Return to Main Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jazper Cipres | Built for CS101 , Bicol University</p>
+        <p>jax.exe</p>
+    </footer>
+</body>
+
+</html>

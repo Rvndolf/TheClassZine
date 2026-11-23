@@ -939,6 +939,7 @@ summary:active,
   left: 50%;
   z-index: 5;
   display: inline-flex;
+  margin: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -2590,6 +2591,7 @@ summary:active,
     transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
     border-color 0.22s ease,
     box-shadow 0.22s ease;
+  container-type: inline-size;
 }
 
 .player-card:hover,
@@ -2657,6 +2659,31 @@ summary:active,
   color: #8ec5ff;
 }
 
+/* Avatar image: transparent PNG inside the portrait card */
+.player-card__avatar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: inherit;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Subtle lift on hover */
+.player-card:hover .player-card__avatar,
+.player-card:focus-visible .player-card__avatar {
+  transform: scale(1.06);
+}
+
+/* When an avatar is present, hide the "?" mark */
+.player-card__portrait:has(.player-card__avatar) .player-card__mark {
+  display: none;
+}
+
 .player-card__mark {
   position: relative;
   font-family: "Super Mario 256", system-ui, sans-serif;
@@ -2691,18 +2718,58 @@ summary:active,
   gap: 0.15rem;
   padding: 0.1rem 0.15rem 0.35rem;
   text-align: center;
+  width: 100%;
+  min-width: 0;
 }
 
 .player-card__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   font-family: "Super Mario 256", system-ui, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.92rem);
-  line-height: 1.2;
-  letter-spacing: 0.05em;
+  font-size: clamp(0.55rem, 0.78vw, 0.78rem);
+  font-size: clamp(0.55rem, 6.8cqi, 0.78rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
   color: #fff;
-  text-shadow: 0 2px 0 #000;
+  text-shadow: 0 1.5px 0 #000;
+  text-align: center;
+}
+
+.player-card__first-name,
+.player-card__last-name,
+.player-card__name > span {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Scaled font sizes so long and extra-long names fit strictly on one line */
+.player-card__name--long {
+  font-size: clamp(0.5rem, 0.68vw, 0.7rem);
+  font-size: clamp(0.5rem, 6cqi, 0.7rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1.5px 0 #000;
+}
+
+.player-card__name--xl {
+  font-size: clamp(0.44rem, 0.58vw, 0.62rem);
+  font-size: clamp(0.44rem, 5cqi, 0.62rem);
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 #000;
 }
 
 .player-card__status {
+  white-space: nowrap;
   font-family: ui-monospace, "Cascadia Mono", "Courier New", monospace;
   font-size: clamp(0.5rem, 0.68vw, 0.62rem);
   letter-spacing: 0.12em;
@@ -2750,16 +2817,7 @@ summary:active,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.55rem;
   margin: clamp(2.5rem, 4vw, 3.5rem) 0 0;
-  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-  font-size: clamp(0.7rem, 0.95vw, 0.85rem);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: #fff;
-  text-shadow:
-    0 2px 0 rgb(9 45 100 / 72%),
-    0 0 14px rgb(9 45 100 / 50%);
 }
 
 .select__note-coin {
@@ -3373,7 +3431,7 @@ summary:active,
 .lore__logo-group {
   position: relative;
   display: grid;
-  width: min(88vw, 760px);
+  width: min(94vw, 1260px, 168vh);
   max-width: 100%;
 }
 
@@ -3418,7 +3476,7 @@ summary:active,
    Lore Carousel
    - Fits the black screen of nintendo.webp (source image pixels
      x 313–1112, y 51–537 of 1412×591), so the console frame stays visible
-   - 6 slides, one every 3s (18s loop), sliding in from the right and
+   - 13 slides, one every 3s (39s loop), sliding in from the right and
      out to the left so the sequence reads as a scrolling carousel
    ========================================================================== */
 .lore__carousel {
@@ -3452,47 +3510,68 @@ summary:active,
   height: 100%;
   object-fit: cover;
   transform: translateX(100%);
-  animation: lore-carousel-slide 18s linear infinite;
+  animation: lore-carousel-slide 39s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
 
-/* Each slide is already in place on load and hands off to the next every 3s in an 18s loop (6 slides).
+/* Each slide is already in place on load and hands off to the next every 3s in a 39s loop (13 slides).
    The extra -0.8s offsets the slide-in duration so the container is never blank. */
 .lore__slide:nth-of-type(1) {
   animation-delay: -0.8s;
 }
 .lore__slide:nth-of-type(2) {
-  animation-delay: -15.8s;
+  animation-delay: -36.8s;
 }
 .lore__slide:nth-of-type(3) {
-  animation-delay: -12.8s;
+  animation-delay: -33.8s;
 }
 .lore__slide:nth-of-type(4) {
-  animation-delay: -9.8s;
+  animation-delay: -30.8s;
 }
 .lore__slide:nth-of-type(5) {
-  animation-delay: -6.8s;
+  animation-delay: -27.8s;
 }
 .lore__slide:nth-of-type(6) {
+  animation-delay: -24.8s;
+}
+.lore__slide:nth-of-type(7) {
+  animation-delay: -21.8s;
+}
+.lore__slide:nth-of-type(8) {
+  animation-delay: -18.8s;
+}
+.lore__slide:nth-of-type(9) {
+  animation-delay: -15.8s;
+}
+.lore__slide:nth-of-type(10) {
+  animation-delay: -12.8s;
+}
+.lore__slide:nth-of-type(11) {
+  animation-delay: -9.8s;
+}
+.lore__slide:nth-of-type(12) {
+  animation-delay: -6.8s;
+}
+.lore__slide:nth-of-type(13) {
   animation-delay: -3.8s;
 }
 
-/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in an 18s loop. */
+/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in a 39s loop. */
 @keyframes lore-carousel-slide {
   0% {
     transform: translateX(100%);
     animation-timing-function: cubic-bezier(0.22, 0.75, 0.3, 1);
   }
-  4.444% {
+  2.051% {
     transform: translateX(0);
     animation-timing-function: linear;
   }
-  16.667% {
+  7.692% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.25);
   }
-  21.111%,
+  9.744%,
   100% {
     transform: translateX(-100%);
   }
@@ -3505,8 +3584,12 @@ summary:active,
     --lore-separator-h: clamp(28px, 4.5vw, 40px);
   }
 
+  .lore__body {
+    padding: clamp(1rem, 2.5vh, 1.75rem) clamp(0.5rem, 2vw, 1rem);
+  }
+
   .lore__logo-group {
-    width: min(92vw, 460px);
+    width: min(97vw, 620px);
   }
 
   .lore__platform {
@@ -3841,44 +3924,68 @@ summary:active,
     min-height: 85vh;
     min-height: 85dvh;
     --forum-separator-h: clamp(28px, 4.5vw, 40px);
+    --forum-body-pad: clamp(1rem, 3vw, 2rem);
+    --forum-toad-h: clamp(240px, 43vh, 365px);
+    --forum-toad-h: clamp(240px, 43dvh, 365px);
+    --forum-bubble-h: min(33vw, 200px);
     background-image: url("elements/background-sm.webp");
   }
 
   .forum__body {
-    padding: clamp(1rem, 3vw, 2rem);
+    padding: var(--forum-body-pad);
   }
 
+  /* Bubble is centered in the section and stretched wider */
   .forum__container,
   .forum__bubble-wrap {
     width: min(96vw, 560px);
+    position: static;
   }
 
+  .forum__bubble {
+    width: calc(var(--forum-bubble-h) * 2.9014);
+    flex-shrink: 0;
+    height: var(--forum-bubble-h);
+    transform: translateY(calc(-1 * clamp(8px, 2dvh, 18px)));
+    z-index: 2;
+  }
+
+  /* Big heading is centered and sits close under the brick separator above */
   .forum__title-group {
-    left: 0;
+    left: 50%;
+    top: calc(25% - clamp(4px, 8.25vw, 50px) - clamp(4px, 1dvh, 9px));
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    align-items: center;
     gap: 0;
+    z-index: 5;
   }
 
   .forum__title-item {
-    font-size: clamp(2.8rem, 9.5vw, 4.8rem);
+    font-size: clamp(3rem, 18vw, 5rem);
   }
 
   .forum__title-item .mario-char {
-    -webkit-text-stroke: clamp(2.4px, 0.5vw, 3.8px) var(--mario-black);
+    -webkit-text-stroke: clamp(2px, 0.6vw, 3.5px) var(--mario-black);
   }
 
+  /* Bigger toad, standing above the separator, head just reaching the bubble */
   .forum__toad {
-    height: 142%;
-    right: -9%;
-    bottom: -15%;
-    max-width: 52%;
+    height: var(--forum-toad-h);
+    right: -2%;
+    bottom: -20px;
+    max-width: 84vw;
+    z-index: 3;
   }
 
   .forum__bubble-text {
-    bottom: clamp(13%, 3.8vw, 18%);
-    left: 52%;
+    top: calc(50% + clamp(24px, 8.1vw, 56px) - clamp(8px, 2dvh, 18px));
+    bottom: auto;
+    left: 50%;
+    width: max-content;
     font-size: clamp(0.62rem, 2.2vw, 0.88rem);
     letter-spacing: 0;
-    max-width: 78%;
+    max-width: 90%;
     white-space: normal;
     text-wrap: balance;
     line-height: 1.25;
@@ -3887,21 +3994,18 @@ summary:active,
 
 @media (max-width: 420px) {
   .forum__title-group {
-    left: 0;
     gap: 0;
   }
 
-  .forum__title-item {
-    font-size: clamp(2.2rem, 9vw, 3.4rem);
-  }
-
-  .forum__title-item .mario-char {
-    -webkit-text-stroke: 2px var(--mario-black);
-  }
-
   .forum__toad {
-    right: -7%;
-    bottom: -12%;
+    right: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Keep the heading clear of the separator and bubble on very narrow phones */
+  .forum__title-item {
+    font-size: clamp(2.6rem, 16.5vw, 5rem);
   }
 }
 
@@ -4302,8 +4406,14 @@ summary:active,
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: clamp(0.5rem, 2vw, 2.5rem);
+  padding: clamp(0.25rem, 1vw, 1rem);
   box-sizing: border-box;
+}
+
+.credits__header {
+  margin-bottom: -0.5rem;
+  position: relative;
+  z-index: 4;
 }
 
 /* Cards row group */
@@ -4437,7 +4547,7 @@ summary:active,
 .credits__card-role[aria-label="Development"],
 .credits__card-role[aria-label="Integration"],
 .credits__card--small .credits__card-role {
-  font-size: clamp(0.85rem, 1.35vw, 1.22rem);
+  font-size: clamp(0.95rem, 1.55vw, 1.38rem);
   letter-spacing: 0.01em;
 }
 
@@ -4490,7 +4600,7 @@ summary:active,
 /* Names using the same font as the About Us description (Montserrat) - scaled smaller to fit better */
 .credits__card-name {
   font-family: var(--about-font-body);
-  font-size: clamp(0.72rem, 1.02vw, 0.94rem);
+  font-size: clamp(0.78rem, 1.12vw, 1.02rem);
   font-weight: 600;
   line-height: 1.35;
   color: #2b1100;
@@ -4505,7 +4615,7 @@ summary:active,
 }
 
 .credits__card--tall .credits__card-name {
-  font-size: clamp(0.78rem, 1.15vw, 1.04rem);
+  font-size: clamp(0.86rem, 1.28vw, 1.14rem);
 }
 
 /* Pixel sparkle star positioned over the top-right corner */
@@ -4576,13 +4686,20 @@ summary:active,
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .credits {
-    min-height: 125vh;
-    min-height: 125dvh;
+    min-height: auto;
+    padding-bottom: clamp(2.8rem, 6vh, 4.5rem);
   }
 
   .credits__header {
-    padding-top: clamp(3.2rem, 6.5vh, 5rem);
-    padding-bottom: clamp(0.5rem, 1.2vh, 1.2rem);
+    padding-top: clamp(3.2rem, 7vh, 4.8rem);
+    padding-bottom: clamp(2.2rem, 5vw, 3rem);
+    margin-bottom: 0;
+  }
+
+  .credits__body {
+    flex: 0 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .credits__sign {
@@ -4615,17 +4732,37 @@ summary:active,
   }
 
   .credits__cards {
-    gap: clamp(8px, 2vw, 20px);
+    flex-direction: column;
+    gap: clamp(1rem, 2.8vw, 1.4rem);
+    width: 100%;
+  }
+
+  .credits__card--tall,
+  .credits__card--small {
+    width: clamp(240px, 60vw, 320px);
+    max-width: 86vw;
+    max-height: none;
+    transform: none;
+    animation: none;
+    z-index: 3;
+  }
+
+  .credits__card--tall {
+    height: clamp(370px, 52vh, 440px);
+  }
+
+  .credits__card--small {
+    height: clamp(330px, 46vh, 400px);
   }
 
   .credits__card-character-wrap {
-    height: 54%;
-    transform: translate(-50%, -20%);
+    height: 52%;
+    transform: translate(-50%, -16%);
   }
 
   .credits__card--tall .credits__card-character-wrap {
-    height: 60%;
-    transform: translate(-50%, -22%);
+    height: 58%;
+    transform: translate(-50%, -18%);
   }
 
   .credits__piranha {
@@ -4635,8 +4772,8 @@ summary:active,
   }
 
   .credits__card-content {
-    top: 45.5%;
-    padding: 0 clamp(0.35rem, 1vw, 0.8rem);
+    top: 46%;
+    padding: 0 clamp(0.5rem, 1.2vw, 1rem);
   }
 
   .credits__card--tall .credits__card-content {
@@ -4644,78 +4781,65 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(0.92rem, 2.3vw, 1.25rem);
+    font-size: clamp(1.18rem, 3vw, 1.55rem);
     letter-spacing: 0.015em;
   }
 
   .credits__card-role[aria-label="Development"],
   .credits__card-role[aria-label="Integration"],
   .credits__card--small .credits__card-role {
-    font-size: clamp(0.68rem, 1.65vw, 0.92rem);
+    font-size: clamp(1.12rem, 2.6vw, 1.42rem);
     letter-spacing: 0.008em;
   }
 
+  .credits__card-role[aria-label="Development"] .mario-char,
+  .credits__card-role[aria-label="Integration"] .mario-char,
+  .credits__card--small .credits__card-role .mario-char {
+    -webkit-text-stroke: clamp(1.6px, 0.24vw, 2.2px) var(--mario-black);
+  }
+
   .credits__card--tall .credits__card-role {
-    font-size: clamp(1.12rem, 2.8vw, 1.55rem);
+    font-size: clamp(1.45rem, 3.6vw, 1.95rem);
     letter-spacing: 0.025em;
   }
 
   .credits__card-names {
-    margin-top: clamp(8px, 1.5vh, 14px);
-    gap: clamp(4px, 0.9vh, 9px);
+    margin-top: clamp(10px, 1.6vh, 16px);
+    gap: clamp(6px, 1.1vh, 12px);
   }
 
   .credits__card--tall .credits__card-names {
-    margin-top: clamp(10px, 1.8vh, 17px);
-    gap: clamp(5px, 1.1vh, 11px);
+    margin-top: clamp(12px, 1.9vh, 18px);
+    gap: clamp(7px, 1.2vh, 14px);
   }
 
   .credits__card-name {
-    font-size: clamp(0.56rem, 1.2vw, 0.76rem);
+    font-size: clamp(0.92rem, 2.2vw, 1.14rem);
+    font-weight: 700;
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.62rem, 1.35vw, 0.84rem);
-  }
-
-  .credits__card--tall {
-    height: clamp(260px, 68vh, 520px);
-    transform: translateY(-18px);
-  }
-
-  .credits__card--small {
-    height: clamp(200px, 52vh, 410px);
-    transform: translateY(8px);
-  }
-
-  @keyframes credits-float-tall {
-    from {
-      transform: translateY(-18px);
-    }
-    to {
-      transform: translateY(-28px);
-    }
-  }
-
-  @keyframes credits-float-small {
-    from {
-      transform: translateY(8px);
-    }
-    to {
-      transform: translateY(-2px);
-    }
+    font-size: clamp(0.98rem, 2.4vw, 1.22rem);
+    font-weight: 700;
   }
 }
 
 @media (max-width: 480px) {
   .credits {
-    min-height: 120vh;
-    min-height: 120dvh;
+    min-height: auto;
+    padding-bottom: clamp(2.2rem, 5vh, 3.8rem);
   }
 
   .credits__header {
-    padding-top: clamp(2.6rem, 5.5vh, 4rem);
-    padding-bottom: 0.4rem;
+    padding-top: clamp(2.8rem, 6.5vh, 4.2rem);
+    padding-bottom: clamp(1.85rem, 5.5vw, 2.4rem);
+    margin-bottom: 0;
+  }
+
+  .credits__body {
+    flex: 0 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .credits__sign {
@@ -4750,13 +4874,13 @@ summary:active,
   }
 
   .credits__card-character-wrap {
-    height: 52%;
-    transform: translate(-50%, -18%);
+    height: 50%;
+    transform: translate(-50%, -14%);
   }
 
   .credits__card--tall .credits__card-character-wrap {
-    height: 58%;
-    transform: translate(-50%, -20%);
+    height: 56%;
+    transform: translate(-50%, -16%);
   }
 
   .credits__piranha {
@@ -4766,8 +4890,8 @@ summary:active,
   }
 
   .credits__card-content {
-    top: 45.5%;
-    padding: 0 0.25rem;
+    top: 46%;
+    padding: 0 clamp(0.35rem, 1.5vw, 0.75rem);
   }
 
   .credits__card--tall .credits__card-content {
@@ -4775,71 +4899,70 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(0.68rem, 2.8vw, 0.95rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.32rem);
     letter-spacing: 0.01em;
   }
 
   .credits__card-role[aria-label="Development"],
   .credits__card-role[aria-label="Integration"],
   .credits__card--small .credits__card-role {
-    font-size: clamp(0.52rem, 2.1vw, 0.72rem);
-    letter-spacing: 0.005em;
+    font-size: clamp(1rem, 3.8vw, 1.25rem);
+    letter-spacing: 0.006em;
+  }
+
+  .credits__card-role[aria-label="Development"] .mario-char,
+  .credits__card-role[aria-label="Integration"] .mario-char,
+  .credits__card--small .credits__card-role .mario-char {
+    -webkit-text-stroke: 1.6px var(--mario-black);
   }
 
   .credits__card--tall .credits__card-role {
-    font-size: clamp(0.82rem, 3.2vw, 1.15rem);
-    letter-spacing: 0.018em;
+    font-size: clamp(1.28rem, 4.8vw, 1.62rem);
+    letter-spacing: 0.02em;
   }
 
   .credits__card-names {
-    margin-top: clamp(5px, 1.2vh, 10px);
-    gap: clamp(3px, 0.6vh, 5px);
+    margin-top: clamp(8px, 1.5vh, 13px);
+    gap: clamp(5px, 1vh, 9px);
   }
 
   .credits__card--tall .credits__card-names {
-    margin-top: clamp(6px, 1.4vh, 12px);
-    gap: clamp(3px, 0.7vh, 6px);
+    margin-top: clamp(10px, 1.8vh, 15px);
+    gap: clamp(6px, 1.2vh, 10px);
   }
 
   .credits__card-name {
-    font-size: clamp(0.42rem, 1.75vw, 0.58rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(0.84rem, 3.5vw, 0.98rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.46rem, 1.9vw, 0.64rem);
+    font-size: clamp(0.88rem, 3.8vw, 1.05rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .credits__cards {
-    gap: clamp(4px, 1.5vw, 12px);
+    flex-direction: column;
+    gap: clamp(0.75rem, 2.2vw, 1rem);
+    width: 100%;
   }
 
   .credits__card--tall {
-    height: clamp(220px, 64vh, 420px);
-    transform: translateY(-12px);
+    width: min(78vw, 290px);
+    height: clamp(340px, 48vh, 390px);
+    transform: none;
+    animation: none;
+    z-index: 3;
   }
 
   .credits__card--small {
-    height: clamp(170px, 48vh, 320px);
-    transform: translateY(6px);
-  }
-
-  @keyframes credits-float-tall {
-    from {
-      transform: translateY(-12px);
-    }
-    to {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes credits-float-small {
-    from {
-      transform: translateY(6px);
-    }
-    to {
-      transform: translateY(-2px);
-    }
+    width: min(75vw, 275px);
+    height: clamp(310px, 44vh, 360px);
+    transform: none;
+    animation: none;
+    z-index: 3;
   }
 }
 
@@ -5262,6 +5385,31 @@ section[id] {
   .holo-nav__link:active .holo-nav__btn {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Reveal section headers with the user's scroll position (no JavaScript). */
+@supports (animation-timeline: view()) {
+  .section-header-reveal {
+    animation: section-header-opacity both linear;
+    animation-timeline: view();
+    animation-range: entry 15% cover 45%;
+  }
+
+  @keyframes section-header-opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-header-reveal {
+    animation: none;
+    opacity: 1;
   }
 }
 

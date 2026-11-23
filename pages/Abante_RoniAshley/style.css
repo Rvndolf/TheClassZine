@@ -1,0 +1,1484 @@
+@font-face {
+  /*Find Cartoon is a font downloaded online to truly personalize my webpage*/
+  font-family: 'Find Cartoon';
+  src: url('fonts/Find Cartoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #BBCCE0;
+  overflow-x: hidden;
+}
+
+html,
+body,
+main,
+header,
+section,
+footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+table {
+  max-width: 100%;
+}
+
+.header-name {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 95px;
+  margin-top: -15px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  line-height: 1;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.lastname {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 95px;
+  margin-top: 18px;
+  margin-left: 280px;
+  margin-bottom: 20px;
+  line-height: 1;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+/*The first background image seen at the very start of my webpage to highlight the main head*/
+.hero-banner {
+  width: 100vw;
+  height: 650px;
+  background-image: url('images/bgE1.jpg');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+.hero-content {
+  text-align: left;
+}
+
+/*this code is the main format for the stitch images in header 1*/
+.hero-banner .stitch {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.stitch-left {
+  top: 30px;
+  left: 0px;
+  width: 400px;
+}
+
+.stitch-top {
+  position: absolute;
+  top: -150px;
+  /* Sits right on top of the upper border on desktop */
+  right: 120px;
+  left: auto;
+  width: 220px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/*This customizes my picture in a polygon shape for visual appeals*/
+.custom-shaped-image {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  pointer-events: none;
+  clip-path: polygon(0% 5%, 50% 0%, 100% 5%, 100% 95%, 50% 100%, 0% 95%);
+}
+
+.hero-photo-wrap {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 400px;
+  height: 350px;
+  z-index: 10;
+}
+
+.nav-links {
+  align-items: normal;
+  text-align: left;
+}
+
+/*the format of the paragraph*/
+.tagline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -25px;
+  margin-left: 280px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-style: italic;
+  color: #113351;
+}
+
+.intro {
+  display: block;
+  margin: 0;
+  padding: 20px 25px;
+  max-width: 430px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #5381a7;
+}
+
+.intro.rounded-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 0px 0px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 470px;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+  margin-left: 280px;
+}
+
+/*an interactive navigation bar so that specific sub-topics will be easier to find starting from the top of the webpage*/
+.navbar {
+  width: 100%;
+  height: 30px;
+  position: static;
+  top: 0;
+
+  background-color: #4B7AB3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  padding: 0px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+/*the interactive part of the navigation bar that changes the color of the text if a crouser is hovered above it*/
+.navbar a:hover {
+  color: #004AAD;
+}
+
+/*Hello section*/
+.hero-content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Aligns all text cleanly to the left */
+  max-width: 600px;
+  /* Matches the width of your .facts-grid */
+  margin: 0 auto 25px;
+  /* Centers the text block above the cards */
+}
+
+.header-hello {
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 80px;
+  margin: 18px 0 15px 0;
+  line-height: 1;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.hello-intro {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #113351;
+}
+
+.hello-content {
+  margin: 0;
+  font-size: 18px;
+  color: #113351;
+}
+
+.header-hello {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 80px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+  margin-left: -300px;
+  line-height: 1;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.intro {
+  align-self: flex-start;
+  display: block;
+  margin: 0;
+  padding: 20px 25px;
+  max-width: 430px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  color: #113351;
+}
+
+.hero-banner3 {
+  position: relative;
+}
+
+.hero-banner3 .stitchsayshello {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.stitch-hello {
+  bottom: 20px;
+  /* Anchors Stitch's cut-off bottom edge cleanly to the bottom of the section */
+  left: 0px;
+  /* Anchors Stitch's flat left edge directly to the left screen edge */
+  width: 400px;
+}
+
+/* Container for the 4 fact cards */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* Individual Fact Card */
+.fact-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 22px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Small header label style */
+.fact-label {
+  font-family: 'Find Cartoon', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #4B7AB3;
+  text-transform: uppercase;
+}
+
+/* Main text value style */
+.fact-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #113351;
+  line-height: 1.3;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 900px) {
+  .facts-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+  }
+}
+
+/*About Me Section*/
+.header-name2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 35px;
+  line-height: 1;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(54, 118, 230, 0.4));
+}
+
+.hero-banner2 {
+  width: 100vw;
+  min-height: 650px;
+  background-image: url('images/H2BG3.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px;
+}
+
+.hero-content2.rounded-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 40px 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 850px;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.hero-content2 p span {
+  display: block;
+  margin-bottom: 0px;
+}
+
+.nav-links2 p {
+  margin: 0;
+  font-size: 20px;
+  color: #113351;
+  text-align: left;
+}
+
+.custom-shaped-image2 {
+  width: 400px;
+  height: 350px;
+  margin-left: -60px;
+  margin-top: 25px;
+  clip-path: polygon(0% 5%, 50% 0%, 100% 5%, 100% 95%, 50% 100%, 0% 95%);
+  filter: drop-shadow(0px 10px 18px rgba(3, 49, 87, 0.4));
+}
+
+/*Path to Computing Section*/
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 850px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  background: #4B7AB3;
+  border-radius: 4px;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.timeline li {
+  margin-left: 50px;
+  position: relative;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 36px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #64acec;
+  border: 3px solid #fff;
+}
+
+.visible .timeline::before {
+  animation: growLine 1.2s ease forwards;
+}
+
+@keyframes growLine {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/*My hobbies Section*/
+.header-name3 {
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: left;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.hero-banner3 {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 650px;
+  background-image: url('images/H2BG3.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.hero-content3.rounded-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-content3 .nav-links2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-content3 .nav-links2 li {
+  font-size: 24px;
+  font-family: 'Find Cartoon', sans-serif;
+  /* Optional: matches header style */
+  color: #113351;
+  text-align: left;
+  font-weight: bold;
+}
+
+.hobbies-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hobby-images-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  height: 180px;
+}
+
+.hobby-images-left img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-images-left img:nth-child(2) {
+  transform: translateY(30px);
+}
+
+.hobby-images-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.hobby-images-right img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/*My Goals Section*/
+.header-name4 {
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+.hero-banner4 {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 650px;
+  background-image: url('images/H2BG3.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.hero-content4.rounded-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  flex: 1;
+  min-width: 260px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.goals-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: -25px;
+}
+
+.goal-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.goal-list {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.goal-list li {
+  font-size: 22px;
+  font-family: 'Find Cartoon', sans-serif;
+  color: #113351;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.scroll-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/*My Favorites Section*/
+.header-name6 {
+  font-family: 'Find Cartoon', sans-serif;
+  color: #64acec;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow:
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-banner6 {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 650px;
+  background-image: url('images/H2BG3.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+}
+
+/* Reflection Card Styles */
+#reflection .timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  border-left: none;
+}
+
+#reflection .timeline::before,
+#reflection .timeline::after {
+  display: none;
+}
+
+/*Make the reflection cards smaller */
+.reflection-card {
+  max-width: 550px;
+  /* Reduced from 850px to make them smaller/narrower */
+  width: 100%;
+  margin: 0 auto 15px auto;
+  /* Centers the cards and adds spacing */
+  list-style: none;
+  overflow: hidden;
+  background-color: rgba(140, 226, 244, 0.35);
+  /* Keeps your glassmorphic card style */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Clickable Header padding adjustments for smaller size */
+.reflection-toggle {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  /* Tighter padding for a smaller card look */
+  cursor: pointer;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+}
+
+.reflection-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.reflection-toggle h3 {
+  margin: 0;
+  font-family: 'Find Cartoon', sans-serif;
+  /* Matches your font style */
+  font-size: 16px;
+  color: #113351;
+}
+
+/* Circular + / - Badge */
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: #64acec;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-icon::before {
+  content: "+";
+}
+
+.reflection-card[open] .toggle-icon {
+  background-color: #4b7ab3;
+}
+
+.reflection-card[open] .toggle-icon::before {
+  content: "-";
+}
+
+/* Content Area */
+.reflection-content {
+  padding: 0 20px 18px 20px;
+}
+
+.reflection-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #113351;
+}
+
+/* Footer Styling */
+.site-footer {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #113351;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.footer-home {
+  display: inline-block;
+  margin-top: 10px;
+  color: #113351;
+  font-weight: bold;
+}
+
+/* Back to Home button */
+.back-home {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  background: #1a3c6e;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+}
+
+.back-home.show {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.back-home:hover {
+  background: #64acec;
+}
+
+.back-home:focus-visible,
+.navbar a:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/*side menu for small screens*/
+.nav-toggle,
+.nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 400;
+    width: 44px;
+    height: 44px;
+    padding: 0 11px;
+    box-sizing: border-box;
+    background: #1a3c6e;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 230px;
+    height: 100vh;
+    z-index: 300;
+    padding: 80px 24px 24px;
+    gap: 6px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+    transform: translateX(-105%);
+    transition: transform 0.35s ease;
+  }
+
+  .navbar.open {
+    transform: none;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .navbar a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: none;
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    background: rgba(17, 51, 81, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  body.nav-open .nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .page-section {
+    scroll-margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page-section {
+  scroll-margin-top: 40px;
+}
+
+/* Sticky navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 30px;
+  height: auto;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.navbar a:hover {
+  transform: translateY(-1px);
+}
+
+/* New cards (same glass look as the original rounded cards) */
+.info-card {
+  background-color: rgba(140, 226, 244, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
+  color: #113351;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover,
+.hero-content3.rounded-card:hover,
+.hero-content4.rounded-card:hover {
+  transform: translateY(-6px);
+}
+
+.hero-content3.rounded-card,
+.hero-content4.rounded-card {
+  transition: transform 0.3s ease;
+}
+
+.info-card h3 {
+  font-family: 'Find Cartoon', sans-serif;
+  font-size: 26px;
+  margin: 0 0 12px;
+  color: #113351;
+}
+
+.info-card p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+/*Animation effects*/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.header-name span {
+  display: block;
+  opacity: 0;
+  animation: dropIn 0.8s ease forwards;
+}
+
+.header-name span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.header-name span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.nav-links p {
+  opacity: 0;
+  animation: dropIn 0.8s ease 0.8s forwards;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.custom-shaped-image,
+.custom-shaped-image2 {
+  animation: dropIn 0.8s ease;
+}
+
+.stitch-top {
+  animation: dropIn 0.8s ease;
+}
+
+.stitch-left {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.stitch-hello {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+@keyframes floaty {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes sway {
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal,
+  .header-name span,
+  .nav-links p {
+    opacity: 1;
+    transform: none;
+  }
+
+  .timeline::before {
+    transform: none;
+  }
+}
+
+/*Responsive feature*/
+
+@media (max-width: 900px) {
+
+  .scroll-wrap {
+    overflow-x: visible;
+  }
+
+  .hobbies-container,
+  .goals-container {
+    width: 100% !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .hero-content3.rounded-card,
+  .hero-content4.rounded-card {
+    flex: 0 1 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* 1. Reset Header & Navbar so there is zero empty gap on top */
+  header {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 230px;
+    height: 100vh;
+    z-index: 400;
+    padding: 80px 24px 24px;
+    gap: 6px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+    transform: translateX(-105%);
+    transition: transform 0.35s ease;
+  }
+
+  .navbar.open {
+    transform: translateX(0);
+  }
+
+  /* Move the close (X) button outside the open menu drawer */
+  body.nav-open .nav-toggle {
+    left: 245px;
+    background-color: #1a3c6e;
+    z-index: 500;
+  }
+
+  /* 2. Hero Banner & Anchored Top Stitch */
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    padding: 30px 15px 35px 15px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    overflow: visible !important;
+    /* Allows Stitch to peek out cleanly */
+  }
+
+  .hero-photo-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 220px !important;
+    height: 200px !important;
+    margin: 35px auto 15px auto !important;
+    /* Leaves room for Stitch's ears at the top */
+  }
+
+  .custom-shaped-image {
+    position: relative !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+  }
+
+  .stitch-top {
+    position: absolute !important;
+    width: 120px !important;
+    top: -55px !important;
+    /* Rests right on the upper border on mobile */
+    right: 10px !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 5 !important;
+  }
+
+  .stitch-left {
+    width: 110px;
+    top: 75px;
+    left: -10px;
+  }
+
+  .hero-content {
+    order: 2 !important;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .header-name,
+  .lastname {
+    margin: 5px 0;
+    font-size: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tagline {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+
+  .intro.rounded-card {
+    margin: 0 auto;
+    max-width: 92%;
+    box-sizing: border-box;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  /* 3. Hello Section */
+  .stitch-hello {
+    width: 100px;
+    bottom: 5px;
+    left: 0;
+  }
+
+  .hello-banner .header-hello {
+    margin-left: 0;
+    font-size: 45px;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+  }
+
+  /* 4. About Me & Favorites */
+  .hero-banner2 {
+    flex-direction: column;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    gap: 20px;
+  }
+
+  .custom-shaped-image2 {
+    margin: 0;
+    width: 260px;
+    height: 230px;
+  }
+
+  .hero-content2.rounded-card {
+    padding: 25px 22px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-content2 p span {
+    display: inline;
+  }
+
+  .nav-links2 p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  /* 5. Section Headers & Timeline */
+  .header-name2,
+  .header-name3,
+  .header-name4 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .timeline li {
+    margin-left: 40px;
+  }
+
+  .info-card {
+    padding: 22px;
+  }
+
+  .info-card p {
+    font-size: 17px;
+  }
+
+  /* 6. Hobbies & Goals (Stacked for Mobile) */
+  .hobbies-container,
+  .goals-container {
+    margin-left: 0;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-content3.rounded-card {
+    height: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 1 100%;
+    box-sizing: border-box;
+  }
+
+  .hobby-images-left {
+    height: auto;
+    margin-bottom: 25px;
+  }
+
+  .hobby-images-left img {
+    width: 45%;
+    height: 130px;
+  }
+
+  .hobby-images-right {
+    gap: 10px;
+  }
+
+  .hero-content4.rounded-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 1 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .goal-image {
+    height: 200px;
+  }
+
+  .goal-list li {
+    font-size: 18px;
+  }
+
+  /* 7. Back to Top */
+
+  .back-home {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-name,
+  .lastname {
+    font-size: 36px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

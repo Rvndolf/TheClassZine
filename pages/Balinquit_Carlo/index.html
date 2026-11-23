@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlo's Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header (h1) -->
+  <header class="header" id="header">
+    <div class="header-title">
+      <h1>Hi! It's me, CARLO!</h1>
+      <p class="smallp">I believe, therefore, I am.</p>
+    </div>
+    
+    <!-- Navigation -->
+    <nav>
+      <a href="#hello" class="nav-button">Hello</a>
+      <a href="#aboutme" class="nav-button">About Me</a>
+      <a href="#path" class="nav-button">My Path</a>
+      <a href="#favorites-skills" class="nav-button">Favorites & Skills</a>
+      <a href="#goals" class="nav-button">Goals</a>
+      <a href="#reflection" class="nav-button">Reflection</a>
+      <a href="#gallery" class="nav-button">Gallery</a>
+    </nav>
+  </header>
+  
+  <!-- Main -->
+  <main class="container">
+
+     <!-- Top Grid (sections 1-3 on left) -->
+    <div class="main-layout">
+      
+      <!-- For left column -->
+      <div class="left-stack">
+
+        <!-- 1st Section (Hello)-->
+        <section id="hello" class="hello-box">
+          <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+          <div class="hello-text">
+            <h2>Hello!</h2>
+            <p class="p1">
+              I am <strong>Carlo Añola Balinquit</strong>, a first-year BS Computer Science student at Bicol University. 
+              I am a curious and optimistic type of person, I love doing new things as much as I love learning.
+            </p>
+          </div>
+        </section>
+        
+        <!-- COMMENT 1: The <img> tag above is an element to add image directly into this html, and it is an empty tag, therefore no </img>.
+                      Inside <img>, it consists some essential attributes. The src="" is basically the source/path of the image file, the alt="" means textual 
+                      replacement for the image, this is big help for people with visual impairement. The class="" I used is to label/identify that links the 
+                      image to set of styles I made in css. 
+
+        <!-- 2nd Section (About Me) -->
+        <section id="aboutme">
+          <h2>About Me</h2>
+          
+          <!-- Top row (pictures & texts) -->
+          <div class="aboutme-top-row">
+            <div class="auto-pic-box">
+              <div class="auto-pic-track">
+                <img src="images/day1.jpg" alt="My Typical Day">
+                <img src="images/day2.jpg" alt="My Typical Day">
+                <img src="images/day3.jpg" alt="My Typical Day">
+                <img src="images/day4.jpg" alt="My Typical Day">
+                <img src="images/day5.jpg" alt="My Typical Day">
+                <img src="images/day6.jpg" alt="My Typical Day">
+              </div>
+            </div>
+
+            <div class="glass-box">
+              <p class="p2">
+                A typical day for me is all about embracing new experiences and growth. Whether I'm noticing new sights, meeting interesting people,
+                or learning something new, I try to find joy in the little things and spend quality time with my loved ones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom row (interests & hobbies) -->
+          <div class="aboutme-bottom-row">
+            <div class="sub-box">
+              <h3>Interests</h3>
+              <ul>
+                <li>Graphic Design & Art</li>
+                <li>Motion Graphics</li>
+                <li>Data Science</li>
+                <li>Electronics</li>
+                <li>Embedded Systems</li>
+                <li>Photography</li>
+                <li>Movies & Series</li>
+                <li>K-pop</li>
+              </ul>
+            </div>
+
+            <div class="sub-box">
+              <h3>Hobbies</h3>
+              <div class="hobbies-inner">
+                <ul>
+                  <li>Drawing</li>
+                  <li>Dancing</li>
+                  <li>Designing</li>
+                  <li>Writing</li>
+                  <li>Watching movies</li>
+                  <li>Listening to music</li>
+                  <li>Playing online games</li>
+                </ul>
+
+                <ul>
+                  <li>Reading</li>
+                  <li>Taking pics</li>
+                  <li>Jogging</li>
+                  <li>Talking to strangers</li>
+                  <li>Editing videos</li>
+                  <li>Singing</li>
+                  <li>Doomscrolling</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- The <div> tag I used many times is simply to group elements together,
+                       which I can edit the style of the elements in easy way. It ends with </div>. -->
+
+        <!-- 3rd Section (My Path into Computing) -->
+        <section id="path">
+          <h2>My Path Into Computing</h2>
+          <p class="p2">
+            Back in Grade 12, when our research project involved basic electronics and data processing, and seeing how hardware and raw data
+            work together really fascinated me to technology, though my curiosity leaned more toward data science and electronics rather than programming
+            itself. Even though Computer Science wasn't my original dream program, I believe I can still make the most out of it through
+            consistent learning and staying open to new things along the way.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Right Column (<aside>) -->
+      <aside class="sidebar">
+
+           <!-- Fun Facts About Me -->
+           <div class="aside-group">
+             <h3>Fun Facts About Me</h3>
+              <div class="auto-text-box">
+                <div class="auto-text-track-6">
+                 <p>I love listening to music while doing almost everything.</p>
+                 <p>I find everything funny, unfortunately lol ^o^</p>
+                 <p>I don't tolerate wrongdoing; I will call it out even if I end up embarrassing myself.</p>
+                 <p>Once I'm comfortable with someone, I become very talkative.</p>
+                 <p>I love it when it rains. <br>Pluviophile, I guess?</p>
+                 <p>Having deep and meaningful life talks really interests me.</p>
+               </div>
+              </div>
+           </div>
+
+          <!-- For GIF below-->
+            <div class="aside-gif-container">
+              <img src="images/facts.gif" alt="Fun Facts GIF" class="sidebar-gif" style="width: 90%; height: auto;"S>
+            </div>
+
+          <!-- Groups and Artists I Listen To (screenshot photos) -->
+              <div class="aside-group">
+               <h3>Groups and Artists I Listen To</h3>
+                  <div class="auto-pic-box yt-caption">
+                    <div class="auto-pic-track-18">
+                      <img src="images/charlie.png" alt="Charlie Puth">
+                      <img src="images/ed.png" alt="Ed Sheeran">
+                      <img src="images/justin.png" alt="Justin Bieber">
+                      <img src="images/ariana.png" alt="Ariana Grande">
+                      <img src="images/taylor.png" alt="Taylor Swift">
+                      <img src="images/weeknd.png" alt="The Weeknd">
+                      <img src="images/blackpink.png" alt="BLACKPINK">
+                      <img src="images/benben.png" alt="Ben&Ben">
+                      <img src="images/lesserafim.png" alt="LE SSERAFIM">
+                      <img src="images/twice.png" alt="TWICE">
+                      <img src="images/cortis.png" alt="Cortis">
+                      <img src="images/enhypen.png" alt="ENHYPEN">
+                      <img src="images/seventeen.png" alt="Seventeen">
+                      <img src="images/aespa.png" alt="aespa">
+                      <img src="images/illit.png" alt="ILLIT">
+                      <img src="images/newjeans.png" alt="NewJeans">
+                      <img src="images/unis.png" alt="UNIS">
+                      <img src="images/ive.png" alt="IVE">
+                    </div>
+                 </div>
+              </div> 
+
+              <!-- GIF Conatiner -->
+              <div class="aside-gif-container">
+               <img src="images/music.gif" alt="Music GIF" class="sidebar-gif" style="width: 80%; height: auto;">
+              </div>
+      </aside>
+   </div>
+
+    <!-- 4th Section (Favorites and Skills) -->
+    <section id="favorites-skills">
+      <h2>Favorites and Skills</h2>
+      
+      <div class="two-col-grid">
+        
+        <!-- Favorites (ordered list) -->
+        <div class="sub-box">
+          <h3>My Favorites</h3>
+            <ol class="styled-list">
+             <li>
+               <strong>Websites:</strong> 
+               <a href="https://www.music.youtube.com" target="_blank" rel="noopener noreferrer">YouTube Music</a>, 
+               <a href="https://www.rappler.com" target="_blank" rel="noopener noreferrer">Rappler</a>, 
+               <a href="https://www.miraculous.to.com" target="_blank" rel="noopener noreferrer">Miraculous: Ladybug and Cat Noir</a>,
+               <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>,
+               <a href="https://www.video-tutor.net/" target="_blank" rel="noopener noreferrer">Video-Tutor</a>,
+               <a href="https://www.nesoacademy.org/" target="_blank" rel="noopener noreferrer">Neso Academy</a>.
+             </li>
+             <li>
+               <strong>Movies:</strong> 
+               <a href="https://www.imdb.com/title/tt1677720/" target="_blank" rel="noopener noreferrer">Ready Player One</a>,
+               <a href="https://www.imdb.com/title/tt1663662/?ref_=tt_mlt_i_4" target="_blank" rel="noopener noreferrer">Pacific Rim</a>,
+               <a href="https://www.imdb.com/list/ls033452628/" target="_blank" rel="noopener noreferrer">Transformers</a>,
+               <a href="https://www.imdb.com/title/tt4520988/" target="_blank" rel="noopener noreferrer">Frozen 2</a>,
+               <a href="https://www.imdb.com/title/tt0816692/" target="_blank" rel="noopener noreferrer">Interstellar</a>, 
+               <a href="https://www.imdb.com/title/tt1375666/" target="_blank" rel="noopener noreferrer">Inception</a>, 
+               <a href="https://www.imdb.com/title/tt4154796/" target="_blank" rel="noopener noreferrer">Avengers: Endgame</a>.
+             </li>
+             <li>
+               <strong>Foods:</strong>
+               <a href="https://www.kawalingpinoy.com/buko-salad/" target="_blank" rel="noopener noreferrer">Buko Salad</a>,
+               <a href="https://panlasangpinoy.com/filipino-style-spaghetti/" target="_blank" rel="noopener noreferrer">Spaghetti</a>, 
+               <a href="https://panlasangpinoy.com/filipino-food-pork-adobo-recipe/" target="_blank" rel="noopener noreferrer">Adobo</a>, 
+               <a href="https://panlasangpinoy.com/filipino-fried-chicken/" target="_blank" rel="noopener noreferrer">Fried Chicken</a>,
+               <a href="https://panlasangpinoy.com/filipino-lumpia-recipe/" target="_blank" rel="noopener noreferrer">Lumpia</a>,
+               <a href="https://panlasangpinoy.com/pork-sinigang-na-baboy-recipe/" target="_blank" rel="noopener noreferrer">Sinigang</a>.
+             </li>
+           </ol>
+        </div>
+
+        <!-- COMMENT 3: The href attribute specifies the URL/destination address that a link points to, it just basically tells the browser
+                      exactly where to take the user when they click on an element, most used inside an anchor tag <a>.. -->
+
+
+        <!-- Skills ( auto-next texts) -->
+        <div class="sub-box">
+           <h3>My Skills</h3>
+           <div class="auto-text-box skills-container">
+             <div class="auto-text-track-7">
+               <p>Designing & Editing</p>
+               <p>Art</p>
+               <p>Writing</p>
+               <p>Adaptable</p>
+               <p>Technical (Electronics)</p>
+               <p>Communication</p>
+               <p>Problem-Solving</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5th Section (Goals) -->
+    <section id="goals">
+      <h2>Goals</h2>
+      
+      <div class="goals-grid">
+
+        <!-- Table -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Phase / Year</th>
+                <th>I'll focus on</th>
+                <th>Core Skills & Technologies</th>
+                <th>Status</th>
+              </tr>
+           </thead>
+           <tbody>
+             <tr>
+                <td>Year 1 (Foundation)</td>
+                <td>Programming & Electronics</td>
+                <td>C Programming, Python Basics, Circuit Assembly, Logic Gates</td>
+                <td>In progress</td>
+             </tr>
+             <tr>
+                <td>Year 2 (Self-study)</td>
+                <td>Embedded Systems</td>
+                <td>Microcontrollers (Arduino/ESP32), C/C++, Sensors</td>
+                <td>Upcoming</td>
+             </tr>
+             <tr>
+                <td>Year 2 (Uni-Study)</td>
+                <td>Data Science</td>
+                <td>NumPy, Pandas, SQL, Data Cleaning, Exploratory Analysis</td>
+                <td>Upcoming</td>
+             </tr>
+             <tr>
+                <td>Year 3 (Integration)</td>
+                <td>Edge AI & IoT</td>
+                <td>Machine Learning, TinyML, MQTT, Cloud Dashboards</td>
+                <td>Upcoming</td>
+             </tr>
+             <tr>
+                <td>Year 4 (Capstone)</td>
+                <td>Full-Stack Edge Intelligence</td>
+                <td>RTOS, Deep Learning, Hardware-Software Co-Design</td>
+                <td>Upcoming</td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+
+       <!-- COMMENT 4: The <tr> means a table row to group cells horizontally, 
+                      <th> means a header cell which bolds and centers important labels, and
+                      <td> means a standard data cell to hold the actual information. -->
+
+       <!-- Paragraph -->
+        <div class="sub-box">
+          <p class="p2">
+            In the next few years, I hope to continuously learn about data science and how to incorporate hardware (electronics) with software (programming).
+            I also want to build a basic device, or at least a physical prototype when I enter my second year.
+            For the remaining years, I would like to secure amazing internships, both locally and nationally, if given the chance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6th Section (Reflection) -->
+    <section id="reflection">
+      <h2>Reflection</h2>
+      <p class="p2">
+       While building this webpage, I learned many new HTML elements, CSS rules, and layout styles to try and incorporate. 
+       It felt overwhelming at first to grasp everything without a step-by-step guide, so I made a clear layout plan first before maximizing 
+       the available elements and styles. Compared to my previous About Me activity, I significantly improved the structure. 
+       I placed the main header and navigation on opposite sides, added a full-height sidebar spanning alongside the first three
+       sections, and built four additional sections below them. I replaced the old GIFs with new ones and placed them in the sidebar, so that
+       it will not look not organized. I also experimented heavily with keyframes animations for sliding text, photo tracks, and a gallery carousel.
+       Lastly, I organized the footer by left-aligning my name and credits for the GIFs and background image, while right-aligning the return home button.
+     </p>
+    </section>
+
+    <!-- 7th Section (Random Photos in My Gallery) -->
+    <section id="gallery">
+      <h2>Random Photos in My Gallery</h2>
+      <div class="carousel">
+        <div class="group">
+          <div class="card"><img src="images/me4.jpg" alt="Dancing Photo"></div>
+          <div class="card"><img src="images/flowchart.jpg" alt="Meme1"></div>
+          <div class="card"><img src="images/me3.jpg" alt="Training Days Photo"></div>
+          <div class="card"><img src="images/math.jpg" alt="Meme2"></div>
+          <div class="card"><img src="images/me7.jpg" alt="Candid Photo"></div>
+          <div class="card"><img src="images/me6.jpg" alt="Workshop Days Photo"></div>
+        </div>
+
+        <div class="group" aria-hidden="true">
+          <div class="card"><img src="images/me4.jpg" alt="Dancing Photo"></div>
+          <div class="card"><img src="images/flowchart.jpg" alt="Meme1"></div>
+          <div class="card"><img src="images/me3.jpg" alt="Training Days Photo"></div>
+          <div class="card"><img src="images/math.jpg" alt="Meme2"></div>
+          <div class="card"><img src="images/me7.jpg" alt="Candid Photo"></div>
+          <div class="card"><img src="images/me6.jpg" alt="Workshop Days Photo"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <!-- Footer (Name, socials, cited sources and back to home button) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>Made by <strong>Carlo Añola Balinquit</strong> for CS 101, Bicol University. 2026.</p>
+        
+        <!-- Row for credits w/ inline style -->
+        <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 10px;">
+          <!-- Credits (w/ inline style) -->
+          <div class="asset-credits" style="font-size: 1.0rem; font-family: 'Dancing Script', cursive; color: bold #e2e8f0;">
+            GIFs via <a href="https://tenor.com/view/music-happy-potz-memeland-gif-17472202171685093310" target="_blank" rel="noopener noreferrer" style="color: bold #f6c667; text-decoration: none;">Tenor</a> | 
+            Background image via <a href="https://ph.pinterest.com/pin/1061301468435311395/" target="_blank" rel="noopener noreferrer" style="color: bold #f6c667; text-decoration: none;">Pinterest</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <a class="back-to-home" href="../../index.html">Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

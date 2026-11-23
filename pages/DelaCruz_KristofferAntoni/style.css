@@ -1,0 +1,539 @@
+/* ==========================================================
+   STYLE.CSS - organized top to bottom:
+   1. Fonts  2. Variables  3. Base  4. Header  5. Navigation
+   6. Main sections  7. Table + dropdowns  8. Footer
+   9. Animation  10. Responsive
+   ========================================================== */
+
+/* ---------- 1. FONTS (stored in the fonts/ folder, works offline) ---------- */
+/* Fredoka: Used for headings and buttons. */
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/fredoka.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* Nunito: Used for paragraphs and tables. */
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/nunito.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+/* ---------- 2. VARIABLES ---------- */
+:root {
+  color-scheme: dark;
+
+  /* Accents */
+  --blue: #4d9dff;
+  --blue-deep: #2468c5;
+  --green: #55d69a;
+  --green-deep: #21966b;
+  --yellow: #ffd166;
+
+  /* Base colors */
+  --bg: #0c1226;
+  --panel: #151d38;
+  --panel-soft: #1c2646;
+  --ink: #0c1226;
+  --text: #f3efe6;
+  --body: #d6d9e4;
+  --muted: #a3abc4;
+  --line: rgba(163, 171, 196, 0.25);
+
+  /* Fonts with friendly backups in case a file fails to load */
+  --font-head: "Fredoka", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-body: "Nunito", "Segoe UI", Arial, sans-serif;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- 3. BASE ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Fixed background image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("images/background.webp") right center / cover no-repeat;
+  opacity: 0.5;
+}
+
+/* Dark fade over the image*/
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(12, 18, 38, 0.45), rgba(12, 18, 38, 0.94) 70%);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+a {
+  color: var(--yellow);
+  font-weight: 700;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* ---------- 4. HEADER (Flexbox layout) ---------- */
+.site-header {
+  padding: 40px clamp(20px, 6vw, 88px) 28px;
+  background: rgba(21, 29, 56, 0.8);
+  border-bottom: 4px solid var(--blue);
+}
+
+.hello {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  max-width: 1000px;
+}
+
+.hello-text {
+  flex: 1;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.intro {
+  max-width: 55ch;
+  margin: 0 0 22px;
+  color: var(--body);
+  font-size: 1.15rem;
+}
+
+/* Hello facts: name, program, year level */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  margin: 0;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--green);
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Profile photo styled like a tilted sticker */
+.portrait {
+  flex: 0 0 auto;
+  width: 210px;
+  margin: 0;
+  text-align: center;
+}
+
+.portrait img {
+  display: block;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 4px solid var(--yellow);
+  border-radius: 28px;
+  box-shadow: 7px 7px 0 var(--blue);
+  transform: rotate(-4deg);
+}
+
+figcaption {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.credit {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* ---------- 5. NAVIGATION: the page's "arcade buttons" ---------- */
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar a {
+  display: block;
+  padding: 8px 18px;
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--blue);
+  border-radius: 14px;
+  box-shadow: 0 5px 0 var(--blue-deep);  
+  transition: transform 0.25s var(--spring), box-shadow 0.25s var(--spring), background 0.2s ease;
+}
+
+/* Hover: button rises and turns green */
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--ink);
+  background: var(--green);
+  box-shadow: 0 8px 0 var(--green-deep);
+  transform: translateY(-3px);
+}
+
+/* Press (click or tap): button sinks into the page */
+.navbar a:active {
+  box-shadow: 0 1px 0 var(--green-deep);
+  transform: translateY(4px);
+  transition-duration: 0.08s;
+}
+
+/* ---------- 6. MAIN SECTIONS ---------- */
+main {
+  max-width: 760px;
+  margin: 40px 20px 0 clamp(20px, 6vw, 88px);
+}
+
+section {
+  margin-bottom: 30px;
+  padding: clamp(22px, 4vw, 34px);
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+  scroll-margin-top: 20px;
+}
+
+/* Section titles*/
+h2 {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 4px 18px;
+  color: var(--ink);
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  background: var(--blue);
+  border-radius: 999px;
+}
+
+h3 {
+  margin: 24px 0 8px;
+  color: var(--green);
+  font-size: 1.2rem;
+}
+
+section p {
+  margin: 0 0 12px;
+  color: var(--body);
+}
+
+strong {
+  color: #fff;
+}
+
+ul {
+  color: var(--body);
+}
+
+section li {
+  margin-bottom: 4px;
+}
+
+section li::marker {
+  color: var(--green);
+}
+
+/* ---------- 7. TABLE + REFLECTION DROPDOWNS ---------- */
+/* Wrapper rounds the corners and scrolls sideways on small screens */
+.table-wrap {
+  overflow-x: auto;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(12, 18, 38, 0.6);
+}
+
+caption {
+  padding: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  caption-side: bottom;
+  padding-top: 6px;
+}
+
+th, td {
+  padding: 11px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--ink);
+  font-family: var(--font-head);
+  background: var(--blue);
+}
+
+td {
+  color: var(--body);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+/* Hover: row lights up green*/
+tbody tr:hover {
+  background: rgba(85, 214, 154, 0.16);
+}
+
+/* Dropdowns */
+details {
+  margin-bottom: 12px;
+  background: var(--panel-soft);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  transition: border-color 0.2s ease;
+}
+
+details[open] {
+  border-color: var(--green);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style: none;          /* hides the default arrow */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;      
+}
+
+/* Custom "+" icon that spins into an "x" when opened */
+summary::after {
+  content: "+";
+  color: var(--green);
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: transform 0.3s var(--spring);
+}
+
+details[open] summary::after {
+  transform: rotate(135deg);
+}
+
+summary:hover {
+  color: var(--green);
+}
+
+details p {
+  margin: 0;
+  padding: 0 18px 16px;
+}
+
+/* ---------- 8. FOOTER ---------- */
+footer {
+  max-width: 760px;
+  margin: 44px 20px 0 clamp(20px, 6vw, 88px);
+  padding: 18px 0 32px;
+  color: var(--muted);
+  border-top: 2px solid var(--line);
+}
+
+footer p {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+/* ---------- 9. ANIMATION ---------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* The photo sticker bounces in, ending at its -4deg tilt */
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.6) rotate(-14deg); }
+  to   { opacity: 1; transform: scale(1) rotate(-4deg); }
+}
+
+/* Page load: the one intro moment (text rises, photo pops) */
+.hello-text {
+  animation: rise 0.6s ease both;
+}
+
+.portrait img {
+  animation: pop 0.7s var(--spring) 0.2s both;
+}
+
+/* Dropdown answer slides down when opened */
+details[open] p {
+  animation: rise 0.35s ease;
+}
+
+/* Respect people who turn off motion in their device settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- 10. RESPONSIVE (mobile-friendly) ---------- */
+@media (max-width: 700px) {
+  /* Stack the hello text and photo vertically, photo first */
+  .hello {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  main,
+  footer {
+    margin-left: 20px;
+  }
+}
+
+
+/* Sticky Back to Home button: always visible at the bottom right */
+.home-btn {
+  position: fixed;              
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 10;                   
+  padding: 10px 20px;
+  color: #0c1226;
+  font-family: "Fredoka", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  background: #ffd166;
+  border-radius: 14px;
+  box-shadow: 0 5px 0 #c9962b;   
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+}
+
+
+.home-btn:hover,
+.home-btn:focus-visible {
+  color: #0c1226;
+  background: #55d69a;
+  box-shadow: 0 8px 0 #21966b;
+  transform: translateY(-3px);
+}
+
+.home-btn:active {
+  box-shadow: 0 1px 0 #21966b;
+  transform: translateY(4px);
+  transition-duration: 0.08s;
+}
+
+footer {
+  padding-bottom: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-btn {
+    transition: none;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

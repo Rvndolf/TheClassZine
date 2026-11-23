@@ -1,0 +1,526 @@
+:root {
+  /* page background */
+  --page-bg-image: url("images/Dark waves wallpaper.jpg");
+  --page-bg-color: #000000;          
+
+  /* the box frame*/
+  --box-img: url("images/download.jpg");
+
+  
+  --box-slice: 75;
+
+  
+  --box-border: 45px;
+
+  
+  --box-padding: 20px;
+
+  
+  
+  --anim-length: 15%;
+  --anim-stagger: 3%;
+}
+
+
+
+html {
+  scroll-behavior: smooth;   /* nav links glide */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #dedede;
+
+  background-color: var(--page-bg-color);
+  background-image: var(--page-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+h1 {
+  font-family: Garamond, "Times New Roman", serif;
+  color: #dce0e7;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2, h3 {
+  color: #09c547;
+}
+
+header {
+  background-color: #00000073;
+  color: white;
+  text-align: center;
+}
+
+header, footer {
+  padding: 20px;
+}
+
+/* ---------- boxes ---------- */
+section {
+  box-sizing: border-box;
+  max-width: 880px;
+  margin: 20px auto;
+  padding: var(--box-padding);
+
+  
+  border: var(--box-border) solid transparent;
+  border-image: var(--box-img) var(--box-slice) fill / var(--box-border) stretch;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  color: #dedede;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+a {
+  color: #0c56c5;
+}
+
+a:hover {
+  color: #1bd465;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+/* scroll animations, (nagpatulong ako dito hehe)*/
+@keyframes slide-from-left {
+  from { opacity: 0; transform: translateX(-120px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-from-right {
+  from { opacity: 0; transform: translateX(120px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rise-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes reveal-line {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes title-drop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+header h1 {
+  animation: title-drop 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  
+    
+  h2, h3, h4          { animation: slide-from-left  0.8s ease-out both; }
+  hr                  { animation: reveal-line      0.8s ease-out 0.15s both;
+                        transform-origin: left; }
+  section p           { animation: rise-up          0.8s ease-out 0.3s both; }
+  section li          { animation: slide-from-right 0.8s ease-out 0.3s both; }
+  tbody tr            { animation: rise-up          0.8s ease-out 0.3s both; }
+  section img         { animation: pop-in           0.8s ease-out 0.2s both; }
+
+
+  
+  
+  @supports (animation-timeline: view()) {
+
+    
+    
+    section {
+      view-timeline: --box block;
+    }
+
+    h2, h3, h4, hr, section p, section li, tbody tr, section img {
+      animation-duration: auto;
+      animation-delay: 0s;
+      animation-timeline: --box;
+    }
+
+    
+    
+    h2                  { animation-range: cover calc(var(--anim-stagger) * 0) cover calc(var(--anim-stagger) * 0 + var(--anim-length)); }
+    hr                  { animation-range: cover calc(var(--anim-stagger) * 1) cover calc(var(--anim-stagger) * 1 + var(--anim-length)); }
+    h3, h4, section img { animation-range: cover calc(var(--anim-stagger) * 2) cover calc(var(--anim-stagger) * 2 + var(--anim-length)); }
+    section p           { animation-range: cover calc(var(--anim-stagger) * 3) cover calc(var(--anim-stagger) * 3 + var(--anim-length)); }
+
+    section li:nth-child(1)   { animation-range: cover calc(var(--anim-stagger) * 3) cover calc(var(--anim-stagger) * 3 + var(--anim-length)); }
+    section li:nth-child(2)   { animation-range: cover calc(var(--anim-stagger) * 4) cover calc(var(--anim-stagger) * 4 + var(--anim-length)); }
+    section li:nth-child(3)   { animation-range: cover calc(var(--anim-stagger) * 5) cover calc(var(--anim-stagger) * 5 + var(--anim-length)); }
+    section li:nth-child(n+4) { animation-range: cover calc(var(--anim-stagger) * 6) cover calc(var(--anim-stagger) * 6 + var(--anim-length)); }
+
+    tbody tr:nth-child(1) { animation-range: cover calc(var(--anim-stagger) * 1) cover calc(var(--anim-stagger) * 1 + var(--anim-length)); }
+    tbody tr:nth-child(2) { animation-range: cover calc(var(--anim-stagger) * 2) cover calc(var(--anim-stagger) * 2 + var(--anim-length)); }
+    tbody tr:nth-child(3) { animation-range: cover calc(var(--anim-stagger) * 3) cover calc(var(--anim-stagger) * 3 + var(--anim-length)); }
+    tbody tr:nth-child(4) { animation-range: cover calc(var(--anim-stagger) * 4) cover calc(var(--anim-stagger) * 4 + var(--anim-length)); }
+    tbody tr:nth-child(5) { animation-range: cover calc(var(--anim-stagger) * 5) cover calc(var(--anim-stagger) * 5 + var(--anim-length)); }
+    tbody tr:nth-child(6) { animation-range: cover calc(var(--anim-stagger) * 6) cover calc(var(--anim-stagger) * 6 + var(--anim-length)); }
+    tbody tr:nth-child(7) { animation-range: cover calc(var(--anim-stagger) * 7) cover calc(var(--anim-stagger) * 7 + var(--anim-length)); }
+
+    
+    
+    #about h2, #about hr, #about p, #about img {
+      animation-timeline: auto;
+      animation-range: normal;
+      animation-duration: 0.8s;
+    }
+    #about hr  { animation-delay: 0.15s; }
+    #about img { animation-delay: 0.2s; }
+    #about p   { animation-delay: 0.3s; }
+  }
+
+  
+  nav li { animation: none; }
+}
+
+
+
+
+/* ---------- Hello section: Flexbox info chips ---------- */
+.info-chips {
+  display: flex;
+  flex-wrap: wrap;            /* chips wrap onto new lines on small screens */
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.info-chips li {
+  flex: 1 1 200px;
+  padding: 10px 14px;
+  background-color: #00000073;
+  border: 1px solid #09c547;
+  border-radius: 8px;
+}
+
+/* ---------- Figures: image + caption + credit ---------- */
+figure {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.credit {
+  display: block;
+  font-size: 0.8rem;
+  font-style: normal;
+  color: #9aa3ad;
+}
+
+/* the SVG illustration should stay rectangular, not circular */
+img.plain-img {
+  border-radius: 12px;
+}
+
+/* ---------- Skills: CSS Grid layout ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.skill-card {
+  padding: 12px;
+  background-color: #00000073;
+  border: 1px solid #09c547;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-card h4 { margin: 0 0 6px; color: #09c547; }
+.skill-card p  { margin: 0; }
+
+/* HOVER EFFECT: skill cards lift up and brighten */
+.skill-card:hover {
+  transform: translateY(-6px);
+  background-color: #09c54733;
+}
+
+/* HOVER EFFECT: info chips glow */
+.info-chips li:hover {
+  background-color: #09c54733;
+}
+
+/* ---------- Back to Home link ---------- */
+.back-home {
+  color: #dedede;
+  font-weight: bold;
+}
+
+.back-home:hover {
+  color: #1bd465;
+}
+
+/* nav can wrap now that there are more links */
+nav ul {
+  flex-wrap: wrap;
+}
+
+/* ---------- RESPONSIVE: tablets and phones ---------- */
+@media (max-width: 700px) {
+  :root {
+    --box-border: 25px;       /* thinner frame so content has room */
+    --box-padding: 10px;
+  }
+
+  h1 { font-size: 1.8rem; }
+
+  nav ul {
+    gap: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  section { margin: 12px 8px; }
+
+  th, td { padding: 6px; font-size: 0.9rem; }
+}
+
+
+/* ====================================================
+   NAV BAR + BACK TO HOME STYLING
+   ==================================================== */
+
+/* ---------- Sticky nav: follows the page while scrolling ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;                          /* stays above the section boxes */
+  padding: 10px 12px;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);            /* frosted-glass look */
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid #09c547;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+nav ul {
+  margin: 0;
+  gap: 8px;
+}
+
+/* ---------- Nav links: pill buttons ---------- */
+nav a {
+  position: relative;
+  display: block;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #dedede;
+  text-decoration: none;
+  /* green fill that is hidden until hover (slides up from the bottom) */
+  background-image: linear-gradient(#09c547, #09c547);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 0%;
+  transition: background-size 0.3s ease, color 0.3s ease,
+              transform 0.3s ease, box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* HOVER EFFECT: green fill sweeps up, link lifts and glows */
+nav a:hover,
+nav a:focus-visible {
+  background-size: 100% 100%;
+  color: #04120a;
+  text-decoration: none;                 /* cancels the original underline */
+  border-color: #09c547;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(9, 197, 71, 0.45);
+  outline: none;
+}
+
+nav a:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* section headings won't hide behind the sticky nav after clicking a link */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ---------- Back to Home: pill button with a bouncing arrow ---------- */
+.back-home {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 2px solid #09c547;
+  border-radius: 999px;
+  color: #dedede;
+  font-weight: bold;
+  text-decoration: none;
+  background-image: linear-gradient(#09c547, #09c547);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 0% 100%;              /* fill grows from the left on hover */
+  transition: background-size 0.35s ease, color 0.35s ease,
+              box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* HOVER EFFECT: fill slides across, button lifts, arrow bounces */
+.back-home:hover,
+.back-home:focus-visible {
+  background-size: 100% 100%;
+  color: #04120a;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(9, 197, 71, 0.5);
+  outline: none;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+.back-home:hover .arrow {
+  display: inline-block;
+  animation: arrow-bounce 0.6s ease infinite;
+}
+
+/* ---------- Mobile: nav scrolls sideways instead of stacking ---------- */
+@media (max-width: 700px) {
+  nav ul {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  nav li { flex: 0 0 auto; }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  section { scroll-margin-top: 70px; }
+}
+
+
+
+
+/* image pops up with a little overshoot, like a bounce */
+@keyframes pop-bounce {
+  0%   { opacity: 0; transform: scale(0.4) translateY(40px); }
+  70%  { opacity: 1; transform: scale(1.08) translateY(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  #path img        { animation-name: pop-bounce; }
+  #path figcaption { animation: rise-up 0.8s ease-out 0.4s both; }
+
+  /* scroll-driven version: plays as the section scrolls into view */
+  @supports (animation-timeline: view()) {
+    #path figcaption {
+      animation-duration: auto;
+      animation-delay: 0s;
+      animation-timeline: --box;
+      animation-range: cover calc(var(--anim-stagger) * 3) cover calc(var(--anim-stagger) * 3 + var(--anim-length));
+    }
+  }
+}
+
+
+
+
+section a {
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #4da3ff;                         /* brighter blue, readable on dark */
+  text-decoration: none;
+  /* a 2px underline drawn as a background so it can animate */
+  background-image: linear-gradient(#4da3ff, #4da3ff);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 2px;
+  transition: background-size 0.3s ease, color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* little arrow after links that open in a new tab */
+section a[target="_blank"]::after {
+  content: " \2192";                      /* right arrow */
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT: underline grows into a green highlight, arrow slides */
+section a:hover,
+section a:focus-visible {
+  color: #04120a;
+  background-image: linear-gradient(#09c547, #09c547);
+  background-size: 100% 100%;
+  box-shadow: 0 0 12px rgba(9, 197, 71, 0.5);
+  outline: none;
+}
+
+section a[target="_blank"]:hover::after {
+  transform: translateX(4px);
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

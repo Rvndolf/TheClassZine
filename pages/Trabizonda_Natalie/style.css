@@ -1,0 +1,417 @@
+/*
+=====================================================================
+  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
+  File 2 of 2: style.css  (the LOOK and LAYOUT of your page)
+=====================================================================
+
+HOW CSS WORKS
+  A CSS rule has three parts:
+
+      selector {
+        property: value;
+      }
+
+  - selector : WHICH HTML element to style (for example body, h1, nav a)
+  - property : WHAT you want to change (for example color, font-size)
+  - value    : HOW you want to change it (for example blue, 20px)
+
+  Every declaration ends with a semicolon ( ; ).
+  A CSS comment starts with a slash followed by an asterisk, and ends
+  with an asterisk followed by a slash (like this big note you are reading).
+
+HOW TO USE THIS FILE
+  1. Work through the STEPS below, from top to bottom.
+  2. In each step there is an example inside a comment. To use it,
+     copy it BELOW the comment, then change the values to match your taste.
+     (Or remove the comment markers.) Experiment: change a value, save,
+     refresh your browser, and see what happens.
+  3. You need at least 5 different style rules for full points, and one
+     of them must use Flexbox (Step 4). Doing every step gives you more
+     than enough.
+
+TIPS
+  - Press F12 in your browser to open the developer tools. Right-click any
+    part of your page and choose "Inspect" to see which CSS applies to it.
+  - If a style does not work, check for: a missing semicolon, a missing
+    closing brace }, or a misspelled property.
+  - Colors can be written as names (steelblue), hex codes (#4682b4), or
+    rgb(70, 130, 180). Try a free color picker online to find hex codes.
+
+CHECKLIST
+  [/] Step 1: body (font, color, background)
+  [/] Step 2: headings (color, size, alignment)
+  [/] Step 3: box model (padding, margin, border)
+  [/] Step 4: Flexbox navigation menu
+  [/] Step 5: table styling
+  [ ] Step 6: image and link styling
+*/
+
+/* The body rule sets the font, text color,
+ and a grid-like green background for the whole page. */
+body {
+  position: relative;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  background-color: #27473c;
+  background-size: 80px 80px;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+}
+hr {
+  border: 1px solid #c1272d;
+}
+h1 {
+  color: #e67e22;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  color: #e67e22;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+h3 {
+  color: #e67e22;
+  text-transform: uppercase;
+}
+
+header {
+  border: 2px solid #e67e22;
+  box-shadow: 8px 8px #a84c4c;
+  background-color: #1d1a19;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.tagline {
+  color: #ffffff;
+  font-weight: bold;
+}
+.subtitle {
+  color: #ffffff;
+  font-size: 12px;
+}
+.profile-info {
+  flex: 1;
+  text-shadow: 2px 2px 0px #1d1a19;
+  min-width: 220px;
+}
+.picture-caption {
+  margin-bottom: 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #1d1a19;
+  font-size: 18px;
+}
+.picture-box {
+  width: 280px;
+  max-width: 100%;
+  padding: 15px;
+  text-align: center;
+  background-color: #e67e22;
+  background-size: 80px 80px;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+}
+.label {
+  color: #ffffff;
+  font-weight: bold;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid #c44b30;
+  background-color: #e67e22;
+  background-size: 80px 80px;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5) 50%, transparent 50%);
+  gap: 30px;
+  margin: 25px 0;
+}
+
+img {
+  border: 3px solid #1d1a19;
+  max-width: 100%;
+  box-shadow: 4px 4px #393837;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* IMAGE HOVER: Adds an animation when the cursor moves over an image */
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px #a84c4c;
+}
+/* SECTIONS: Creates the main content panels */
+section {
+  background-color: #1d1a19;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #c44b30;
+  box-shadow: 10px 10px #393837;
+}
+
+header,
+footer {
+  padding: 20px;
+}
+.navnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 15px auto;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  border: 2px solid #e67e22;
+  background-color: #1d1a19;
+  padding: 10px 10px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #1d1a19;
+  background-color: #e67e22;
+  transform: translateY(-3px);
+  box-shadow: 4px 4px #27473c;
+}
+
+li {
+  transition: transform 0.2s;
+}
+
+main li:hover {
+  color: #e67e22;
+  transform: translateX(6px);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e67e22;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #393837;
+}
+tbody tr:hover {
+  background-color: #27473c;
+}
+
+main a {
+  color: #e67e22;
+}
+
+main a:hover {
+  color: #c1272d;
+}
+.favorites-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 25px auto;
+}
+.favorite-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  padding: 15px;
+  background-color: #393837;
+  border: 2px solid #e67e22;
+  box-shadow: 4px 4px #a84c4c;
+  transition: all 0.3s ease;
+}
+.favorite-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: none;
+  box-shadow: none;
+}
+.favorite-card:hover {
+  transform: translateY(-6px);
+  background-color: #e67e22;
+}
+.favorite-card:hover img {
+  transform: scale(1.1);
+}
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 20px auto;
+  max-width: 800px;
+}
+.back-home {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #393837;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  border: 2px solid #e67e22;
+  box-shadow: 5px 5px #a84c4c;
+  transition: all 0.3s ease;
+}
+.back-home:hover {
+  background-color: #e67e22;
+  color: #1d1a19;
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px #a84c4c;
+}
+/* RESPONSIVE DESIGN: Adjusts the layout for smaller screens */
+@media (max-width: 600px) {
+  header,
+  section,
+  footer {
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .navnav {
+    padding: 8px 5px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .back-home {
+    font-size: 11px;
+    padding: 10px 14px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .picture-box {
+    width: 85%;
+  }
+
+  .profile-info {
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .favorites-container {
+    gap: 15px;
+  }
+
+  .favorite-card {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+  }
+
+  .favorite-card img {
+    width: 75px;
+    height: 75px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

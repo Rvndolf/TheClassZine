@@ -1,0 +1,390 @@
+/*
+=====================================================================
+  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
+  File 2 of 2: style.css  (the LOOK and LAYOUT of your page)
+=====================================================================
+
+HOW CSS WORKS
+  A CSS rule has three parts:
+
+      selector {
+        property: value;
+      }
+
+  - selector : WHICH HTML element to style (for example body, h1, nav a)
+  - property : WHAT you want to change (for example color, font-size)
+  - value    : HOW you want to change it (for example blue, 20px)
+*/
+
+
+body {
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     font-size: 16px;
+     line-height: 1.5;
+     color: antiquewhite;
+     background: url('images/MBG3.jpg');
+     background-size: cover;
+     margin: 0;  
+     overflow-x: hidden;
+     }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+     font-family: 'Playfair Display', Georgia, serif;
+     color: antiquewhite;
+     font-size: 3.0rem;
+     text-align: center;
+   }
+
+  h2, h3 {
+     font-family: 'Playfair Display', Georgia, serif;
+     color: beige;
+         }
+
+  header {
+     background-color: #1F2A44;
+     color: white;
+     text-align: center;
+         }
+
+
+section {
+     background-color: rgba(10, 10, 10, 0.87);  
+     backdrop-filter: blur(3px);
+     padding: 10px;
+     margin: 20px 15px auto;
+     max-width: 1000px;
+     max-height: fit-content;
+     border: 1px solid black;
+     border-radius: 8px;
+        }
+
+  header, footer {
+     padding: 10px;
+                 }
+
+nav {
+     position:sticky;
+     top:0;
+     z-index: 100;
+     background-color: #00040D;
+     padding: 3px 24px;
+     border-radius: 3px;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 6px 16px;
+     align-items: center;
+
+     
+    }
+nav span {
+          margin-right: auto;
+          color: white;
+          font-weight: 700;
+         }
+
+nav ul {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     list-style: none;
+     padding: 0;
+       }
+:root {
+    --white: white;
+}
+  nav a, table a {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+        }
+
+  nav a:hover, table a:hover {
+    background-color: var(--white); color:#00040D;
+              }
+.hero {
+       background: url('images/BGP2.jpg');
+       background-size: cover;
+       background-position: center 20%; 
+       border-radius: 8px;  
+       min-height: 300px;                
+       padding: 25px 15px;                
+       text-align: center;
+       margin: 5px 50px auto;
+    
+      }
+
+.btn {
+    display: inline-block;
+    background-color: transparent;      
+    color: navy;                
+    text-decoration: none;          
+    font-weight: bold;
+    padding: 10px 28px;            
+    border-radius: 50px;            
+    transition: transform 0.3s, box-shadow 0.3s;
+     }
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    background-color: #FFFDF8;
+    color: #1F2A44;
+}   
+
+.layout {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 10px;
+    padding: 25px 50px;
+    align-items: start;
+}
+ 
+.sidebar {
+    position: sticky;
+    top: 80px;               
+    background-color: rgba(10, 10, 10, 0.6);  
+    backdrop-filter: blur(5px);
+    color: #F4EFE6;
+    border-radius: 12px;
+    padding: 5px 5px;
+    text-align: center;
+}
+ 
+.sidebar img {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid darkred;
+}
+.sidebar h2 { color: #F4EFE6; font-size: 1.0rem; margin: 12px 0 4px; }
+.sidebar p { margin: 2px 0; font-size: 0.8rem; opacity: 0.85; }
+ 
+
+.tabs input {display: none;}
+.tabs label {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 8px 8px 0 0;
+    background-color: var(--line);
+    color: var(--navy);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+#interests:checked ~ label[for="interests"],
+#goals:checked ~ label[for="goals"] {
+    background-color: #202124;
+    color: #F4EFE6;
+}
+ 
+.panel { display: none; }
+#interests:checked ~ .p2, #goals:checked ~ .p3 { display: block; }
+ 
+/* ---------- PHONES AND SMALL SCREENS ---------- */
+@media (max-width: 800px) {
+    body {
+        font-size: 15px;
+        overflow-x: hidden;
+    }
+
+    nav {
+        position: sticky;
+        width: 100%;
+        padding: 10px 12px;
+        justify-content: center;
+    }
+
+    nav span {
+        width: 100%;
+        margin: 0 0 6px;
+        text-align: center;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        margin: 0;
+    }
+
+    .hero {
+        width: auto;
+        margin: 8px 12px;
+        padding: 30px 12px;
+        min-height: 220px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 12px;
+    }
+
+    main {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+        margin: 12px 0;
+        padding: 16px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .tabs label {
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 4px;
+    }
+
+    .HBD {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+        max-width: 100%;
+    }
+
+    th,
+    td {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        padding: 8px 6px;
+    }
+
+    #favorites table {
+        table-layout: fixed;
+        font-size: 0.9rem;
+    }
+}
+
+table {
+     border-collapse: collapse;
+     width: 100%;
+      }
+
+  th{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    color: black
+    }
+
+  th, td {
+     border: 1px solid #cccccc;
+     padding: 10px;
+     text-align: left;
+         }
+
+  tr:nth-child(even) {
+     background-color: #28282B;
+                     }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+    .gallery { grid-template-columns: 1fr; }
+}                   
+
+
+.HBD { 
+            width: 450px;
+            height:auto;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+      
+        }
+
+img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(31, 42, 68, 0.25);
+          }
+
+
+footer {
+     text-align: center;
+     font-size: 0.9rem;
+     color: antiquewhite;
+       }
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

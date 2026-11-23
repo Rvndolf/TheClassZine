@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jax.exe | Goal 3: Build Something Meaningful</title>
+    <!-- Pixelated / Retro font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .roadmap-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .roadmap-container::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 30px;
+            width: 4px;
+            border-left: 3px dashed var(--primary-red);
+            z-index: 1;
+        }
+
+        .roadmap-step {
+            position: relative;
+            margin-bottom: 35px;
+            padding-left: 50px;
+            z-index: 2;
+        }
+
+        .roadmap-step::before {
+            content: "◆";
+            position: absolute;
+            left: 17px;
+            top: 0;
+            color: var(--light-red);
+            font-size: 1.2rem;
+            background-color: var(--card-bg);
+            padding: 2px 0;
+        }
+
+        .roadmap-card {
+            background-color: #141414;
+            border: 1px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .step-title {
+            font-family: var(--font-pixel);
+            font-size: 1.1rem;
+            color: var(--light-red);
+            margin-bottom: 10px;
+        }
+
+        .prog-symbol {
+            color: var(--light-red);
+            font-family: var(--font-pixel);
+            font-size: 0.8rem;
+            margin-right: 6px;
+        }
+
+        .milestone-list {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        .milestone-list li {
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            background: rgba(204, 0, 0, 0.1);
+            border-left: 3px solid var(--primary-red);
+            border-radius: 4px;
+        }
+
+        .reflection-box {
+            background-color: rgba(204, 0, 0, 0.15);
+            border-left: 4px solid var(--light-red);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Goal Roadmap: Create Something Meaningful</h1>
+        <p class="subtitle">Step-by-Step Vision: Merging Technology, Music, and Empathy to Help Others</p>
+        <nav class="navbar">
+            <a href="index.html">Main Page</a>
+            <a href="index.html#hobbies">Back to Hobbies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Objective Overview</h2>
+            <p>
+                To me, programming and songwriting are not just technical exercises or pastimes, they are medium through which we connect with people on a human level. My deepest dream is to combine my computer science background, my love for music, and my passion for youth leadership into projects that heal, inspire, and uplift lives.
+            </p>
+            <div class="reflection-box">
+                "Whether it's a song that articulates the silent pain someone couldn't express, or code written to solve a real community problem, true achievement lies in making someone's world a little brighter."
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>The Impact & Purpose Roadmap</h2>
+            <div class="roadmap-container">
+                
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 1: Empathy & Connection Through Song</div>
+                        <p>Using music as a vehicle for emotional healing and self-expression, writing stories that make listeners feel understood.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[✓]</span> Composed original tracks (such as "Di Pa Rin" and "Clinging") that turn personal heartbreak and vulnerability into shared comfort.</li>
+                            <li><span class="prog-symbol">[✓]</span> Wrote personal songs for loved ones and friends to offer encouragement and emotional support during difficult times.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Reaching listeners on digital platforms to share songs that resonate with people going through similar life struggles.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 2: Youth Leadership & Community Roots</div>
+                        <p>Giving back to the local community in Tabaco City by advocating for youth development, education, and shared growth.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[✓]</span> Served as a delegate in PAGSIBOL 2026 (4th Tabaco City Youth Congress), collaborating on youth development initiatives.</li>
+                            <li><span class="prog-symbol">[✓]</span> Shared inspirational messages during valedictory and school addresses to encourage fellow students to pursue their dreams.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Mentoring peers in computer science coursework and organizing collaborative study groups at Bicol University.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 3: Tech for Good & Digital Tools</div>
+                        <p>Harnessing software engineering skills to build accessible, practical applications that solve actual problems for everyday people.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[&gt;]</span> Designing user-centered, accessible web layouts and software interfaces from the ground up without unnecessary bloat.</li>
+                            <li><span class="prog-symbol">[ ]</span> Developing free open-source tools, educational utilities, or community management applications.</li>
+                            <li><span class="prog-symbol">[ ]</span> Exploring the intersection of digital audio technology and interactive software to create accessible creative tools for aspiring artists.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 4: Lasting Legacy & Universal Reach</div>
+                        <p>Building a life's work where technology and music come together to leave a lasting positive mark on the world.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[ ]</span> Reaching full potential as a professional singer-songwriter whose music provides comfort across generations.</li>
+                            <li><span class="prog-symbol">[ ]</span> Launching tech solutions that improve local education, community organization, or creative accessibility.</li>
+                            <li><span class="prog-symbol">[ ]</span> Inspiring the next generation of students from my hometown to pursue both tech and the arts with heart.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="index.html#hobbies" class="close-btn">&larr; Return to Main Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jazper Cipres | Built for CS101 , Bicol University</p>
+        <p>jax.exe</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+/* ==========================================
+AEON'S PERSONAL PROFILE
+Modern Minimalist Portfolio Design
+========================================== */
+
+/* GLOBAL SETTINGS */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  }
+
+body {
+font-family: 'Segoe UI', Arial, sans-serif;
+background-color: #f4f7fb;
+color: #334155;
+margin: 0;
+line-height: 1.8;
+font-size: 16px;
+}
+
+/* ==========================================
+HEADER AND INTRODUCTION
+========================================== */
+
+header {
+background: linear-gradient(135deg, #101f35, #1e4165, #28577e);
+color: white;
+text-align: center;
+padding: 65px 20px 35px;
+}
+
+header h1 {
+color: #ffffff;
+font-size: 2.8rem;
+font-weight: 800;
+letter-spacing: 1px;
+margin: 0;
+}
+
+header p {
+color: #b9d5ef;
+font-size: 1.1rem;
+letter-spacing: 3px;
+margin-top: 5px;
+text-transform: uppercase;
+}
+
+/* ==========================================
+NAVIGATION
+========================================== */
+
+nav {
+margin-top: 35px;
+}
+
+nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+nav a {
+display: inline-block;
+color: #ffffff;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+padding: 10px 22px;
+border: 1px solid rgba(255,255,255,0.25);
+border-radius: 30px;
+transition: all 0.3s ease;
+}
+
+nav a:hover {
+background-color: white;
+color: #173b5e;
+transform: translateY(-3px);
+}
+
+/* ==========================================
+MAIN CONTENT
+========================================== */
+
+main {
+max-width: 1050px;
+margin: 45px auto;
+padding: 0 20px;
+}
+
+/* ==========================================
+CONTENT SECTIONS
+========================================== */
+
+section {
+background-color: #ffffff;
+padding: 35px;
+margin-bottom: 30px;
+border-radius: 16px;
+border: 1px solid #e5eaf1;
+box-shadow: 0 5px 20px rgba(25, 55, 85, 0.06);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 28px rgba(25, 55, 85, 0.10);
+}
+
+h2 {
+color: #193c5c;
+font-size: 1.75rem;
+font-weight: 750;
+margin-top: 0;
+margin-bottom: 22px;
+padding-bottom: 12px;
+border-bottom: 3px solid #dce9f5;
+}
+
+h3 {
+color: #28577e;
+font-size: 1.2rem;
+margin-top: 25px;
+}
+
+/* ==========================================
+ABOUT ME
+========================================== */
+
+#about img {
+width: 200px;
+height: 230px;
+object-fit: cover;
+border-radius: 14px;
+float: left;
+margin: 5px 25px 15px 0;
+border: 4px solid #e6eff8;
+box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+transition: transform 0.3s ease;
+}
+
+#about img:hover {
+transform: scale(1.04);
+}
+
+#about p {
+text-align: justify;
+}
+
+/* ==========================================
+HOBBIES AND GOALS
+========================================== */
+
+#hobbies ul,
+#hobbies ol {
+padding-left: 25px;
+}
+
+#hobbies li {
+padding: 7px 0;
+}
+
+#hobbies ul li::marker {
+color: #3676a8;
+}
+
+#hobbies ol li::marker {
+color: #24527a;
+font-weight: bold;
+}
+
+/* ==========================================
+FAVORITES
+========================================== */
+
+#favorites p {
+background-color: #f1f6fb;
+padding: 20px;
+border-left: 4px solid #3676a8;
+border-radius: 8px;
+}
+
+a {
+color: #24669b;
+font-weight: 600;
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: #102e4c;
+}
+
+/* ==========================================
+FOOTER
+========================================== */
+
+footer {
+background-color: #101f35;
+color: #d5e2ef;
+text-align: center;
+padding: 25px 15px;
+margin-top: 50px;
+}
+
+footer p {
+margin: 0;
+font-size: 0.9rem;
+}
+
+/* ==========================================
+RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 650px) {
+
+header {
+    padding: 45px 15px 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    gap: 8px;
+}
+
+nav a {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+}
+
+main {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+section {
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.45rem;
+}
+
+#about img {
+    float: none;
+    width: 180px;
+    height: auto;
+    margin: 10px auto 20px;
+}
+
+#about p {
+    text-align: left;
+}
+
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

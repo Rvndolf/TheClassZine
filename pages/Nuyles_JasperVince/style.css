@@ -1,0 +1,344 @@
+
+/* =================================
+   1. GENERAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+:root {
+    --background: #0b0b0f;
+    --card-background: #15151e;
+    --purple: #9333ea;
+    --light-purple: #c084fc;
+    --text: #f5f3ff;
+    --muted: #b5b0c2;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* =================================
+   2. HEADER AND NAVIGATION
+================================= */
+
+header {
+    text-align: center;
+    padding: 60px 20px 35px;
+    background: linear-gradient(
+        135deg,
+        #1a1029,
+        #0b0b0f,
+        #1b1030
+    );
+    border-bottom: 1px solid #39234e;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--light-purple);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+    padding: 9px 16px;
+    border: 1px solid #49305e;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   3. MAIN CONTENT
+================================= */
+
+main {
+    max-width: 1050px;
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+section {
+    background: var(--card-background);
+    padding: 30px;
+    border: 1px solid #30223e;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+section:hover {
+    border-color: var(--purple);
+    transform: translateY(-4px);
+}
+
+
+/* =================================
+   4. HEADINGS AND TEXT
+================================= */
+
+h2 {
+    color: var(--light-purple);
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #49305e;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #d8b4fe;
+    margin: 22px 0 12px;
+}
+
+p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+
+/* =================================
+   5. PROFILE IMAGE
+================================= */
+
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    width: 190px;
+    height: 190px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--purple);
+    box-shadow: 0 0 25px rgba(147, 51, 234, 0.35);
+}
+
+figcaption {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+
+/* =================================
+   6. LISTS
+================================= */
+
+ul,
+ol {
+    padding-left: 25px;
+    color: var(--muted);
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: var(--light-purple);
+}
+
+
+/* =================================
+   7. TABLE
+================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #392b49;
+}
+
+th {
+    background: #32164d;
+    color: white;
+}
+
+td {
+    color: var(--muted);
+}
+
+tbody tr:hover {
+    background: #251832;
+}
+
+
+/* =================================
+   8. LINKS
+================================= */
+
+a {
+    color: var(--light-purple);
+    transition: 0.3s ease;
+}
+
+p a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =================================
+   9. FOOTER
+================================= */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #121019;
+    border-top: 1px solid #39234e;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid var(--purple);
+    border-radius: 20px;
+}
+
+footer a:hover {
+    background: var(--purple);
+    color: white;
+}
+
+
+/* =================================
+   10. MOBILE RESPONSIVENESS
+================================= */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+        padding: 7px 12px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

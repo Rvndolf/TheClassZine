@@ -1,0 +1,624 @@
+/* =========================================================
+   JEANNE PAGE: FINAL PROJECT
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Monaco', Courier, monospace;
+  background-image: url("Images/main bg.png");
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* ---------- LACE (image) ---------- */
+.lace {
+  position: relative;
+  z-index: 4;
+  height: 50px;
+  margin-top: -1px;
+  background-image: url("Images/lace header.png");
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: auto 100%;
+  pointer-events: none;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: relative;
+  z-index: 3;
+  background-color: #fbdeff;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 95px;
+  line-height: 1.05;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 3px #5a3a2a;
+}
+
+header p {
+  margin-top: 4px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #6b3e00;
+  line-height: 1.6;
+}
+
+/* ---------- NAVIGATION BUTTONS ---------- */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px 10px;
+  line-height: 1.6;
+}
+
+nav a {
+  padding: 14px 18px;
+  background-color: #5a3a2a;
+  color: #fff7ca;
+  text-decoration: none;
+  text-align: center;
+  font-size: 19px;
+  border-radius: 999px;
+}
+
+nav a:hover {
+  background-color: #6d4733;
+  color: #ffffff;
+}
+
+/* ---------- LAYOUT ---------- */
+.layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin-top: -55px;
+  min-height: 1400px;
+}
+
+/* ---------- FILM STRIP / PHOTOGRAPHY COLLAGE (images) ---------- */
+.film {
+  flex: 0 0 18%;
+  min-width: 80px;
+  max-width: 240px;
+  padding: 80px 36px 0 38px;
+  background-color: #ffe168;
+}
+
+.film img {
+  display: block;
+  width: 100%;
+  height: 218px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(78, 64, 0, 0.605);
+}
+
+/* ---------- MAIN CONTENT / SECTIONS ---------- */
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 160px 52px 80px 78px;
+  position: relative;
+  z-index: 3;
+}
+
+section {
+  background-color: #febdffce;
+  border: 1px solid #cccccc;
+  border-radius: 35px;
+  padding: 10px 30px 30px;
+  margin-top: 25px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+/* ---------- FLEX BOX ---------- */
+.media-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.media-row img {
+  flex: 0 1 200px;
+}
+
+.media-row p {
+  flex: 1 1 250px;
+}
+
+/* ---------- INNER BOX ---------- */
+.card {
+  background-color: rgba(255, 240, 190, 0.92);
+  border-radius: 30px;
+  padding: 24px 40px 40px;
+  margin-top: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card ol,
+.card ul {
+  padding-left: 60px;
+}
+
+.card p {
+  text-indent: 40px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ---------- TABLE ---------- */
+table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid #800060;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #4a0a36;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #a31f6c;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #ffb1e8;
+}
+
+tr:nth-child(odd) {
+  background-color: #fffed8;
+}
+
+.table-wrap {
+  background-color: rgba(224, 211, 168, 0.92);
+  border-radius: 30px;
+  padding: 24px 40px 40px;
+  margin-top: 24px;
+  overflow-x: auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- TABLE DROPDOWN FOR PROGRESS / "DONE?" ---------- */
+select {
+  padding: 8px 12px;
+  background-color: #bb00c1;
+  color: #fff5e1;
+  font-family: 'Monaco', Courier, monospace;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 80px;
+}
+
+/* ---------- HOVER EFFECT (dropdowns + list items) ---------- */
+select:hover,
+li:hover {
+  background-color: #3e2300;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(58, 0, 51, 0.241);
+  border-radius: 30px;
+}
+
+/* ---------- LINKS ---------- */
+a {
+  color: #3e2300;
+}
+
+a:visited {
+  color: #ff00c3;
+}
+
+a:hover {
+  color: #fff7e9;
+}
+
+.back-to-top {
+  display: block;
+  width: fit-content;
+  margin: 20px 0 0 auto;
+  padding: 8px 18px;
+  background-color: #5a3a2a;
+  color: #fff7ca;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 999px;
+}
+
+.back-to-top:hover {
+  background-color: #6d4733;
+  color: #ffffff;
+}
+
+/* ---------- VINYL (image) ---------- */
+.vinyl {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 520px;
+  height: 520px;
+  background-image: url("images/vinyl.gif");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: rgb(250, 237, 115);
+  text-align: center;
+  padding: 8px 20px;
+}
+
+/* ---------- AUDIO PLAYER ---------- */
+audio {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 200px;
+  height: 35px;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+/* =========================================================
+   MOBILE OPTIMIZATION
+   Everything below only applies on small screens (tablet
+   portrait / phones), so the desktop view above stays as-is.
+   ========================================================= */
+
+/* ---------- TABLETS & PHONES ---------- */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: clamp(30px, 9.5vw, 56px);
+    letter-spacing: 2px;
+    -webkit-text-stroke: 2px #5a3a2a;
+    overflow-wrap: anywhere;
+  }
+
+  header p {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  /* Navigation */
+  nav {
+    margin-top: 12px;
+  }
+
+  nav ul {
+    gap: 12px 8px;
+    margin-top: 6px;
+  }
+
+  nav a {
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  /* Lace under the header */
+  .lace {
+    height: 34px;
+  }
+
+  /* Layout: stack the film strip on top of the content */
+  .layout {
+    flex-direction: column;
+    margin-top: -34px;
+    min-height: 0;
+  }
+
+  /* Film strip becomes a swipeable horizontal row */
+  .film {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    display: flex;
+    gap: 10px;
+    padding: 44px 14px 26px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .film img {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 160px;
+    margin-bottom: 0;
+  }
+
+  /* Main content */
+  main {
+    flex: none;
+    width: 100%;
+    padding: 20px 12px 90px;
+  }
+
+  section {
+    border-radius: 24px;
+    padding: 6px 16px 20px;
+    margin-top: 18px;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    padding-top: 8px;
+  }
+
+  .card {
+    border-radius: 22px;
+    padding: 16px 18px 22px;
+    margin-top: 16px;
+  }
+
+  .card ol,
+  .card ul {
+    padding-left: 28px;
+  }
+
+  .card p {
+    text-indent: 20px;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+
+  .media-row {
+    gap: 16px;
+  }
+
+  .media-row img {
+    flex: 0 1 170px;
+  }
+
+  /* Table: each row becomes its own stacked card */
+  .table-wrap {
+    border-radius: 22px;
+    padding: 14px 12px 18px;
+    overflow-x: visible;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  table {
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
+  }
+
+  /* hide the header row visually (still readable by screen readers) */
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  tr {
+    margin-bottom: 14px;
+    border: 1px solid #4a0a36;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  tr:last-child {
+    margin-bottom: 0;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid rgba(74, 10, 54, 0.25);
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  /* first cell acts as the card's title */
+  td:nth-child(1) {
+    background-color: #a31f6c;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* small labels, since the header row is hidden */
+  td::before {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #800060;
+  }
+
+  td:nth-child(1)::before {
+    content: none;
+  }
+
+  td:nth-child(2)::before {
+    content: "Target Year";
+  }
+
+  td:nth-child(3)::before {
+    content: "Reason";
+  }
+
+  td:nth-child(4)::before {
+    content: "Done?";
+  }
+
+  /* Decorations that would cover the content on a small screen */
+  .vinyl {
+    width: 220px;
+    height: 220px;
+  }
+
+  audio {
+    bottom: 8px;
+    right: 8px;
+    width: 150px;
+    height: 32px;
+  }
+
+  footer {
+    padding: 12px 14px 56px;
+    font-size: 13px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+@media (max-width: 480px) {
+
+  header h1 {
+    -webkit-text-stroke: 1.5px #5a3a2a;
+  }
+
+  nav a {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+
+  main {
+    padding: 16px 8px 90px;
+  }
+
+  section {
+    padding: 4px 12px 16px;
+  }
+
+  .card {
+    padding: 14px 14px 18px;
+  }
+
+  .film img {
+    width: 110px;
+    height: 140px;
+  }
+
+  .vinyl {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* ---------- TOUCH SCREENS: no "stuck" hover after tapping ---------- */
+@media (hover: none) {
+
+  li:hover {
+    background-color: transparent;
+    color: inherit;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  select:hover {
+    background-color: #bb00c1;
+    color: #fff5e1;
+    transform: none;
+    box-shadow: none;
+    border-radius: 80px;
+  }
+
+  a:hover {
+    color: #3e2300;
+  }
+
+  a:visited:hover {
+    color: #ff00c3;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ===============================================================
+       HEADER
+       <header> is a semantic tag for the top part of the page
+       (title, logo, introduction).
+       <h1> is the MAIN heading. Use only ONE h1 per page.  
+       ================================================================ -->
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#IntroComp">Computing</a></li>
+                <li><a href="#Goals">Goals</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#Reflection">Reflection</a></li>
+            </ul>
+        </nav>
+
+        <div class="home">
+
+            <div class="home-image">
+                <img src="images/baby-Ants.jpg" alt="Anthony's profile picture">
+            </div>
+
+            <div class="home-text">
+
+                <h1>John Anthony C. Llagas</h1>
+
+                <h2>BS Computer Science Student</h2>
+
+                <p>
+                    I am a carefree, empathetic, friendly,
+                    and enjoyable person to be around :3
+                </p>
+
+                <a href="#about" class="home-btn">
+                    Get To Know Me →
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+    <!-- ===============================================================
+       MAIN
+       <main> is a semantic tag for the main content of the page.
+       Use only one <main> per page.
+       <section> groups related content. The id attribute gives it a
+       unique name, which the nav links above jump to.
+       <h2> is a SUB-heading. Use h2 for each major section.
+       (Heading order: h1 > h2 > h3. Do not skip levels.)
+       ================================================================ -->
+    <main>
+
+        <!-- ------------- SECTION 1: ABOUT ME ------------- -->
+        <section id="about">
+            <h2>About Me</h2>
+            <!--
+        <img> shows an image. It has no closing tag.
+          src = where the image file is (the file path)
+          alt = text describing the image (for screen readers, and
+                shown if the image fails to load). Never leave it empty.
+
+      -->
+            <div class="wrapper">
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="The maker of a robot" width="200">
+                </div>
+                <!-- YOUR COMMENT 1: The image above shows the hardwork we put 
+         through on building a fire fighting robot for our capstone. -->
+                <div class="intro">
+                    <p>
+                        Hello! My name is <strong>Anthony</strong>. I am a first-year BS Computer Science
+                        student at Bicol University. I am a carefree, friendly, and enjoyable person to be
+                        around. I chose Computer Science because I enjoy solving problems and exploring the
+                        logic behind programming. My interests include anime, online games, and road trips.
+                        To me, each day feels like a new chapter filled with opportunities to create lasting
+                        memories.
+                    </p>
+                </div>
+            </div>
+
+            <!--
+      <p> is a PARAGRAPH.
+      <strong> makes text bold (important). <em> makes text italic (emphasis).
+    -->
+
+        </section>
+
+        <!-- ------------- SECTION 2: HOBBIES AND GOALS ------------- -->
+        <section id="hobbies">
+            <h2>My Hobbies</h2>
+
+            <!--
+        <ul> = UNORDERED list (bullets), used when order does not matter.
+        <ol> = ORDERED list (1, 2, 3), used when order matters.
+        <li> = one item in either kind of list.
+        TODO: Replace the sample items with your own hobbies.
+      -->
+            <div class="container">
+                <div class="hobbies">
+                    <ul>
+                        <li>Calling with friends</li>
+                        <li>Playing games</li>
+                        <li>Casual walking</li>
+                    </ul>
+                </div>
+                <div class="hobbies2">
+                    <ul>
+                        <li>Watching Anime</li>
+                        <li>Playing basketball</li>
+                        <li>Casual outings</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="IntroComp">
+            <h2>My Path Into Computing</h2>
+            <p>Since I was little, technology has always been one of my greatest interests.
+                I would often open broken phones just to see how their components worked. As I grew older,
+                I became even more curious about how games and technology were created. This curiosity
+                eventually led me to become fascinated with coding and the logic behind it.
+            </p>
+            <p>Additionally, this interest aligns with my way of thinking, as I often enjoy
+                finding solutions and fixing problems whenever I can. Because of this passion for
+                problem-solving and technology, I chose to pursue a degree in Computer Science.</p>
+        </section>
+        <!-- ------------- SECTION 3: GOALS ------------- -->
+        <section id="Goals">
+            <h2>My Goals In Life</h2>
+            <!--
+        TABLE TAGS
+          <table>   the whole table
+          <thead>   the header part (column titles)
+          <tbody>   the body part (the data rows)
+          <tr>      one table ROW
+          <th>      a header CELL (bold and centered by default)
+          <td>      a regular data CELL
+        Each <tr> must have the same number of cells as the other rows.
+        TODO: Replace the sample rows with your real subjects. Add more rows
+              by copying one whole <tr>...</tr> block and pasting it below it.
+      -->
+            <div class="goals-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CATEGORY</th>
+                            <th>PERSONAL GOAL</th>
+                            <th>ACTION PLAN</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Life</td>
+                            <td>Become the best version of myself</td>
+                            <td>Continue learning more about myself</td>
+                        </tr>
+                        <tr>
+                            <td>Breadwinner</td>
+                            <td>Provide for my family</td>
+                            <td>Build a stable career and income</td>
+                        </tr>
+                        <tr>
+                            <td>Academic</td>
+                            <td>Graduate without a failing mark</td>
+                            <td>Study hard and practice regularly</td>
+                        </tr>
+                        <tr>
+                            <td>Programming</td>
+                            <td>Improve my programming skills</td>
+                            <td>Practice coding and build projects</td>
+                        </tr>
+                        <tr>
+                            <td>Discipline</td>
+                            <td>Develop better time management</td>
+                            <td>Follow a consistent daily routine</td>
+                        </tr>
+                        <tr>
+                            <td>Determination</td>
+                            <td>Develop the courage to face failure</td>
+                            <td>Keep trying even when things get difficult</td>
+                        </tr>
+                        <tr>
+                            <td>Discovery</td>
+                            <td>Remain curious about the world</td>
+                            <td>Try new things and explore new experiences</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- YOUR COMMENT 2: 
+         Tr(table rows) makes a row for your table to input.Secondly, Th(Table header),
+         means it highlights the main point or title of the table. Ultimatley, Td(Table Data) is the contents
+         of the table that supports the th(table header).-->
+        </section>
+
+        <!-- ------------- SECTION 4: FAVORITES (LINK) ------------- -->
+        <section id="favorites">
+            <h2>My Favorites</h2>
+
+            <!--
+        <a> is an ANCHOR, which creates a LINK.
+          href = where the link goes (the web address)
+          target="_blank" opens the link in a NEW tab
+          rel="noopener" is a safety setting that should go with target="_blank"
+      -->
+
+            <p>
+                These are some of the apps and websites I frequently use for
+                entertainment, communication, and learning.
+            </p>
+
+            <div class="favorites-cube">
+
+                <div class="fav-row">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/facebook.jpg" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.spotify.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/spotify.png" alt="Spotify">
+                    </a>
+
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/discord.png" alt="Discord">
+                    </a>
+                </div>
+
+                <div class="fav-row">
+                    <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/netflix.jpg" alt="Netflix">
+                    </a>
+
+                    <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/roblox.png" alt="Roblox">
+                    </a>
+
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/youtube.png" alt="YouTube">
+                    </a>
+                </div>
+
+                <div class="fav-row">
+                    <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/chrome.jpg" alt="Chrome">
+                    </a>
+
+                    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/tiktok.png" alt="TikTok">
+                    </a>
+
+                    <a href="https://www.chess.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/chess.png" alt="Chess">
+                    </a>
+                </div>
+
+
+            </div>
+            <!-- The images below represent apps and websites I frequently use. -->
+        </section>
+        <section id="Reflection">
+            <h2>Reflection</h2>
+            <p>
+                I learned that web design is much more complex than using traditional editing applications.
+                In web design, the placement and appearance of elements must be carefully planned and
+                implemented through coding. Unlike traditional editors, where users can simply select, drag,
+                and modify objects, web development requires manually controlling the layout and design
+                using the features and tools provided by the programming language.
+            </p>
+            <p>
+                Additionally, compared to my previous About Me activity, I improved the overall user
+                interface of my webpage to make it cleaner, more organized, and more professional.
+                I also included more information about myself while still preserving the main ideas from
+                the original version. This webpage serves as an improved and updated version of my previous work.
+            </p>
+        </section>
+        <a class="back-to-home" href="../../index.html" aria-label="Back to home">
+            Back to home
+        </a>
+    </main>
+
+    <!-- ===============================================================
+       FOOTER
+       <footer> is a semantic tag for the bottom of the page
+       (credits, contact info, copyright).
+       ================================================================ -->
+    <footer>
+        <p>Made by John Anthony C Llagas for CS 101, Bicol University.</p>
+    </footer>
+
+</body>
+
+</html>

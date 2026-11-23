@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jax.exe | Pokémon Achievements</title>
+    <!-- Pixelated / Retro font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .poke-fav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .poke-fav-img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            transition: transform 0.1s ease;
+        }
+        .poke-fav-img:hover {
+            animation: pet-shake 0.3s infinite ease-in-out;
+        }
+        @keyframes pet-shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-4px) rotate(-2deg); }
+            50% { transform: translateX(4px) rotate(2deg); }
+            75% { transform: translateX(-3px) rotate(-1deg); }
+            100% { transform: translateX(0); }
+        }
+        .poke-fav-text {
+            flex: 1;
+            min-width: 250px;
+        }
+        .hack-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .hack-row.reverse {
+            flex-direction: row-reverse;
+        }
+        .hack-img-box {
+            width: 220px;
+            height: 140px;
+            background-color: #2b2b2b;
+            border: 2px solid var(--primary-red);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .hack-img-box img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+        }
+        .image-source-credit {
+            font-size: 0.75rem;
+            color: #aaaaaa;
+            background-color: #1a1a1a;
+            width: 100%;
+            text-align: center;
+            padding: 2px 0;
+            border-top: 1px solid #333333;
+        }
+        .image-source-credit a {
+            color: var(--light-red);
+            text-decoration: underline;
+        }
+        .hack-desc {
+            flex: 1;
+            min-width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pokémon Gaming & ROM Hacking</h1>
+        <p class="subtitle">Deep Dive: Favorite Pokémon, In-Progress Projects & Completed Hacks</p>
+        <nav class="navbar">
+            <a href="index.html">Main Page</a>
+            <a href="index.html#hobbies">Back to Hobbies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>My Favorite Pokémon</h2>
+            
+            <div class="poke-fav-container">
+                <img src="images/corviknight.png" alt="Corviknight" class="poke-fav-img" />
+                <div class="poke-fav-text">
+                    <h3>Corviknight</h3>
+                    <p>
+                        Its steel wings signify freedom and resilience. Ever since I was young, I really wanted to fly, soar high, and be truly free.
+                    </p>
+                </div>
+            </div>
+
+            <div class="poke-fav-container">
+                <img src="images/metagross.png" alt="Metagross" class="poke-fav-img" />
+                <div class="poke-fav-text">
+                    <h3>Metagross</h3>
+                    <p>
+                        Because of its typing and analytical nature, it deeply symbolizes me and how I approach problem-solving.
+                    </p>
+                </div>
+            </div>
+
+            <div class="poke-fav-container">
+                <img src="images/charizard.png" alt="Charizard" class="poke-fav-img" />
+                <div class="poke-fav-text">
+                    <h3>Charizard</h3>
+                    <p>
+                        This is my first ever Pokémon that I had when I first started playing when I was 8 years old, holding a special place in my gaming journey.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>GBA ROM Hacking Milestones</h2>
+            <p>
+                Developing custom Game Boy Advance ROM hacks using CUBHMA binary base framework and Hex Maniac Advance.
+            </p>
+            <ul>
+                <li>Designed custom sprite sheets, transparent palettes, and stylized character graphics.</li>
+                <li>Imported custom MIDI tracking assets for localized game audio.</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Status: In-Progress Projects</h3>
+            <ul>
+                <li><strong>PNHS (Pokemon National High School):</strong> About my high school journey and a tribute to the sweet memories that me and my classmates had.</li>
+                <li><strong>PokeShan:</strong> A Pokémon game customized and designed as a gift for a special someone.</li>
+                <li><strong>Pokemon Delibird's Gift:</strong> A special holiday release planned as a Christmas special project.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Completed Pokémon ROM Hack Games & Ratings</h2>
+            <p>Here are my personal thoughts and ratings on completed ROM hacks I've played:</p>
+
+            <div class="hack-row">
+                <div class="hack-img-box">
+                    <img src="images/Unbound.jpg" alt="Pokémon Unbound" />
+                    <div class="image-source-credit">Source: <a href="https://www.pokeharbor.com/2022/08/pokemon-unbound/" target="_blank">PokeHarbor</a></div>
+                </div>
+                <div class="hack-desc">
+                    <h3>Pokémon Unbound &mdash; 10/10</h3>
+                    <p>It's just peak. The custom CFRU engine, modern quality-of-life features, and deep exploration make it an absolute masterpiece of a hack.</p>
+                </div>
+            </div>
+
+            <div class="hack-row reverse">
+                <div class="hack-img-box">
+                    <img src="images/Radical Red.jpg" alt="Pokémon Radical Red" />
+                    <div class="image-source-credit">Source: <a href="https://www.pokeharbor.com/2021/06/pokemon-radical-red/" target="_blank">PokeHarbor</a></div>
+                </div>
+                <div class="hack-desc">
+                    <h3>Pokémon Radical Red &mdash; 9/10</h3>
+                    <p>It's hard and I had a hard time fighting the Elite Four, but it was peak. The strategic depth and strict level caps forced me to truly master team building.</p>
+                </div>
+            </div>
+
+            <div class="hack-row">
+                <div class="hack-img-box">
+                    <img src="images/Red Chapters.jpg" alt="Pokémon Red Chapters" />
+                    <div class="image-source-credit">Source: <a href="https://www.youtube.com/watch?v=Hx6ETfVOMb0&list=PL-ec1vuqoUzZDl41HsLZrsm6TeR-XWtWt" target="_blank">YouTube Gameplay</a></div>
+                </div>
+                <div class="hack-desc">
+                    <h3>Pokémon Red Chapters &mdash; 10/10</h3>
+                    <p>It follows the story of the manga and the events were peak enough to make me cry. The narrative execution is unmatched.</p>
+                </div>
+            </div>
+
+            <div class="hack-row reverse">
+                <div class="hack-img-box">
+                    <img src="images/Quetzal.jpg" alt="Pokémon Quetzal" />
+                    <div class="image-source-credit">Source: <a href="https://pkmnquetzal.com" target="_blank">Pokemon Quetzal Official</a></div>
+                </div>
+                <div class="hack-desc">
+                    <h3>Pokémon Quetzal &mdash; 8/10</h3>
+                    <p>Customizable with cool features like following Pokémon and multiplayer elements, but ultimately too easy for me.</p>
+                </div>
+            </div>
+
+            <div class="hack-row">
+                <div class="hack-img-box">
+                    <img src="images/Elite Redux.png" alt="Pokémon Elite Redux" />
+                    <div class="image-source-credit">Source: <a href="https://eliteredux.com" target="_blank">Pokemon Elite Redux Official</a></div>
+                </div>
+                <div class="hack-desc">
+                    <h3>Pokémon Elite Redux &mdash; 9/10</h3>
+                    <p>The introduction of innates and multi-abilities is so insane and lets you build completely overpowered and creative Pokémon teams.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Other Pokémon Projects & Experiments</h2>
+            <ul>
+                <li>Exploring open-world mechanics in Cobblemon (Minecraft mod).</li>
+                <li>Trying out Pokémon Brick Bronze in Roblox and figuring out how I can build a game there.</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Pokémon Game Accounts</h3>
+            <ul>
+                <li><strong>Pokemon Champions</strong>: Trainer ID: 1148 8492 5210</li>
+                <li><strong>Pokemon Go</strong>: Trainer Name: Jaz0417</li>
+                <li><strong>Roblox</strong>: Username: jaxrueshh</li>
+            </ul>
+
+            <a href="index.html#hobbies" class="close-btn">&larr; Return to Main Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jazper Cipres | Built for CS101 , Bicol University</p>
+        <p>jax.exe</p>
+    </footer>
+</body>
+
+</html>

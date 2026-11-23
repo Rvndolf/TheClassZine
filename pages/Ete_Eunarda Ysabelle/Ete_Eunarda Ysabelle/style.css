@@ -1,0 +1,242 @@
+/* ==========================================================================
+   CS101 Final Project: Pink Glitter & Cute Aesthetic Zine Design
+   Author: Eunarda Ysabelle J. Ete
+   ========================================================================== */
+
+/* 1. CSS Custom Properties (Pink Aesthetic Theme) */
+:root {
+  --bg-color: #FFF5F7;          /* Soft light pink background */
+  --card-bg: #FFFFFF;           /* Pure white card container */
+  --card-inner-pink: #FFE4EC;   /* Soft pink inner containers */
+  --card-pink-accent: #FFD1DC;  /* Classic cute pastel pink */
+  
+  --text-main: #4A2E35;         /* Deep mauve/rose dark text */
+  --text-muted: #7A535E;        /* Warm muted mauve text */
+  --heading-pink: #9E4B6C;      /* Deep plum-rose heading color */
+  --border-pink: #F3B0C3;       /* Soft pink outline border */
+  --border-pink-strong: #D87093;/* Deeper rose pink border */
+  
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow-pink: 0 8px 25px rgba(222, 143, 168, 0.18);
+  --shadow-hover: 0 12px 30px rgba(216, 112, 147, 0.28);
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 2. Global Resets & Decorative Background */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(#F8C8D4 0.8px, transparent 0.8px), 
+    radial-gradient(#F8C8D4 0.8px, var(--bg-color) 0.8px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  padding-bottom: 2rem;
+}
+
+/* Custom Pink Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-pink);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heading-pink);
+}
+
+::selection {
+  background-color: var(--card-pink-accent);
+  color: var(--heading-pink);
+}
+
+/* 3. Header Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 245, 247, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--border-pink);
+  z-index: 1000;
+  padding: 0.9rem 1.8rem;
+}
+
+.nav-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links-left {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem;
+}
+
+.nav-links-left a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-links-left a:hover {
+  color: var(--heading-pink);
+}
+
+.back-home-btn {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: var(--heading-pink);
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(158, 75, 108, 0.3);
+  transition: var(--transition);
+}
+
+.back-home-btn:hover {
+  background-color: #823854;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(158, 75, 108, 0.4);
+}
+
+/* 4. Main Container & Hero Section */
+.main-container {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-pink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pink);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--heading-pink);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-name {
+  color: var(--border-pink-strong);
+  font-style: italic;
+}
+
+.hero-intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+/* Decorative Arch Profile Frame */
+.profile-frame-card {
+  background-color: var(--card-inner-pink);
+  border: 2px dashed var(--border-pink-strong);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  text-align: center;
+  max-width: 280px;
+  box-shadow: 0 6px 16px rgba(243, 176, 195, 0.4);
+}
+
+.arch-image-container {
+  border: 3px solid #FFFFFF;
+  border-radius: 100px 100px 16px 16px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.profile-arch-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  font-size: 0.825rem;
+  color: var(--heading-pink);
+  font-weight: 500;
+}
+
+/* 5. Card Sections */
+.card-section {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-pink);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-pink);
+  transition: var(--transition);
+}
+
+.card-
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}
