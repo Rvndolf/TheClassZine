@@ -3476,7 +3476,7 @@ summary:active,
    Lore Carousel
    - Fits the black screen of nintendo.webp (source image pixels
      x 313–1112, y 51–537 of 1412×591), so the console frame stays visible
-   - 6 slides, one every 3s (18s loop), sliding in from the right and
+   - 13 slides, one every 3s (39s loop), sliding in from the right and
      out to the left so the sequence reads as a scrolling carousel
    ========================================================================== */
 .lore__carousel {
@@ -3510,47 +3510,68 @@ summary:active,
   height: 100%;
   object-fit: cover;
   transform: translateX(100%);
-  animation: lore-carousel-slide 18s linear infinite;
+  animation: lore-carousel-slide 39s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
 
-/* Each slide is already in place on load and hands off to the next every 3s in an 18s loop (6 slides).
+/* Each slide is already in place on load and hands off to the next every 3s in a 39s loop (13 slides).
    The extra -0.8s offsets the slide-in duration so the container is never blank. */
 .lore__slide:nth-of-type(1) {
   animation-delay: -0.8s;
 }
 .lore__slide:nth-of-type(2) {
-  animation-delay: -15.8s;
+  animation-delay: -36.8s;
 }
 .lore__slide:nth-of-type(3) {
-  animation-delay: -12.8s;
+  animation-delay: -33.8s;
 }
 .lore__slide:nth-of-type(4) {
-  animation-delay: -9.8s;
+  animation-delay: -30.8s;
 }
 .lore__slide:nth-of-type(5) {
-  animation-delay: -6.8s;
+  animation-delay: -27.8s;
 }
 .lore__slide:nth-of-type(6) {
+  animation-delay: -24.8s;
+}
+.lore__slide:nth-of-type(7) {
+  animation-delay: -21.8s;
+}
+.lore__slide:nth-of-type(8) {
+  animation-delay: -18.8s;
+}
+.lore__slide:nth-of-type(9) {
+  animation-delay: -15.8s;
+}
+.lore__slide:nth-of-type(10) {
+  animation-delay: -12.8s;
+}
+.lore__slide:nth-of-type(11) {
+  animation-delay: -9.8s;
+}
+.lore__slide:nth-of-type(12) {
+  animation-delay: -6.8s;
+}
+.lore__slide:nth-of-type(13) {
   animation-delay: -3.8s;
 }
 
-/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in an 18s loop. */
+/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in a 39s loop. */
 @keyframes lore-carousel-slide {
   0% {
     transform: translateX(100%);
     animation-timing-function: cubic-bezier(0.22, 0.75, 0.3, 1);
   }
-  4.444% {
+  2.051% {
     transform: translateX(0);
     animation-timing-function: linear;
   }
-  16.667% {
+  7.692% {
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0.7, 0, 0.8, 0.25);
   }
-  21.111%,
+  9.744%,
   100% {
     transform: translateX(-100%);
   }
