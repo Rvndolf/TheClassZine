@@ -3903,44 +3903,68 @@ summary:active,
     min-height: 85vh;
     min-height: 85dvh;
     --forum-separator-h: clamp(28px, 4.5vw, 40px);
+    --forum-body-pad: clamp(1rem, 3vw, 2rem);
+    --forum-toad-h: clamp(240px, 43vh, 365px);
+    --forum-toad-h: clamp(240px, 43dvh, 365px);
+    --forum-bubble-h: min(33vw, 200px);
     background-image: url("elements/background-sm.webp");
   }
 
   .forum__body {
-    padding: clamp(1rem, 3vw, 2rem);
+    padding: var(--forum-body-pad);
   }
 
+  /* Bubble is centered in the section and stretched wider */
   .forum__container,
   .forum__bubble-wrap {
     width: min(96vw, 560px);
+    position: static;
   }
 
+  .forum__bubble {
+    width: calc(var(--forum-bubble-h) * 2.9014);
+    flex-shrink: 0;
+    height: var(--forum-bubble-h);
+    transform: translateY(calc(-1 * clamp(8px, 2dvh, 18px)));
+    z-index: 2;
+  }
+
+  /* Big heading is centered and sits close under the brick separator above */
   .forum__title-group {
-    left: 0;
+    left: 50%;
+    top: calc(25% - clamp(4px, 8.25vw, 50px) - clamp(4px, 1dvh, 9px));
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    align-items: center;
     gap: 0;
+    z-index: 5;
   }
 
   .forum__title-item {
-    font-size: clamp(2.8rem, 9.5vw, 4.8rem);
+    font-size: clamp(3rem, 18vw, 5rem);
   }
 
   .forum__title-item .mario-char {
-    -webkit-text-stroke: clamp(2.4px, 0.5vw, 3.8px) var(--mario-black);
+    -webkit-text-stroke: clamp(2px, 0.6vw, 3.5px) var(--mario-black);
   }
 
+  /* Bigger toad, standing above the separator, head just reaching the bubble */
   .forum__toad {
-    height: 142%;
-    right: -9%;
-    bottom: -15%;
-    max-width: 52%;
+    height: var(--forum-toad-h);
+    right: -2%;
+    bottom: -20px;
+    max-width: 84vw;
+    z-index: 3;
   }
 
   .forum__bubble-text {
-    bottom: clamp(13%, 3.8vw, 18%);
-    left: 52%;
+    top: calc(50% + clamp(24px, 8.1vw, 56px) - clamp(8px, 2dvh, 18px));
+    bottom: auto;
+    left: 50%;
+    width: max-content;
     font-size: clamp(0.62rem, 2.2vw, 0.88rem);
     letter-spacing: 0;
-    max-width: 78%;
+    max-width: 90%;
     white-space: normal;
     text-wrap: balance;
     line-height: 1.25;
@@ -3949,21 +3973,18 @@ summary:active,
 
 @media (max-width: 420px) {
   .forum__title-group {
-    left: 0;
     gap: 0;
   }
 
-  .forum__title-item {
-    font-size: clamp(2.2rem, 9vw, 3.4rem);
-  }
-
-  .forum__title-item .mario-char {
-    -webkit-text-stroke: 2px var(--mario-black);
-  }
-
   .forum__toad {
-    right: -7%;
-    bottom: -12%;
+    right: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Keep the heading clear of the separator and bubble on very narrow phones */
+  .forum__title-item {
+    font-size: clamp(2.6rem, 16.5vw, 5rem);
   }
 }
 
