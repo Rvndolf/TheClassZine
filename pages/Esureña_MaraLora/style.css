@@ -1,0 +1,196 @@
+
+  /*1 - page styling*/
+  body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3b3b3b;
+    background: url(images/Purple_BG.jpg); /*background, yappie!!*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+  /*2 - headings*/
+  h1 {
+    color: #8E1EA2;
+    font-size: 36px;
+    text-align: center;
+  }
+  h2 {
+    color: #C654C3;
+  }
+  h3 {
+    color: #ED96D7;
+    }
+
+  header {
+    background-color: #d8c2f0;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+    /*3 - section boxes and header & footer*/
+  section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid #d8c2f0;
+    border-radius: 12px;
+  }
+
+  header, footer {
+    padding: 20px;
+  }
+
+  /*4 - navigation bar*/
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav a {
+    color: #6a3d9a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: #b539c0;
+    text-decoration: underline;
+  }
+  /*5 - image and link styling*/
+
+  img {
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: #6a3d9a;
+  }
+
+  a:hover {
+    color: #b539c0;
+  }
+  /*footer design*/
+  footer {
+    text-align: center;
+    font-size: 14px;
+    background-color: #d8c2f0;
+  }
+
+  /*7 - reflection section*/
+  #reflection h3 {
+    color: #ED96D7;
+    margin-top: 20px;
+  }
+
+  #reflection p {
+    line-height: 1.8;
+    text-align: justify;
+  }
+  /*8 - about me section*/
+  #about h2 {
+    text-align: center;
+  }
+  #about h2 {
+    text-align: center;
+  }
+
+  #about img {
+    display: block;
+    margin: 0 auto;
+  }
+  #about p {
+    text-align: center;
+  }
+
+/*9 - quotes section*/
+#quotes blockquote {
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto;
+}
+#quotes blockquote p{
+  font-style: italic;
+  font-size: 18px;
+  color: #3b3b3b;
+}
+#quotes blockquote cite {
+  color:#8E1EA2;
+  font-size: 14px;
+  display: block;
+}
+#quotes hr {
+  border: none;
+  border-top: 2px solid #d8c2f0;
+  margin: 15px 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    section {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

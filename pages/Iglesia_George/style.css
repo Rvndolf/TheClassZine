@@ -1,0 +1,376 @@
+/*
+=====================================================================
+  CS 101 FINAL PROJECT: ABOUT ME PAGE
+  style.css controls the look and layout of index.html.
+  Main colors: purple (main) and yellow (accent).
+=====================================================================
+*/
+
+/* ===== COLORS AND FONTS =====
+   :root holds CSS variables (named values). Use them with var(--name).
+   Change a value here and it updates everywhere on the page. */
+:root {
+  --purple: #4c0962;       /* main color */
+  --purple-light: #f6eefa; /* soft tint for table stripes */
+  --accent: #fbbf26;       /* accent: used for hovers and small details */
+  --text: #2b2b2b;
+  --card-bg: #ffffff;
+  --border: #e3e3e3;
+  --body-font: "Trebuchet MS", Arial, sans-serif;
+  --heading-font: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* ===== 1. WHOLE PAGE =====
+   Rules that apply to the entire page. */
+* {
+  box-sizing: border-box; /* padding stays inside an element's width, so sizes are predictable */
+}
+
+html {
+  scroll-behavior: smooth; /* menu links glide to their section instead of jumping */
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, #fafafa 0%, #4c0962 90%); /* white fading to purple */
+  margin: 0;
+}
+
+main {
+  padding: 0 16px; /* keeps the cards away from the screen edges */
+}
+
+/* ===== 2. HEADINGS AND HEADER ===== */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--purple);
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--purple);
+  font-size: 1.2rem;
+}
+
+/* The purple banner at the top. The big top padding leaves room for the floating menu. */
+header {
+  background-color: var(--purple);
+  color: white;
+  text-align: center;
+  border-bottom: 8px solid #21022c;
+  padding-top: 110px;
+  padding-bottom: 30px;
+}
+
+header p {
+  margin: 4px 0;
+}
+
+/* ===== 3. BOX MODEL (the section "cards") =====
+   padding = space inside the box, margin = space outside, border = the outline. */
+section {
+  background-color: var(--card-bg);
+  padding: 28px;
+  margin: 24px auto;       /* auto on the sides centers the card */
+  max-width: 800px;        /* keeps lines readable on wide screens */
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  scroll-margin-top: 110px; /* stops the fixed menu from covering a section title after a menu click */
+  transition: box-shadow 0.25s;
+}
+
+/* Hover effect: a soft shadow appears around a card when the mouse is over it */
+section:hover {
+  box-shadow: 0 6px 18px rgba(76, 9, 98, 0.12);
+}
+
+/* ===== 4. FLEXBOX =====
+   display: flex lines up the children of an element in a row. */
+
+/* The floating menu: position: fixed keeps it on screen while scrolling,
+   and left 50% + translateX(-50%) centers it. */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;                  /* keeps the menu above the cards */
+  width: max-content;
+  max-width: calc(100% - 24px);   /* never wider than the screen */
+  background-color: #78109a;
+  padding: 8px 16px;
+  border: 3px solid black;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Flexbox: puts the menu items in a row, centered, and wraps to a new line if needed */
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each menu link is its own pill */
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect: the pill turns yellow, lifts up, grows slightly, and gets a shadow */
+nav a:hover {
+  background-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Keyboard users see the same highlight when they tab to a link */
+nav a:focus-visible {
+  outline: 3px solid var(--accent);
+}
+
+/* Flexbox: puts the photo and the About text side by side */
+#about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+#about h2 {
+  flex-basis: 100%; /* the heading takes the full first row */
+  margin: 0;
+}
+
+#about p {
+  flex: 1;           /* the text fills the leftover space beside the photo */
+  min-width: 250px;  /* drops below the photo when there isn't enough room */
+}
+
+/* ===== 5. TABLE ===== */
+.table-wrap {
+  overflow-x: auto; /* the table scrolls inside its box on phones, so the page never scrolls sideways */
+}
+
+table {
+  border-collapse: collapse; /* merges double borders into single lines */
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--purple);
+  color: white;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Zebra stripes: shades every second row */
+tr:nth-child(even) {
+  background-color: var(--purple-light);
+}
+
+/* ===== 6. IMAGES AND LINKS ===== */
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;   /* crops instead of squashing, so the photo stays a perfect circle */
+  border-radius: 50%;  /* turns the square photo into a circle */
+  max-width: 100%;     /* never wider than its container */
+  border: 5px solid var(--purple);
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-top: 6px;
+}
+
+a {
+  color: var(--purple);
+}
+
+/* Hover effect on links: a thick yellow underline */
+a:hover {
+  color: var(--purple);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+/* Hover effect on list items */
+main li:hover {
+  color: var(--purple);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--purple);
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 28px 20px;
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* ===== 7. PHONES (media query) =====
+   These rules only apply on screens 600px wide or narrower. */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  header {
+    padding-top: 90px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  main {
+    padding: 0 12px;
+  }
+
+  section {
+    padding: 20px;
+    scroll-margin-top: 90px;
+  }
+
+  /* Menu: one compact row that scrolls sideways, so it doesn't cover the screen */
+  nav {
+    top: 10px;
+    padding: 4px 8px;
+    max-width: calc(100% - 20px);
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 8px 4px; /* room so the hover pop isn't cut off */
+    scrollbar-width: thin;
+  }
+
+  nav li {
+    flex-shrink: 0;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  nav a:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  /* Photo stacks above the text and everything centers */
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  /* Tighter table cells so more fits on a small screen */
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== 8. REDUCED MOTION =====
+   For people who turned off animations in their device settings. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

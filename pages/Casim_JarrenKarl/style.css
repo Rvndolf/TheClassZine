@@ -1,0 +1,328 @@
+/* ==========================================================
+   GLOBAL: page background, base font, and text color
+   ========================================================== */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;                      /* removes the default gap around the page */
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #ff1010, #ffffff);
+    color: #222222;                 /* solid, readable text color */
+}
+/* INTRODUCTION: centered paragraph under the header */
+main > p {
+    text-align: center;
+    width: min(950px, calc(100% - 32px));   /* same width as the section cards */
+    margin: 30px auto 0;                    /* auto left/right centers the block */
+}   
+/* ==========================================================
+   HEADINGS: gradient text (dark enough to read on white sections)
+   ========================================================== */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 0 10px;
+    display: inline-block;
+    /* light gradient so it stands out on the dark header overlay */
+    background-image: linear-gradient(to bottom, #ff0000, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h2, h3 {
+    display: inline-block;
+    background-image: linear-gradient(to right, #b00000, #1a1a1a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ==========================================================
+   HEADER: background image with dark overlay, title, and nav
+   ========================================================== */
+header {
+    position: relative;
+    isolation: isolate;             /* keeps the image behind the text */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+/* the image and dark overlay live here so the bottom edge can fade out */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;                       /* fills the whole header */
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("images/lilith.png");
+    background-size: cover;
+    background-position: 75% 20%;
+    background-repeat: no-repeat;
+    /* solid until the last 80px, then fades to transparent so the page gradient shows through */
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
+}
+
+header p {
+    margin: 5px 0;
+}
+
+/* links inside the header (nav and Back to Home) */
+header a {
+    background-image: linear-gradient(to right , #ffffff, rgb(225, 211, 211));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ffd0d0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;                /* wraps to a new line instead of overflowing */
+    justify-content: center;
+    gap: 15px 25px;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header, footer {
+    padding: 25px;
+}
+
+/* extra space at the bottom so the nav sits above the fade-out area */
+header {
+    padding-bottom: 100px;
+}
+
+/* ==========================================================
+   SECTIONS: white cards so text is always readable
+   ========================================================== */
+section {
+    background-color: rgba(255, 255, 255, 0.93);
+    padding: 30px;
+    margin: 40px auto;
+    width: min(950px, calc(100% - 32px));   /* centered, never wider than the screen */
+    box-sizing: border-box;
+    border: 2px solid #b00000;
+    border-radius: 10px;
+}
+
+/* ==========================================================
+   HELLO SECTION: Grid layout (photo beside text, stacks on phones)
+   ========================================================== */
+#hello {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px 30px;
+    align-items: center;
+}
+
+#hello h2 {
+    grid-column: 1 / -1;            /* heading spans the full width */
+    justify-self: start;
+    margin: 0;
+}
+
+#hello p {
+    margin: 0;
+}
+
+.profile-image {
+    margin: 0;
+}
+
+/* ==========================================================
+   IMAGES: square crop so the circle never turns into an oval
+   ========================================================== */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;              /* crops instead of stretching */
+    border-radius: 50%;
+}
+
+/* ==========================================================
+   TABLE: favorites and skills
+   ========================================================== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1.5px solid #5f5f5f;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #8a1c1c;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f6dcdc;      /* light tint keeps dark text readable */
+}
+
+/* ==========================================================
+   LINKS (inside sections)
+   ========================================================== */
+a {
+    color: #0b6b83;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7a1010;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+}
+
+/* ==========================================================
+   HOVER EFFECT: animated gradient lines above and below nav links
+   ========================================================== */
+.hover-underline {
+    font-size: 0.9rem;
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ff6b6b, #ffffff);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
+
+/* ==========================================================
+   MOBILE: stack the Hello section on narrow screens
+   ========================================================== */
+@media (max-width: 600px) {
+    #hello {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    #hello h2 {
+        justify-self: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+/* ==========================================================
+   TABLE WRAPPER: scrolls inside itself on narrow phones
+   ========================================================== */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* ==========================================================
+   PLAYLISTS: Flexbox row of Spotify embeds (stacks on phones)
+   ========================================================== */
+.playlist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.playlist-grid iframe {
+    flex: 1 1 300px;
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* caption under the profile photo */
+figcaption {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

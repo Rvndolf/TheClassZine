@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albert Benedict L. Cortes | About Me</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header id="home">
+    <h1>ALBERT BENEDICT</h1>
+    <p>A closet nerd that loves Marvel, DC, Dinosaurs and Cartoons. Yearns for the LONG MAROON LINE.</p>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#hello">Hello</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#path">My Path</a></li>
+            <li><a href="#favorites">Favorites</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#reflection">Reflection</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="hello">
+        <h2>Hello!</h2>
+        <div class="hello-layout">
+            <figure>
+                <img src="images/profile.jpg" alt="Daniel A.K.A Albert Padilla handsome mirrorshot" />
+                <figcaption>
+                    Gotta Catch them all.<br />
+                    <span class="credit">Photo credit: Daniel Padilla</span>
+                </figcaption>
+            </figure>
+            <div class="hello-text">
+                <p>
+                    Hello! Holla! Bonjour! Ciao! Konnichiwa! Annyeonghaseyo! Kamusta ka-su!
+                    My name is <strong>Albert Benedict L. Cortes</strong>, but you can call me
+                    <strong>Daniel, I mean Albert/Bedek rather</strong>.
+                </p>
+                <ul class="quick-facts">
+                    <li><strong>Program:</strong> BS Computer Science</li>
+                    <li><strong>Year level:</strong> First year</li>
+                    <li><strong>School:</strong> Bicol University</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am 18 years old, from Baleno, Masbate, and a first year Computer Science 
+            Student in Bicol University. 
+        </p>
+        <p>
+            I love nerding about stuff but I am also physically active. I plays different types of sport. 
+            i want to be succesful to give my family the life that they deserve.
+        </p>
+        <!--using <strong> doesn't just Bold you text, but it let it know the text is important.-->
+    </section>
+    <section id="path">
+        <h2>My Path into Computing</h2>
+        <p>
+            I chose Computer Science because I believe that if I hone my skills in programming,
+            I could land a job that will be in demand with a high-paying salary in the future.
+            I am also fascinated by how AI works and I would like to create one for myself.
+        </p>
+        <p>
+            Fun fact about me: My Tito was also a ComSci graduate and he had a PC setup when he was still 
+            in the Philippines and I started playing Counter Strike and Fishing Frenzy at age 3.<br>
+            My Tito was my inspiration in becoming a ComSci Student. 
+        </p>
+    </section>
+
+
+    <section id="favorites">
+        <h2>My Favorites and Skills</h2>
+        <!-- Two-column layout using CSS Grid (stacks on mobile) -->
+        <div class="two-col">
+            <div>
+                <h3>Hobbies</h3>
+                <ul>
+                    <li>Billiards</li>
+                    <li>Running</li>
+                    <li>Dancing</li>
+                    <li>Watching Cartoons and Superhero Movies</li>
+                    <li>Pokemon</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Skills</h3>
+                <ul>
+                    <li>Never Gives Up</li>
+                    <li>Fast Learner</li>
+                    <li>Enthusiastic/Explorative/Likes to try new things</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>
+            One website I enjoy visiting is
+            <a href="https://7reels.cc/" target="_blank" rel="noopener">7reels</a>
+            because I love to watch shows and movies on a pirated(illegal website) WHAHAHAHA.<strong>VERY RECOMMENDED, VERY HIGH QUALITY</strong>
+            <!--Using target="_blank" opens the link in a new page (tab) instead of replacing the current one.-->
+        </p>
+
+        <!-- Table: My Top 10 Pokemon -->
+        <h3>My Top 10 Favorite Pokemon</h3>
+        <div class="table-wrap">
+            <table>
+                <caption>Top 10 favorite Pokemon</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">No.</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Pokedex Entry</th>
+                        <th scope="col">Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--You can make a 1 is to multiple(1:many) cell using rowspan.-->
+                    <tr>
+                        <td><img src="images/rayquaza.png" alt="Rayquaza" /></td>
+                        <td>1. Rayquaza</td>
+                        <td>#384</td>
+                        <td>Dragon / Flying</td>
+                        <td>A dragon that lives in the ozone layer high above the clouds and is almost never seen. It is said to have calmed the fight between Groudon and Kyogre.</td>
+                        <td>Hoenn</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/charizard.png" alt="Charizard" /></td>
+                        <td>2. Charizard</td>
+                        <td>#006</td>
+                        <td>Fire / Flying</td>
+                        <td>It soars through the sky searching for strong opponents. Its flame can melt boulders, but it never aims it at weaker foes.</td>
+                        <td>Kanto</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/greninja.png" alt="Greninja" /></td>
+                        <td>3. Greninja</td>
+                        <td>#658</td>
+                        <td>Water / Dark</td>
+                        <td>So fast that it is hard to even see, it throws razor-sharp water shurikens that can cut through metal.</td>
+                        <td>Kalos</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/lucario.png" alt="Lucario" /></td>
+                        <td>4. Lucario</td>
+                        <td>#448</td>
+                        <td>Fighting / Steel</td>
+                        <td>It reads the aura of living things to sense feelings and find opponents from far away. It is very loyal to Trainers it trusts.</td>
+                        <td>Sinnoh</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/sceptile.png" alt="Sceptile" /></td>
+                        <td>5. Sceptile</td>
+                        <td>#254</td>
+                        <td>Grass</td>
+                        <td>The sharp leaves on its arms can slice through thick tree trunks. It moves through the forest very fast and guards its home.</td>
+                        <td>Hoenn</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/marshadow.png" alt="Marshadow" /></td>
+                        <td>6. Marshadow</td>
+                        <td>#802</td>
+                        <td>Fighting / Ghost</td>
+                        <td>A Mythical Pokemon that hides inside the shadows of people and Pokemon, staying quietly out of sight.</td>
+                        <td>Alola</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/gengar.png" alt="Gengar" /></td>
+                        <td>7. Gengar</td>
+                        <td>#094</td>
+                        <td>Ghost / Poison</td>
+                        <td>It hides in the dark and makes the air feel colder when it sneaks close. It likes to copy shadows and scare people.</td>
+                        <td>Kanto</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/metagross.png" alt="Metagross" /></td>
+                        <td>8. Metagross</td>
+                        <td>#376</td>
+                        <td>Steel / Psychic</td>
+                        <td>Its four brains work together and make it smarter than a supercomputer. It pins down prey with its heavy steel body.</td>
+                        <td>Hoenn</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/garchomp.png" alt="Garchomp" /></td>
+                        <td>9. Garchomp</td>
+                        <td>#445</td>
+                        <td>Dragon / Ground</td>
+                        <td>It tucks in its body and flies at jet-plane speed. It hunts from the sky and rarely lets its prey escape.</td>
+                        <td>Sinnoh</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/bisharp.png" alt="Bisharp" /></td>
+                        <td>10. Bisharp</td>
+                        <td>#625</td>
+                        <td>Dark / Steel</td>
+                        <td>It leads a group of Pawniard and gives them orders. The blades on its body get sharper the more it fights.</td>
+                        <td>Unova</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="goals">
+        <h2>My Goals</h2>
+        <!-- List 2: ordered list of goals -->
+        <ol>
+            <li>Repay my parents and spoil my siblings</li>
+            <li>Be rich</li>
+            <li>Become a cadet of the Philippine National Police Academy (PNPA)</li>
+        </ol>
+        <p>
+            My main goal is to be a cadet of the PNPA. I did not pass the Neuro-Psychiatric exam,
+            but I am still hoping to pass it in the next 4 years.
+        </p>
+        <p>
+            My ultimate dream was to become a cadet/officer of the Philippine National Police Academy
+            because I want to be a person capable of serving the community and because it is a one time trip
+            in becoming successful<strong>(during your 4 year college there, you'll have a salary of 45k pesos a month,
+            and after you graduate you are istantly promoted into a lieutenant).</strong>
+            Unfortunately, I failed the Neuro-Psychiatric Exam last year and was enrolled in BU. I took the exam 
+            again and I passed this November of 2026. I hope that this is my time.
+        </p>
+    </section>
+
+    <section id="reflection">
+        <h2>Reflection</h2>
+        <p>
+            I have learnt a lot from CS101, at the start of classes, I have zero to no knowledge about computer programming. 
+            But with the help of Sir Johnry and the other Professors, I started building my foundation, I learned about the
+            Hardware and Software Components, The different syntax in C, the Algorithm which is one of the most important, and
+            <strong>THIS</strong>, I learnt how to make my own webpage. I was an ignorant, but now--I am a Computer Science Student.
+        </p>
+    </section>
+
+    <!-- Back to Home link: jumps to the top of the page -->
+    <p class="back-home"><a class="back-to-home" href="../../index.html">&uarr; Back to Home</a></p>
+
+</main>
+
+<footer>
+    <p>Made by Albert Benedict L. Cortes for CS 101, Bicol University.</p>
+</footer>
+
+</body>
+</html>

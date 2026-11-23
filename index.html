@@ -8,7 +8,9 @@
     <!-- Google Fonts: Montserrat (for all p texts) & Retro Pixel Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Minecraft Font -->
     <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -33,11 +35,11 @@
             </a>
             <a href="#lore" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--green" aria-hidden="true"></span>
-                <span class="holo-nav__label">QUESTS</span>
+                <span class="holo-nav__label">LORE</span>
             </a>
             <a href="#forum" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--yellow" aria-hidden="true"></span>
-                <span class="holo-nav__label">LORE</span>
+                <span class="holo-nav__label">QUESTS</span>
             </a>
             <a href="#credits" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--red" aria-hidden="true"></span>
@@ -73,8 +75,8 @@
     <div class="music">
         <div class="music__screen">
             <div class="music__scaler">
-                <audio class="music__audio" src="elements/SUPER MARIO RUN (OFFICIAL TRAP REMIX) - (320 Kbps).mp3"
-                    autoplay loop preload="auto" playsinline controls aria-label="Background music"></audio>
+                <audio class="music__audio" src="elements/SUPER MARIO RUN (OFFICIAL TRAP REMIX) - (320 Kbps).mp3" loop
+                    preload="auto" playsinline controls aria-label="Background music"></audio>
             </div>
             <span class="music__scan" aria-hidden="true"></span>
         </div>
@@ -95,7 +97,8 @@
                 <div class="title__arcade-tint" aria-hidden="true"></div>
 
                 <!-- Screen container matching the rounded edge of the arcade screen, like lore section -->
-                <div class="title__arcade-screen" tabindex="0" role="region" aria-label="BSCS 1A Class Picture Arcade Screen">
+                <div class="title__arcade-screen" tabindex="0" role="region"
+                    aria-label="BSCS 1A Class Picture Arcade Screen">
                     <img src="elements/classpic.jpeg" alt="BSCS 1A Class Picture" class="title__arcade-photo">
                     <div class="title__arcade-screen-glare" aria-hidden="true"></div>
                     <div class="title__arcade-screen-scanlines" aria-hidden="true"></div>
@@ -115,7 +118,7 @@
                 <span class="title__arcade-typewriter">the beginning of a story</span>
             </div>
 
-            <div class="title__text-group" role="heading" aria-level="1" aria-label="SUPER BSCS 1A">
+            <h1 class="title__text-group" aria-label="SUPER BSCS 1A">
                 <div class="title__super" aria-hidden="true">
                     <span class="mario-char mario-char--blue mario-char--s">S</span>
                     <span class="mario-char mario-char--yellow mario-char--u">U</span>
@@ -137,7 +140,7 @@
                         <span class="mario-char mario-char--red mario-char--a">A</span>
                     </span>
                 </div>
-            </div>
+            </h1>
 
             <div class="title__arcade-patterns" aria-hidden="true"></div>
             <div class="title__stars title__stars--far" aria-hidden="true"></div>
@@ -303,7 +306,7 @@
         <!-- About Section -->
         <section class="about" id="about" aria-labelledby="about-title">
             <div class="about__inner">
-                <header class="about__header">
+                <header class="about__header section-header-reveal">
                     <h2 class="about__title" id="about-title" role="heading" aria-level="2" aria-label="About Us">
                         <span class="about__word" aria-hidden="true">
                             <span class="mario-char mario-char--blue mario-char--about-a">A</span>
@@ -355,7 +358,7 @@
                     draggable="false">
             </div>
 
-            <header class="select__header">
+            <header class="select__header section-header-reveal">
                 <h2 class="select__title" id="select-title" aria-label="Select your Player">
                     <span class="select__title-top" aria-hidden="true">
                         <span class="select__word">
@@ -391,548 +394,674 @@
             <!-- Placeholder roster: swap each href="#" for a classmate's page when ready -->
             <ul class="players" role="list">
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Abache_Assel/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P1</span>
                             <img class="player-card__avatar" src="avatars/Abache.png" alt="ABACHE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Assel Abache</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Assel Abache">
+                                <span class="player-card__first-name">Assel</span>
+                                <span class="player-card__last-name">Abache</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Abante_RoniAshley/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P2</span>
                             <img class="player-card__avatar" src="avatars/Abante.png" alt="ABANTE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Ashley Abante</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Ashley Abante">
+                                <span class="player-card__first-name">Ashley</span>
+                                <span class="player-card__last-name">Abante</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Alim_Gabriel_Vincent_A_Alim/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P3</span>
                             <img class="player-card__avatar" src="avatars/Alim.png" alt="ALIM">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Gabriel Vincent Alim">Gabriel Vincent Alim</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Gabriel Vincent Alim">
+                                <span class="player-card__first-name">Gabriel Vincent</span>
+                                <span class="player-card__last-name">Alim</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Alvaro_Grail/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P4</span>
                             <img class="player-card__avatar" src="avatars/Alvaro.png" alt="ALVARO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Grail Alvaro</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Grail Alvaro">
+                                <span class="player-card__first-name">Grail</span>
+                                <span class="player-card__last-name">Alvaro</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Amaranto_JanRandolf/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P5</span>
                             <img class="player-card__avatar" src="avatars/Amaranto.png" alt="AMARANTO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Randolf Amaranto">Randolf Amaranto</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Randolf Amaranto">
+                                <span class="player-card__first-name">Randolf</span>
+                                <span class="player-card__last-name">Amaranto</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Arciaga_Krizoffer/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P6</span>
                             <img class="player-card__avatar" src="avatars/Arciaga.png" alt="ARCIAGA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Krizoffer Arciaga">Krizoffer Arciaga</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Krizoffer Arciaga">
+                                <span class="player-card__first-name">Krizoffer</span>
+                                <span class="player-card__last-name">Arciaga</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Balinquit_Carlo/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P7</span>
                             <img class="player-card__avatar" src="avatars/Balinquit.png" alt="BALINQUIT">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Carlo Balinquit">Carlo Balinquit</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Carlo Balinquit">
+                                <span class="player-card__first-name">Carlo</span>
+                                <span class="player-card__last-name">Balinquit</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Basallote_ ClaireDanel/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P8</span>
                             <img class="player-card__avatar" src="avatars/Basallote.png" alt="BASALLOTE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Claire Basallote">Claire Basallote</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Claire Basallote">
+                                <span class="player-card__first-name">Claire</span>
+                                <span class="player-card__last-name">Basallote</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bañares_JaimeKhalil/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P9</span>
                             <img class="player-card__avatar" src="avatars/Bañares.png" alt="BAÑARES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jaime Banares</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jaime Banares">
+                                <span class="player-card__first-name">Jaime</span>
+                                <span class="player-card__last-name">Banares</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bibon_NeilAndrew/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P10</span>
                             <img class="player-card__avatar" src="avatars/Bibon.png" alt="BIBON">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Neil Bibon</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Neil Bibon">
+                                <span class="player-card__first-name">Neil</span>
+                                <span class="player-card__last-name">Bibon</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bombita_MarfredoJohn/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P11</span>
                             <img class="player-card__avatar" src="avatars/Bombita.png" alt="BOMBITA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Marfredo Bombita">Marfredo Bombita</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Marfredo Bombita">
+                                <span class="player-card__first-name">Marfredo</span>
+                                <span class="player-card__last-name">Bombita</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bongay_Mitsui Kiesha/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P12</span>
                             <img class="player-card__avatar" src="avatars/Bongay.png" alt="BONGAY">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Mitsui Bongay</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Mitsui Bongay">
+                                <span class="player-card__first-name">Mitsui</span>
+                                <span class="player-card__last-name">Kiesha</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bosquillos_Charles/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P13</span>
                             <img class="player-card__avatar" src="avatars/Bosquillos.png" alt="BOSQUILLOS">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Charles Bosquillos">Charles Bosquillos</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Charles Bosquillos">
+                                <span class="player-card__first-name">Charles</span>
+                                <span class="player-card__last-name">Bosquillos</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Brizuela_Aeon Nathaniel/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P14</span>
                             <img class="player-card__avatar" src="avatars/Brizuela.png" alt="BRIZUELA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Aeon Brizuela</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Aeon Brizuela">
+                                <span class="player-card__first-name">Aeon</span>
+                                <span class="player-card__last-name">Brizuela</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Bustamante_DarleneMae/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P15</span>
                             <img class="player-card__avatar" src="avatars/Bustamante.png" alt="BUSTAMANTE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Darlene Bustamante">Darlene Bustamante</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Darlene Bustamante">
+                                <span class="player-card__first-name">Darlene</span>
+                                <span class="player-card__last-name">Bustamante</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Casim_JarrenKarl/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P16</span>
                             <img class="player-card__avatar" src="avatars/Casim.png" alt="CASIM">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jarren Casim</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jarren Casim">
+                                <span class="player-card__first-name">Jarren</span>
+                                <span class="player-card__last-name">Casim</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Cipres_Jazper/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P17</span>
                             <img class="player-card__avatar" src="avatars/Cipres.png" alt="CIPRES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jazper Cipres</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jazper Cipres">
+                                <span class="player-card__first-name">Jazper</span>
+                                <span class="player-card__last-name">Cipres</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Cortes_Albert-Benedict/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P18</span>
                             <img class="player-card__avatar" src="avatars/Cortes.png" alt="CORTES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Albert Cortes</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Albert Cortes">
+                                <span class="player-card__first-name">Albert</span>
+                                <span class="player-card__last-name">Cortes</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/DelaCruz_KristofferAntoni/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P19</span>
                             <img class="player-card__avatar" src="avatars/Dela Cruz.png" alt="DELA CRUZ">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Kristoffer Dela Cruz">Kristoffer Dela Cruz</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Kristoffer Dela Cruz">
+                                <span class="player-card__first-name">Kristoffer</span>
+                                <span class="player-card__last-name">Dela Cruz</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Esureña_MaraLora/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P20</span>
                             <img class="player-card__avatar" src="avatars/Esurna.png" alt="ESURNA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Mara Lora Esurena">Mara Lora Esurena</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Mara Lora Esurena">
+                                <span class="player-card__first-name">Mara Lora</span>
+                                <span class="player-card__last-name">Esurena</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Ete_Eunarda Ysabelle/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P21</span>
                             <img class="player-card__avatar" src="avatars/Ete.png" alt="ETE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Ysabelle Ete</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Ysabelle Ete">
+                                <span class="player-card__first-name">Ysabelle</span>
+                                <span class="player-card__last-name">Ete</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Fajardo_Kyle/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P22</span>
                             <img class="player-card__avatar" src="avatars/Fajardo.png" alt="FAJARDO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Kyle Fajardo</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Kyle Fajardo">
+                                <span class="player-card__first-name">Kyle</span>
+                                <span class="player-card__last-name">Fajardo</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Iglesia_George/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P23</span>
                             <img class="player-card__avatar" src="avatars/Iglesia.png" alt="IGLESIA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">George Iglesia</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="George Iglesia">
+                                <span class="player-card__first-name">George</span>
+                                <span class="player-card__last-name">Iglesia</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Llagas_John Anthony/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P24</span>
                             <img class="player-card__avatar" src="avatars/Llagas.png" alt="LLAGAS">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="John Anthony Llagas">John Anthony Llagas</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="John Anthony Llagas">
+                                <span class="player-card__first-name">John Anthony</span>
+                                <span class="player-card__last-name">Llagas</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Llona_Mikee/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P25</span>
                             <img class="player-card__avatar" src="avatars/Llona.png" alt="LLONA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Mikee Llona</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Mikee Llona">
+                                <span class="player-card__first-name">Mikee</span>
+                                <span class="player-card__last-name">Llona</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Marbella_JohnPatrick/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P26</span>
                             <img class="player-card__avatar" src="avatars/Marbella.png" alt="MARBELLA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="John Patrick Marbella">John Patrick Marbella</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="John Patrick Marbella">
+                                <span class="player-card__first-name">John Patrick</span>
+                                <span class="player-card__last-name">Marbella</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Melgar_HarronNoah/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P27</span>
                             <img class="player-card__avatar" src="avatars/Melgar.png" alt="MELGAR">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Harron Noah Melgar">Harron Noah Melgar</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Harron Noah Melgar">
+                                <span class="player-card__first-name">Harron Noah</span>
+                                <span class="player-card__last-name">Melgar</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Mendez_Zyrus/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P28</span>
                             <img class="player-card__avatar" src="avatars/Mendez.png" alt="MENDEZ">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Zyrus Mendez</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Zyrus Mendez">
+                                <span class="player-card__first-name">Zyrus</span>
+                                <span class="player-card__last-name">Mendez</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Mendoza_Jacken/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P29</span>
                             <img class="player-card__avatar" src="avatars/MendozaJ.png" alt="MENDOZAJ">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Jacken Mendoza">Jacken Mendoza</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jacken Mendoza">
+                                <span class="player-card__first-name">Jacken</span>
+                                <span class="player-card__last-name">Mendoza</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Mendoza_Marcus/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P30</span>
                             <img class="player-card__avatar" src="avatars/MendozaM.png" alt="MENDOZAM">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Marcus Mendoza">Marcus Mendoza</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Marcus Mendoza">
+                                <span class="player-card__first-name">Marcus</span>
+                                <span class="player-card__last-name">Mendoza</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Millena_Jake/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P31</span>
                             <img class="player-card__avatar" src="avatars/Millena.png" alt="MILLENA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jake Millena</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jake Millena">
+                                <span class="player-card__first-name">Jake</span>
+                                <span class="player-card__last-name">Millena</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Morales_AnnRose/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P32</span>
                             <img class="player-card__avatar" src="avatars/Morales.png" alt="MORALES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Ann Rose Morales">Ann Rose Morales</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Ann Rose Morales">
+                                <span class="player-card__first-name">Ann Rose</span>
+                                <span class="player-card__last-name">Morales</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Nero_BrentDarrell/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P33</span>
                             <img class="player-card__avatar" src="avatars/Nero.png" alt="NERO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Brent Nero</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Brent Nero">
+                                <span class="player-card__first-name">Brent</span>
+                                <span class="player-card__last-name">Nero</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Nuyles_JasperVince/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P34</span>
                             <img class="player-card__avatar" src="avatars/Nuyles.png" alt="NUYLES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Jasper Vince Nuyles">Jasper Vince Nuyles</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jasper Vince Nuyles">
+                                <span class="player-card__first-name">Jasper Vince</span>
+                                <span class="player-card__last-name">Nuyles</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Pulido_Alyanna/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P35</span>
                             <img class="player-card__avatar" src="avatars/Pulido.png" alt="PULIDO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Alyanna Pulido</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Alyanna Pulido">
+                                <span class="player-card__first-name">Alyanna</span>
+                                <span class="player-card__last-name">Pulido</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Raneses_Jeanne/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P36</span>
                             <img class="player-card__avatar" src="avatars/Rañeses.png" alt="RAÑESES">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jeanne Raneses</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jeanne Raneses">
+                                <span class="player-card__first-name">Jeanne</span>
+                                <span class="player-card__last-name">Raneses</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Rosario_Sean/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P37</span>
                             <img class="player-card__avatar" src="avatars/Rosario.png" alt="ROSARIO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Sean Rosario</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Sean Rosario">
+                                <span class="player-card__first-name">Sean</span>
+                                <span class="player-card__last-name">Rosario</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/SanJose_AlyzaJulie/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P38</span>
                             <img class="player-card__avatar" src="avatars/San Jose.png" alt="SAN JOSE">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--long" title="Alyza San Jose">Alyza San Jose</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Alyza San Jose">
+                                <span class="player-card__first-name">Alyza</span>
+                                <span class="player-card__last-name">San Jose</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Sanchez_Marco/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P39</span>
                             <img class="player-card__avatar" src="avatars/Sanchez.png" alt="SANCHEZ">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Marco Sanchez</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Marco Sanchez">
+                                <span class="player-card__first-name">Marco</span>
+                                <span class="player-card__last-name">Sanchez</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Sy_Jed Vin/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P40</span>
                             <img class="player-card__avatar" src="avatars/Sy.png" alt="SY">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Jed Vin Sy</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Jed Vin Sy">
+                                <span class="player-card__first-name">Jed Vin</span>
+                                <span class="player-card__last-name">Sy</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Trabizonda_Natalie/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P41</span>
                             <img class="player-card__avatar" src="avatars/Trabizonda.png" alt="TRABIZONDA">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name player-card__name--xl" title="Natalie Trabizonda">Natalie Trabizonda</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Natalie Trabizonda">
+                                <span class="player-card__first-name">Natalie</span>
+                                <span class="player-card__last-name">Trabizonda</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
                 <li class="players__item">
-                    <a class="player-card" href="#">
+                    <a class="player-card" href="pages/Yoingco_TrixieMarina/index.html">
                         <span class="player-card__arrow" aria-hidden="true"></span>
                         <span class="player-card__portrait">
                             <span class="player-card__badge">P42</span>
                             <img class="player-card__avatar" src="avatars/Yoingco.png" alt="YOINGCO">
                         </span>
                         <span class="player-card__info">
-                            <span class="player-card__name">Trixie Yoingco</span>
-                            <span class="player-card__status">Page coming soon</span>
+                            <span class="player-card__name" title="Trixie Yoingco">
+                                <span class="player-card__first-name">Trixie</span>
+                                <span class="player-card__last-name">Yoingco</span>
+                            </span>
+                            <span class="player-card__status">View page</span>
                         </span>
                     </a>
                 </li>
@@ -940,7 +1069,6 @@
 
             <p class="select__note">
                 <img src="elements/coin.png" alt="" class="select__note-coin">
-                More players unlocking soon.
             </p>
         </section>
 
@@ -950,7 +1078,7 @@
 
             <div class="lore__body">
                 <h2 class="visually-hidden">Lore</h2>
-                <p class="lore__tagline">recent quests...</p>
+                <p class="lore__tagline section-header-reveal">recent quests...</p>
                 <div class="lore__logo-group">
                     <img src="elements/mariohat.webp" alt="" class="lore__mario-hat" aria-hidden="true"
                         draggable="false">
@@ -959,18 +1087,18 @@
 
                     <!-- Carousel shares the Nintendo image's exact grid cell, so it moves with it -->
                     <div class="lore__carousel" role="group" aria-label="Quest slideshow">
-                        <img src="elements/quest1.jpg" alt="Quest slide 1" class="lore__slide"
-                            draggable="false" loading="lazy">
-                        <img src="elements/quest2.jpg" alt="Quest slide 2" class="lore__slide"
-                            draggable="false" loading="lazy">
-                        <img src="elements/quest3.JPG" alt="Quest slide 3" class="lore__slide"
-                            draggable="false" loading="lazy">
-                        <img src="elements/quest4.jpg" alt="Quest slide 4" class="lore__slide"
-                            draggable="false" loading="lazy">
-                        <img src="elements/quest5.JPG" alt="Quest slide 5" class="lore__slide"
-                            draggable="false" loading="lazy">
-                        <img src="elements/quest6.jpg" alt="Quest slide 6" class="lore__slide"
-                            draggable="false" loading="lazy">
+                        <img src="elements/quest1.jpg" alt="Quest slide 1" class="lore__slide" draggable="false"
+                            loading="lazy">
+                        <img src="elements/quest2.jpg" alt="Quest slide 2" class="lore__slide" draggable="false"
+                            loading="lazy">
+                        <img src="elements/quest3.jpg" alt="Quest slide 3" class="lore__slide" draggable="false"
+                            loading="lazy">
+                        <img src="elements/quest4.jpg" alt="Quest slide 4" class="lore__slide" draggable="false"
+                            loading="lazy">
+                        <img src="elements/quest5.jpg" alt="Quest slide 5" class="lore__slide" draggable="false"
+                            loading="lazy">
+                        <img src="elements/quest6.jpg" alt="Quest slide 6" class="lore__slide" draggable="false"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1053,7 +1181,7 @@
                 decoding="async" aria-hidden="true" draggable="false">
 
             <!-- Wooden sign banner with Meet The Crew in the top part of the section -->
-            <div class="credits__header">
+            <div class="credits__header section-header-reveal">
                 <div class="credits__sign">
                     <!-- Left and right hanging ropes -->
                     <span class="credits__sign-rope credits__sign-rope--left" aria-hidden="true"></span>

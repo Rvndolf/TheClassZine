@@ -1,0 +1,233 @@
+/*BASE*/
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #F2F2F2;
+    background-color: #2B2B2B;
+    background-image: linear-gradient(180deg, #2B2B2B 0%, #3B3B3B 100%);
+    background-attachment: fixed;
+}
+
+/*HEADINGS*/
+h1 {
+    color: #F2F2F2;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #B2B2B2;
+    text-align: center;
+
+}
+
+h2 {
+    color: #F2F2F2;
+    border-bottom: 2px solid gold;
+    padding-bottom: 8px;
+}
+
+/*HEADER*/
+header {
+    background-color: #2B2B2B;
+    color: #F2F2F2;
+    text-align: center;
+    border-bottom: 3px solid gold;
+    padding: 20px;
+}
+
+header p {
+    color: #B2B2B2;
+}
+
+/*NAVIGATION(Flexbox)*/
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: #F2F2F2;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: gold;
+    text-decoration: underline;
+}
+
+/*SECTIONS*/
+section {
+    background-color: #3B3B3B;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid #505050;
+    border-radius: 8px;
+}
+
+/*LISTS*/
+ul, ol {
+    padding-left: 20px;
+}
+
+/*TABLE*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+caption {
+    text-align: left;
+    padding-bottom: 8px;
+    color: #B2B2B2;
+}
+
+th, td {
+    border: 1px solid #505050;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #505050;
+    color: #F2F2F2;
+}
+
+td {
+    background-color: #3B3B3B;
+}
+
+/*IMAGE, CAPTION, CREDIT*/
+figure {
+    margin: 20px auto;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+#about img {
+    display: block;
+    margin: 0 auto 10px auto;
+    border: 3px solid gold;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #B2B2B2;
+}
+
+/*PHOTO AND TEXT SIDE BY SIDE*/
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content figure {
+    margin: 0;
+    flex-shrink: 0;
+    max-width: 220px;
+}
+
+/*LINKS*/
+a {
+    color: gold;
+}
+
+a:hover {
+    color: #F2F2F2;
+}
+
+/*BACK TO HOME*/
+.back-home {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #2B2B2B;
+    color: #B2B2B2;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+/*Responsive for phones and small screens */
+@media (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    section {
+        margin: 12px;
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .about-content {
+        flex-direction: column; 
+    }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

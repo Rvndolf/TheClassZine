@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Personal webpage of Jed Vin A. Sy, a first-year BSCS student at Bicol University.">
+    <title>Jed Vin A. Sy | Personal Webpage</title>
+
+    <!-- Connects this page to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER: site title, tagline, and navigation menu -->
+    <header id="home">
+        <h1>Jed Vin A. Sy</h1>
+        <p class="tagline">First-Year BSCS Student | Bicol University</p>
+
+        <!-- Navigation: each link jumps to a section on this page -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#hello">Hello</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#path">My Path</a></li>
+                <li><a href="#favorites">Favorites &amp; Skills</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN: all the content sections of the page -->
+    <main>
+
+        <!-- SECTION 1: HELLO (preferred name, program, year level) -->
+        <section id="hello" class="card">
+            <h2>Hello!</h2>
+
+            <!-- Short introduction (1-2 sentences) -->
+            <p class="intro">
+                Welcome to my personal webpage! Here you can learn who I am,
+                how I found my way into computing, and where I hope to go as a
+                Computer Science student.
+            </p>
+
+            <div class="hello-layout">
+                <!-- Profile picture with alt text, caption, and image credit -->
+                <figure>
+                    <img src="images/This is me.jpg" alt="Photo of Jed Vin A. Sy" width="240">
+                    <figcaption>
+                        Me, Jed Vin A. Sy, at the start of my BSCS journey.
+                        <span class="credit">Image credit: photo taken by me.</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Quick facts list -->
+                <ul class="quick-facts">
+                    <li><strong>Preferred name:</strong> Jed Vin</li>
+                    <li><strong>Program:</strong> Bachelor of Science in Computer Science (BSCS)</li>
+                    <li><strong>Year level:</strong> First Year</li>
+                    <li><strong>School:</strong> Bicol University</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT ME -->
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>
+                My name is <strong>Jed Vin A. Sy</strong>, and I am a first-year
+                BSCS student at Bicol University. I am a curious person who
+                enjoys learning new things about everything and anything. When I
+                am not studying, I like to relax with games and music, and I am
+                always looking for something new to figure out.
+            </p>
+
+            <h3>My Hobbies</h3>
+            <!-- Unordered list of hobbies -->
+            <ul>
+                <li>Playing online games</li>
+                <li>Listening to music</li>
+                <li>Learning new things about everything and anything</li>
+            </ul>
+        </section>
+        <!-- SECTION 3: MY PATH INTO COMPUTING -->
+        <section id="path" class="card">
+            <h2>My Path into Computing</h2>
+            <p>
+                I chose Computer Science because I am interested in technology
+                and programming. Spending time with online games made me curious
+                about the technology behind the things I use every day. That
+                curiosity grew into a wish to understand how software works and
+                to build useful applications and websites of my own. Starting
+                college has been the first real step on that path.
+            </p>
+
+        </section>
+
+        <!-- SECTION 4: FAVORITES / SKILLS -->
+        <section id="favorites" class="card">
+            <h2>Favorites &amp; Skills</h2>
+
+            <h3>My Favorite Website</h3>
+            <p>
+                My favorite website is YouTube, and my favorite channel there is
+                <!-- External hyperlink: opens in a new tab -->
+                <a href="https://www.youtube.com/@KristianPH" target="_blank" rel="noopener">KristianPH</a>.
+                I enjoy watching his videos because he is a good content creator
+                and he is very funny.
+            </p>
+
+            <h3>Skills I Am Building</h3>
+            <ul>
+                <li>Basic programming in C (functions, loops, and problem solving)</li>
+                <li>Building simple webpages with HTML and CSS</li>
+                <li>Learning new topics quickly through curiosity</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 5: GOALS -->
+        <section id="goals" class="card">
+            <h2>My Top 3 Goals</h2>
+            <!-- Ordered list because the goals are numbered -->
+            <ol>
+                <li>Improve my programming skills</li>
+                <li>Pass all my subjects</li>
+                <li>Be someone who is not a burden</li>
+            </ol>
+        </section>
+
+        <!-- SECTION 6: REFLECTION -->
+        <section id="reflection" class="card">
+            <h2>Reflection</h2>
+            <p>
+                Building this webpage showed me that programming is more than
+                writing code that works. It also means organizing ideas clearly
+                and caring about how people will read and use what I make. I
+                learned how HTML gives a page its structure and how CSS gives it
+                its style. I also learned that small mistakes, like a wrong file
+                path or a missing tag, can break a whole page. Moving forward, I
+                want to keep practicing patiently and keep learning from my
+                mistakes.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: contains my name and a Back to Home link -->
+    <footer>
+        <p>Made by Jed Vin A. Sy for CS 101, Bicol University.</p>
+        <p><a class="back-to-home" href="../../index.html">Back to Home</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!--
+=====================================================================
+  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
+  File 1 of 2: index.html  (the STRUCTURE and CONTENT of your page)
+=====================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAL's WEBPAGE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <span class="brand">KAL's WEBPAGE</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#interests-goals">Interests & Goals</a></li>
+      <li><a href="#favorites">Favorites</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1>WELCOME!</h1>
+    <p><strong>Would you like to see my gallery?</strong></p>
+    <a class="btn" href="#gallery">Take me there!</a>
+  </header>
+
+<!-- My Profile sidebar--> 
+  <div class="layout">
+    <aside class="sidebar">
+        <img src="images/profile.jpg" alt="Photo of Krizoffer">
+        <h2>Krizoffer Arciaga</h2>
+        <p>BSCS - 1A</p>
+        <p>Bicol University</p>
+    </aside>
+ 
+<main> 
+    <!--This section serves as my Hello section in relation to the Profile sidebar above-->
+    <section id="about">
+       <h2>Let Me Tell You About Myself</h2>
+       <p>Hello! My name is <strong>Krizoffer Arciaga</strong>. I am a first-year <em>BSCS</em>
+          <em>student</em> at <strong>Bicol University</strong>. I currently live in <strong>Kinawitan, Daraga, Albay</strong>.
+          If i had to describe myself in a few words, I would say that I am a <strong>lazy</strong>, <strong>slightly introverted</strong>, and <strong>lowkey curious</strong> type of an individual.
+          I'm also the type of guy who thinks of ways to improve myself, which is a problem since i only do the 'thinking' part;p.
+       </p>
+    </section>
+
+    <section id="CSPath">
+      <h2>My Path into Computing</h2>
+      <p>
+        I can't really say that I love <strong>computing</strong> since, by the word itself it seems to relate to math, 
+        a subject I have mix feelings about. I mean sometimes it's a pain to deal with, but
+        at the same time, I find it entertaining and fun. Moving on, I do have an addiction to computers
+        since I was a kid, perhaps due to having access to a net cafe back then. I would spend hours playing games and exploring the internet, I'd even sneak in the office to steal the password when 
+        they decided to change it. Basically, you can say that I have a love-hate relationship with computing, but I do enjoy using it for entertainment and nowadays, I surprisingly find it fulfilling, 
+        the feeling of knowing the reason why a program works and it's evergrowing connections to a lot of stuff. I chose to pursue this course because aside from money,
+        I am hoping to create new projects such as games and applications that can enhance the convenience we are already enjoying in our daily lives.
+      </p>
+    </section>
+<!-- This section is for my clever use of radio buttons to produce a Tabs effect using only html and css-->
+    <section id="interests-goals">
+      <div class="tabs">
+        <input type="radio" name="page" id="interests" checked>
+        <label for="interests">My Passions</label>
+        <input type="radio" name="page" id="goals">
+        <label for="goals">My Goals</label>
+      
+        <div class="panel p2">
+          <h3>Hobbies/Passions</h3>
+          <ul>
+            <li><strong>Reading Novels and Comics</strong></li>
+            <li><strong>Playing Online Games</strong></li>
+            <li><strong>Watching Movies and Series</strong></li>
+          </ul>
+          <img src="images/HBD.jpg" alt="Mix of Interests" class="HBD">
+          <p>
+            As mentioned above, I am fond of reading novels and comics, which is my main hobby. 
+            I also enjoy playing online games, especially Multiplayer Games, as it allows me to connect
+            with friends and meet new people. Additionally, I like watching movies and series, 
+            which helps me relax and unwind after a long day. To be honest, I am a very lazy person and am easily addicted to things that interest me, 
+            so I usually spend my free time doing these activities(even if it's not my free time i still spend it the same). <strong>And that's my typical day for you</strong>.
+          </p>
+        </div>
+        <div class="panel p3">
+          <h3>My Goals</h3>
+          <p>My <strong>short-term goal</strong> is to survive my first year in college, I don't really have
+             any grand ambition, I just wish to be sane afterwards and hopefully i won't haev to 
+             switch courses(not that I'd love to:P). Kidding aside, I feel like I need to lock-in,
+             learn more about <em>programming</em> and strive to accomplish a <em>major project</em> by 3rd year.
+             On the otherhand, <strong>my long-term goal</strong> is to be capable of using my knowledge learned
+             in college to find a high-paying job and achieve <em>financial freedom</em> to live in comfort
+             till the day i fly away.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    
+    <section id="favorites">
+      <h2>My Favorites</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Websites/Applications</th>
+            <th>WHY I Like It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.webnovel.com/" target="_blank" rel="noopener">WebNovel</a></td>
+            <td>It has a wide variety of novels and comics to read, and it allows me to explore different genres and discover new stories.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.netflix.com/" target="_blank" rel="noopener">Netflix</a></td>
+            <td>It has a vast collection of movies and series, and it allows me to watch my favorite shows anytime, anywhere.</td>
+          </tr>
+          <tr>
+            <td><a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></td>
+            <td>It has a wide selection of games, and it allows me to connect with friends and play multiplayer games online.</td>
+          </tr> 
+        </tbody>
+      </table>
+    </section>
+
+
+    <section id="gallery">
+      <h2>My Gallery</h2>
+      <div class="gallery">
+        <figure>
+            <img src="images/PIC1.jpg" alt="visit at the hospital">
+            <figcaption>Visit at the hospital</figcaption>
+        </figure>
+        <figure>
+          <img src="images/PIC2.jpg" alt="dozing off with friend">
+          <figcaption>At nakatulog sa lamig</figcaption>
+        </figure>
+        <figure>
+          <img src="images/PIC3.jpg" alt="lunch with the group">
+          <figcaption>lunch with the group</figcaption>
+        </figure>
+        <figure>
+          <img src="images/PIC4.jpg" alt="Bible Study in the grass">
+          <figcaption>Bible study kaso may tumakas</figcaption>
+        </figure>
+        <figure>  
+          <img src="images/honorpic.jpg" alt="Recognition Day">
+          <figcaption>Recognition Day Picture</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gradpic.jpg" alt="Graduation Day">
+          <figcaption>Graduation Day Picture</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+
+    <section id="Reflection">
+      <h2>Reflection</h2>
+      <p>
+        I am genuinely surprised and amazed. I never thought that doing this activity would make me so immersed
+        to the point of no-eating and not even knowing how much time had passed. I was amazed because I didn't expect
+        myself to be so hooked into this project that I'm starting to think that I might actually be a workaholic. It was 
+        so fun! It's been a while for me to be so focused on a 'chore', it's usually so limited to entertainment purposes. 
+        I'm glad since, I think I've found my calling, I just hope these coming years won't change this mindset HAHA. 
+        Moving on, It's hard. I learned a lot of things, especially the effects I can apply to links, texts, and images. 
+        Through my research about different html and css elements and properties, I was able to make use of div, tabs, clever uses 
+        of buttons, and a lot more. I also learned how to combine and organize my ideas properly and learn quite a bit of webdesign.
+        These are just some of the changes I improved and made on the previous version of my webpage. This is one of the most
+        fulfilling individual projects that I've done and did not complain about. I am expecting to do more of these in the future.
+      </p>
+    </section>
+    
+
+
+  </main>
+  </div>
+  <footer>
+    <p>Made by Krizoffer Arciaga for CS 101, Bicol University.</p>
+      <p><a class="back-to-home" href="../../index.html">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

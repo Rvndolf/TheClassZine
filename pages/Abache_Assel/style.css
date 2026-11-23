@@ -1,0 +1,778 @@
+/* PALETTE: colors come from my original theme (night forest, moss green, lantern gold).
+   Variables keep every color in one place. */
+:root {
+  --header-h: 180px;
+  --night: #202734;
+  --panel: rgba(18, 28, 46, 0.6);
+  --leaf: #E0F8C7;
+  --sage: #B7D894;
+  --moss: #80dc7e;
+  --lantern: #F8E0A4;
+  --firefly: #ffe98a;
+  --serif: Georgia, 'Times New Roman', serif;
+  --mono: 'Courier New', Courier, monospace;
+}
+
+/* BASE: page background, body text, and smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--leaf);
+  background-image: url(images/minecraftBG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADINGS: monospace headings give a code feel against the serif body */
+h1,
+h2,
+h3 {
+  font-family: var(--mono);
+}
+
+h1 {
+  color: var(--lantern);
+  font-size: clamp(3rem, 6.7vw, 6.1rem); 
+  line-height: .98; 
+  letter-spacing: -.065em; 
+  margin: 18px 0 22px; 
+  text-decoration: dotted;
+}
+
+h2,
+h3 {
+  color: var(--sage);
+}
+
+.description {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.intro {
+  max-width: 60ch;
+  margin: 0 auto 8px;
+}
+
+em {
+  font-size: 80px;
+  font-style: normal;
+  margin-top: -30rem;
+  color: #6879a0;
+}
+
+/* HEADER: gradient banner. The ::before pseudo-element draws a few fireflies
+   that drift slowly, like the ones in my Minecraft background. */
+header {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  background-image: linear-gradient(to right,
+      rgba(26, 54, 93, 0.9),
+      rgba(74, 105, 150, 0.75));
+  color: #58D68D;
+  text-align: center;
+  padding: 20px 20px 12px;
+}
+
+header>* {
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--firefly);
+  box-shadow: 9vw 40px 4px var(--firefly), 24vw 110px 3px #9dffb0,
+    41vw 28px 4px var(--firefly), 58vw 130px 3px #9dffb0,
+    73vw 52px 4px var(--firefly), 90vw 118px 3px #9dffb0;
+  animation: drift 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+
+  to {
+    transform: translate(14px, -18px);
+    opacity: 1;
+  }
+}
+
+/* NAVIGATION: pill links with a hover effect */
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+nav a {
+  display: inline-block;
+  font-family: var(--mono);
+  background-color: var(--night);
+  color:#9dffb0;
+  padding: 8px 15px;
+  border: 1px solid var(--lantern);
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color:#6879a0;
+  color: #80e080;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* SECTIONS: each section is a frosted panel that fills most of the screen */
+section {
+  background-color: var(--panel);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid var(--lantern);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+/* LINKS: visible keyboard focus and a hover color */
+a {
+  color: var(--sage);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--moss);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--lantern);
+  outline-offset: 3px;
+}
+
+/* HELLO: one-sentence summary on top, quick-fact cards below */
+.hello-content {
+  display: flex;
+  flex-direction: column;           /* stacks the sentence above the cards */
+  gap: 20px;
+}
+
+.lead {
+  margin: 0;
+  padding-left: 16px;
+  border-left: 4px solid var(--lantern);
+  font-size: 1.3rem;
+}
+
+.fact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));  /* adds or drops columns to fit */
+  gap: 16px;
+  margin: 0;
+}
+
+.fact-card {
+  background-color: var(--night);
+  border: 1px solid var(--sage);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.fact-card:hover {
+  border-color: var(--lantern);
+  background-color: #4a5875;
+}
+
+.fact-icon {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.fact-card dt {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--lantern);
+}
+
+.fact-card dd {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+}
+
+/* ABOUT ME: portrait and text side by side */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-content figure {
+  flex: 0 0 160px;
+  margin: 0;
+  text-align: center;
+}
+
+.about-content img {
+  width: 160px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 40%;
+  object-fit: cover;
+  border: 3px solid var(--leaf);
+  transition: 0.3s;
+}
+
+.about-content img:hover {
+  border-radius: 20%;
+  transition: 0.3s;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.about-content p {
+  margin: 0 0 12px;
+}
+
+/* LISTS: hobbies and goals share the same dark panel */
+.panel-list {
+  background-color: var(--night);
+  border: 1px solid var(--sage);
+  border-radius: 20px;
+  padding: 20px 20px 20px 40px;
+  margin: 5px 0;
+}
+
+/* Favorites and skills: wrapper scrolls sideways on small screens instead of the whole page */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  text-align: left;
+  font-style: italic;
+  padding-bottom: 8px;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--night);
+  color: white;
+}
+
+tbody tr {
+  background-color: #2b3549;
+}
+
+td {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+td:hover {
+  background-color: #6879a0;
+  box-shadow: inset 0 0 0 2px var(--lantern);
+  cursor: default;
+}
+
+td a {
+  display: block;
+  margin: -10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+td a::after {
+  content: " ↗";
+  color: var(--lantern);
+}
+
+td:hover a {
+  color: #ffffff;
+}
+
+/* FOOTER: name, credits, and links back to home and to the top */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 20px;
+}
+
+.credits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 32px;
+  text-align: left;
+}
+
+.header-text {
+  flex: 1 1 280px;
+  max-width: 60ch;
+}
+
+.intro {
+  margin: 0 0 8px;
+  background-color: #2b3549;
+  padding: 10px;
+  border: 1px solid var(--lantern);
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+/* SMALL SCREENS: stack the layouts and let sections fit their content */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  .header-top{
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .header-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  h1 {
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    margin: 10px 0 16px;
+    overflow-wrap: anywhere;
+  }
+
+  h1 em {
+    margin-top: 0;
+    font-size: 40px;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 0.9rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-content figure {
+    flex-basis: auto;
+  }
+
+  section {
+    width: auto;
+    max-width: none;
+    margin: 16px 12px;
+    padding: 16px;
+  }
+
+  .fact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-list {
+    padding-right: 16px;
+  }
+
+  .table-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table {
+    min-width: 520px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .fold summary {
+    gap: 8px;
+  }
+}
+
+/* ACCESSIBILITY: respect people who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  header::before {
+    animation: none;
+  }
+
+  section,
+  .cards li,
+  nav a,
+  .about-content img {
+    transition: none;
+  }
+
+  section:hover {
+    transform: none;
+  }
+}
+
+.sidebar-checkbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-toggle {
+  display: block;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 21;
+  padding: 8px 15px;
+  font-family: var(--mono);
+  background: var(--leaf);
+  color: #18345e;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: left 0.3s, background-color 0.3s;
+}
+
+.sidebar-toggle:hover {
+  background: #4a5875;
+  color: #80e080;
+}
+
+#sidebar-toggle:focus-visible + .sidebar-toggle {
+  outline: 3px solid var(--lantern);
+  outline-offset: 3px;
+}
+
+nav.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 64px 16px 24px;
+  overflow-y: auto;
+  background: rgba(18, 28, 46, 0.95);
+  border-right: 1px solid var(--lantern);
+  z-index: 20;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+nav.sidebar ul {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 10px;
+  margin: 0;
+}
+
+nav.sidebar a {
+  display: block;
+  text-align: left;
+}
+
+#sidebar-toggle:checked ~ header nav.sidebar {
+  transform: translateX(0);
+}
+
+/* Phones: keep the menu button from covering the name */
+@media (max-width: 899px) {
+  header {
+    padding-top: 56px;
+  }
+}
+
+.sidebar-backdrop{
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (min-width: 900px) {
+  /* Wide screens: open by default, and the content makes room for it */
+  header,
+  main,
+  footer {
+    margin-left: 220px;
+    transition: margin-left 0.3s;
+  }
+
+  nav.sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    left: 232px;
+  }
+
+  /* Wide screens: checked = hidden */
+  #sidebar-toggle:checked ~ header nav.sidebar {
+    transform: translateX(-100%);
+  }
+
+  #sidebar-toggle:checked ~ header,
+  #sidebar-toggle:checked ~ main,
+  #sidebar-toggle:checked ~ footer {
+    margin-left: 0;
+  }
+
+  #sidebar-toggle:checked + .sidebar-toggle {
+    left: 12px;
+  }
+}
+
+section:target {
+  border-color: var(--moss);
+}
+
+/* NAV ICONS: a fixed-width box keeps the words lined up in the sidebar */
+.icon {
+  display: inline-block;
+  width: 1.4em;
+  margin-right: 4px;
+  text-align: center;
+}
+
+/* COLLAPSIBLE BOXES: <details> and <summary> hide long text until it is clicked (no JavaScript) */
+.fold {
+  background-color: var(--night);
+  border: 1px solid var(--sage);
+  border-radius: 12px;
+  margin: 12px 0 0;
+  transition: border-color 0.3s;
+}
+
+.fold[open] {
+  border-color: var(--lantern);
+}
+
+.fold summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-family: var(--mono);
+  color: var(--lantern);
+  text-align: left;
+  list-style: none;                 /* removes the default triangle */
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.fold summary::-webkit-details-marker {
+  display: none;                    /* removes the triangle in Safari */
+}
+
+.fold summary::after {
+  content: "+";                     /* closed */
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--moss);
+}
+
+.fold[open] summary::after {
+  content: "\2212";                /* open: minus sign */
+}
+
+.fold summary:hover {
+  background-color: #2b3549;
+}
+
+.fold summary:focus-visible {
+  outline: 3px solid var(--lantern);
+  outline-offset: 3px;
+}
+
+/* The text slides in when the box opens */
+.fold-body {
+  padding: 4px 16px 16px;
+  text-align: left;
+  animation: unfold 0.35s ease;
+}
+
+.fold-body p {
+  margin: 0 0 12px;
+}
+
+.fold-body p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes unfold {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Credits box in the footer stays small and centered */
+.credits-fold {
+  max-width: 420px;
+  margin: 0 auto 12px;
+}
+
+.credits-fold .credits {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fold,
+  .fold summary {
+    transition: none;
+  }
+
+  .fold-body {
+    animation: none;
+  }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

@@ -939,6 +939,7 @@ summary:active,
   left: 50%;
   z-index: 5;
   display: inline-flex;
+  margin: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -2722,25 +2723,40 @@ summary:active,
 }
 
 .player-card__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  font-family: "Super Mario 256", system-ui, sans-serif;
+  font-size: clamp(0.55rem, 0.78vw, 0.78rem);
+  font-size: clamp(0.55rem, 6.8cqi, 0.78rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-shadow: 0 1.5px 0 #000;
+  text-align: center;
+}
+
+.player-card__first-name,
+.player-card__last-name,
+.player-card__name > span {
   display: block;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: "Super Mario 256", system-ui, sans-serif;
-  font-size: clamp(0.65rem, 0.9vw, 0.92rem);
-  font-size: clamp(0.65rem, 8cqi, 0.92rem);
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: #fff;
-  text-shadow: 0 2px 0 #000;
 }
 
 /* Scaled font sizes so long and extra-long names fit strictly on one line */
 .player-card__name--long {
-  font-size: clamp(0.52rem, 0.72vw, 0.74rem);
-  font-size: clamp(0.52rem, 6.4cqi, 0.74rem);
+  font-size: clamp(0.5rem, 0.68vw, 0.7rem);
+  font-size: clamp(0.5rem, 6cqi, 0.7rem);
   letter-spacing: 0.02em;
   text-shadow: 0 1.5px 0 #000;
 }
@@ -2801,16 +2817,7 @@ summary:active,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.55rem;
   margin: clamp(2.5rem, 4vw, 3.5rem) 0 0;
-  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-  font-size: clamp(0.7rem, 0.95vw, 0.85rem);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: #fff;
-  text-shadow:
-    0 2px 0 rgb(9 45 100 / 72%),
-    0 0 14px rgb(9 45 100 / 50%);
 }
 
 .select__note-coin {
@@ -4357,8 +4364,14 @@ summary:active,
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: clamp(0.5rem, 2vw, 2.5rem);
+  padding: clamp(0.25rem, 1vw, 1rem);
   box-sizing: border-box;
+}
+
+.credits__header {
+  margin-bottom: -0.5rem;
+  position: relative;
+  z-index: 4;
 }
 
 /* Cards row group */
@@ -4492,7 +4505,7 @@ summary:active,
 .credits__card-role[aria-label="Development"],
 .credits__card-role[aria-label="Integration"],
 .credits__card--small .credits__card-role {
-  font-size: clamp(0.85rem, 1.35vw, 1.22rem);
+  font-size: clamp(0.95rem, 1.55vw, 1.38rem);
   letter-spacing: 0.01em;
 }
 
@@ -4545,7 +4558,7 @@ summary:active,
 /* Names using the same font as the About Us description (Montserrat) - scaled smaller to fit better */
 .credits__card-name {
   font-family: var(--about-font-body);
-  font-size: clamp(0.72rem, 1.02vw, 0.94rem);
+  font-size: clamp(0.78rem, 1.12vw, 1.02rem);
   font-weight: 600;
   line-height: 1.35;
   color: #2b1100;
@@ -4560,7 +4573,7 @@ summary:active,
 }
 
 .credits__card--tall .credits__card-name {
-  font-size: clamp(0.78rem, 1.15vw, 1.04rem);
+  font-size: clamp(0.86rem, 1.28vw, 1.14rem);
 }
 
 /* Pixel sparkle star positioned over the top-right corner */
@@ -4631,13 +4644,20 @@ summary:active,
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .credits {
-    min-height: 125vh;
-    min-height: 125dvh;
+    min-height: auto;
+    padding-bottom: clamp(2.8rem, 6vh, 4.5rem);
   }
 
   .credits__header {
-    padding-top: clamp(3.2rem, 6.5vh, 5rem);
-    padding-bottom: clamp(0.5rem, 1.2vh, 1.2rem);
+    padding-top: clamp(3.2rem, 7vh, 4.8rem);
+    padding-bottom: clamp(2.2rem, 5vw, 3rem);
+    margin-bottom: 0;
+  }
+
+  .credits__body {
+    flex: 0 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .credits__sign {
@@ -4670,17 +4690,37 @@ summary:active,
   }
 
   .credits__cards {
-    gap: clamp(8px, 2vw, 20px);
+    flex-direction: column;
+    gap: clamp(1rem, 2.8vw, 1.4rem);
+    width: 100%;
+  }
+
+  .credits__card--tall,
+  .credits__card--small {
+    width: clamp(240px, 60vw, 320px);
+    max-width: 86vw;
+    max-height: none;
+    transform: none;
+    animation: none;
+    z-index: 3;
+  }
+
+  .credits__card--tall {
+    height: clamp(370px, 52vh, 440px);
+  }
+
+  .credits__card--small {
+    height: clamp(330px, 46vh, 400px);
   }
 
   .credits__card-character-wrap {
-    height: 54%;
-    transform: translate(-50%, -20%);
+    height: 52%;
+    transform: translate(-50%, -16%);
   }
 
   .credits__card--tall .credits__card-character-wrap {
-    height: 60%;
-    transform: translate(-50%, -22%);
+    height: 58%;
+    transform: translate(-50%, -18%);
   }
 
   .credits__piranha {
@@ -4690,8 +4730,8 @@ summary:active,
   }
 
   .credits__card-content {
-    top: 45.5%;
-    padding: 0 clamp(0.35rem, 1vw, 0.8rem);
+    top: 46%;
+    padding: 0 clamp(0.5rem, 1.2vw, 1rem);
   }
 
   .credits__card--tall .credits__card-content {
@@ -4699,78 +4739,65 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(0.92rem, 2.3vw, 1.25rem);
+    font-size: clamp(1.18rem, 3vw, 1.55rem);
     letter-spacing: 0.015em;
   }
 
   .credits__card-role[aria-label="Development"],
   .credits__card-role[aria-label="Integration"],
   .credits__card--small .credits__card-role {
-    font-size: clamp(0.68rem, 1.65vw, 0.92rem);
+    font-size: clamp(1.12rem, 2.6vw, 1.42rem);
     letter-spacing: 0.008em;
   }
 
+  .credits__card-role[aria-label="Development"] .mario-char,
+  .credits__card-role[aria-label="Integration"] .mario-char,
+  .credits__card--small .credits__card-role .mario-char {
+    -webkit-text-stroke: clamp(1.6px, 0.24vw, 2.2px) var(--mario-black);
+  }
+
   .credits__card--tall .credits__card-role {
-    font-size: clamp(1.12rem, 2.8vw, 1.55rem);
+    font-size: clamp(1.45rem, 3.6vw, 1.95rem);
     letter-spacing: 0.025em;
   }
 
   .credits__card-names {
-    margin-top: clamp(8px, 1.5vh, 14px);
-    gap: clamp(4px, 0.9vh, 9px);
+    margin-top: clamp(10px, 1.6vh, 16px);
+    gap: clamp(6px, 1.1vh, 12px);
   }
 
   .credits__card--tall .credits__card-names {
-    margin-top: clamp(10px, 1.8vh, 17px);
-    gap: clamp(5px, 1.1vh, 11px);
+    margin-top: clamp(12px, 1.9vh, 18px);
+    gap: clamp(7px, 1.2vh, 14px);
   }
 
   .credits__card-name {
-    font-size: clamp(0.56rem, 1.2vw, 0.76rem);
+    font-size: clamp(0.92rem, 2.2vw, 1.14rem);
+    font-weight: 700;
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.62rem, 1.35vw, 0.84rem);
-  }
-
-  .credits__card--tall {
-    height: clamp(260px, 68vh, 520px);
-    transform: translateY(-18px);
-  }
-
-  .credits__card--small {
-    height: clamp(200px, 52vh, 410px);
-    transform: translateY(8px);
-  }
-
-  @keyframes credits-float-tall {
-    from {
-      transform: translateY(-18px);
-    }
-    to {
-      transform: translateY(-28px);
-    }
-  }
-
-  @keyframes credits-float-small {
-    from {
-      transform: translateY(8px);
-    }
-    to {
-      transform: translateY(-2px);
-    }
+    font-size: clamp(0.98rem, 2.4vw, 1.22rem);
+    font-weight: 700;
   }
 }
 
 @media (max-width: 480px) {
   .credits {
-    min-height: 120vh;
-    min-height: 120dvh;
+    min-height: auto;
+    padding-bottom: clamp(2.2rem, 5vh, 3.8rem);
   }
 
   .credits__header {
-    padding-top: clamp(2.6rem, 5.5vh, 4rem);
-    padding-bottom: 0.4rem;
+    padding-top: clamp(2.8rem, 6.5vh, 4.2rem);
+    padding-bottom: clamp(1.85rem, 5.5vw, 2.4rem);
+    margin-bottom: 0;
+  }
+
+  .credits__body {
+    flex: 0 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .credits__sign {
@@ -4805,13 +4832,13 @@ summary:active,
   }
 
   .credits__card-character-wrap {
-    height: 52%;
-    transform: translate(-50%, -18%);
+    height: 50%;
+    transform: translate(-50%, -14%);
   }
 
   .credits__card--tall .credits__card-character-wrap {
-    height: 58%;
-    transform: translate(-50%, -20%);
+    height: 56%;
+    transform: translate(-50%, -16%);
   }
 
   .credits__piranha {
@@ -4821,8 +4848,8 @@ summary:active,
   }
 
   .credits__card-content {
-    top: 45.5%;
-    padding: 0 0.25rem;
+    top: 46%;
+    padding: 0 clamp(0.35rem, 1.5vw, 0.75rem);
   }
 
   .credits__card--tall .credits__card-content {
@@ -4830,71 +4857,70 @@ summary:active,
   }
 
   .credits__card-role {
-    font-size: clamp(0.68rem, 2.8vw, 0.95rem);
+    font-size: clamp(1.05rem, 4.2vw, 1.32rem);
     letter-spacing: 0.01em;
   }
 
   .credits__card-role[aria-label="Development"],
   .credits__card-role[aria-label="Integration"],
   .credits__card--small .credits__card-role {
-    font-size: clamp(0.52rem, 2.1vw, 0.72rem);
-    letter-spacing: 0.005em;
+    font-size: clamp(1rem, 3.8vw, 1.25rem);
+    letter-spacing: 0.006em;
+  }
+
+  .credits__card-role[aria-label="Development"] .mario-char,
+  .credits__card-role[aria-label="Integration"] .mario-char,
+  .credits__card--small .credits__card-role .mario-char {
+    -webkit-text-stroke: 1.6px var(--mario-black);
   }
 
   .credits__card--tall .credits__card-role {
-    font-size: clamp(0.82rem, 3.2vw, 1.15rem);
-    letter-spacing: 0.018em;
+    font-size: clamp(1.28rem, 4.8vw, 1.62rem);
+    letter-spacing: 0.02em;
   }
 
   .credits__card-names {
-    margin-top: clamp(5px, 1.2vh, 10px);
-    gap: clamp(3px, 0.6vh, 5px);
+    margin-top: clamp(8px, 1.5vh, 13px);
+    gap: clamp(5px, 1vh, 9px);
   }
 
   .credits__card--tall .credits__card-names {
-    margin-top: clamp(6px, 1.4vh, 12px);
-    gap: clamp(3px, 0.7vh, 6px);
+    margin-top: clamp(10px, 1.8vh, 15px);
+    gap: clamp(6px, 1.2vh, 10px);
   }
 
   .credits__card-name {
-    font-size: clamp(0.42rem, 1.75vw, 0.58rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(0.84rem, 3.5vw, 0.98rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .credits__card--tall .credits__card-name {
-    font-size: clamp(0.46rem, 1.9vw, 0.64rem);
+    font-size: clamp(0.88rem, 3.8vw, 1.05rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .credits__cards {
-    gap: clamp(4px, 1.5vw, 12px);
+    flex-direction: column;
+    gap: clamp(0.75rem, 2.2vw, 1rem);
+    width: 100%;
   }
 
   .credits__card--tall {
-    height: clamp(220px, 64vh, 420px);
-    transform: translateY(-12px);
+    width: min(78vw, 290px);
+    height: clamp(340px, 48vh, 390px);
+    transform: none;
+    animation: none;
+    z-index: 3;
   }
 
   .credits__card--small {
-    height: clamp(170px, 48vh, 320px);
-    transform: translateY(6px);
-  }
-
-  @keyframes credits-float-tall {
-    from {
-      transform: translateY(-12px);
-    }
-    to {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes credits-float-small {
-    from {
-      transform: translateY(6px);
-    }
-    to {
-      transform: translateY(-2px);
-    }
+    width: min(75vw, 275px);
+    height: clamp(310px, 44vh, 360px);
+    transform: none;
+    animation: none;
+    z-index: 3;
   }
 }
 
@@ -5317,6 +5343,31 @@ section[id] {
   .holo-nav__link:active .holo-nav__btn {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Reveal section headers with the user's scroll position (no JavaScript). */
+@supports (animation-timeline: view()) {
+  .section-header-reveal {
+    animation: section-header-opacity both linear;
+    animation-timeline: view();
+    animation-range: entry 15% cover 45%;
+  }
+
+  @keyframes section-header-opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-header-reveal {
+    animation: none;
+    opacity: 1;
   }
 }
 

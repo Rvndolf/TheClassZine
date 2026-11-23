@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kristoff, BSCS 1A</title>
+    <!-- External stylesheet: all design rules live in style.css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="home">
+    <!-- ========== HEADER: hello + navigation ========== -->
+    <header class="site-header">
+      <div class="hello">
+        <div class="hello-text">
+          <h1>Hello, I'm Kristoff.</h1>
+          <p class="intro">
+            I'm a first-year BSCS student at Bicol University who loves games,
+            3D modeling, and building things for the web. This page is my
+            portfolio for CS 101.
+          </p>
+          <!-- Hello details: preferred name, program, year level -->
+          <dl class="facts">
+            <div>
+              <dt>Preferred name</dt>
+              <dd>Kristoff</dd>
+            </div>
+            <div>
+              <dt>Program</dt>
+              <dd>BS Computer Science</dd>
+            </div>
+            <div>
+              <dt>Year level</dt>
+              <dd>1st year (BSCS 1A)</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Profile image with alt text, caption, and credit -->
+        <figure class="portrait">
+          <img
+            src="images/profile.png"
+            alt="a young man with glasses and a light beard, wearing black headphones with his eyes closed."
+          />
+          <figcaption>Just a selfie.<br />Taken by me.</figcaption>
+        </figure>
+      </div>
+
+      <nav class="navbar" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#path">My Path</a></li>
+          <li><a href="#favorites">Favorites</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#reflection">Reflection</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ========== ABOUT ME ========== -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          My full name is <strong>Kristoffer Antoni M. Dela Cruz</strong>, but
+          you can call me Kristoff. I'm a first-year BSCS student at Bicol
+          University, and I'm from Masbate City. Outside of class, you'll
+          usually find me playing horror games on Roblox, working on 3D models,
+          or catching up on sleep.
+        </p>
+      </section>
+
+      <!-- ========== MY PATH INTO COMPUTING ========== -->
+      <section id="path">
+        <h2>My Path into Computing</h2>
+        <p>
+          I chose computer science because I was already interested in
+          technology in general. I'm not the brightest in math, but my trade-off
+          is my passion for learning programming, especially full-stack web
+          development.
+        </p>
+        <p>
+          I hope to learn more about the core of computer science over the next
+          four years of my course.
+        </p>
+      </section>
+
+      <!-- ========== FAVORITES / SKILLS ========== -->
+      <section id="favorites">
+        <h2>Favorites and Skills</h2>
+
+        <h3>Favorite websites</h3>
+        <p>
+          I play on
+          <a href="https://www.roblox.com/home" target="_blank" rel="noopener"
+            >Roblox</a
+          >
+          regularly because of its huge range of games, and I always go for
+          horror. I watch
+          <a href="https://www.youtube.com" target="_blank" rel="noopener"
+            >YouTube</a
+          >
+          for entertainment, and I keep my personal projects on
+          <a href="https://github.com/HashtagOne" target="_blank" rel="noopener"
+            >GitHub</a
+          >.
+        </p>
+
+        <h3>Skills I'm building</h3>
+        <!-- Unordered list of skills -->
+        <ul>
+          <li>HTML and CSS (this page!)</li>
+          <li>Python basics</li>
+          <li>3D modeling</li>
+          <li>Full-stack web development (in progress)</li>
+        </ul>
+      </section>
+
+      <!-- ========== GOALS ========== -->
+      <section id="goals">
+        <h2>Hobbies and Goals</h2>
+        <p>Here is what I do for fun, and what I'm working toward.</p>
+
+        <!-- Wrapper lets the table scroll sideways on small screens -->
+        <div class="table-wrap">
+          <table>
+            <caption>
+              My hobbies and top 3 goals
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">What</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hobby</td>
+                <td>Gaming</td>
+              </tr>
+              <tr>
+                <td>Hobby</td>
+                <td>3D modeling</td>
+              </tr>
+              <tr>
+                <td>Hobby</td>
+                <td>Programming</td>
+              </tr>
+              <tr>
+                <td>Hobby</td>
+                <td>Sleeping</td>
+              </tr>
+              <tr>
+                <td>Goal 1</td>
+                <td>Live a peaceful life</td>
+              </tr>
+              <tr>
+                <td>Goal 2</td>
+                <td>Graduate from Computer Science</td>
+              </tr>
+              <tr>
+                <td>Goal 3</td>
+                <td>Create a successful game on Roblox</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== REFLECTION ========== -->
+      <section id="reflection">
+        <h2>Reflection</h2>
+
+        <!-- Drop-down reflections: <details> works without JavaScript -->
+        <details>
+          <summary>What did I find easy?</summary>
+          <p>
+            Structuring the HTML. Since HTML doesn't need any programming logic,
+            creating a solid structure for my webpage felt fairly easy. It
+            wasn't too easy, but it was the right kind of easy.
+          </p>
+        </details>
+
+        <details>
+          <summary>What confused me?</summary>
+          <p>
+            CSS. I was still tripped up on how to organize my selectors, and on
+            which ones to write first or what to tackle first. I still need more
+            practice.
+          </p>
+        </details>
+
+        <details>
+          <summary>What do I want to improve?</summary>
+          <p>
+            My CSS design. I'm not that bad, but my project could still use
+            work. I would like to learn more about animations and transitions
+            for my portfolio.
+          </p>
+        </details>
+
+        <!-- Extended reflection -->
+        <h3>Extended reflection</h3>
+        <p>
+          After learning more about HTML and CSS, I realized that the different
+          features in CSS give me the tools to refine my webpage. They let me
+          make more aesthetically pleasing design choices and bake more
+          personality into it, even though it was quite challenging. HTML is
+          more straightforward and easier to learn than CSS, but that doesn't
+          change the fact that it is fundamental for a webpage to exist in the
+          first place. This is where coherency is born.
+        </p>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <p>
+        Made by Kristoffer Antoni M. Dela Cruz for CS 101, Bicol University.
+      </p>
+      <!-- Back to Home link jumps to the top of this page (id="home") -->
+      <p><a class="back-to-home" href="../../index.html">Back to Home</a></p>
+      <p class="credit">
+        Background image: Roblox game thumbnails, &copy; Roblox Corporation.
+      </p>
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,317 @@
+/*
+CHECKLIST
+  [/] Step 1: body (font, color, background)
+  [/] Step 2: headings (color, size, alignment)
+  [/] Step 3: box model (padding, margin, border)
+  [/] Step 4: Flexbox navigation menu
+  [/] Step 5: table styling
+  [/] Step 6: image and link styling
+*/
+
+
+/* ---------------------------------------------------------------
+   STEP 1: STYLE THE WHOLE PAGE (the body selector)
+   Anything you set on body is inherited by most elements inside it.
+
+   Properties to know:
+     font-family      : the typeface. List backups after the commas.
+     font-size        : size of the text (16px is the browser default).
+     line-height      : space between lines. 1.5 is easier to read.
+     color            : the TEXT color.
+     background-color : the background color.
+   --------------------------------------------------------------- */
+body {
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 24px;
+     line-height: 1.5;
+     color:#222222;
+     background-color:#AAE5A4;
+   }
+
+footer p{
+     text-align: center;
+     font-size: 0.9rem;
+     font-family: 'Comic Sans MS', cursive;
+   }
+
+/* ---------------------------------------------------------------
+   STEP 2: STYLE THE HEADINGS AND TEXT
+   You can give the same style to several selectors by separating
+   them with commas.
+
+   Properties to know:
+     text-align : left, center, or right.
+     font-weight: normal or bold.
+   --------------------------------------------------------------- */
+  h1 {
+     color: #540ef8;
+     font-size: 3rem;
+     text-align: center;
+   }
+
+   h2{
+     color: #000000;
+     text-align: center;
+   }
+   h3{
+     color: #4278ff;
+     text-align: left;
+   }
+   p{
+     color: #000000;
+     text-align: left;
+   }
+   header p{
+     color: white;
+     text-align: center;
+   }
+   header {
+     background-color: #ffd3a0;
+     color: white;
+     text-align: center;
+   }
+   caption {
+     font-weight: bold;
+     padding: 10px;
+     color: #000000;
+   }
+
+/* ---------------------------------------------------------------
+   STEP 3: THE BOX MODEL (spacing around elements)
+   Every HTML element is a box made of four layers, from inside out:
+
+       content > padding > border > margin
+
+   Properties to know:
+     padding : space INSIDE the box, between the content and the border.
+     border  : the line around the box. Shorthand: width style color.
+     margin  : space OUTSIDE the box, pushing other elements away.
+     max-width + margin: 0 auto : centers a block on the page.
+
+   --------------------------------------------------------------- */
+section {
+     background-color: rgb(252, 209, 209);
+     padding: 20px;
+     margin: 20px auto;
+     max-width: 800px;
+     border: 5px solid #f19c9c;
+     border-radius: 8px;
+     overflow-x: auto;
+   }
+
+   header {
+     padding: 20px;
+     margin: 20px auto;
+     max-width: 800px;
+     border: 5px solid #3856f0;
+     border-radius: 60px;
+   }
+
+
+
+
+/* ---------------------------------------------------------------
+   STEP 4: FLEXBOX (REQUIRED: arrange part of your page)
+   Flexbox arranges the children of a container in a row or column.
+   You turn it on by setting display: flex on the PARENT (container).
+
+   Properties to know (set on the container):
+     display: flex            : turns on Flexbox. Children line up in a row.
+     justify-content          : spacing along the main axis (the row).
+                                Try: flex-start, center, space-between,
+                                space-around, flex-end.
+     align-items              : alignment along the cross axis (up/down).
+                                Try: center, flex-start, stretch.
+     gap                      : space between the children.
+     flex-wrap: wrap          : lets items drop to the next line on small screens.
+
+   Your nav menu is a <ul> with <li> items inside it. The <ul> is the
+   container, so you apply display: flex to "nav ul".
+
+   --------------------------------------------------------------- */
+
+   nav ul {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 10px 20px;
+     list-style: none;
+     padding: 0;
+     margin: 0 auto;
+     max-width: 480px;
+   }
+
+
+   .hobbiesngoalslist {
+      display: flex;
+      gap: 20px;
+    }
+
+    .hobbiesngoalslist ul, .hobbiesngoalslist ol {
+      flex: 1;
+      padding-left : 20px;
+      margin: 0;
+    }
+
+   a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+   }
+
+   a:hover{
+    transform: scale(1.05);
+    color: #029baf;
+   }
+   .section1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+   }
+   img{
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 1s ease;
+    cursor: pointer;
+    max-width: 100%;
+   }
+   img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+   }
+   .imgtext{
+    flex: 1;
+    max-width: 100%;
+   }
+
+
+   .section1 figure{
+    width: 50%;
+    flex-shrink: 0;
+    margin: 0;
+   }
+   .section1 figure img{
+    width: 100%;
+   }
+   figcaption{
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+    color: #000000;
+   }
+
+
+
+/* ---------------------------------------------------------------
+   STEP 5: STYLE THE TABLE
+   Properties to know:
+     border-collapse: collapse : merges the double borders into single lines.
+     width: 100%               : makes the table fill its container.
+     th, td                    : style header and data cells together.
+     tr:nth-child(even)        : selects every second row (zebra stripes).
+
+
+   --------------------------------------------------------------- */
+
+ table {
+     border-collapse: collapse;
+     width: 100%;
+     font-size: 18px;
+     color:#000000;
+   }
+
+   th, td {
+     border: 2px solid #f19c9c;
+     padding: 15px;
+     text-align: left;
+   }
+
+   th {
+     background-color: #4972af;
+     color: white;
+   }
+
+   tr:nth-child(even) {
+     background-color: #b8b5b5;
+   }
+   tr:nth-child(odd) {
+     background-color: #999595;
+   }
+
+/* ---------------------------------------------------------------
+   STEP 6: STYLE IMAGES AND LINKS
+   Properties to know:
+     border-radius: 50%        : makes a square image into a circle.
+     max-width: 100%           : keeps images from overflowing small screens.
+     :hover                    : a style that applies when the mouse is over it.
+     text-decoration           : none, underline.
+
+
+   --------------------------------------------------------------- */
+
+nav a {
+     color: #1a3c6e;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 27px;
+     transition: transform 0.3s ease;
+   }
+
+   nav a:hover {
+     text-decoration: underline;
+     transform: scale(1.1);
+     color:#029baf;
+   }
+
+
+/* --------- Allows to fit small screens ---------- */
+@media (max-width: 700px) {
+  body { font-size: 18px; }
+  h1 { font-size: 2rem; }
+  nav a { font-size: 20px; }
+  .section1, .hobbiesngoalslist { flex-direction: column; }
+  table { font-size: 14px; }
+  th, td { padding: 8px; }
+  section, header { margin: 10px; }
+  .section1 figure { width: 100%; }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

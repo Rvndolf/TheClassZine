@@ -1,0 +1,10 @@
+CS101 Web Page Building Activity - Reflection
+
+1. What was easy?
+Understanding the semantic structure of HTML was straightforward because elements like <header>, <nav>, <main>, and <footer> clearly represent the layout of a web page. Inserting headings, lists, and basic images was also quick and intuitive to implement once I saw how tags open and close.
+
+2. What was confusing?
+The most confusing part was working with CSS layout properties, specifically understanding how Flexbox alignments work across different screen sizes. Adjusting margins, padding, and border boxes to align table elements correctly with the rest of the content also required extra trial and error.
+
+3. What is one thing you would improve?
+One area I would improve is making the website fully responsive for mobile devices by introducing CSS media queries. I would also like to add custom hover animations and interactive JavaScript functions in the future to make the page more dynamic.

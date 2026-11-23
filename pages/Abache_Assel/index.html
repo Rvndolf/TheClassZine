@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Snippet of My Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- SIDEBAR TOGGLE: checkbox stores open/closed, label is the button -->
+  <input type="checkbox" id="sidebar-toggle" class="sidebar-checkbox">
+  <label for="sidebar-toggle" class="sidebar-toggle">☰ Menu</label>
+  <label for="sidebar-toggle" class="sidebar-backdrop" aria-hidden="true"></label>
+
+  <!-- HEADER: page title, one-line description, short intro, and in-page navigation -->
+  <header>
+    <div class="header-top">
+        <h1>Assel<br><em>A.Abache</em></h1>
+      <div class="header-text">
+        <pre class="intro">Welcome to my overworld page! <br>Here is a snippet of who I am, what I study, <br>and where I want to go in tech.</pre>
+        <p class="description">1st Year BSCS Student of Bicol University</p>
+      </div>
+    </div>
+    <nav class="sidebar" aria-label="Page sections">
+      <ul>
+          <li><a href="#hello"><span class="icon" aria-hidden="true">👋</span> Hello</a></li>
+          <li><a href="#about"><span class="icon" aria-hidden="true">🙋</span> About</a></li>
+          <li><a href="#path"><span class="icon" aria-hidden="true">🧭</span> Path</a></li>
+          <li><a href="#hobbies"><span class="icon" aria-hidden="true">🎮</span> Hobbies</a></li>
+          <li><a href="#favorites"><span class="icon" aria-hidden="true">⭐</span> Favorites</a></li>
+          <li><a href="#goals"><span class="icon" aria-hidden="true">🎯</span> Goals</a></li>
+          <li><a href="#reflection"><span class="icon" aria-hidden="true">💭</span> Reflection</a></li>
+      </ul>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <!-- HELLO: preferred name, program, year level, and a one-sentence summary -->
+    <section id="hello">
+      <h2>Hello</h2>
+      <div class="hello-content">
+        <p class="lead">Hi, I'm Assel, a young-adult that loves solitude.</p>
+        <aside class="quick-facts" aria-label="Quick facts">
+          <dl class="fact-cards">
+            <div class="fact-card">
+              <dt><span class="fact-icon" aria-hidden="true">👤</span>Preferred name</dt>
+              <dd>Sel</dd>
+            </div>
+            <div class="fact-card">
+              <dt><span class="fact-icon" aria-hidden="true">💻</span>Program</dt>
+              <dd>BS Computer Science</dd>
+            </div>
+            <div class="fact-card">
+              <dt><span class="fact-icon" aria-hidden="true">🎓</span>Year level</dt>
+              <dd>1st year</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Long text sits inside <details class="fold"> boxes: click the <summary> to open or close -->
+    <!-- ABOUT ME: portrait with caption and credit, plus a paragraph about me -->
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <figure>
+          <img src="images/profile.jpg" alt="Portrait of Assel Abache in graduation attire" width="160" height="178" title="Assel A. Abache">
+          <figcaption>
+            Me in my graduation attire, Class of 2026.
+          </figcaption>
+        </figure>
+        <div>
+          <p>
+            Hello! My name is <strong>Assel Abache</strong>. I am a first-year BSCS
+            student at Bicol University, from Cagbacong Legazpi City, Albay. I chose BSCS because I have a passion for
+            technology and programming.
+            I hope to learn more about software development and improve my coding skills.
+          </p>
+          <details class="fold">
+            <summary><span class="icon" aria-hidden="true">🕒</span> A typical day for me</summary>
+            <div class="fold-body">
+              <p>My everyday life mostly revolves around mundane tasks such as doing house chores, 
+                feeding my pets, finishing all the pending schoolwork, and commuting. During school days, 
+                especially now at college, I spend my free time learning new skills such as programming, 
+                communication, and time management.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY PATH INTO COMPUTING: how I became interested in computing -->
+    <section id="path">
+      <h2>My Path Into Computing</h2>
+      <details class="fold">
+            <summary><span class="icon" aria-hidden="true">📖</span> Read my story</summary>
+            <div class="fold-body">
+              <p>How I became interested in computing progressed gradually in my early years. 
+                Initially, I hardly saw myself pursuing computer science, since I used to easily 
+                get overwhelmed by the fast-paced advancement of technology. But my high school 
+                experience helped me discover my passion for computing. I took Computer Systems 
+                Servicing (CSS) as my TLE specialisation during Junior high, and as I learned, 
+                I slowly grew fond of computers and configuring them as I saw the complexity of 
+                technology I once took for granted. From that, it became my stepping stone towards 
+                being enthusiastic about computer software. In the present, I don't regret choosing 
+                this path because, as I learn and discover new things in this field, I see myself 
+                grow academically and personally. </p>
+            </div>
+          </details>
+    </section>
+
+    <!-- HOBBIES: an unordered list -->
+    <section id="hobbies">
+      <h2>My Hobbies</h2>
+      <ul class="panel-list">
+        <li>Reading</li>
+        <li>Playing Video Games</li>
+        <li>Listening to Music</li>
+      </ul>
+    </section>
+
+    <!-- FAVORITES AND SKILLS: a table plus my favorite website link -->
+    <section id="favorites">
+      <h2>My Favorite and Skills</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Books</th>
+              <th scope="col">Video Games</th>
+              <th scope="col">Skills Currently Learning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://shopee.ph/The-WOODPECKER-METHOD-(CHESS)...Axel-Smith-Hans-Tikkanen-i.1038391432.21193820607?extraParams=%7B%22display_model_id%22%3A99450997858%2C%22model_selection_logic%22%3A3%7D&image_ids=ph-11134207-7r992-lmhck7ej2bgvb4" target="_blank" rel="noopener">The Woodpecker-Method by Axel Smith & Hans Tikkanen</a></td>
+              <td><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></td>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Performance" target="_blank" rel="noopener">Programming skills</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://shopee.ph/Be-Yourself-by-John-Mason-BESTSELLER!-i.47896966.3190564050?extraParams=%7B%22display_model_id%22%3A75215589743%2C%22model_selection_logic%22%3A3%7D&image_ids=ph-11134207-7r991-lwcdh34dyvz536" target="_blank" rel="noopener">Be Yourself by John Mason</a></td>
+              <td><a href="https://www.asphaltlegends.com/" target="_blank" rel="noopener">Asphalt Legends</a></td>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Performance" target="_blank" rel="noopener">Communication skills</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://shopee.ph/The-Mountain-Is-You-by-Brianna-Wiest(Paperback)-New-Brand-english-book-i.430940444.10496094708?extraParams=%7B%22display_model_id%22%3A426066875660%2C%22model_selection_logic%22%3A3%7D&image_ids=ph-11134207-7qula-lh3bnz7vxujq3f" target="_blank" rel="noopener">The Mountain is You by Brianna Weist</a></td>
+              <td><a href="https://www.geometrydash.com/" target="_blank" rel="noopener">Geometry Dash</a></td>
+              <td><a href="https://musictheory.net/" target="_blank" rel="noopener">Music and instrument playing</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://shopee.ph/How-to-Deal-with-Difficult-People-by-Bo-Sanchez-Feast-Books-Official-Inspirational-i.295104514.5050722327?extraParams=%7B%22display_model_id%22%3A40880099028%2C%22model_selection_logic%22%3A3%7D&image_ids=ee9d309800227068ab9f18c7c0c1579e" target="_blank" rel="noopener">How to Deal with Difficult People by Bo Sanchez</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://shopee.ph/%E3%80%90NEW%E3%80%91%E3%80%908-Books-Set%E3%80%91Harry-Potter-English-Novel-Read-Story-Book-Fiction-Kids-Adult-Books-i.463745037.4291458850?extraParams=%7B%22display_model_id%22%3A26286283221%2C%22model_selection_logic%22%3A3%7D&image_ids=sg-11134253-822yy-mi3pa2xych6p68&incoming_source=srp&rModelId=26286283221&vItemId=43051906974&vModelId=285154963231&vShopId=1257811163" target="_blank" rel="noopener">Harry Potter by J.K. Rowling</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="fold">
+            <summary><span class="icon" aria-hidden="true">🔗</span> My favorite website</summary>
+            <div class="fold-body">
+              <p>
+        One website I enjoy visiting is
+        <a href="https://www.w3resource.com/c-programming-exercises/" target="_blank" rel="noopener">W3Resource C
+          Programming Exercises</a>
+        because it has large varieties of C programming challenges, which I am delighted to solve, that helps me broaden
+        my programming and algorithmic thinking skills.
+      </p>
+            </div>
+          </details>
+      <!-- <tr> = table row, <th> = header cell, <td> = data cell, <caption> = table title -->
+    </section>
+
+    <!-- GOALS: an ordered list of what I hope to do in the next few years -->
+    <section id="goals">
+      <h2>Goals</h2>
+      <p>These are my top three goals for the next few years:</p>
+      <ol class="panel-list">
+        <li>Graduate with latin honors</li>
+        <li>Get an internship at a tech company</li>
+        <li>Contribute to an open-source project</li>
+      </ol>
+    </section>
+
+    <!-- REFLECTION: what I learned and what I improved from the About Me activity -->
+    <section id="reflection">
+      <h2>Reflection</h2>
+      <details class="fold">
+            <summary><span class="icon" aria-hidden="true">💭</span> Read my reflection</summary>
+            <div class="fold-body">
+              <p>I learned a lot during the creation of my personal webpage. 
+                I learned that creating a webpage isn't just about writing, 
+                designing, and turning it into functional content; it also 
+                teaches us what the environment of a browser actually is. 
+                Every day, we are exposed to different web creations—from 
+                simple scrolling to productive tools. Yet it is easy to overlook 
+                the creativity and logic behind this because, after all, we are 
+                after its functionality and features, rather than the semantic 
+                tags and elements they cleverly used. But revising my previous 
+                About Me page taught me to appreciate web development more, as 
+                well as the importance of expressing oneself in every way possible.
+              </p>
+            </div>
+          </details>
+    </section>
+  </main>
+
+  <!-- FOOTER: my name, credits and sources, and the required Back to Home link -->
+  <footer>
+    <p>Made by Assel Abache for CS 101, Bicol University.</p>
+    <details class="fold credits-fold">
+            <summary><span class="icon" aria-hidden="true">📷</span> Credits and sources</summary>
+            <div class="fold-body">
+              <ul class="credits">
+      <li>Background image: Pinterest</li>
+      <li>Link source: W3Resource C Programming Exercises</li>
+    </ul>
+            </div>
+          </details>
+    <div class="footer-links">
+      <a class="back-to-home" href="../../index.html">Back to Home</a>
+      <a href="#">Back to top</a>
+    </div>
+  </footer>
+</body>
+
+</html>

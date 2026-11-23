@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jax.exe | Goal 1: Skilled Programmer</title>
+    <!-- Pixelated / Retro font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .roadmap-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .roadmap-container::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 30px;
+            width: 4px;
+            border-left: 3px dashed var(--primary-red);
+            z-index: 1;
+        }
+
+        .roadmap-step {
+            position: relative;
+            margin-bottom: 35px;
+            padding-left: 50px;
+            z-index: 2;
+        }
+
+        .roadmap-step::before {
+            content: "◆";
+            position: absolute;
+            left: 17px;
+            top: 0;
+            color: var(--light-red);
+            font-size: 1.2rem;
+            background-color: var(--card-bg);
+            padding: 2px 0;
+        }
+
+        .roadmap-card {
+            background-color: #141414;
+            border: 1px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .step-title {
+            font-family: var(--font-pixel);
+            font-size: 1.1rem;
+            color: var(--light-red);
+            margin-bottom: 10px;
+        }
+
+        .prog-symbol {
+            color: var(--light-red);
+            font-family: var(--font-pixel);
+            font-size: 0.8rem;
+            margin-right: 6px;
+        }
+
+        .milestone-list {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        .milestone-list li {
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            background: rgba(204, 0, 0, 0.1);
+            border-left: 3px solid var(--primary-red);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Goal Roadmap: Skilled Programmer</h1>
+        <p class="subtitle">Step-by-Step Leveling Up from CS101 to Full-Stack & Systems Engineering</p>
+        <nav class="navbar">
+            <a href="index.html">Main Page</a>
+            <a href="index.html#hobbies">Back to Hobbies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>&gt; Objective Overview</h2>
+            <p>
+                My ultimate objective is to grow from a first-year Computer Science student into a skilled, versatile programmer who can architect reliable software, build automated workflows, and create meaningful technical tools from the ground up. Here is my personalized roadmap to get there:
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>&gt; The Programmer's Roadmap</h2>
+            <div class="roadmap-container">
+                
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 1: Foundations & Procedural Logic</div>
+                        <p>Mastering core syntax, memory structures, loops, and problem-solving fundamentals through academic coursework and early programming tracks.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[✓]</span> Completed Cisco Python Essentials 1 and DICT Python basics to lock down foundational syntax.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Excelling in university C programming (Computer Programming 1) and procedural logic structures at Bicol University.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Training computational thinking through math-based trajectory simulations and logic challenges.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 2: Toolchain & Environment Mastery</div>
+                        <p>Building a robust, localized software engineering stack to handle version control, package management, and efficient script execution.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[&gt;]</span> Fluent configuration of VS Code extensions, custom themes, and keybindings.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Managing isolated package dependencies via Python Poetry and PowerShell terminal workflows.</li>
+                            <li><span class="prog-symbol">[&gt;]</span> Utilizing native Git command-line operations for version control and code repository tracking.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 3: Custom Tooling & Creative Development</div>
+                        <p>Applying programming logic to personal passions, such as custom binary ROM hacking tools (CUBHMA/Hex Maniac Advance) and modular web layouts.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[ ]</span> Engineering custom GBA Pokémon expansions and script routines for personal game titles.</li>
+                            <li><span class="prog-symbol">[ ]</span> Building responsive websites and interactive portfolios from scratch using clean semantic CSS Flexbox.</li>
+                            <li><span class="prog-symbol">[ ]</span> Automating repetitive local tasks and data processing pipelines with custom scripts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-card">
+                        <div class="step-title">Phase 4: Advanced Systems & Impact</div>
+                        <p>Transitioning into advanced data structures, collaborative software engineering projects, and full-stack applications that solve real-world problems.</p>
+                        <ul class="milestone-list">
+                            <li><span class="prog-symbol">[ ]</span> Mastering advanced data structures, algorithms, and object-oriented paradigms in upper-year college courses.</li>
+                            <li><span class="prog-symbol">[ ]</span> Collaborating on team software projects and contributing actively to tech student groups.</li>
+                            <li><span class="prog-symbol">[ ]</span> Launching production-ready applications designed to benefit and empower communities.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="index.html#hobbies" class="close-btn">&larr; Return to Main Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jazper Cipres | Built for CS101 , Bicol University</p>
+        <p>jax.exe</p>
+    </footer>
+</body>
+
+</html>

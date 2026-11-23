@@ -1,0 +1,290 @@
+body 
+{
+     font-family: Lucida Console, sans-serif, Arial;
+     font-size: 16px;
+     line-height: 1.6;
+     color: #e0e0e0;
+     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 24%), url('images/bg.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
+
+/* ---------------------------------------------------------------
+   STEP 2: STYLE THE HEADINGS AND TEXT
+   You can give the same style to several selectors by separating
+   them with commas.
+
+   Properties to know:
+     text-align : left, center, or right.
+     font-weight: normal or bold.
+
+   Example:
+
+   h1 {
+     color: #1a3c6e;
+     font-size: 2.5rem;
+     text-align: center;
+   }
+
+   h2, h3 {
+     color: #1a3c6e;
+   }
+
+   header {
+     background-color: #1a3c6e;
+     color: white;
+     text-align: center;
+   }
+   --------------------------------------------------------------- */
+
+h1 {
+     color: #ffffff;
+     font-size: 2.5rem;
+     text-align: center;
+   }
+
+   h2, h3 {
+     color: #ffffff;
+   }
+
+   header {
+     background-color: rgba(0, 0, 0, 0.6);
+     color: rgb(255, 255, 255);
+     text-align: center;
+   }
+
+/* ---------------------------------------------------------------
+   --------------------------------------------------------------- */
+.retro-card {
+  border: 2px solid #b9013e;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 16px 16px 16px; /* Left, right, and bottom padding for the text */
+}
+
+.retro-card h2 {
+  background-color: #b9013e;
+  color: #ffffff;
+  margin: 0 -16px 16px -16px; /* Negative side margins cancel out the section padding to hit the edges */
+  padding: 8px 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* -------------- */
+section {
+  rotate: random(-0.5deg, 0.5deg);
+    background-color: rgba(0, 0, 0, 0.6);
+     padding: 16px;
+     margin: 20px auto;
+     max-width: 800px;
+    border: 2px solid #b9013e; 
+     /*border-radius: 8px;*/
+   }
+
+   header, footer {
+     padding: 32px;
+   }
+
+/* ---------------------------------------------------------------
+
+   --------------------------------------------------------------- */
+   
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+nav ul {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 64px;
+     list-style: none;
+     padding: 10px;
+   }
+
+   nav a {
+     color: rgb(255, 255, 255);
+     text-decoration: none;
+   }
+
+   nav a:hover {
+     text-decoration: underline;
+   }
+
+/* about me flexbox */
+.about-content {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* Makes both containers the exact same height */
+}
+
+.about-left {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column; /* Stacks the image and text vertically */
+  align-items: center;    /* Centers the image and text horizontally */
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #b9013e; 
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+}
+
+.about-right {
+  flex: 1; /* Takes up all the remaining space on the right */
+  /*background-color: rgb(243, 239, 227);*/
+  background-color: rgba(0, 0, 0, 0.8);
+  /*color: #000000;*/
+  border-radius: 8px;
+  padding: 16px;
+  text-align: justify;
+}
+
+/* skills flexbox */
+.skills-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.skills-left {
+  display: flex;
+  flex: 0 0 200px; /*lumiliit yung image*/
+}
+
+.skills-right {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #b9013e; 
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.skills-right ul {
+  margin: 0;
+}
+
+/* table */
+
+ul, ol {
+  padding-left: 25px;
+}
+
+table {
+     border-collapse: collapse;
+     width: 100%;
+   }
+
+   th, td {
+     border: 1px solid #0000007a;
+     padding: 10px;
+     text-align: center;
+   }
+
+   th {
+     background-color: #b9013e;
+     color: white;
+   }
+
+   tr:nth-child(odd) {
+     background-color: #47474780;
+   }
+
+   tr:nth-child(even) {
+     background-color: #0a0a0a80;
+   }
+
+/* image and link */
+
+img {
+     border-radius: 4%;
+     max-width: 100%;
+     rotate: random(-2deg, 2deg);
+   }
+
+   a {
+     color: #1a3c6e;
+   }
+
+   a:hover {
+     color: #c0392b;
+   }
+
+   footer {
+     text-align: center;
+     font-size: 0.9rem;
+     background-color: #000000;
+
+   }
+
+/* hover effect */
+/*di maganda tignan pag nasa header imo*/
+/*before*/
+.about-right ul a { 
+  
+  background-color: #b9013e; /* Soft red background block */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the text inside the button */
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  rotate: -1deg;
+}
+
+/* after */
+.about-right ul a:hover {
+  background-color: #d44b79; /* Turns solid theme red when hovered */
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

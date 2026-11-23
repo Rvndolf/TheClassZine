@@ -1,0 +1,1314 @@
+/* =========================================================
+   1. GLOBAL STYLES & BASE ELEMENT SELECTORS
+   ========================================================= */
+
+/* Universal selector (*): Ensures padding and borders are included inside every element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+/* body element selector: Sets the main page font, Starry Night background image, dark blue fallback color, and custom cursor */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    color: #FFFFFF;
+    cursor: url("images/cursor.png") 4 4, auto;
+    background-color: #071426;
+    background-image:
+        linear-gradient(rgba(5, 15, 35, 0.48), rgba(5, 15, 35, 0.62)),
+        url("images/starry-night.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+/* html element selector: Enables smooth scrolling when clicking anchor links in the navigation bar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* img element selector: Makes all images responsive so they scale cleanly without overflowing their containers */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* h1 element selector: Styles the main page title in the header */
+h1 {
+    margin-top: 10px;
+    color: #F2F3F5;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* h2 element selector: Styles section headings with a soft sky-blue color */
+h2 {
+    color: #BFDBFE;
+    text-align: center;
+}
+
+/* h3 element selector: Styles subsection headings aligned to the left */
+h3 {
+    color: #BFDBFE;
+    text-align: left;
+}
+
+/* a (anchor) pseudo-class selectors: Customizes unvisited, visited, hovered, and focused hyperlink colors */
+a:link { color: #FDE68A; }
+a:visited { color: #FCDFA0; }
+a:hover,
+a:focus {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Applies custom pointer hand cursor to all links, buttons, theme toggle, and FAQ questions */
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active,
+button,
+label,
+.theme-button,
+.theme-button *,
+details summary,
+details summary *,
+summary,
+summary *,
+nav ul li a,
+nav ul li a:hover,
+.back-home-link,
+.back-home-link:hover,
+.back-to-top,
+.back-to-top * {
+    cursor: url("images/pointer.png") 8 2, pointer;
+}
+
+/* .nav-back class selector: Aligns the "Back to Home" button container to the left */
+.nav-back { text-align: left; }
+
+/* .back-home-link class selector: Styles the "Back to Home" link as a bordered button with a hover color transition */
+.back-home-link {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #60A5FA;
+    border-radius: 6px;
+    background-color: rgba(11, 31, 58, 0.8);
+    color: #FDE68A;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-home-link:hover {
+    background-color: #60A5FA;
+    color: #0B1F3A;
+    text-decoration: none;
+}
+
+/* =========================================================
+   2. HEADER AND STICKY NAVIGATION ONLY
+   ========================================================= */
+
+/* header element selector: Displays the starry banner background and centers the main title and tagline */
+header {
+    padding: 20px 25px 15px;
+    background-image:
+        linear-gradient(rgba(5, 15, 45, 0.72), rgba(5, 15, 45, 0.72)),
+        url("images/header-stars.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* nav element selector: Keeps the navigation bar sticky at the top of the screen while scrolling */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 115px 12px 20px;
+    background-color: rgba(7, 20, 38, 0.94);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(96, 165, 250, 0.35);
+    border-bottom: 2px solid #60A5FA;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* nav ul descendant selector: Uses Flexbox to arrange navigation items horizontally and wrap cleanly */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* nav ul li a descendant selector: Styles each navigation link as a rounded pill with hover lift */
+nav ul li a {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 0.92rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+    background-color: #60A5FA;
+    color: #0B1F3A;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   3. TAGLINE TYPING ANIMATION
+   ========================================================= */
+
+/* .tagline class selector: Animates the header subtitle with a typewriter text-reveal effect */
+.tagline {
+    display: inline-block;
+    width: 0;
+    margin: 10px auto 5px;
+    overflow: hidden;
+    border-right: 3px solid #FFFFFF;
+    white-space: nowrap;
+    animation:
+        typing 4s steps(40, end) forwards,
+        blink 0.7s step-end 6,
+        removeCursor 0s 4s forwards;
+}
+
+/* @keyframes at-rules: Control width expansion and blinking cursor behavior for the tagline */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 40ch; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@keyframes removeCursor {
+    to { border-right-color: transparent; }
+}
+
+/* =========================================================
+   4. MAIN PORTFOLIO LAYOUT & SECTION CARDS
+   ========================================================= */
+
+/* main element selector: Wraps the primary content area with vertical spacing */
+main {
+    width: 100%;
+    padding: 28px 0 10px;
+}
+
+/* Grouped class selectors: Keeps all main layout wrappers aligned horizontally */
+.portfolio-layout,
+.full-width-wrapper,
+.full-width-sections,
+.bottom-grid {
+    width: min(94%, 1450px);
+    margin: 0 auto;
+}
+
+/* .portfolio-layout class selector: Two-column CSS Grid separating main content from the sidebar */
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(320px, 0.95fr);
+    align-items: start;
+    gap: 26px;
+}
+
+/* Left main column and right sidebar column stacked vertically using Flexbox */
+.main-column,
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    min-width: 0;
+}
+
+.full-width-wrapper {
+    margin-top: 26px;
+}
+
+/* section element selector: Styles every content card with a dark translucent background and blue border */
+section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 28px;
+    border: 2px solid #60A5FA;
+    border-radius: 12px;
+    background-color: rgba(7, 20, 38, 0.94);
+    color: #FFFFFF;
+    scroll-margin-top: 85px;
+    min-width: 0;
+}
+
+/* section p descendant selector: Sets readable line spacing and bottom margin for paragraphs */
+section p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* section h2 descendant selector: Controls spacing around section headings */
+section h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+.section-intro {
+    line-height: 1.75;
+}
+
+/* Adjusts padding and heading size for section elements inside the narrower sidebar */
+.sidebar-column section {
+    padding: 24px;
+}
+
+.sidebar-column section h2 {
+    font-size: 1.45rem;
+}
+
+/* Highlighted callout boxes for "My Path" and "Reflection" text */
+.path-box,
+.reflection-box {
+    padding: 15px 20px;
+    border-left: 4px solid #60A5FA;
+    border-radius: 6px;
+    background-color: rgba(191, 219, 254, 0.1);
+}
+
+/* =========================================================
+   5. HELLO SECTION AND PROFILE PHOTO (WITH TILT)
+   ========================================================= */
+
+/* Flexbox container placing the profile photo beside the greeting text */
+.hello-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 28px;
+    padding: 20px;
+    border-left: 4px solid #60A5FA;
+    border-radius: 8px;
+    background-color: rgba(191, 219, 254, 0.1);
+}
+
+/* .profile-figure class selector: Wraps the profile photo and caption */
+.profile-figure {
+    flex: 0 0 32%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* .profile-figure img descendant selector: Applies a subtle tilt and zoom effect on hover */
+.profile-figure img {
+    width: 200px;
+    max-width: 100%;
+    border: 2px solid #60A5FA;
+    border-radius: 10px;
+    object-fit: contain;
+    transform: rotate(-2.5deg);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile-figure img:hover {
+    transform: rotate(2.5deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.35);
+}
+
+.hello-text { flex: 1; min-width: 0; }
+
+.hello-text p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+/* figcaption element selector: Styles image captions and credits below photos */
+figcaption {
+    margin-top: 10px;
+    color: #BFDBFE;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   6. ABOUT ME & REFLECTION SECTIONS (WITH TILT GIFS)
+   ========================================================= */
+
+/* Flexbox container placing the animated GIF beside the About Me bio */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.gif-figure {
+    flex-shrink: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* .gif-figure img descendant selector: Tilts slightly and rotates opposite on hover */
+.gif-figure img {
+    width: 190px;
+    border: 2px solid #60A5FA;
+    border-radius: 10px;
+    transform: rotate(2deg);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gif-figure img:hover {
+    transform: rotate(-2.5deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.35);
+}
+
+.about-text { flex: 1; min-width: 0; }
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-text p:last-child { margin-bottom: 0; }
+
+/* Full-width box highlighting Hobbies & Passions */
+.hobbies-full-width {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px 25px;
+    border-left: 4px solid #60A5FA;
+    border-radius: 8px;
+    background-color: rgba(191, 219, 254, 0.1);
+}
+
+.hobbies-full-width h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #BFDBFE;
+    font-size: 1.2rem;
+}
+
+/* ul and li descendant selectors inside Hobbies: Formats bullet list spacing and bold accent colors */
+.hobbies-full-width ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.hobbies-full-width li {
+    margin-bottom: 10px;
+    color: #E2E8F0;
+    line-height: 1.8;
+}
+
+.hobbies-full-width li:last-child { margin-bottom: 0; }
+.hobbies-full-width li strong { color: #FDE68A; }
+
+/* #reflection ID selector: Matches the width and vertical spacing of the main grid */
+#reflection {
+    width: min(94%, 1450px);
+    margin: 26px auto 0;
+}
+
+/* Flexbox container placing the Reflection GIF on the left and text on the right */
+.reflection-container {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.reflection-gif {
+    flex-shrink: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* .reflection-gif img descendant selector: Adds tilted photo framing and hover animation */
+.reflection-gif img {
+    width: 210px;
+    border: 2px solid #60A5FA;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.reflection-gif img:hover {
+    transform: rotate(2.5deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.35);
+}
+
+.reflection-container .reflection-box {
+    flex: 1;
+    min-width: 0;
+}
+
+/* =========================================================
+   7. GOALS, HOBBIES, MOTTO AND VISION CARDS
+   ========================================================= */
+
+.hobbies-goals-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+/* Light-blue cards inside Goals with dark navy text and upward hover lift */
+.hobby-box,
+.goal-box,
+.motto-box,
+.vision-box {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #60A5FA;
+    border-radius: 12px;
+    background-color: #BFDBFE;
+    color: #0B1F3A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-box:hover,
+.goal-box:hover,
+.motto-box:hover,
+.vision-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 12px rgba(0, 0, 0, 0.24);
+}
+
+.hobby-box h3,
+.goal-box h3,
+.motto-box h3,
+.vision-box h3 {
+    margin-top: 0;
+    color: #164E8A;
+}
+
+/* List item (li) descendant selectors inside Goals */
+.hobby-box li,
+.goal-box li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* blockquote descendant selector: Emphasizes the personal life motto */
+.motto-box blockquote {
+    margin: 12px 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   8. SKILLS AND PROGRESS BARS
+   ========================================================= */
+
+.skill { margin-bottom: 16px; }
+
+/* Flexbox row aligning each skill name on the left and percentage span on the right */
+.skill-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.skill-info h3 {
+    margin: 0;
+    color: #BFDBFE;
+    font-size: 1rem;
+}
+
+.skill-info span {
+    color: #BFDBFE;
+    font-weight: bold;
+}
+
+/* Outer track of each skill progress bar */
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid #164E8A;
+    border-radius: 20px;
+    background-color: #BFDBFE;
+}
+
+/* Inner filled bar animated via @keyframes fillProgress */
+.progress {
+    width: var(--progress-width);
+    height: 100%;
+    border-radius: 20px;
+    background-color: #164E8A;
+    animation: fillProgress 1.5s ease both;
+}
+
+/* Custom CSS variables defining each skill's target percentage */
+.html { --progress-width: 65%; }
+.css { --progress-width: 50%; }
+.c { --progress-width: 55%; }
+.problem { --progress-width: 65%; }
+.web { --progress-width: 30%; }
+
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: var(--progress-width); }
+}
+
+/* =========================================================
+   9. TABLES
+   ========================================================= */
+
+/* Enables horizontal scrolling on small screens so wide tables never break layout */
+.table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: visible;
+}
+
+/* table element selector: Collapses cell borders into clean grid lines */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+/* th (table header) and td (table data) element selectors: Sets cell padding and borders */
+th,
+td {
+    padding: 12px;
+    border: 1px solid #164E8A;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* th element selector: Styles column headers with a deep navy background */
+th {
+    background-color: #164E8A;
+    color: #FFFFFF;
+}
+
+/* tr:nth-child(even) pseudo-class selector: Adds alternating row striping for readability */
+tr:nth-child(even) {
+    background-color: rgba(147, 197, 253, 0.2);
+}
+
+/* .favorites-table class selector: Custom styling for the Favorites table inside the sidebar */
+.favorites-table {
+    width: 100%;
+    margin: 20px 0 30px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.favorites-table th,
+.favorites-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.favorites-table th {
+    background-color: #243b64;
+    color: white;
+}
+
+.favorites-table td {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================================
+   10. FAQ AND DETAILS
+   ========================================================= */
+
+/* details element selector: Styles each expandable FAQ accordion box */
+details {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #164E8A;
+    border-radius: 8px;
+    background-color: rgba(191, 219, 254, 0.97);
+    color: #0B1F3A;
+}
+
+/* summary element selector: Styles the clickable question label with a pointer cursor */
+summary {
+    color: #0B1F3A;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details p { margin-bottom: 0; }
+
+/* =========================================================
+   11. FLIP CARDS
+   ========================================================= */
+
+/* Flexbox wrapper for Fun Facts interactive flip cards */
+.flip-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Sets 3D perspective for the card flip effect */
+.flip-card {
+    width: 250px;
+    height: 200px;
+    background: transparent;
+    perspective: 1000px;
+}
+
+/* Preserves 3D space and animates the 180-degree Y-axis rotation on hover */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Shared positioning and backface hiding for front and back card faces */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 2px solid #164E8A;
+    border-radius: 15px;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #BFDBFE;
+    color: #0B1F3A;
+}
+
+.flip-card-front,
+.flip-card-front h3,
+.flip-card-front p { color: #0B1F3A; }
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #164E8A;
+    color: #FFFFFF;
+}
+
+.flip-card-back,
+.flip-card-back h3,
+.flip-card-back p { color: #FFFFFF; }
+
+/* =========================================================
+   12. PHOTO GALLERY (WITH TILT) AND LIGHTBOX
+   ========================================================= */
+
+/* CSS Grid arranging gallery photo cards into columns */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 8px 4px;
+}
+
+/* .gallery-item class selector: Styles each photo card with anti-aliasing for sharp tilted edges */
+.gallery-item {
+    margin: 0;
+    padding: 8px 8px 12px;
+    border: 2px solid #60A5FA;
+    border-radius: 12px;
+    background-color: rgba(15, 36, 66, 0.85);
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* :nth-child pseudo-class selectors: Alternates tilt angles for odd and even gallery cards */
+.gallery-item:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.gallery-item:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.gallery-item:nth-child(odd):hover {
+    transform: rotate(2deg) scale(1.04);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.35);
+    z-index: 2;
+}
+
+.gallery-item:nth-child(even):hover {
+    transform: rotate(-2deg) scale(1.04);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.35);
+    z-index: 2;
+}
+
+/* .gallery-item img descendant selector: Crops thumbnails cleanly without stretching */
+.gallery-item img {
+    width: 100%;
+    height: 190px;
+    border-radius: 8px;
+    object-fit: cover;
+    image-rendering: auto;
+    backface-visibility: hidden;
+}
+
+/* Pure-CSS full-screen lightbox overlay triggered via the :target pseudo-class */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox:target { display: flex; }
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 75vh;
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* .lightbox span descendant selector: Styles the close label inside the lightbox */
+.lightbox span {
+    margin-top: 15px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* =========================================================
+   13. LEARNING JOURNEY TIMELINE
+   ========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 750px;
+    margin: 40px auto;
+}
+
+/* ::before pseudo-element creates the vertical timeline spine line */
+.timeline::before {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 4px;
+    height: 100%;
+    background-color: #164E8A;
+    content: "";
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 60px;
+}
+
+/* ::before pseudo-element creates the circular node marker for each milestone */
+.timeline-item::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #164E8A;
+    border-radius: 50%;
+    background-color: #BFDBFE;
+    content: "";
+}
+
+.timeline-content {
+    padding: 22px 24px;
+    border: 2px solid #60A5FA;
+    border-radius: 12px;
+    background-color: rgba(191, 219, 254, 0.97);
+    color: #0B1F3A;
+    line-height: 1.7;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover { transform: translateX(8px); }
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #0B1F3A;
+}
+
+.timeline-content span {
+    color: #164E8A;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: #0B1F3A;
+}
+
+/* =========================================================
+   14. CONTACT AND SOURCES
+   ========================================================= */
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-icons img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover img { transform: scale(1.15); }
+
+.sources-list { line-height: 1.8; }
+
+/* =========================================================
+   15. FOOTER
+   ========================================================= */
+
+/* footer element selector: Centers the copyright and credits bar at the bottom of the page */
+footer {
+    margin-top: 28px;
+    padding: 20px;
+    border-top: 1px solid #60A5FA;
+    background-color: #040C18;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* =========================================================
+   16. BACK-TO-TOP BUTTON
+   ========================================================= */
+
+/* .back-to-top class selector: Fixed circular anchor button in the bottom-right corner */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #93C5FD;
+    border-radius: 50%;
+    background-color: #164E8A;
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background-color: #60A5FA;
+    color: #0B1F3A;
+}
+
+/* =========================================================
+   17. DARK MODE TOGGLE (PURE CSS CHECKBOX HACK)
+   ========================================================= */
+
+/* #theme-toggle ID selector: Hides the raw checkbox input while keeping it functional */
+#theme-toggle { display: none; }
+
+/* .theme-button class selector: Styles the toggle label as a fixed top-right pill button */
+.theme-button {
+    position: fixed;
+    top: 12px;
+    right: 15px;
+    z-index: 2500;
+    padding: 8px 14px;
+    border: 1px solid #93C5FD;
+    border-radius: 20px;
+    background-color: #164E8A;
+    color: #FFFFFF;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.dark-icon { display: none; }
+
+/* :has() and :checked pseudo-class selectors: Apply deeper midnight colors when toggled on */
+body:has(#theme-toggle:checked) {
+    background-color: #030A18;
+    color: #E2E8F0;
+}
+
+body:has(#theme-toggle:checked) section,
+body:has(#theme-toggle:checked) nav {
+    border-color: #2563EB;
+    background-color: rgba(13, 33, 58, 0.95);
+}
+
+#theme-toggle:checked + .theme-button .light-icon { display: none; }
+#theme-toggle:checked + .theme-button .dark-icon { display: inline; }
+
+body:has(#theme-toggle:checked) .hobby-box,
+body:has(#theme-toggle:checked) .goal-box,
+body:has(#theme-toggle:checked) .motto-box,
+body:has(#theme-toggle:checked) .vision-box,
+body:has(#theme-toggle:checked) details,
+body:has(#theme-toggle:checked) .timeline-content {
+    background-color: #BFDBFE;
+    color: #0B1F3A;
+}
+
+/* =========================================================
+   18. MASONRY TWO-COLUMN LAYOUT & BOTTOM GRID
+   ========================================================= */
+
+/* Multi-column layout for Movies, Gallery, FAQ, Fun Facts, and Journey */
+.full-width-sections {
+    margin-top: 26px;
+    columns: 2;
+    column-gap: 26px;
+}
+
+/* Direct child combinator (>): Prevents individual sections from splitting across columns */
+.full-width-sections > section {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 26px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Equal two-column CSS Grid for Sources and Contact sections at the bottom */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+}
+
+#schedule table {
+    min-width: 500px;
+}
+
+#gallery .gallery-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#fun-facts .flip-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
+    gap: 16px;
+}
+
+#fun-facts .flip-card {
+    width: 100%;
+    min-width: 0;
+    height: 190px;
+}
+
+#journey .timeline {
+    margin: 28px auto 10px;
+}
+
+#contact .contact-intro {
+    text-align: center;
+}
+
+/* =========================================================
+   19. RESPONSIVE @media QUERIES (TABLET & MOBILE)
+   ========================================================= */
+
+/* @media (max-width: 1050px): Adjusts column proportions and stacks About Me vertically */
+@media (max-width: 1050px) {
+    .portfolio-layout {
+        grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.9fr);
+        gap: 18px;
+    }
+
+    section,
+    .sidebar-column section {
+        padding: 22px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gif-figure {
+        align-self: center;
+    }
+}
+
+/* @media (max-width: 900px): Switches masonry and bottom grid into a single column */
+@media (max-width: 900px) {
+    .full-width-sections {
+        columns: 1;
+        margin-top: 20px;
+    }
+
+    .full-width-sections > section {
+        margin-bottom: 20px;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #schedule table {
+        min-width: 600px;
+    }
+
+    #gallery .gallery-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #fun-facts .flip-card-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #fun-facts .flip-card {
+        width: 250px;
+    }
+}
+
+/* @media (max-width: 800px): Stacks the main portfolio column and sidebar into 1 column */
+@media (max-width: 800px) {
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .main-column,
+    .sidebar-column {
+        gap: 20px;
+    }
+
+    .sidebar-column {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hobbies-goals-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* @media (max-width: 750px): Stacks Reflection GIF above text on smaller tablets */
+@media (max-width: 750px) {
+    .reflection-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reflection-gif img {
+        width: 190px;
+    }
+}
+
+/* @media (max-width: 600px): Mobile-friendly font sizes, single-column grids, and compact nav */
+@media (max-width: 600px) {
+    .portfolio-layout,
+    .full-width-wrapper,
+    .full-width-sections,
+    .bottom-grid,
+    #reflection {
+        width: 92%;
+    }
+
+    section,
+    .sidebar-column section {
+        padding: 20px;
+    }
+
+    .hello-container,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-figure {
+        flex: none;
+        width: 100%;
+    }
+
+    .gif-figure {
+        align-self: center;
+    }
+
+    .gif-figure img { width: 180px; }
+
+    .hobbies-goals-container,
+    #gallery .gallery-container,
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    #fun-facts .flip-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #fun-facts .flip-card,
+    .flip-card {
+        width: min(100%, 280px);
+    }
+
+    #schedule .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: visible;
+    }
+
+    #schedule table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    #schedule th,
+    #schedule td {
+        padding: 7px 5px;
+        font-size: 0.72rem;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    h1 { font-size: 1.8rem; }
+
+    nav {
+        padding: 10px 95px 10px 10px;
+    }
+
+    nav ul {
+        gap: 6px 8px;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        font-size: 0.82rem;
+    }
+
+    .tagline {
+        width: auto;
+        border-right: none;
+        white-space: normal;
+        animation: none;
+    }
+
+    .theme-button {
+        top: 8px;
+        right: 8px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Consistent Back to Home button */
+.back-to-home {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.back-to-home:hover {
+  filter: brightness(1.08);
+}
+.back-to-home:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+
+/* Student mobile responsiveness baseline */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; }
+body { max-width: 100%; overflow-x: hidden; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+main, header, section, article, footer, nav { max-width: 100%; }
+table { max-width: 100%; }
+.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  main, section, article, header, footer { min-width: 0; }
+  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
+  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
+  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
+  table { width: 100%; }
+  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
+}

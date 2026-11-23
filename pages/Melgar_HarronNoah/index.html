@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Guess_Who_Harron_Is — Personal developer portfolio, academic portfolio and profile of Harron Noah A. Melgar, 1st Year BSCS Student at Bicol University.">
+  <title>Guess_Who_Harron_Is // Harron Noah A. Melgar — BSCS 1A Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <details class="audio-player-shell">
+    <summary class="audio-player-moon" aria-label="Open lunar radio controls" title="Lunar radio controls"></summary>
+    <div class="audio-player-controls">
+      <div class="audio-player-heading">
+        <span class="audio-player-label">LUNAR RADIO</span>
+        <span class="audio-player-status" aria-hidden="true">LOOP</span>
+      </div>
+      <audio class="background-audio-player" autoplay controls loop preload="auto" aria-label="Background music">
+        <source src="images/Retro-Sci-Fi-Planet_Looping.ogg" type="audio/ogg">
+      </audio>
+    </div>
+  </details>
+
+  <header class="site-nav-header" role="banner">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Harron Noah A. Melgar Portfolio">
+        <svg class="nav-brand-mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" aria-hidden="true">
+          <ellipse cx="50" cy="50" rx="42" ry="18" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 3"
+            opacity="0.6" transform="rotate(-25 50 50)" />
+          <ellipse cx="50" cy="50" rx="34" ry="13" stroke="currentColor" stroke-width="1.8"
+            transform="rotate(35 50 50)" />
+          <circle cx="50" cy="50" r="14" fill="#121824" stroke="currentColor" stroke-width="2.2" />
+          <circle cx="50" cy="50" r="17" stroke="#4E95FF" stroke-width="1.2" opacity="0.8" stroke-dasharray="2 2" />
+          <path d="M 16 74 Q 50 28 84 26" stroke="#4E95FF" stroke-width="2.2" stroke-linecap="round" />
+          <circle cx="78" cy="27" r="2.8" fill="#4E95FF" />
+        </svg>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">HARRON NOAH A. MELGAR</span>
+          <span class="nav-brand-sub">BSCS 1A // BICOL UNIVERSITY</span>
+        </div>
+      </a>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-links-menu nav-pill-dock">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#origin" class="nav-link">Origin</a></li>
+          <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+          <li><a href="#memories" class="nav-link">Memories</a></li>
+          <li><a href="#favorites" class="nav-link">Favorites</a></li>
+          <li><a href="#toolkit" class="nav-link">Toolkit</a></li>
+          <li><a href="#reflection" class="nav-link">Reflection</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-action-wrapper">
+        <a href="mailto:harronnoahanonuevo.melgar26@bicol-u.edu.ph" class="btn-nav-action" aria-label="Email Harron">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm10 9L2 6v12h20V6l-10 7zm0-2.4L20 6H4l8 4.6z" />
+          </svg>
+          <span>Email Me</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true" style="opacity: 0.7;">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
+        </a>
+
+        <label for="nav-toggle" class="mobile-hamburger-btn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+
+  </header>
+
+  <div class="cylinder-rolling-horizon" aria-hidden="true">
+    <div class="cylinder-specular-sheen"></div>
+  </div>
+
+  <main id="main-content">
+
+    <div id="wandering-moon" class="wandering-moon" aria-hidden="true">
+      <div class="moon-globe-sphere">
+        <div class="moon-globe-texture"></div>
+        <div class="moon-atmosphere-rim"></div>
+      </div>
+    </div>
+
+    <section id="hero" class="hero-section" aria-label="Harron Noah A. Melgar Introduction">
+      <div class="hero-backdrop-stars" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-centered-wrap">
+          <div class="hero-stage-visual-centered" role="img"
+            aria-label="Conceptual 3D visualization of the rotating Moon surrounded by orbital trajectory rings and telemetry annotations">
+
+            <div class="orbit-ring-container" aria-hidden="true">
+              <div class="orbit-ring leo" style="border-color: rgba(78, 149, 255, 0.45);">
+                <div class="satellite-node">
+                  <span class="telemetry-dot" style="color: var(--color-accent-orbit);"></span>
+                  <span class="text-mono" style="color: var(--color-accent-orbit);">ORBIT // LEO</span>
+                </div>
+              </div>
+              <div class="orbit-ring meo" style="border-color: rgba(255, 255, 255, 0.15);"></div>
+              <div class="orbit-ring geo" style="border-color: rgba(52, 211, 153, 0.35);"></div>
+            </div>
+
+            <div class="hero-hud-card hud-card-top" aria-hidden="true">
+              <span class="hud-card-label">ACADEMIC PROGRAM</span>
+              <span class="hud-card-value">BSCS 1A</span>
+              <span class="hud-card-sub text-orbit">BICOL UNIVERSITY</span>
+            </div>
+
+            <div class="hero-hud-card hud-card-bottom" aria-hidden="true">
+              <span class="hud-card-label">MISSION DIRECTIVE</span>
+              <span class="hud-card-value">PILOT &amp; AI ENGINEER</span>
+              <span class="hud-card-sub" style="color: var(--color-accent-cyan);">FUTURE FOCUS</span>
+            </div>
+          </div>
+
+          <div class="hero-centered-editorial">
+            <div class="hero-mission-badge">
+              <span class="telemetry-dot" style="color: var(--color-accent-cyan);"></span>
+              <span>STUDENT IDENTITY: CS 101 INTRODUCTION TO COMPUTING</span>
+              <span class="badge-alert" style="color: var(--color-accent-orbit);">// BSCS 1A</span>
+            </div>
+
+            <h1 class="hero-main-headline">HARRON NOAH A. MELGAR</h1>
+
+            <p class="hero-supporting-copy">
+              1st Year BSCS Student. Passionate about web development and programming, QlNDUyAxQQ==. Building innovative
+              computational solutions and exploring how technology can solve real-world problems.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#about" class="btn-primary-hero">
+                <span>Explore About Me</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#memories" class="btn-secondary-hero">
+                <span>View Memory Archive</span>
+              </a>
+            </div>
+
+            <div class="telemetry-tag neutral" style="margin-top: 0.25rem;">
+              <span>BICOL UNIVERSITY // COLLEGE OF SCIENCE // DEPARTMENT OF COMPUTER SCIENCE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-telemetry-banner" role="region" aria-label="Student Academic Profile Metrics">
+          <div class="hero-metric-tile">
+            <span class="metric-num text-orbit">BSCS 1A</span>
+            <span class="metric-label">Academic Section</span>
+            <span class="metric-context">Bicol University College of Science.</span>
+          </div>
+
+          <div class="hero-metric-tile">
+            <span class="metric-num">7 SUBJECTS</span>
+            <span class="metric-label">Course Schedule</span>
+            <span class="metric-context">Comprehensive computing and analysis curriculum.</span>
+          </div>
+
+          <div class="hero-metric-tile">
+            <span class="metric-num">4 HOBBIES</span>
+            <span class="metric-label">Analytical Pursuits</span>
+            <span class="metric-context">Chess, Programming, Books, Video Games.</span>
+          </div>
+
+          <div class="hero-metric-tile">
+            <span class="metric-num text-hazard" style="color: var(--color-accent-cyan);">TOP 3</span>
+            <span class="metric-label">Lifelong Ambitions</span>
+            <span class="metric-context">Aviation, AI Engineering, and Spreading Happiness.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-wrapper" aria-labelledby="heading-about">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 01</span>
+            <span class="section-meta-title">BIOGRAPHICAL BACKGROUND</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-about" class="heading-section">About Me</h2>
+            <p class="section-lead-text">
+              First-year Computer Science undergraduate student at Bicol University, dedicated to software development,
+              artificial intelligence, and purposeful engineering.
+            </p>
+          </div>
+        </div>
+
+        <div class="author-dossier-grid">
+          <div class="author-profile-wrap">
+            <div class="author-profile-frame">
+              <img src="images/profile.jpg" alt="A picture of me from my Junior year" width="200">
+            </div>
+            <div class="telemetry-tag neutral">
+              <span>ARCHIVE PHOTO // JUNIOR YEAR</span>
+            </div>
+          </div>
+
+          <div class="author-bio-content">
+            <div class="author-meta-row">
+              <span class="telemetry-tag neutral"
+                style="color: var(--color-accent-orbit); border-color: var(--color-accent-orbit);">BICOL
+                UNIVERSITY</span>
+              <span class="telemetry-tag neutral">1ST YEAR BSCS</span>
+              <span class="telemetry-tag neutral">QlNDUyAxQQ==</span>
+            </div>
+
+            <p class="body-standard">
+              Hello! My name is <strong>Harron Noah A. Melgar</strong>. I am a first-year BSCS
+              student at Bicol University. I chose Computer Science because I enjoy programming,
+              creating innovative solutions, and exploring how technology can improve people's lives.
+              I am particularly interested in software development, artificial intelligence, and building
+              applications that solve real-world problems. Through this course, I hope to strengthen my
+              programming skills, develop my problem-solving and critical-thinking abilities, and gain a
+              deeper understanding of computer systems and emerging technologies. Ultimately, I want to
+              use what I learn to create meaningful projects and develop solutions that can make a positive
+              impact on society.
+            </p>
+
+            <div class="spec-comment-callout">
+              <!-- MY COMMENT 1: The <img> tag is used to display an image i privided a path with on the webpage. It has a source attribute (src) that specifies the path to the image file, and an alt attribute that provides alternative text for the image. -->
+              <span class="spec-comment-header">MY COMMENT 1</span>
+              <p class="spec-comment-body">The <code>&lt;img&gt;</code> tag is used to display an image provided with a
+                relative path on the webpage. It features a <code>src</code> attribute pointing to the image asset and
+                an <code>alt</code> attribute providing alternative text for accessibility and screen readers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="origin" class="section-wrapper" aria-labelledby="heading-origin">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 02</span>
+            <span class="section-meta-title">ORIGIN TRACE // WHY CS</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-origin" class="heading-section">Why I Chose Computer Science</h2>
+          </div>
+        </div>
+
+        <article class="origin-story-panel" aria-labelledby="origin-story-title">
+          <div class="origin-terminal-bar" aria-hidden="true">
+            <span class="origin-terminal-title">curiosity.log</span>
+            <span class="origin-terminal-state">
+              <span class="telemetry-dot" style="color: var(--color-accent-cyan);"></span>
+              RUNNING
+            </span>
+          </div>
+
+          <div class="origin-story-content">
+            <h3 id="origin-story-title" class="heading-subsection">It Started With A Screen</h3>
+
+            <p class="origin-story-lead">
+              Ever since I was a child, I have been curious about technology — especially computers. I remember watching
+              videos on an old PC with a CRT monitor. Back then, it was so much fun just to sit in front of that glowing
+              screen and explore.
+            </p>
+
+            <p class="origin-story-body">
+              Then my uncle gave me a more modern PC. I watched movies on it all day, and I also started playing around
+              with it — opening folders, changing settings, and figuring out what the device was capable of. I kept
+              exploring and exploring, and the more I discovered, the more I wanted to know.
+            </p>
+
+            <blockquote class="origin-story-quote">
+              <p>&ldquo;Yes!! I finally found a way to satisfy my curiosity even further.&rdquo;</p>
+              <cite>8TH GRADE // CHOOSING COMPUTER PROGRAMMING</cite>
+            </blockquote>
+
+            <p class="origin-story-body">
+              In 8th grade, we were given the chance to choose a course for our 9th and 10th grade path. I didn't think
+              twice. I chose Computer Programming, and that decision became years of learning. Today I can build apps,
+              create chatbots, and develop AI tools that help with modern problems.
+            </p>
+
+            <div class="origin-build-row">
+              <span class="origin-build-label">NOW BUILDING</span>
+              <ul class="origin-build-tags">
+                <li>APPS</li>
+                <li>CHATBOTS</li>
+                <li>AI</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="origin-closing-row">
+            <span class="origin-closing-label">WHY COMPUTER SCIENCE</span>
+            <p class="origin-closing-text">To understand the systems behind the screen — and keep satisfying the
+              <strong>curiosity</strong> that started it all.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="hobbies" class="section-wrapper" aria-labelledby="heading-hobbies">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 03</span>
+            <span class="section-meta-title">PASSIONS &amp; HORIZONS</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-hobbies" class="heading-section">My Hobbies and Goals</h2>
+            <p class="section-lead-text">
+              Analytical pastimes that train strategic focus, paired with core lifelong ambitions in aviation,
+              artificial intelligence, and human happiness.
+            </p>
+          </div>
+        </div>
+
+        <div class="hobbies-goals-layout">
+          <!-- Hobbies Card -->
+          <div class="dossier-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="telemetry-tag neutral">ANALYTICAL PURSUITS</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color: var(--color-accent-orbit);">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
+              </svg>
+            </div>
+
+            <h3 class="heading-subsection">Hobbies</h3>
+
+            <ul class="dossier-list-styled">
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Playing Chess</strong>
+                  <p class="dossier-item-desc">Tactical positioning, pattern recognition, and competitive calculation on
+                    international platforms.</p>
+                </div>
+              </li>
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Programming</strong>
+                  <p class="dossier-item-desc">Architecting web interfaces, mastering algorithms, and exploring
+                    computational system design.</p>
+                </div>
+              </li>
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Reading Books</strong>
+                  <p class="dossier-item-desc">Broadening perspective, critical thinking, literature, and analytical
+                    problem-solving.</p>
+                </div>
+              </li>
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Playing Video Games</strong>
+                  <p class="dossier-item-desc">Immersive digital worlds, strategic decision-making, and rapid
+                    situational assessment.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="goals" class="dossier-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="telemetry-tag neutral"
+                style="color: var(--color-accent-cyan); border-color: rgba(52, 211, 153, 0.3);">FLIGHT &amp; LIFE
+                OBJECTIVES</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color: var(--color-accent-cyan);">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+
+            <h3 class="heading-subsection">My Top 3 Goals</h3>
+
+            <ol class="dossier-ordered-list">
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Become a Pilot</strong>
+                  <p class="dossier-item-desc">Commanding aircraft, mastering aeronautical flight principles, and
+                    navigating the open skies.</p>
+                </div>
+              </li>
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Be an AI Engineer</strong>
+                  <p class="dossier-item-desc">Developing intelligent systems, neural computing, and automated
+                    technologies to advance humanity.</p>
+                </div>
+              </li>
+              <li>
+                <div class="dossier-item-wrap">
+                  <strong class="dossier-item-title">Make those whom I love Happy</strong>
+                  <p class="dossier-item-desc">The ultimate foundational purpose: bringing peace, loyalty, and joy to
+                    family and loved ones.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="memories" class="section-wrapper" aria-labelledby="heading-memories">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 04</span>
+            <span class="section-meta-title">MEMORY ARCHIVE</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-memories" class="heading-section">Captured Moments</h2>
+            <p class="section-lead-text">
+              A photo collage of the people, places, and small celebrations that make up my story. Hover or focus a
+              frame to slide the photo aside and reveal the memory behind it.
+            </p>
+          </div>
+        </div>
+
+        <div class="memory-collage-toolbar">
+          <span class="memory-toolbar-status">
+            <span class="telemetry-dot" style="color: var(--color-accent-cyan);"></span>
+            MEMORY ARCHIVE // 04 FRAMES ONLINE
+          </span>
+          <span class="memory-toolbar-instruction">HOVER OR FOCUS A FRAME <span aria-hidden="true">→</span> SLIDE TO
+            REVEAL</span>
+        </div>
+
+        <div class="memory-collage" role="group" aria-label="Personal photo collage">
+          <figure class="memory-card memory-card--science" tabindex="0">
+            <div class="memory-card__media">
+              <img src="images/625089938_26432922399731585_4647551278437342765_n.jpg"
+                alt="Harron and classmates posing together at a science expo booth with project posters" width="2048"
+                height="1536" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="memory-card__caption">
+              <span class="memory-card__ghost" aria-hidden="true">01</span>
+              <span class="memory-card__index">FRAME 01 // NSEF</span>
+              <h3 class="memory-card__title">Future Scientists</h3>
+              <p class="memory-card__text">Our team during the National Science Engineering Fair (NSEF) along with our
+                so called predecessors.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="memory-card memory-card--cats" tabindex="0">
+            <div class="memory-card__media">
+              <img src="images/688255212_2237217537093616_4848713998379840470_n.jpg"
+                alt="Two kittens sleeping curled up together in a basket, one wearing a yellow heart collar"
+                width="2048" height="1280" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="memory-card__caption">
+              <span class="memory-card__ghost" aria-hidden="true">02</span>
+              <span class="memory-card__index">FRAME 02 // NAMI & SANJI</span>
+              <h3 class="memory-card__title">QTπ</h3>
+              <p class="memory-card__text">My two kittens back at home, napping together in a cozy position.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="memory-card memory-card--family" tabindex="0">
+            <div class="memory-card__media">
+              <img src="images/471528829_960582049310453_3117952465001526949_n.jpg"
+                alt="Harron and his family gathered around a table in front of a lit Christmas tree" width="1153"
+                height="2048" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="memory-card__caption">
+              <span class="memory-card__ghost" aria-hidden="true">03</span>
+              <span class="memory-card__index">FRAME 03 // CHRISTMAS AT HOME</span>
+              <h3 class="memory-card__title">Home, Warm &amp; Loud</h3>
+              <p class="memory-card__text">Christmas with my family... warm lights, full plates, and stories that get
+                louder every year.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="memory-card memory-card--selfie" tabindex="0">
+            <div class="memory-card__media">
+              <img src="images/IMG_20251022_075627.jpg"
+                alt="A close-up selfie of Harron and a friend making silly scrunched-up faces" width="4080"
+                height="3072" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="memory-card__caption">
+              <span class="memory-card__ghost" aria-hidden="true">04</span>
+              <span class="memory-card__index">FRAME 04 // SILLY SELFIE</span>
+              <h3 class="memory-card__title">"MY" Partner<3 </h3>
+                  <p class="memory-card__text">The one who always made my day :)) </p>
+            </figcaption>
+          </figure>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section id="favorites" class="section-wrapper" aria-labelledby="heading-favorites">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 05</span>
+            <span class="section-meta-title">CULTURAL &amp; DIGITAL HUBS</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-favorites" class="heading-section">My Favorites</h2>
+            <p class="section-lead-text">
+              Digital platforms, aesthetic philosophy, and multimedia bookmarks.
+            </p>
+          </div>
+        </div>
+
+        <div class="favorites-editorial-card">
+          <p class="body-standard">
+            One website I enjoy visiting is
+            <a href="https://chess.com" target="_blank" rel="noopener">Chess.com</a>
+            because it's a great place to play chess and improve my skills and aligned with my hobby, I like to oftenly
+            visit this site to play with chess players all across the world.
+            Another website I like is
+            <a href="https://lichess.org" target="_blank" rel="noopener">Lichess</a>
+            because it's another platform to play chess and well when chess.com takes too long to pair to an opponent, I
+            oftenly visit this site also to play chess with other players across the world.
+          </p>
+
+          <p class="body-standard">
+            Another favorite thing of mine is my favorite color which is <strong>Black and White</strong> (kahit na
+            green nilagay ko sa site ko kasi sabi ni Mama mas maganda daw po) because it represents elegance,
+            sophistication, and mystery. It can also convey a sense of power and authority. I love to wear black
+            clothing because it makes me feel confident and stylish but unfortunately, due to the heat these days I try
+            not to wear it and choose lighter colors instead like white another fave color of mine. Additionally, black
+            is a versatile color that can be paired with almost any other color, making it easy to create different
+            looks and styles (according sa neresearch ko hehe coz yeah).
+            <a href="https://www.instagram.com/reel/DQI3IWdE2EJ/" target="_blank" rel="noopener">Instagram Reel</a>
+            view this link for an example.
+          </p>
+
+          <div class="spec-comment-callout">
+            <!-- MY COMMENT 3: href specifies the URL of the page the link goes to for example: https://chess.com the one I used above, when clicked, will navigate to that URL and in that case it will open the link in a new tab also, to test even further I added more links like the lichess.org and instagram.com reel. -->
+            <span class="spec-comment-header">MY COMMENT 3</span>
+            <p class="spec-comment-body"><code>href</code> specifies the URL of the page the link goes to (for example:
+              <code>https://chess.com</code>). When clicked, it navigates to that destination in a new tab; additionally
+              tested with <code>lichess.org</code> and an Instagram reel.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="toolkit" class="section-wrapper" aria-labelledby="heading-toolkit">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">DOSSIER // 06</span>
+            <span class="section-meta-title">EVERYDAY INDEX</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-toolkit" class="heading-section">My Everyday Toolkit</h2>
+            <p class="section-lead-text">
+              The apps I visit, AI tools I learn with, books I enjoy, and skills I’m building.
+            </p>
+          </div>
+        </div>
+
+        <div class="toolkit-panel">
+
+          <div class="toolkit-block">
+            <div class="toolkit-block-head">
+              <h3 class="toolkit-block-title">Apps</h3>
+              <span class="toolkit-block-meta">08 ENTRIES</span>
+            </div>
+            <table class="toolkit-table">
+              <caption class="sr-only">Favorite apps</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="toolkit-col-index">#</th>
+                  <th scope="col">App</th>
+                  <th scope="col" class="toolkit-col-detail">Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="toolkit-index">01</td>
+                  <th scope="row" class="toolkit-name">Facebook</th>
+                  <td class="toolkit-detail">Social</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">02</td>
+                  <th scope="row" class="toolkit-name">TikTok</th>
+                  <td class="toolkit-detail">Short video</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">03</td>
+                  <th scope="row" class="toolkit-name">Instagram</th>
+                  <td class="toolkit-detail">Photos &amp; reels</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">04</td>
+                  <th scope="row" class="toolkit-name">Mobile Legends: Bang Bang</th>
+                  <td class="toolkit-detail">MOBA</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">05</td>
+                  <th scope="row" class="toolkit-name">Call of Duty: Mobile</th>
+                  <td class="toolkit-detail">FPS</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">06</td>
+                  <th scope="row" class="toolkit-name">Chess.com</th>
+                  <td class="toolkit-detail">Puzzles &amp; rapid</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">07</td>
+                  <th scope="row" class="toolkit-name">Lichess</th>
+                  <td class="toolkit-detail">Study &amp; analysis</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">08</td>
+                  <th scope="row" class="toolkit-name">YouTube</th>
+                  <td class="toolkit-detail">Videos &amp; tutorials</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="toolkit-block">
+            <div class="toolkit-block-head">
+              <h3 class="toolkit-block-title">Tools</h3>
+              <span class="toolkit-block-meta">03 ENTRIES</span>
+            </div>
+            <table class="toolkit-table">
+              <caption class="sr-only">AI tools used for learning</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="toolkit-col-index">#</th>
+                  <th scope="col">Tool</th>
+                  <th scope="col" class="toolkit-col-detail">Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="toolkit-index">01</td>
+                  <th scope="row" class="toolkit-name">Gemini</th>
+                  <td class="toolkit-detail">Guided learning</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">02</td>
+                  <th scope="row" class="toolkit-name">ChatGPT</th>
+                  <td class="toolkit-detail">Deep research mode</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">03</td>
+                  <th scope="row" class="toolkit-name">Claude</th>
+                  <td class="toolkit-detail">Learning support</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="toolkit-block">
+            <div class="toolkit-block-head">
+              <h3 class="toolkit-block-title">Books</h3>
+              <span class="toolkit-block-meta">BY RICK RIORDAN</span>
+            </div>
+            <table class="toolkit-table">
+              <caption class="sr-only">Favorite book series by Rick Riordan</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="toolkit-col-index">#</th>
+                  <th scope="col">Series</th>
+                  <th scope="col" class="toolkit-col-detail">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="toolkit-index">01</td>
+                  <th scope="row" class="toolkit-name">Percy Jackson &amp; the Olympians</th>
+                  <td class="toolkit-detail">Original series</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">02</td>
+                  <th scope="row" class="toolkit-name">The Heroes of Olympus</th>
+                  <td class="toolkit-detail">Sequel series</td>
+                </tr>
+                <tr>
+                  <td class="toolkit-index">03</td>
+                  <th scope="row" class="toolkit-name">The Trials of Apollo</th>
+                  <td class="toolkit-detail">Collecting the set</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="toolkit-block">
+            <div class="toolkit-block-head">
+              <h3 class="toolkit-block-title">Skills</h3>
+              <span class="toolkit-block-meta">IN PROGRESS</span>
+            </div>
+            <table class="toolkit-table">
+              <caption class="sr-only">Skill currently being built</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="toolkit-col-index">#</th>
+                  <th scope="col">Skill</th>
+                  <th scope="col" class="toolkit-col-detail">Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="toolkit-index">01</td>
+                  <th scope="row" class="toolkit-name">Memory</th>
+                  <td class="toolkit-detail">Woodpecker Method</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="toolkit-footnote">
+              I’m working on my memory by practicing consistently with the Woodpecker Method.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="reflection" class="section-wrapper" aria-labelledby="heading-reflection">
+      <div class="container">
+
+        <div class="section-header-editorial">
+          <div class="section-meta-block">
+            <span class="section-index">REFLECTION // 07</span>
+            <span class="section-meta-title">HARRON NOAH A. MELGAR · BSCS 1A</span>
+          </div>
+          <div class="section-title-wrap">
+            <h2 id="heading-reflection" class="heading-section">My Reflection</h2>
+          </div>
+        </div>
+
+        <div class="reflection-copy">
+          <div class="reflection-window-bar">
+            <span class="reflection-window-controls" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="reflection-window-title">reflection.txt</span>
+            <span aria-hidden="true"></span>
+          </div>
+          <div class="reflection-copy-body">
+            <p class="body-standard">
+              I had learned an had so much fun messing around and experimenting with my site copying styles I see and
+              developing ideas of my own too, for example the moving moon the inspo is about how the sticky header
+              sticks at the top of the navebar always then I had a fun idea what if my moon does the same thing so my
+              site wouldn't be so boring so yeah that's how it turned out a moving moon across the sections.
+            </p>
+            <p class="body-standard">
+              I had another idea to design it more those rings in the hero section I so I went to look for references I
+              can learn from and well I love how it turned out then well some of my classmates said that the table
+              should be replaced with something but I just hid it away then replaced it with a memory album containing
+              the memories in my life I love very much the outcome of it and well the caption thing when the cursor is
+              hovered above it is well I saw it from Randolf and it looked cool so I used it also :)).
+            </p>
+            <p class="body-standard">
+              I have learned so much from this activity while having lots of fun along the way.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top-grid" style="grid-template-columns: 1.8fr 1fr 1fr;">
+        <!-- Brand Identity & Creator -->
+        <div class="footer-brand-col">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <svg style="width: 26px; height: 26px; color: var(--color-accent-orbit);" viewBox="0 0 100 100" fill="none"
+              stroke="currentColor">
+              <ellipse cx="50" cy="50" rx="42" ry="18" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3" />
+              <ellipse cx="50" cy="50" rx="34" ry="13" stroke="currentColor" stroke-width="2" />
+              <circle cx="50" cy="50" r="14" fill="#141923" stroke="currentColor" stroke-width="2" />
+              <circle cx="78" cy="27" r="3" fill="#4E95FF" />
+            </svg>
+            <span class="footer-brand-title">HARRON NOAH A. MELGAR</span>
+          </div>
+
+          <p class="footer-desc">
+            Made by Harron Noah A. Melgar for CS 101 , Bicol University, BSCS 1A.
+          </p>
+
+          <details class="private-access">
+            <summary aria-label="Open classified easter egg note" title="Classified Note">•</summary>
+            <div class="private-note-card" style="margin-top: 1.25rem; text-align: left;">
+              <span class="telemetry-tag hazard">
+                <span class="telemetry-dot" style="color: var(--color-accent-hazard);"></span>
+                SECRET CLEARANCE UNLOCKED
+              </span>
+              <h2>Private Notes</h2>
+              <p>If mahanap mo po yaa sir within 2 days na mapasa ko may 10 pesos ka po ;)) HEHEHEHEHE.</p>
+            </div>
+          </details>
+
+          <p class="footer-desc">
+            Personal developer portfolio, computing timetable, and academic profile created with strict semantic HTML5
+            and modern CSS3.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Portfolio Corridors</h4>
+          <ul class="footer-links-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#origin">Origin</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#memories">Memories</a></li>
+            <li><a href="#favorites">Favorites</a></li>
+            <li><a href="#toolkit">Toolkit</a></li>
+            <li><a href="#reflection">Reflection</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Platforms &amp; College</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.chess.com/member/harronnoah160" target="_blank" rel="noopener noreferrer">Chess.com
+                Profile</a></li>
+            <li><a href="https://lichess.org/@/The_Herron" target="_blank" rel="noopener noreferrer">Lichess Profile</a>
+            </li>
+            <li><a href="https://www.instagram.com/reel/DQI3IWdE2EJ/" target="_blank" rel="noopener noreferrer">Clothing
+                Reel</a></li>
+            <li><a href="https://bicol-u.edu.ph" target="_blank" rel="noopener noreferrer">Bicol University</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-telemetry">
+        <div>
+          <span>&copy; 2026 HARRON NOAH A. MELGAR // CS 101 INTRODUCTION TO COMPUTING // BICOL UNIVERSITY.</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="footer-status-pill">
+            <span class="telemetry-dot"></span>
+            ALL SENSORS NOMINAL
+          </span>
+          <span>SYSTEM: BSCS 1A ACTIVE</span>
+        </div>
+      </div>
+
+    </div>
+      <p><a class="back-to-home" href="../../index.html">Back to Home</a></p>
+</footer>
+
+</body>
+
+</html>
