@@ -1055,6 +1055,217 @@ footer {
   color: var(--muted);
 }
 
+#films .section-side h2 {
+  font-size: clamp(1.5rem, 3.2vw, 2.8rem);
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin: 0;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+#films .film-heading-word {
+  display: block;
+}
+
+#films .section-content {
+  width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+  max-width: 780px;
+}
+
+/* Floating Table Container */
+.floating-table-card {
+  width: 100%;
+  background: #f4f2ec;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  isolation: isolate;
+
+  animation: card-rise linear both;
+  animation-timeline: view();
+  animation-range: entry 10% entry 90%;
+
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-table-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.13);
+}
+
+.floating-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.floating-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.floating-table-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 999px;
+}
+
+.floating-table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+section .floating-table {
+  animation: none;
+}
+
+.floating-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.floating-table thead {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.floating-table th {
+  padding: 14px 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #CC310E;
+  border-bottom: 1px solid var(--line);
+}
+
+.floating-table th.th-films {
+  width: 220px;
+}
+
+.floating-table th.th-thoughts {
+  width: auto;
+}
+
+.floating-table td {
+  padding: 22px 24px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.25s ease;
+}
+
+.floating-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.floating-table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Film Poster Card with slide hover transition revealing movie title */
+.film-poster-card {
+  position: relative;
+  width: 190px;
+  height: 125px;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background-color: #f4f2ec;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  isolation: isolate;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.film-poster-card:hover,
+.film-poster-card:focus-visible,
+.film-poster-card:focus-within {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  transform: scale(1.02);
+}
+
+.film-poster-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+  display: block;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.film-poster-card:hover img,
+.film-poster-card:focus-visible img,
+.film-poster-card:focus-within img {
+  transform: translateX(-100%);
+}
+
+.film-poster-text {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #f4f2ec;
+  color: var(--text);
+  box-sizing: border-box;
+  padding: 12px 14px;
+  text-align: center;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  z-index: 2;
+}
+
+.film-poster-card:hover .film-poster-text,
+.film-poster-card:focus-visible .film-poster-text,
+.film-poster-card:focus-within .film-poster-text {
+  transform: translateX(0);
+}
+
+.film-title {
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.film-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #8d2e1d;
+  letter-spacing: 0.2px;
+}
+
+/* Thoughts text - disable scroll-driven appear animation so all rows are crisp, solid, and fully visible */
+section #films p,
+.floating-table p,
+.film-thoughts {
+  animation: none !important;
+  opacity: 1 !important;
+  color: var(--text) !important;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 
 
 #favorites .section-side h2 {
@@ -1232,6 +1443,7 @@ footer {
   #journey .section-side h2,
   #hobbies .section-side h2,
   #hyperfixations .section-side h2,
+  #films .section-side h2,
   #favorites .section-side h2 {
     text-align: center;
   }
@@ -1281,6 +1493,39 @@ footer {
     margin-top: 12px;
   }
 
+  #films .section-side h2 {
+    font-size: clamp(1.4rem, 4vw, 1.95rem);
+    text-align: center;
+    margin: 0 auto 12px;
+  }
+
+  #films .film-heading-word {
+    display: inline-block;
+    margin: 0 4px;
+  }
+
+  .floating-table-card {
+    border-radius: 16px;
+  }
+
+  .floating-table th,
+  .floating-table td {
+    padding: 16px 18px;
+  }
+
+  .floating-table th.th-films {
+    width: 185px;
+  }
+
+  .film-poster-card {
+    width: 175px;
+    height: 115px;
+  }
+
+  .film-thoughts {
+    font-size: 0.94rem;
+  }
+
   
   #reflection {
     padding: 64px var(--gutter);
@@ -1325,6 +1570,20 @@ footer {
     font-size: clamp(1.65rem, 7.5vw, 3rem);
     line-height: 1;
     overflow-wrap: anywhere;
+  }
+
+  #films .section-side h2 {
+    width: 100%;
+    font-size: clamp(1.2rem, 5.2vw, 1.7rem);
+    line-height: 1.15;
+    text-align: center;
+    margin: 0 auto 10px;
+    letter-spacing: -0.5px;
+  }
+
+  #films .film-heading-word {
+    display: inline-block;
+    margin: 0 3px;
   }
 
   .hero h1 {
@@ -1411,6 +1670,47 @@ footer {
     line-height: 1.2;
   }
 
+  .floating-table {
+    min-width: 480px;
+  }
+
+  .floating-table-card {
+    border-radius: 14px;
+  }
+
+  .floating-table th {
+    padding: 12px 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.4px;
+  }
+
+  .floating-table th.th-films {
+    width: 165px;
+  }
+
+  .floating-table td {
+    padding: 14px 16px;
+  }
+
+  .film-poster-card {
+    width: 155px;
+    height: 105px;
+  }
+
+  .film-title {
+    font-size: 1rem;
+  }
+
+  .film-sub {
+    font-size: 0.72rem;
+  }
+
+  .film-thoughts {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+
   
   .logo-grid {
     gap: 20px 24px;
@@ -1444,41 +1744,4 @@ footer {
     padding: 24px 16px 48px;
     font-size: 0.88rem;
   }
-}
-
-
-.back-to-home {
-  display: inline-block;
-  padding: 0.65rem 1rem;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-}
-.back-to-home:hover {
-  filter: brightness(1.08);
-}
-.back-to-home:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 3px;
-}
-
-
-
-*, *::before, *::after { box-sizing: border-box; }
-html { max-width: 100%; }
-body { max-width: 100%; overflow-x: hidden; }
-img, video, canvas, svg { max-width: 100%; height: auto; }
-main, header, section, article, footer, nav { max-width: 100%; }
-table { max-width: 100%; }
-.table-wrap, .table-container, .goals-table { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-@media (max-width: 700px) {
-  body { font-size: 16px; }
-  main, section, article, header, footer { min-width: 0; }
-  nav, nav ul, .navbar, .nav-links, .button-links { flex-wrap: wrap; }
-  nav ul, .navbar, .nav-links, .button-links { width: 100%; }
-  nav a, .navbar a, .nav-links a, .button-links a { max-width: 100%; }
-  table { width: 100%; }
-  .back-to-home, .back-home, .footer-home, .home-link, .home-btn { max-width: calc(100% - 2rem); white-space: normal; }
 }
