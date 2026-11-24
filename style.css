@@ -2729,11 +2729,13 @@ summary:active,
 }
 
 .player-card__status {
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-family: ui-monospace, "Cascadia Mono", "Courier New", monospace;
   font-size: clamp(0.5rem, 0.68vw, 0.62rem);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-align: center;
   color: var(--mario-yellow);
 }
 
