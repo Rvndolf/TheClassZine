@@ -1,6 +1,4 @@
-/* =================================
-   1. GENERAL SETTINGS
-================================= */
+
 :root {
   --text: #5e0f0f;
   --line: #5e0f0f;
@@ -31,7 +29,7 @@ body {
   z-index: 2;
 }
 
-/*---------------------Moving Background---------------------*/
+
 .movingBG {
   width: 100%;
   min-height: 200vh;
@@ -51,11 +49,9 @@ body {
   }
 }
 
-/* =================================
-   2. HEADER AND NAV
-================================= */ 
+ 
 
-/*---------------------Header---------------------*/
+
 header {
   position: relative;
   z-index: 1;
@@ -110,7 +106,7 @@ header img {
   content: "";
 }
 
-/*---------------------Navigation---------------------*/
+
 .header-content nav {
   position: relative;
   z-index: 6;
@@ -131,9 +127,7 @@ header img {
   z-index: 6;
 }
 
-/* =================================
-   3. SIDE BAR
-================================= */ 
+ 
 
 .content {
   display: flex;
@@ -167,9 +161,9 @@ header img {
 .occasional-wave span {
   display: inline-block;
   letter-spacing: -0.3em;
-  /* 5s total cycle: ~1s of waving + ~4s of resting */
+  
   animation: wave-lift 5s ease-in-out infinite;
-  /* Staggers each letter by 0.08 seconds */
+  
   animation-delay: calc(var(--i) * 0.08s);
 }
 
@@ -178,7 +172,7 @@ header img {
     transform: translateY(0);
   }
   10% {
-    transform: translateY(-12px); /* Height of the lift */
+    transform: translateY(-12px); 
   }
 }
 .side-bar img {
@@ -205,9 +199,7 @@ audio::-webkit-media-controls-panel {
   background-color: var(--main-box-color);
 }
 
-/* =================================
-   4. MAIN CONTENT SETTINGS
-================================= */ 
+ 
 main {
   position: relative;
   z-index: 2;
@@ -215,9 +207,9 @@ main {
   min-width: 0;
 }
 
-/*----------------------------DEFAULTS----------------------------*/
 
-/* Default Card Styles*/
+
+
 .card {
   display: flex;
   flex-direction: column;
@@ -278,13 +270,13 @@ main {
   transition: 0.3s ease;
   transform: translateY(-0.5rem);
 }
-/*---------------------Flexbox Defaults---------------------*/
+
 .flexbox-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-/*-- only use if multiple items--*/
+
 .flexbox-item {
   flex: auto;
 }
@@ -315,7 +307,7 @@ p {
   display: flex;
 }
 
-/*---------------------Section Settings---------------------*/
+
 section {
   z-index: 3;
   margin: 2rem;
@@ -325,9 +317,7 @@ section > h2, section > h3{
   margin-bottom: 0;
 }
 
-/* =================================
-   5. HELLO SECTION
-================================= */ 
+ 
 
 #hello {
   display: flex;
@@ -377,7 +367,7 @@ section > h2, section > h3{
   }
 }
 
-/*---------------------Hero Card---------------------*/
+
 .hero-card {
   position: relative;
   z-index: 1;
@@ -414,7 +404,7 @@ section > h2, section > h3{
   flex-wrap: nowrap;
 }
 
-/*Hero Card Text*/
+
 .hero-card ul {
   list-style: none;
   flex: 0 0 52%;
@@ -428,7 +418,7 @@ section > h2, section > h3{
   padding: 0;
 }
 
-/*Hero Card Image*/
+
 .hero-card img {
   position: absolute;
   right: -4rem;
@@ -441,9 +431,7 @@ section > h2, section > h3{
   rotate: -4deg;
 }
 
-/* =================================
-   6. ABOUT SECTION
-================================= */ 
+ 
 
 #about {
   position: relative;
@@ -469,21 +457,18 @@ section > h2, section > h3{
   list-style-position: inside;
 }
 
-/*roaming kat-bukimono sliding animation syntax: credits to gemini cus idk how to do this on my own*/
+
 .sliding-image {
   position: absolute;
   top: -160%;
   width: 80px;
-  /* 
-     0% left = Left edge of .reference-banner
-     100% left - width = Right edge of .reference-banner
-  */
+  
   animation: relativeSlide 8s infinite ease-in-out;
 }
 
 @keyframes relativeSlide {
   0% {
-    left: 0%; /* Aligned to target's left edge */
+    left: 0%; 
   }
   30% {
     left: 60%;
@@ -492,22 +477,18 @@ section > h2, section > h3{
     left: 20%;
   }
   100% {
-    left: calc(100% - 80px); /* Aligned to target's right edge minus image width */
+    left: calc(100% - 80px); 
   }
 }
-/*--------------------------------------------*/
 
-/* =================================
-   7. MY PATH INTO COMPUTING SECTION
-================================= */ 
+
+ 
 #path {
   display: flex;
   justify-content: space-around;
   gap: 1rem;
 }
-/* =================================
-   8. FAVORITES AND SKILLS + GOALS SECTIONS
-================================= */ 
+ 
 .fav-and-goals {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -520,7 +501,7 @@ section > h2, section > h3{
   margin: 0;
 }
 
-/*---------------------Favorites Section---------------------*/
+
 #favorites p {
   padding-bottom: 20px;
 }
@@ -544,7 +525,7 @@ th {
   color: var(--box-color);
 }
 
-td:first-child { /*targets the category column :P*/
+td:first-child { 
   font-weight: bold;
 }
 
@@ -552,14 +533,12 @@ tbody tr:hover {
   background: #d45c19;
   color: var(--box-color);
 }
-/*---------------------Goals Section---------------------*/
+
 #goals ol {
   padding-right: 1em;
 }
 
-/* =================================
-   9. LINKS
-================================= */ 
+ 
 a {
   color: var(--text);
   text-decoration: none;
@@ -573,9 +552,7 @@ nav a:hover {
   color: var(--box-color);
   cursor: url("images/Wanderer\ link.cur"), pointer;
 }
-/* =================================
-   10. BACK TO TOP BUTTON
-================================= */ 
+ 
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -605,7 +582,7 @@ nav a:hover {
     opacity: 0;
     animation: fadeIn linear forwards;
     animation-timeline: scroll();
-    animation-range: 100px 300px; /* Fades in between 100px and 300px scrolled */
+    animation-range: 100px 300px; 
   }
 
   @keyframes fadeIn {
@@ -614,16 +591,14 @@ nav a:hover {
   }
 }
 
-/* =================================
-   11. secret hehe (halata naman sa labels)
-================================= */ 
+ 
 .jumpscare-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* Allows clicks to pass through to the page */
+  pointer-events: none; 
   z-index: 9999;
   opacity: 0;
   animation: scareLoop 40s linear 3s infinite;
@@ -644,9 +619,7 @@ nav a:hover {
   }
 }
 
-/* =================================
-   12. FOOTER
-================================= */ 
+ 
 footer {
   overflow: hidden;
   padding: 10px;
@@ -655,9 +628,7 @@ footer {
   margin-left: 4.4rem;
 }
 
-/* =================================
-   13. MOBILE RESPONSIVENESS
-================================= */
+
 @media screen and (max-width: 768px) {
   :root {
     --sidebar-width: clamp(3rem, 12vw, 5rem);
@@ -675,7 +646,7 @@ footer {
   .body-margin {
     margin-left: 0;
   }
-  /*---------------------HEADER---------------------*/
+  
   header {
     align-items: stretch;
     gap: var(--header-gap);
@@ -716,7 +687,7 @@ footer {
     display: block;
   }
 
-  /*---------------------SIDEBAR---------------------*/
+  
   .side-bar {
     width: auto;
     border-top: 0;
@@ -760,7 +731,7 @@ footer {
     min-width: 0;
   }
 
-  /*---------------------MAIN AND DEFAULTS---------------------*/
+  
   main {
     width: 100%;
     margin: 0;
@@ -797,7 +768,7 @@ footer {
     border-radius: 12px 12px 0 0;
   }
 
-  /*---------------------HELLO SECTION---------------------*/
+  
   #hello > .flexbox-container {
     flex-direction: column;
     gap: 0;
@@ -838,7 +809,7 @@ footer {
     bottom: -0.5rem;
     width: 44%;
   }
-  /*---------------------ABOUT SECTION---------------------*/
+  
   #about {
     width: auto;
     margin: 1rem;
@@ -853,7 +824,7 @@ footer {
     top: -1.5rem;
     width: clamp(2.5rem, 12vw, 4rem);
   }
-  /*---------------------PATH SECTION---------------------*/
+  
   #path {
     flex-direction: column;
     align-items: stretch;
@@ -875,7 +846,7 @@ footer {
     flex: none;
     min-width: 0;
   }
-  /*---------------------FAVORITES AND SKILLS + GOALS SECTION---------------------*/
+  
   .fav-and-goals {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
@@ -898,7 +869,7 @@ footer {
     padding: 0.5rem;
     overflow-wrap: anywhere;
   }
-  /*---------------------FOOTER SECTION---------------------*/
+  
   footer {
     margin: 1rem;
     padding: 0.5rem;
@@ -907,7 +878,7 @@ footer {
   footer p {
     margin: 0.5rem;
   }
-  /*---------------------BACK TO TOP BUTTON---------------------*/
+  
   .back-to-top {
     right: 0.75rem;
     bottom: 0.75rem;
@@ -916,7 +887,7 @@ footer {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -934,7 +905,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

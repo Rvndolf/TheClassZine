@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSCS 1A: The Class Zine</title>
-    <!-- Google Fonts: Montserrat (for all p texts) & Retro Pixel Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
         rel="stylesheet">
-    <!-- Minecraft Font -->
+    
     <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Retro Hologram Navbar (Pure HTML + CSS) -->
+    
     <nav class="holo-nav" id="holo-nav" aria-label="Section navigation">
-        <!-- Hologram Links Panel -->
+        
         <div class="holo-nav__panel">
             <a href="#title" class="holo-nav__link">
                 <span class="holo-nav__btn holo-nav__btn--yellow" aria-hidden="true"></span>
@@ -47,11 +47,11 @@
             </a>
         </div>
 
-        <!-- Nintendo / Mario Game Arrow: Hover handle on desktop, open icon on mobile -->
+        
         <a href="#holo-nav" class="holo-nav__handle holo-nav__handle--open" aria-label="Open navigation menu">
             <img src="elements/mario-arrow.svg" alt="" class="holo-nav__arrow" draggable="false">
 
-            <!-- Slight curved hint in pixel font (Desktop only): illuminates letter by letter -->
+            
             <span class="holo-nav__hint" aria-hidden="true">
                 <span class="hint-char" style="--r: -44deg; --delay: 0.0s;">H</span>
                 <span class="hint-char" style="--r: -22deg; --delay: 0.22s;">O</span>
@@ -61,17 +61,16 @@
             </span>
         </a>
 
-        <!-- Close handle on mobile when expanded -->
+        
         <a href="#" class="holo-nav__handle holo-nav__handle--close" aria-label="Close navigation menu">
             <img src="elements/mario-arrow.svg" alt="" class="holo-nav__arrow" draggable="false">
         </a>
     </nav>
 
-    <!-- Mobile Backdrop Overlay (Tapping closes navbar) -->
+    
     <a href="#" class="holo-nav__backdrop" aria-hidden="true" tabindex="-1"></a>
 
-    <!-- Background music: an arcade-screen play/pause button. The native audio
-         control is scaled and clipped down to just its button, so no JS is needed. -->
+    
     <div class="music">
         <div class="music__screen">
             <div class="music__scaler">
@@ -96,7 +95,7 @@
                 <img src="elements/Arcade.webp" alt="Arcade" class="title__arcade">
                 <div class="title__arcade-tint" aria-hidden="true"></div>
 
-                <!-- Screen container matching the rounded edge of the arcade screen, like lore section -->
+                
                 <div class="title__arcade-screen" tabindex="0" role="region"
                     aria-label="BSCS 1A Class Picture Arcade Screen">
                     <img src="elements/classpic.jpeg" alt="BSCS 1A Class Picture" class="title__arcade-photo">
@@ -104,16 +103,16 @@
                     <div class="title__arcade-screen-scanlines" aria-hidden="true"></div>
                 </div>
 
-                <!-- Mario Head: sits on top of the photo, bigger than the photo, no aura -->
+                
                 <div class="title__arcade-mario-wrap" aria-hidden="true">
                     <img src="elements/mariohead.gif" alt="Mario Head" class="title__arcade-mario" draggable="false">
                 </div>
             </div>
 
-            <!-- Darkening dimmer overlay when photo is hovered to emphasize photo & subtitle -->
+            
             <div class="title__focus-dimmer" aria-hidden="true"></div>
 
-            <!-- Sleek subtitle style typewriter caption below the section -->
+            
             <div class="title__arcade-caption" aria-hidden="true">
                 <span class="title__arcade-typewriter">the beginning of a story</span>
             </div>
@@ -146,7 +145,7 @@
             <div class="title__stars title__stars--far" aria-hidden="true"></div>
             <div class="title__stars title__stars--near" aria-hidden="true"></div>
 
-            <!-- Subtle Mario Stars in the background -->
+            
             <div class="title__mario-stars" aria-hidden="true">
                 <div class="mario-star mario-star--1">
                     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +236,7 @@
                     </svg>
                 </div>
 
-                <!-- Two Featured Floating Interactive Mario Stars in Space -->
+                
                 <div class="mario-star mario-star--hero mario-star--hero-left" tabindex="0" role="img"
                     aria-label="Floating Mario Star (Left)">
                     <div class="mario-star__hitbox">
@@ -284,7 +283,7 @@
             </div>
         </section>
 
-        <!-- Brick separator: every click pops a coin -->
+        
         <section class="separator" aria-label="Lucky block separator">
             <a class="separator__block" href="elements/coin-sound.html" target="coin-sound-frame"
                 aria-label="Hit the question block to pop a coin">
@@ -303,7 +302,7 @@
         <iframe class="coin-sound-frame" name="coin-sound-frame" title="Coin sound" allow="autoplay" src="about:blank"
             hidden></iframe>
 
-        <!-- About Section -->
+        
         <section class="about" id="about" aria-labelledby="about-title">
             <div class="about__inner">
                 <header class="about__header section-header-reveal">
@@ -324,16 +323,51 @@
                 </header>
 
                 <div class="about__content">
-                    <p class="about_text about__text">
-                        Welcome to BSCS 1A: The Class Zine! This is our dedicated space where our class story,
-                        achievements, and memories come together. We are a community of passionate first-year Computer
-                        Science students embarking on our quest through coding, collaboration, and creativity.
-                    </p>
-                    <p class="about_text about__text">
-                        From late-night debugging sessions to multiplayer game nights and innovative tech projects, this
-                        space captures the spirit and memories of our section. More class lore, achievements, and player
-                        highlights will unlock as we level up throughout the school year!
-                    </p>
+                    <div class="about__story">
+                        <p class="about_text about__text">
+                            Welcome to the Mushroom Kingdom of Code in Bicol University! Meet BS Computer Science 1A—42
+                            co-op players drifting through Rainbow Road with zero brakes, dodging SyntaxError Goombas,
+                            and speed-running freshman year on 3 hours of sleep and pure siling labuyo energy.
+                        </p>
+                        <p class="about_text about__text">
+                            One minute we're printing "Hello, World 1-1!", and the next we're dodging Bullet Bill
+                            deadlines, praying a rogue Blue Shell doesn't wreck our GWA, and surviving segmentation
+                            faults. With enough Super Star cram sessions, 1-Up coffee runs, and 2 AM group chat panic,
+                            nobody gets left behind at the flagpole!
+                        </p>
+                    </div>
+
+                    <div class="about__stats" role="list" aria-label="Player stats">
+                        <div class="about__stat" role="listitem">
+                            <span class="about__stat-emblem" aria-hidden="true">🎮</span>
+                            <span class="about__stat-label">Class / Party</span>
+                            <span class="about__stat-value">BS Computer Science 1A</span>
+                        </div>
+                        <div class="about__stat" role="listitem">
+                            <span class="about__stat-emblem" aria-hidden="true">🛡️</span>
+                            <span class="about__stat-label">Guild</span>
+                            <span class="about__stat-value">College of Science</span>
+                        </div>
+                        <div class="about__stat" role="listitem">
+                            <span class="about__stat-emblem" aria-hidden="true">📍</span>
+                            <span class="about__stat-label">Spawn Point</span>
+                            <span class="about__stat-value">BUCS Building 2</span>
+                        </div>
+                        <div class="about__stat" role="listitem">
+                            <span class="about__stat-emblem" aria-hidden="true">⚡</span>
+                            <span class="about__stat-label">Power-Ups</span>
+                            <span class="about__stat-value">Late-night study sessions, shared reviewers, and unmatched
+                                chaotic energy.</span>
+                        </div>
+                        <div class="about__stat about__stat--wide" role="listitem">
+                            <span class="about__stat-emblem" aria-hidden="true">⭐</span>
+                            <span class="about__stat-label">Current Quest</span>
+                            <span class="about__stat-value">Surviving Mathematical Analysis 1 without falling into
+                                Bowser's lava.</span>
+                        </div>
+                    </div>
+
+                    <p class="about__code">printf("Let's-a go, World 1-1!");</p>
                 </div>
             </div>
         </section>
@@ -391,7 +425,7 @@
                 <p class="select__lede">Choose a classmate to jump into their page.</p>
             </header>
 
-            <!-- Placeholder roster: swap each href="#" for a classmate's page when ready -->
+            
             <ul class="players" role="list">
                 <li class="players__item">
                     <a class="player-card" href="pages/Abache_Assel/index.html">
@@ -1072,7 +1106,7 @@
             </p>
         </section>
 
-        <!-- Lore Section -->
+        
         <section class="lore" id="lore" aria-label="Lore">
             <div class="lore__separator lore__separator--top" aria-hidden="true"></div>
 
@@ -1085,7 +1119,7 @@
                     <img src="elements/nintendo.webp" alt="Nintendo" class="lore__nintendo" loading="lazy"
                         decoding="async" draggable="false">
 
-                    <!-- Carousel shares the Nintendo image's exact grid cell, so it moves with it -->
+                    
                     <div class="lore__carousel" role="group" aria-label="Quest slideshow">
                         <img src="elements/quest1.jpg" alt="Quest slide 1" class="lore__slide" draggable="false"
                             loading="lazy">
@@ -1117,24 +1151,24 @@
                 </div>
             </div>
 
-            <!-- Mario gif on the bottom left sitting on top of the wall separator -->
+            
             <img src="elements/mario.gif" alt="Mario" class="lore__mario" loading="lazy" decoding="async"
                 aria-hidden="true" draggable="false">
 
-            <!-- Platform on the bottom right sitting on top of the wall separator -->
+            
             <img src="elements/platform.webp" alt="" class="lore__platform" aria-hidden="true" draggable="false">
 
             <div class="lore__separator lore__separator--bottom" aria-hidden="true"></div>
         </section>
 
-        <!-- Forum Section -->
+        
         <section class="forum" id="forum" aria-label="Forum">
             <div class="forum__body">
                 <div class="forum__container">
-                    <!-- Dialogue bubble -->
+                    
                     <img src="elements/bubble.webp" alt="" class="forum__bubble" draggable="false">
 
-                    <!-- "Talk To Toad" typography on the left side of the bubble -->
+                    
                     <div class="forum__title-group" role="heading" aria-level="2" aria-label="Talk To Toad">
                         <div class="forum__title-item forum__title-item--talk" aria-hidden="true">
                             <span class="mario-char mario-char--blue forum-char--t1">T</span>
@@ -1154,29 +1188,29 @@
                         </div>
                     </div>
 
-                    <!-- QR code centered inside bubble -->
+                    
                     <div class="forum__bubble-qr">
                         <img src="elements/toad-qr.png" alt="Scan to visit our 1Anonymous Website" class="forum__qr-img">
                         <p class="forum__qr-label">spark messages for the players to see!</p>
                     </div>
 
-                    <!-- Toad pointing, mirrored towards the bubble, shifted to the right and lower -->
+                    
                     <img src="elements/toadpointing.webp" alt="Toad" class="forum__toad" loading="lazy" decoding="async"
                         draggable="false">
                 </div>
             </div>
 
-            <!-- Pixel Toad sitting on top of the bottom brick separator -->
+            
             <img src="elements/toad-pixel.webp" alt="Toad" class="forum__pixel-toad" loading="lazy" decoding="async"
                 aria-hidden="true" draggable="false">
 
-            <!-- Bottom separator using brokenbrick.png, matching Lore section method -->
+            
             <div class="forum__separator forum__separator--bottom" aria-hidden="true"></div>
         </section>
 
-        <!-- Credits Section -->
+        
         <section class="credits" id="credits" aria-labelledby="credits-title">
-            <!-- Sky pixel clouds matching the select section -->
+            
             <div class="credits__clouds" aria-hidden="true">
                 <img class="credits__cloud credits__cloud--top-left" src="elements/select-cloud-top-left.webp" alt=""
                     draggable="false">
@@ -1192,23 +1226,23 @@
                     draggable="false">
             </div>
 
-            <!-- Grass block stretched to fit the bottom half section -->
+            
             <div class="credits__ground-wrap" aria-hidden="true">
                 <img src="elements/grassblock.png" alt="" class="credits__ground" draggable="false">
             </div>
 
-            <!-- Animated Piranha Plant planted on top of the grass to the left of Mario -->
+            
             <img src="elements/piranha-plant-mario.gif" alt="Piranha Plant" class="credits__piranha" loading="lazy"
                 decoding="async" aria-hidden="true" draggable="false">
 
-            <!-- Wooden sign banner with Meet The Crew in the top part of the section -->
+            
             <div class="credits__header section-header-reveal">
                 <div class="credits__sign">
-                    <!-- Left and right hanging ropes -->
+                    
                     <span class="credits__sign-rope credits__sign-rope--left" aria-hidden="true"></span>
                     <span class="credits__sign-rope credits__sign-rope--right" aria-hidden="true"></span>
 
-                    <!-- Wooden board with Meet The Crew title -->
+                    
                     <div class="credits__sign-board">
                         <h2 class="credits__title" id="credits-title" role="heading" aria-level="2"
                             aria-label="Meet The Crew">
@@ -1236,10 +1270,10 @@
                 </div>
             </div>
 
-            <!-- Cards row: tall card in center, flanked by small cards left and right -->
+            
             <div class="credits__body">
                 <div class="credits__cards" role="region" aria-label="Credits Cards">
-                    <!-- Left Small Card: Mario -->
+                    
                     <div class="credits__card credits__card--small credits__card--left">
                         <span class="credits__card-star" aria-hidden="true">
                             <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
@@ -1254,7 +1288,7 @@
                                 <rect x="3" y="3" width="1" height="1" fill="#fff566" />
                             </svg>
                         </span>
-                        <!-- Character: Mario overlapping top of the card -->
+                        
                         <div class="credits__card-character-wrap">
                             <img src="elements/mario.webp" alt="Mario"
                                 class="credits__card-character credits__card-character--mario" draggable="false">
@@ -1283,7 +1317,7 @@
                         </div>
                     </div>
 
-                    <!-- Center Tall Card: Princess Peach (elevated, bigger, fits ~70% of section) -->
+                    
                     <div class="credits__card credits__card--tall credits__card--center">
                         <span class="credits__card-star" aria-hidden="true">
                             <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
@@ -1298,7 +1332,7 @@
                                 <rect x="3" y="3" width="1" height="1" fill="#fff566" />
                             </svg>
                         </span>
-                        <!-- Character: Princess Peach overlapping top of the card -->
+                        
                         <div class="credits__card-character-wrap">
                             <img src="elements/princess.webp" alt="Princess Peach"
                                 class="credits__card-character credits__card-character--princess" draggable="false">
@@ -1323,7 +1357,7 @@
                         </div>
                     </div>
 
-                    <!-- Right Small Card: Luigi -->
+                    
                     <div class="credits__card credits__card--small credits__card--right">
                         <span class="credits__card-star" aria-hidden="true">
                             <svg viewBox="0 0 7 7" width="100%" height="100%" shape-rendering="crispEdges">
@@ -1338,7 +1372,7 @@
                                 <rect x="3" y="3" width="1" height="1" fill="#fff566" />
                             </svg>
                         </span>
-                        <!-- Character: Luigi overlapping top of the card -->
+                        
                         <div class="credits__card-character-wrap">
                             <img src="elements/luigi.webp" alt="Luigi"
                                 class="credits__card-character credits__card-character--luigi" draggable="false">

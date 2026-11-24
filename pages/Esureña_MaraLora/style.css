@@ -1,17 +1,17 @@
 
-  /*1 - page styling*/
+  
   body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #3b3b3b;
-    background: url(images/Purple_BG.jpg); /*background, yappie!!*/
+    background: url(images/Purple_BG.jpg); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
   }
-  /*2 - headings*/
+  
   h1 {
     color: #8E1EA2;
     font-size: 36px;
@@ -31,7 +31,7 @@
     font-weight: bold;
   }
   
-    /*3 - section boxes and header & footer*/
+    
   section {
     background-color: #ffffff;
     padding: 25px;
@@ -45,7 +45,7 @@
     padding: 20px;
   }
 
-  /*4 - navigation bar*/
+  
   nav ul {
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@
     color: #b539c0;
     text-decoration: underline;
   }
-  /*5 - image and link styling*/
+  
 
   img {
     border-radius: 12px;
@@ -81,14 +81,14 @@
   a:hover {
     color: #b539c0;
   }
-  /*footer design*/
+  
   footer {
     text-align: center;
     font-size: 14px;
     background-color: #d8c2f0;
   }
 
-  /*7 - reflection section*/
+  
   #reflection h3 {
     color: #ED96D7;
     margin-top: 20px;
@@ -98,7 +98,7 @@
     line-height: 1.8;
     text-align: justify;
   }
-  /*8 - about me section*/
+  
   #about h2 {
     text-align: center;
   }
@@ -114,7 +114,7 @@
     text-align: center;
   }
 
-/*9 - quotes section*/
+
 #quotes blockquote {
   text-align: center;
   padding: 10px;
@@ -136,7 +136,7 @@
   margin: 15px 0;
 }
 
-/* MOBILE RESPONSIVENESS */
+
 @media screen and (max-width: 600px) {
 
     body {
@@ -158,7 +158,7 @@
 
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -176,7 +176,7 @@
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

@@ -1,65 +1,6 @@
-/*
-=====================================================================
-  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
-  File 2 of 2: style.css  (the LOOK and LAYOUT of your page)
-=====================================================================
 
-HOW CSS WORKS
-  A CSS rule has three parts:
 
-      selector {
-        property: value;
-      }
 
-  - selector : WHICH HTML element to style (for example body, h1, nav a)
-  - property : WHAT you want to change (for example color, font-size)
-  - value    : HOW you want to change it (for example blue, 20px)
-
-  Every declaration ends with a semicolon ( ; ).
-  A CSS comment starts with a slash followed by an asterisk, and ends
-  with an asterisk followed by a slash (like this big note you are reading).
-
-HOW TO USE THIS FILE
-  1. Work through the STEPS below, from top to bottom.
-  2. In each step there is an example inside a comment. To use it,
-     copy it BELOW the comment, then change the values to match your taste.
-     (Or remove the comment markers.) Experiment: change a value, save,
-     refresh your browser, and see what happens.
-  3. You need at least 5 different style rules for full points, and one
-     of them must use Flexbox (Step 4). Doing every step gives you more
-     than enough.
-
-TIPS
-  - Press F12 in your browser to open the developer tools. Right-click any
-    part of your page and choose "Inspect" to see which CSS applies to it.
-  - If a style does not work, check for: a missing semicolon, a missing
-    closing brace }, or a misspelled property.
-  - Colors can be written as names (steelblue), hex codes (#4682b4), or
-    rgb(70, 130, 180). Try a free color picker online to find hex codes.
-
-CHECKLIST
-  [/] Step 1: body (font, color, background)
-  [/] Step 2: headings (color, size, alignment)
-  [/] Step 3: box model (padding, margin, border)
-  [/] Step 4: Flexbox navigation menu
-  [/] Step 5: table styling
-  [/] Step 6: image and link styling
-*/
-
-/*
-   STEP 1: STYLE THE WHOLE PAGE (the body selector)
-
-   Anything you set on body is inherited by most elements inside it.
-
-   Properties to know:
-     font-family      : the typeface. List backups after the commas.
-     font-size        : size of the text (16px is the browser default).
-     line-height      : space between lines. 1.5 is easier to read.
-     color            : the TEXT color.
-     background-color : the background color.
-
-   Example (copy it, then change the values):
-*/
 
    body {
      font-family: Georgia, 'Times New Roman', Times, serif;
@@ -75,17 +16,7 @@ CHECKLIST
      padding: 20px;
    }
  
-/*
-   STEP 2: STYLE THE HEADINGS AND TEXT
-   You can give the same style to several selectors by separating
-   them with commas.
 
-   Properties to know:
-     text-align : left, center, or right.
-     font-weight: normal or bold.
-
-   Example:'
-*/
 
    h1 {
      font-size: 2.2rem;
@@ -122,19 +53,7 @@ CHECKLIST
     font-family: Courier New, Courier, monospace;
    }
    
-   /* STEP 3: THE BOX MODEL (spacing around elements)
-   Every HTML element is a box made of four layers, from inside out:
-
-       content > padding > border > margin
-
-   Properties to know:
-     padding : space INSIDE the box, between the content and the border.
-     border  : the line around the box. Shorthand: width style color.
-     margin  : space OUTSIDE the box, pushing other elements away.
-     max-width + margin: 0 auto : centers a block on the page.
-
-   Example: give each section its own "card" look.
-   */
+   
 
    section {
      background-color: rgba(255, 255, 255, 0.75);
@@ -151,26 +70,7 @@ CHECKLIST
      padding: 20px;
    }
    
-   /*
-   STEP 4: FLEXBOX (REQUIRED: arrange part of your page)
-   Flexbox arranges the children of a container in a row or column.
-   You turn it on by setting display: flex on the PARENT (container).
-
-   Properties to know (set on the container):
-     display: flex            : turns on Flexbox. Children line up in a row.
-     justify-content          : spacing along the main axis (the row).
-                                Try: flex-start, center, space-between,
-                                space-around, flex-end.
-     align-items              : alignment along the cross axis (up/down).
-                                Try: center, flex-start, stretch.
-     gap                      : space between the children.
-     flex-wrap: wrap          : lets items drop to the next line on small screens.
-
-   Your nav menu is a <ul> with <li> items inside it. The <ul> is the
-   container, so you apply display: flex to "nav ul".
-
-   Example: turn the list into a horizontal menu.
-   */
+   
 
    nav ul {
      display: flex;
@@ -197,19 +97,7 @@ CHECKLIST
      text-decoration: underline;
    }
 
-   /*
-   Challenge (optional): also use Flexbox to put your image and your
-   paragraph side by side inside the About Me section.
    
-   STEP 5: STYLE THE TABLE
-   Properties to know:
-     border-collapse: collapse : merges the double borders into single lines.
-     width: 100%               : makes the table fill its container.
-     th, td                    : style header and data cells together.
-     tr:nth-child(even)        : selects every second row (zebra stripes).
-
-   Example:
-   */
    table {
      border-collapse: separate;
      width: 100%;
@@ -238,16 +126,7 @@ CHECKLIST
      background-color: rgba(255, 255, 255, 0.04);
    }
   
-   /*
-   STEP 6: STYLE IMAGES AND LINKS
-   Properties to know:
-     border-radius: 50%        : makes a square image into a circle.
-     max-width: 100%           : keeps images from overflowing small screens.
-     :hover                    : a style that applies when the mouse is over it.
-     text-decoration           : none, underline.
-
-   Example:
-   */
+   
    img {
      border-radius: 50%;
      border: 4px solid #4a415b;
@@ -283,45 +162,7 @@ CHECKLIST
      letter-spacing: 0.5px;
    }
 
-   /*
-.schedule-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 25px;
-}
-
-.schedule-card {
-    background-color: rgba(255, 240, 243, 0.65); 
-    backdrop-filter: blur(5px);
-    border-radius: 20px;                        
-    padding: 18px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.6);   
-    border-left: 5px solid #e8a7b8;             
-    box-shadow: 0 8px 20px rgba(232, 167, 184, 0.15); 
-    transition: all 0.3s ease;
-}
-
-.schedule-card:hover {
-    transform: scale(1.02) translateY(-2px);    
-    background-color: rgba(255, 230, 235, 0.85); 
-    box-shadow: 0 10px 25px rgba(232, 167, 184, 0.3); 
-}
-
-.card-subject {
-    font-family: 'Georgia', serif;              
-    font-size: 1.15rem;
-    font-weight: bold;
-    color: #704250;                              
-    margin-bottom: 6px;
-}
-
-.card-details {
-    font-size: 0.9rem;
-    color: #8c6874;                              
-    letter-spacing: 0.5px;
-}
-*/
+   
 .hobby-box {
   background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid #bbf7d0;
@@ -466,7 +307,7 @@ CHECKLIST
 }
 
 
-/* Fun Floating-Card Table Style (Keep Your Exact HTML Words!) */
+
 table {
   width: 100%;
   border-collapse: separate;
@@ -514,7 +355,7 @@ td {
   border-bottom: 1.5px solid #fbcfe8;
 }
 
-/* Turns the # Column into a Cute Highlighted Pill Side */
+
 td:first-child {
   font-weight: bold;
   font-size: 1.05rem;
@@ -538,17 +379,9 @@ td:last-child {
   color: #6b5b7b;
 }
 
-/* ---------------------------------------------------------------
-   YOUR TURN: ADD YOUR OWN RULES BELOW
-   Make the page feel like YOU. Ideas to try:
-     - A different font (Georgia, "Trebuchet MS", "Courier New")
-     - A color scheme based on something you like
-     - Bigger spacing between sections
-     - A different background for the header
-     - A hover effect on the list items
-   --------------------------------------------------------------- */
 
-/* Consistent Back to Home button */
+
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -566,7 +399,7 @@ td:last-child {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

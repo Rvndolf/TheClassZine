@@ -9,12 +9,208 @@
 </head>
 
 <body>
-  <!-- SIDEBAR TOGGLE: checkbox stores open/closed, label is the button -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  
+  @font-face {
+    font-family: "Zine Mario 256";
+    src:
+      url("../../fonts/SuperMario256.ttf") format("truetype"),
+      url("../fonts/SuperMario256.ttf") format("truetype"),
+      url("fonts/SuperMario256.ttf") format("truetype");
+    font-display: swap;
+  }
+
+  .zine-back-home {
+    all: unset;
+    box-sizing: border-box;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    min-height: 42px;
+    padding: 8px;
+    gap: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #fcd100;
+    border-radius: 10px;
+    background: rgba(8, 20, 38, 0.92);
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(60, 140, 230, 0.05) 0px,
+      rgba(60, 140, 230, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    box-shadow:
+      0 0 0 2px #000,
+      0 3px 0 2px #000,
+      0 0 14px rgba(10, 100, 220, 0.28);
+    color: #bce0fd;
+    font-family: "Zine Mario 256", "Super Mario 256", "Press Start 2P", monospace;
+    font-size: 0.78rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-shadow: 0 0 6px rgba(0, 130, 255, 0.4);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      min-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      padding 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      gap 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      color 0.18s ease,
+      background 0.18s ease,
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .zine-back-home:hover,
+  .zine-back-home:focus-visible {
+    width: 230px;
+    min-width: 230px;
+    padding: 8px 18px 8px 14px;
+    gap: 12px;
+    justify-content: flex-start;
+    color: #ffffff;
+    background: rgba(14, 32, 60, 0.96);
+    box-shadow:
+      0 0 0 2px #000,
+      0 3px 0 2px #000,
+      0 0 16px rgba(252, 209, 0, 0.55),
+      0 0 12px rgba(60, 150, 255, 0.45);
+    text-shadow: 0 0 8px rgba(80, 180, 255, 0.8);
+    transform: translateY(-1px);
+  }
+
+  .zine-back-home:active {
+    transform: translateY(1px);
+    box-shadow:
+      0 0 0 2px #000,
+      0 1px 0 2px #000,
+      0 0 12px rgba(10, 100, 220, 0.35);
+  }
+
+  .zine-back-home:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+  }
+
+  .zine-back-home__label {
+    display: block;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-8px);
+    white-space: nowrap;
+    transition:
+      max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.18s ease,
+      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .zine-back-home:hover .zine-back-home__label,
+  .zine-back-home:focus-visible .zine-back-home__label {
+    max-width: 170px;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.06s;
+  }
+
+  .zine-back-home__arrow {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    display: block;
+    image-rendering: pixelated;
+    transform: scaleX(-1);
+    animation: zineBackHomeArrow 0.9s infinite alternate ease-in-out;
+    transition: transform 0.2s ease;
+  }
+
+  .zine-back-home:hover .zine-back-home__arrow,
+  .zine-back-home:focus-visible .zine-back-home__arrow {
+    animation: none;
+    transform: scaleX(-1) translateX(6px);
+  }
+
+  @keyframes zineBackHomeArrow {
+    from { transform: scaleX(-1) translateX(0); }
+    to   { transform: scaleX(-1) translateX(4px); }
+  }
+
+  @media (max-width: 430px) {
+    .zine-back-home {
+      top: 0.75rem;
+      left: 0.75rem;
+      width: 38px;
+      min-width: 38px;
+      height: 38px;
+      min-height: 38px;
+      padding: 7px;
+      font-size: 0.68rem;
+    }
+
+    .zine-back-home__arrow {
+      width: 20px;
+      height: 20px;
+    }
+
+    .zine-back-home:hover,
+    .zine-back-home:focus-visible {
+      width: 210px;
+      min-width: 210px;
+      padding: 7px 12px 7px 10px;
+      gap: 9px;
+    }
+
+    .zine-back-home:hover .zine-back-home__label,
+    .zine-back-home:focus-visible .zine-back-home__label {
+      max-width: 140px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .zine-back-home,
+    .zine-back-home__label,
+    .zine-back-home__arrow {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
+
+<a class="zine-back-home" href="../../index.html">
+  <img
+    class="zine-back-home__arrow"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48c3R5bGU+LmMwe2ZpbGw6IzFhMGMwMH0uYzF7ZmlsbDojZmZkMTAwfS5jMntmaWxsOiNmZmZmZmZ9LmMze2ZpbGw6I2ZmZjg5YX0uYzR7ZmlsbDojZTcxZTA3fS5jNXtmaWxsOiNkOTZjMDB9PC9zdHlsZT48cmVjdCBjbGFzcz0iYzAiIHg9IjEwIiB5PSIxIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEyIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEzIiB5PSIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSI0IiB5PSI0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iNCIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzIiIHg9IjQiIHk9IjUiIHdpZHRoPSI2IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI1IiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNSIgeT0iNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMiIgeD0iMyIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMyIgeD0iNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iNiIgeT0iNiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMzIiB4PSIzIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSI0IiB5PSI3IiB3aWR0aD0iMTMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjgiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxOCIgeT0iOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iOSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iOSIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjkiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE5IiB5PSI5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTAiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjYiIHk9IjEwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iMTAiIHdpZHRoPSI5IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIwIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjExIiB3aWR0aD0iNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI3IiB5PSIxMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTAiIHk9IjExIiB3aWR0aD0iMTEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMjEiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTIiIHdpZHRoPSIxOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMiIgeT0iMTIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjEzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxMyIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNyIgeT0iMTMiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSIxMyIgd2lkdGg9IjExIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIxIiB5PSIxMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjE0IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI2IiB5PSIxNCIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjE0IiB3aWR0aD0iOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMCIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxNSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjExIiB5PSIxNSIgd2lkdGg9IjgiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTkiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjE2IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE4IiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjMiIHk9IjE3IiB3aWR0aD0iMTQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjE3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNSIgeD0iMyIgeT0iMTgiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNyIgeT0iMTgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjE5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM1IiB4PSI0IiB5PSIxOSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSIxOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iNCIgeT0iMjAiIHdpZHRoPSI3IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTUiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTMiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48L3N2Zz4="
+    alt=""
+    aria-hidden="true"
+  >
+  <span class="zine-back-home__label">back to home</span>
+</a>
+
+
+
+
+
+  
   <input type="checkbox" id="sidebar-toggle" class="sidebar-checkbox">
   <label for="sidebar-toggle" class="sidebar-toggle">☰ Menu</label>
   <label for="sidebar-toggle" class="sidebar-backdrop" aria-hidden="true"></label>
 
-  <!-- HEADER: page title, one-line description, short intro, and in-page navigation -->
+  
   <header>
     <div class="header-top">
         <h1>Assel<br><em>A.Abache</em></h1>
@@ -38,7 +234,7 @@
   </header>
 
   <main>
-    <!-- HELLO: preferred name, program, year level, and a one-sentence summary -->
+    
     <section id="hello">
       <h2>Hello</h2>
       <div class="hello-content">
@@ -62,8 +258,8 @@
       </div>
     </section>
 
-    <!-- Long text sits inside <details class="fold"> boxes: click the <summary> to open or close -->
-    <!-- ABOUT ME: portrait with caption and credit, plus a paragraph about me -->
+    
+    
     <section id="about" class="about">
       <h2>About Me</h2>
       <div class="about-content">
@@ -93,7 +289,7 @@
       </div>
     </section>
 
-    <!-- MY PATH INTO COMPUTING: how I became interested in computing -->
+    
     <section id="path">
       <h2>My Path Into Computing</h2>
       <details class="fold">
@@ -113,7 +309,7 @@
           </details>
     </section>
 
-    <!-- HOBBIES: an unordered list -->
+    
     <section id="hobbies">
       <h2>My Hobbies</h2>
       <ul class="panel-list">
@@ -123,7 +319,7 @@
       </ul>
     </section>
 
-    <!-- FAVORITES AND SKILLS: a table plus my favorite website link -->
+    
     <section id="favorites">
       <h2>My Favorite and Skills</h2>
       <div class="table-wrap">
@@ -172,10 +368,10 @@
       </p>
             </div>
           </details>
-      <!-- <tr> = table row, <th> = header cell, <td> = data cell, <caption> = table title -->
+      
     </section>
 
-    <!-- GOALS: an ordered list of what I hope to do in the next few years -->
+    
     <section id="goals">
       <h2>Goals</h2>
       <p>These are my top three goals for the next few years:</p>
@@ -186,7 +382,7 @@
       </ol>
     </section>
 
-    <!-- REFLECTION: what I learned and what I improved from the About Me activity -->
+    
     <section id="reflection">
       <h2>Reflection</h2>
       <details class="fold">
@@ -209,7 +405,7 @@
     </section>
   </main>
 
-  <!-- FOOTER: my name, credits and sources, and the required Back to Home link -->
+  
   <footer>
     <p>Made by Assel Abache for CS 101, Bicol University.</p>
     <details class="fold credits-fold">
@@ -222,7 +418,10 @@
             </div>
           </details>
     <div class="footer-links">
-      <a class="back-to-home" href="../../index.html">Back to Home</a>
+      
+      
+
+      
       <a href="#">Back to top</a>
     </div>
   </footer>

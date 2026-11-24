@@ -1,13 +1,13 @@
 
 :root {
-  --bg: #3E6655;          /* page background */
-  --card: #34584a;        /* section "cards" */
-  --text: #dad7cd;        /* main text */
-  --link: #8ecae6;        /* links */
-  --accent: #ffb703;      /* hover color and button */
-  --table-bg: #BAC8B1;    /* table rows */
-  --table-alt: #dddddd;   /* alternate table rows */
-  --table-text: #1f3a2e;  /* table text (dark so it is easy to read) */
+  --bg: #3E6655;          
+  --card: #34584a;        
+  --text: #dad7cd;        
+  --link: #8ecae6;        
+  --accent: #ffb703;      
+  --table-bg: #BAC8B1;    
+  --table-alt: #dddddd;   
+  --table-text: #1f3a2e;  
 }
 
 * {
@@ -62,7 +62,7 @@ h3 {
   margin: 0 auto 16px;
 }
 
-/* Navigation menu (Flexbox) */
+
 nav ul {
   display: flex;
   flex-wrap: wrap;         
@@ -281,7 +281,7 @@ a:focus-visible {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -299,7 +299,7 @@ a:focus-visible {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

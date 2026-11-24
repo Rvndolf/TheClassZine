@@ -1446,7 +1446,7 @@ footer {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -1464,7 +1464,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

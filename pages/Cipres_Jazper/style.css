@@ -1,4 +1,4 @@
-/* Custom CSS variables used to store my red and black color theme so I can easily reuse them across the stylesheet */
+
 :root {
     --primary-red: #cc0000;
     --dark-red: #8b0000;
@@ -13,7 +13,7 @@
 
 html {
     scroll-behavior: smooth;
-    /* Applies a classic retro pixelated hand/pointer cursor reminiscent of classic Pokémon PC interfaces */
+    
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 8,15 13,22 16,20 11,13 18,13" fill="%23ffffff" stroke="%23000000" stroke-width="2"/></svg>'), auto;
 }
 
@@ -67,7 +67,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Uses CSS Flexbox to align my navigation buttons horizontally with equal spacing and wrapping for mobile responsiveness */
+
 .navbar {
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +89,7 @@ h1 {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 8,15 13,22 16,20 11,13 18,13" fill="%23ff4d4d" stroke="%23000000" stroke-width="2"/></svg>'), pointer;
 }
 
-/* Changes button colors and slightly lifts the element when a user moves their mouse over it for interactive feedback */
+
 .navbar a:hover {
     background-color: var(--light-red);
     color: #000000;
@@ -128,7 +128,7 @@ h3 {
     margin: 15px 0 10px 0;
 }
 
-/* Profile Flexbox Layout */
+
 .profile-container {
     display: flex;
     flex-direction: row;
@@ -177,7 +177,7 @@ li {
     border-radius: 4px;
 }
 
-/* Highlights hobbies or goals when hovered as requested */
+
 li:hover {
     transform: translateX(6px);
     background-color: rgba(204, 0, 0, 0.15);
@@ -284,7 +284,7 @@ footer {
     border-top: 1px solid #333333;
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -302,7 +302,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

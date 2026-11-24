@@ -1,31 +1,27 @@
-/* ==========================================================
-   GLOBAL: page background, base font, and text color
-   ========================================================== */
+
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    margin: 0;                      /* removes the default gap around the page */
+    margin: 0;                      
     min-height: 100vh;
     background-image: linear-gradient(to right, #ff1010, #ffffff);
-    color: #222222;                 /* solid, readable text color */
+    color: #222222;                 
 }
-/* INTRODUCTION: centered paragraph under the header */
+
 main > p {
     text-align: center;
-    width: min(950px, calc(100% - 32px));   /* same width as the section cards */
-    margin: 30px auto 0;                    /* auto left/right centers the block */
+    width: min(950px, calc(100% - 32px));   
+    margin: 30px auto 0;                    
 }   
-/* ==========================================================
-   HEADINGS: gradient text (dark enough to read on white sections)
-   ========================================================== */
+
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
     text-align: left;
     margin: 0 0 10px;
     display: inline-block;
-    /* light gradient so it stands out on the dark header overlay */
+    
     background-image: linear-gradient(to bottom, #ff0000, #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -40,12 +36,10 @@ h2, h3 {
     color: transparent;
 }
 
-/* ==========================================================
-   HEADER: background image with dark overlay, title, and nav
-   ========================================================== */
+
 header {
     position: relative;
-    isolation: isolate;             /* keeps the image behind the text */
+    isolation: isolate;             
     min-height: 200px;
     display: flex;
     flex-direction: column;
@@ -53,11 +47,11 @@ header {
     color: white;
 }
 
-/* the image and dark overlay live here so the bottom edge can fade out */
+
 header::before {
     content: "";
     position: absolute;
-    inset: 0;                       /* fills the whole header */
+    inset: 0;                       
     z-index: -1;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -65,7 +59,7 @@ header::before {
     background-size: cover;
     background-position: 75% 20%;
     background-repeat: no-repeat;
-    /* solid until the last 80px, then fades to transparent so the page gradient shows through */
+    
     -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
     mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
 }
@@ -74,7 +68,7 @@ header p {
     margin: 5px 0;
 }
 
-/* links inside the header (nav and Back to Home) */
+
 header a {
     background-image: linear-gradient(to right , #ffffff, rgb(225, 211, 211));
     -webkit-background-clip: text;
@@ -90,7 +84,7 @@ header a:hover {
 
 nav ul {
     display: flex;
-    flex-wrap: wrap;                /* wraps to a new line instead of overflowing */
+    flex-wrap: wrap;                
     justify-content: center;
     gap: 15px 25px;
     list-style-type: none;
@@ -105,27 +99,23 @@ header, footer {
     padding: 25px;
 }
 
-/* extra space at the bottom so the nav sits above the fade-out area */
+
 header {
     padding-bottom: 100px;
 }
 
-/* ==========================================================
-   SECTIONS: white cards so text is always readable
-   ========================================================== */
+
 section {
     background-color: rgba(255, 255, 255, 0.93);
     padding: 30px;
     margin: 40px auto;
-    width: min(950px, calc(100% - 32px));   /* centered, never wider than the screen */
+    width: min(950px, calc(100% - 32px));   
     box-sizing: border-box;
     border: 2px solid #b00000;
     border-radius: 10px;
 }
 
-/* ==========================================================
-   HELLO SECTION: Grid layout (photo beside text, stacks on phones)
-   ========================================================== */
+
 #hello {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -134,7 +124,7 @@ section {
 }
 
 #hello h2 {
-    grid-column: 1 / -1;            /* heading spans the full width */
+    grid-column: 1 / -1;            
     justify-self: start;
     margin: 0;
 }
@@ -147,9 +137,7 @@ section {
     margin: 0;
 }
 
-/* ==========================================================
-   IMAGES: square crop so the circle never turns into an oval
-   ========================================================== */
+
 img {
     max-width: 100%;
     height: auto;
@@ -158,13 +146,11 @@ img {
 .profile-image img {
     width: 200px;
     height: 200px;
-    object-fit: cover;              /* crops instead of stretching */
+    object-fit: cover;              
     border-radius: 50%;
 }
 
-/* ==========================================================
-   TABLE: favorites and skills
-   ========================================================== */
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -182,12 +168,10 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f6dcdc;      /* light tint keeps dark text readable */
+    background-color: #f6dcdc;      
 }
 
-/* ==========================================================
-   LINKS (inside sections)
-   ========================================================== */
+
 a {
     color: #0b6b83;
     text-decoration: none;
@@ -197,9 +181,7 @@ a:hover {
     color: #7a1010;
 }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
+
 footer {
     text-align: center;
     font-size: 0.9rem;
@@ -207,9 +189,7 @@ footer {
     color: #ffffff;
 }
 
-/* ==========================================================
-   HOVER EFFECT: animated gradient lines above and below nav links
-   ========================================================== */
+
 .hover-underline {
     font-size: 0.9rem;
     position: relative;
@@ -240,9 +220,7 @@ footer {
     transform: scaleX(1);
 }
 
-/* ==========================================================
-   MOBILE: stack the Hello section on narrow screens
-   ========================================================== */
+
 @media (max-width: 600px) {
     #hello {
         grid-template-columns: 1fr;
@@ -258,16 +236,12 @@ footer {
         font-size: 2rem;
     }
 }
-/* ==========================================================
-   TABLE WRAPPER: scrolls inside itself on narrow phones
-   ========================================================== */
+
 .table-wrap {
     overflow-x: auto;
 }
 
-/* ==========================================================
-   PLAYLISTS: Flexbox row of Spotify embeds (stacks on phones)
-   ========================================================== */
+
 .playlist-grid {
     display: flex;
     flex-wrap: wrap;
@@ -283,14 +257,14 @@ footer {
     border-radius: 12px;
 }
 
-/* caption under the profile photo */
+
 figcaption {
     font-size: 0.85rem;
     text-align: center;
     margin-top: 8px;
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -308,7 +282,7 @@ figcaption {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

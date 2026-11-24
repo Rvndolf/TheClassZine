@@ -1,9 +1,6 @@
-/* ==========================================
-AEON'S PERSONAL PROFILE
-Modern Minimalist Portfolio Design
-========================================== */
 
-/* GLOBAL SETTINGS */
+
+
 
 * {
   box-sizing: border-box;
@@ -19,9 +16,7 @@ line-height: 1.8;
 font-size: 16px;
 }
 
-/* ==========================================
-HEADER AND INTRODUCTION
-========================================== */
+
 
 header {
 background: linear-gradient(135deg, #101f35, #1e4165, #28577e);
@@ -46,9 +41,7 @@ margin-top: 5px;
 text-transform: uppercase;
 }
 
-/* ==========================================
-NAVIGATION
-========================================== */
+
 
 nav {
 margin-top: 35px;
@@ -83,9 +76,7 @@ color: #173b5e;
 transform: translateY(-3px);
 }
 
-/* ==========================================
-MAIN CONTENT
-========================================== */
+
 
 main {
 max-width: 1050px;
@@ -93,9 +84,7 @@ margin: 45px auto;
 padding: 0 20px;
 }
 
-/* ==========================================
-CONTENT SECTIONS
-========================================== */
+
 
 section {
 background-color: #ffffff;
@@ -128,9 +117,7 @@ font-size: 1.2rem;
 margin-top: 25px;
 }
 
-/* ==========================================
-ABOUT ME
-========================================== */
+
 
 #about img {
 width: 200px;
@@ -152,9 +139,7 @@ transform: scale(1.04);
 text-align: justify;
 }
 
-/* ==========================================
-HOBBIES AND GOALS
-========================================== */
+
 
 #hobbies ul,
 #hobbies ol {
@@ -174,9 +159,7 @@ color: #24527a;
 font-weight: bold;
 }
 
-/* ==========================================
-FAVORITES
-========================================== */
+
 
 #favorites p {
 background-color: #f1f6fb;
@@ -195,9 +178,7 @@ a:hover {
 color: #102e4c;
 }
 
-/* ==========================================
-FOOTER
-========================================== */
+
 
 footer {
 background-color: #101f35;
@@ -212,9 +193,7 @@ margin: 0;
 font-size: 0.9rem;
 }
 
-/* ==========================================
-RESPONSIVE DESIGN
-========================================== */
+
 
 @media (max-width: 650px) {
 
@@ -262,7 +241,7 @@ h2 {
 
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -280,7 +259,7 @@ h2 {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

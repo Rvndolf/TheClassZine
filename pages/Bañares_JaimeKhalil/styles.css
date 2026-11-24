@@ -474,7 +474,7 @@ tr:nth-child(even) {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -487,7 +487,7 @@ tr:nth-child(even) {
 .back-to-home:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

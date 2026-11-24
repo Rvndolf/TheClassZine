@@ -1,18 +1,10 @@
-/*
-=====================================================================
-  CS 101 FINAL PROJECT: ABOUT ME PAGE
-  style.css controls the look and layout of index.html.
-  Main colors: purple (main) and yellow (accent).
-=====================================================================
-*/
 
-/* ===== COLORS AND FONTS =====
-   :root holds CSS variables (named values). Use them with var(--name).
-   Change a value here and it updates everywhere on the page. */
+
+
 :root {
-  --purple: #4c0962;       /* main color */
-  --purple-light: #f6eefa; /* soft tint for table stripes */
-  --accent: #fbbf26;       /* accent: used for hovers and small details */
+  --purple: #4c0962;       
+  --purple-light: #f6eefa; 
+  --accent: #fbbf26;       
   --text: #2b2b2b;
   --card-bg: #ffffff;
   --border: #e3e3e3;
@@ -20,14 +12,13 @@
   --heading-font: "Trebuchet MS", Arial, sans-serif;
 }
 
-/* ===== 1. WHOLE PAGE =====
-   Rules that apply to the entire page. */
+
 * {
-  box-sizing: border-box; /* padding stays inside an element's width, so sizes are predictable */
+  box-sizing: border-box; 
 }
 
 html {
-  scroll-behavior: smooth; /* menu links glide to their section instead of jumping */
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -35,15 +26,15 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: linear-gradient(180deg, #fafafa 0%, #4c0962 90%); /* white fading to purple */
+  background: linear-gradient(180deg, #fafafa 0%, #4c0962 90%); 
   margin: 0;
 }
 
 main {
-  padding: 0 16px; /* keeps the cards away from the screen edges */
+  padding: 0 16px; 
 }
 
-/* ===== 2. HEADINGS AND HEADER ===== */
+
 h1, h2, h3 {
   font-family: var(--heading-font);
   font-weight: bold;
@@ -67,7 +58,7 @@ h3 {
   font-size: 1.2rem;
 }
 
-/* The purple banner at the top. The big top padding leaves room for the floating menu. */
+
 header {
   background-color: var(--purple);
   color: white;
@@ -81,37 +72,34 @@ header p {
   margin: 4px 0;
 }
 
-/* ===== 3. BOX MODEL (the section "cards") =====
-   padding = space inside the box, margin = space outside, border = the outline. */
+
 section {
   background-color: var(--card-bg);
   padding: 28px;
-  margin: 24px auto;       /* auto on the sides centers the card */
-  max-width: 800px;        /* keeps lines readable on wide screens */
+  margin: 24px auto;       
+  max-width: 800px;        
   border: 1px solid var(--border);
   border-radius: 10px;
-  scroll-margin-top: 110px; /* stops the fixed menu from covering a section title after a menu click */
+  scroll-margin-top: 110px; 
   transition: box-shadow 0.25s;
 }
 
-/* Hover effect: a soft shadow appears around a card when the mouse is over it */
+
 section:hover {
   box-shadow: 0 6px 18px rgba(76, 9, 98, 0.12);
 }
 
-/* ===== 4. FLEXBOX =====
-   display: flex lines up the children of an element in a row. */
 
-/* The floating menu: position: fixed keeps it on screen while scrolling,
-   and left 50% + translateX(-50%) centers it. */
+
+
 nav {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;                  /* keeps the menu above the cards */
+  z-index: 1000;                  
   width: max-content;
-  max-width: calc(100% - 24px);   /* never wider than the screen */
+  max-width: calc(100% - 24px);   
   background-color: #78109a;
   padding: 8px 16px;
   border: 3px solid black;
@@ -119,7 +107,7 @@ nav {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* Flexbox: puts the menu items in a row, centered, and wraps to a new line if needed */
+
 nav ul {
   display: flex;
   justify-content: center;
@@ -130,7 +118,7 @@ nav ul {
   margin: 0;
 }
 
-/* Each menu link is its own pill */
+
 nav a {
   display: block;
   color: white;
@@ -140,7 +128,7 @@ nav a {
   transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Hover effect: the pill turns yellow, lifts up, grows slightly, and gets a shadow */
+
 nav a:hover {
   background-color: var(--accent);
   color: var(--text);
@@ -148,12 +136,12 @@ nav a:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
-/* Keyboard users see the same highlight when they tab to a link */
+
 nav a:focus-visible {
   outline: 3px solid var(--accent);
 }
 
-/* Flexbox: puts the photo and the About text side by side */
+
 #about {
   display: flex;
   align-items: center;
@@ -162,22 +150,22 @@ nav a:focus-visible {
 }
 
 #about h2 {
-  flex-basis: 100%; /* the heading takes the full first row */
+  flex-basis: 100%; 
   margin: 0;
 }
 
 #about p {
-  flex: 1;           /* the text fills the leftover space beside the photo */
-  min-width: 250px;  /* drops below the photo when there isn't enough room */
+  flex: 1;           
+  min-width: 250px;  
 }
 
-/* ===== 5. TABLE ===== */
+
 .table-wrap {
-  overflow-x: auto; /* the table scrolls inside its box on phones, so the page never scrolls sideways */
+  overflow-x: auto; 
 }
 
 table {
-  border-collapse: collapse; /* merges double borders into single lines */
+  border-collapse: collapse; 
   width: 100%;
 }
 
@@ -194,18 +182,18 @@ th {
   letter-spacing: 0.5px;
 }
 
-/* Zebra stripes: shades every second row */
+
 tr:nth-child(even) {
   background-color: var(--purple-light);
 }
 
-/* ===== 6. IMAGES AND LINKS ===== */
+
 img {
   width: 200px;
   height: 200px;
-  object-fit: cover;   /* crops instead of squashing, so the photo stays a perfect circle */
-  border-radius: 50%;  /* turns the square photo into a circle */
-  max-width: 100%;     /* never wider than its container */
+  object-fit: cover;   
+  border-radius: 50%;  
+  max-width: 100%;     
   border: 5px solid var(--purple);
 }
 
@@ -224,19 +212,19 @@ a {
   color: var(--purple);
 }
 
-/* Hover effect on links: a thick yellow underline */
+
 a:hover {
   color: var(--purple);
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
 }
 
-/* Hover effect on list items */
+
 main li:hover {
   color: var(--purple);
 }
 
-/* ===== FOOTER ===== */
+
 footer {
   background-color: var(--purple);
   color: #ffffff;
@@ -257,8 +245,7 @@ footer a:hover {
   color: var(--accent);
 }
 
-/* ===== 7. PHONES (media query) =====
-   These rules only apply on screens 600px wide or narrower. */
+
 @media (max-width: 600px) {
 
   h1 {
@@ -280,7 +267,7 @@ footer a:hover {
     scroll-margin-top: 90px;
   }
 
-  /* Menu: one compact row that scrolls sideways, so it doesn't cover the screen */
+  
   nav {
     top: 10px;
     padding: 4px 8px;
@@ -291,7 +278,7 @@ footer a:hover {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: auto;
-    padding: 8px 4px; /* room so the hover pop isn't cut off */
+    padding: 8px 4px; 
     scrollbar-width: thin;
   }
 
@@ -309,7 +296,7 @@ footer a:hover {
     transform: translateY(-2px) scale(1.05);
   }
 
-  /* Photo stacks above the text and everything centers */
+  
   #about {
     flex-direction: column;
     text-align: center;
@@ -319,15 +306,14 @@ footer a:hover {
     text-align: left;
   }
 
-  /* Tighter table cells so more fits on a small screen */
+  
   th, td {
     padding: 10px 8px;
     font-size: 0.9rem;
   }
 }
 
-/* ===== 8. REDUCED MOTION =====
-   For people who turned off animations in their device settings. */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -338,7 +324,7 @@ footer a:hover {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -356,7 +342,7 @@ footer a:hover {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

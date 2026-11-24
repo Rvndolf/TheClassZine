@@ -1,5 +1,5 @@
 @font-face {
-  /*Find Cartoon is a font downloaded online to truly personalize my webpage*/
+  
   font-family: 'Find Cartoon';
   src: url('fonts/Find Cartoon.ttf') format('truetype');
   font-weight: normal;
@@ -70,7 +70,7 @@ table {
   filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
 }
 
-/*The first background image seen at the very start of my webpage to highlight the main head*/
+
 .hero-banner {
   width: 100vw;
   height: 650px;
@@ -88,7 +88,7 @@ table {
   text-align: left;
 }
 
-/*this code is the main format for the stitch images in header 1*/
+
 .hero-banner .stitch {
   position: absolute;
   z-index: 10;
@@ -105,7 +105,7 @@ table {
 .stitch-top {
   position: absolute;
   top: -150px;
-  /* Sits right on top of the upper border on desktop */
+  
   right: 120px;
   left: auto;
   width: 220px;
@@ -113,7 +113,7 @@ table {
   pointer-events: none;
 }
 
-/*This customizes my picture in a polygon shape for visual appeals*/
+
 .custom-shaped-image {
   position: relative;
   width: 80%;
@@ -139,7 +139,7 @@ table {
   text-align: left;
 }
 
-/*the format of the paragraph*/
+
 .tagline {
   display: inline-flex;
   flex-direction: column;
@@ -175,7 +175,7 @@ table {
   margin-left: 280px;
 }
 
-/*an interactive navigation bar so that specific sub-topics will be easier to find starting from the top of the webpage*/
+
 .navbar {
   width: 100%;
   height: 30px;
@@ -198,21 +198,21 @@ table {
   transition: color 0.2s ease;
 }
 
-/*the interactive part of the navigation bar that changes the color of the text if a crouser is hovered above it*/
+
 .navbar a:hover {
   color: #004AAD;
 }
 
-/*Hello section*/
+
 .hero-content-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* Aligns all text cleanly to the left */
+  
   max-width: 600px;
-  /* Matches the width of your .facts-grid */
+  
   margin: 0 auto 25px;
-  /* Centers the text block above the cards */
+  
 }
 
 .header-hello {
@@ -289,13 +289,13 @@ table {
 
 .stitch-hello {
   bottom: 20px;
-  /* Anchors Stitch's cut-off bottom edge cleanly to the bottom of the section */
+  
   left: 0px;
-  /* Anchors Stitch's flat left edge directly to the left screen edge */
+  
   width: 400px;
 }
 
-/* Container for the 4 fact cards */
+
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -304,7 +304,7 @@ table {
   z-index: 2;
 }
 
-/* Individual Fact Card */
+
 .fact-card {
   background-color: rgba(140, 226, 244, 0.35);
   backdrop-filter: blur(10px);
@@ -324,7 +324,7 @@ table {
   transform: translateY(-4px);
 }
 
-/* Small header label style */
+
 .fact-label {
   font-family: 'Find Cartoon', sans-serif;
   font-size: 14px;
@@ -333,7 +333,7 @@ table {
   text-transform: uppercase;
 }
 
-/* Main text value style */
+
 .fact-value {
   font-size: 18px;
   font-weight: bold;
@@ -341,7 +341,7 @@ table {
   line-height: 1.3;
 }
 
-/* Responsive adjustment for smaller screens */
+
 @media (max-width: 900px) {
   .facts-grid {
     grid-template-columns: 1fr;
@@ -351,7 +351,7 @@ table {
   }
 }
 
-/*About Me Section*/
+
 .header-name2 {
   display: flex;
   flex-direction: column;
@@ -407,6 +407,7 @@ table {
   text-align: left;
 }
 
+
 .custom-shaped-image2 {
   width: 400px;
   height: 350px;
@@ -416,7 +417,7 @@ table {
   filter: drop-shadow(0px 10px 18px rgba(3, 49, 87, 0.4));
 }
 
-/*Path to Computing Section*/
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -439,7 +440,7 @@ table {
   background: #4B7AB3;
   border-radius: 4px;
   transform-origin: top;
-  transform: scaleY(0);
+  transform: scaleY(1);
 }
 
 .timeline li {
@@ -459,17 +460,24 @@ table {
   border: 3px solid #fff;
 }
 
-.visible .timeline::before {
-  animation: growLine 1.2s ease forwards;
-}
+@supports (animation-timeline: view()) {
+  .page-section:has(.timeline) .timeline::before {
+    animation: growLine linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+  }
 
-@keyframes growLine {
-  to {
-    transform: scaleY(1);
+  @keyframes growLine {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
   }
 }
 
-/*My hobbies Section*/
+
 .header-name3 {
   font-family: 'Find Cartoon', sans-serif;
   color: #64acec;
@@ -527,7 +535,7 @@ table {
 .hero-content3 .nav-links2 li {
   font-size: 24px;
   font-family: 'Find Cartoon', sans-serif;
-  /* Optional: matches header style */
+  
   color: #113351;
   text-align: left;
   font-weight: bold;
@@ -589,7 +597,7 @@ table {
   box-sizing: border-box;
 }
 
-/*My Goals Section*/
+
 .header-name4 {
   font-family: 'Find Cartoon', sans-serif;
   color: #64acec;
@@ -682,7 +690,7 @@ table {
   box-sizing: border-box;
 }
 
-/*My Favorites Section*/
+
 .header-name6 {
   font-family: 'Find Cartoon', sans-serif;
   color: #64acec;
@@ -715,7 +723,7 @@ table {
   filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.4));
 }
 
-/* Reflection Card Styles */
+
 #reflection .timeline {
   list-style: none;
   padding: 0;
@@ -728,17 +736,17 @@ table {
   display: none;
 }
 
-/*Make the reflection cards smaller */
+
 .reflection-card {
   max-width: 550px;
-  /* Reduced from 850px to make them smaller/narrower */
+  
   width: 100%;
   margin: 0 auto 15px auto;
-  /* Centers the cards and adds spacing */
+  
   list-style: none;
   overflow: hidden;
   background-color: rgba(140, 226, 244, 0.35);
-  /* Keeps your glassmorphic card style */
+  
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -746,7 +754,7 @@ table {
   transition: all 0.3s ease;
 }
 
-/* Clickable Header padding adjustments for smaller size */
+
 .reflection-toggle {
   list-style: none;
   width: 100%;
@@ -754,7 +762,7 @@ table {
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  /* Tighter padding for a smaller card look */
+  
   cursor: pointer;
   box-sizing: border-box;
   background: none;
@@ -768,12 +776,12 @@ table {
 .reflection-toggle h3 {
   margin: 0;
   font-family: 'Find Cartoon', sans-serif;
-  /* Matches your font style */
+  
   font-size: 16px;
   color: #113351;
 }
 
-/* Circular + / - Badge */
+
 .toggle-icon {
   display: flex;
   align-items: center;
@@ -801,7 +809,7 @@ table {
   content: "-";
 }
 
-/* Content Area */
+
 .reflection-content {
   padding: 0 20px 18px 20px;
 }
@@ -813,7 +821,7 @@ table {
   color: #113351;
 }
 
-/* Footer Styling */
+
 .site-footer {
   width: 100%;
   padding: 30px 20px;
@@ -839,7 +847,7 @@ table {
   font-weight: bold;
 }
 
-/* Back to Home button */
+
 .back-home {
   position: fixed;
   right: 20px;
@@ -852,16 +860,31 @@ table {
   padding: 12px 20px;
   border-radius: 999px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: background 0.2s ease;
 }
 
-.back-home.show {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
+@supports (animation-timeline: scroll()) {
+  .back-home {
+    animation: back-home-reveal linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 300px 600px;
+  }
+
+  @keyframes back-home-reveal {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+  }
 }
 
 .back-home:hover {
@@ -875,7 +898,16 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/*side menu for small screens*/
+
+.nav-state-target {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
 .nav-toggle,
 .nav-backdrop {
   display: none;
@@ -900,26 +932,33 @@ a:focus-visible {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    text-decoration: none;
   }
 
-  .nav-toggle span {
+  .nav-toggle--close {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    font-size: 28px;
+    line-height: 1;
+    color: #fff;
+  }
+
+  #nav-open:target ~ .nav-toggle--open {
+    display: none;
+  }
+
+  #nav-open:target ~ .nav-toggle--close {
+    display: flex;
+  }
+
+  .nav-toggle--open span {
     display: block;
     height: 3px;
     background: #fff;
     border-radius: 3px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 
   .navbar {
@@ -942,7 +981,7 @@ a:focus-visible {
     transition: transform 0.35s ease;
   }
 
-  .navbar.open {
+  #nav-open:target ~ header .navbar {
     transform: none;
   }
 
@@ -968,7 +1007,7 @@ a:focus-visible {
     transition: opacity 0.3s ease;
   }
 
-  body.nav-open .nav-backdrop {
+  #nav-open:target ~ .nav-backdrop {
     opacity: 1;
     pointer-events: auto;
   }
@@ -997,7 +1036,7 @@ html {
   scroll-margin-top: 40px;
 }
 
-/* Sticky navbar */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -1014,7 +1053,7 @@ html {
   transform: translateY(-1px);
 }
 
-/* New cards (same glass look as the original rounded cards) */
+
 .info-card {
   background-color: rgba(140, 226, 244, 0.35);
   backdrop-filter: blur(10px);
@@ -1056,16 +1095,29 @@ html {
   margin-bottom: 0;
 }
 
-/*Animation effects*/
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
 
-.reveal.visible {
+.reveal {
   opacity: 1;
   transform: none;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal-section linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+
+  @keyframes reveal-section {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 .header-name span {
@@ -1150,11 +1202,11 @@ html {
   }
 
   .timeline::before {
-    transform: none;
+    transform: scaleY(1);
   }
 }
 
-/*Responsive feature*/
+
 
 @media (max-width: 900px) {
 
@@ -1178,7 +1230,7 @@ html {
     max-width: 100% !important;
   }
 
-  /* 1. Reset Header & Navbar so there is zero empty gap on top */
+  
   header {
     margin: 0;
     padding: 0;
@@ -1205,18 +1257,19 @@ html {
     transition: transform 0.35s ease;
   }
 
-  .navbar.open {
+  #nav-open:target ~ header .navbar {
     transform: translateX(0);
+    width: min(230px, 78vw);
   }
 
-  /* Move the close (X) button outside the open menu drawer */
-  body.nav-open .nav-toggle {
-    left: 245px;
+  
+  #nav-open:target ~ .nav-toggle--close {
+    left: min(245px, 82vw);
     background-color: #1a3c6e;
     z-index: 500;
   }
 
-  /* 2. Hero Banner & Anchored Top Stitch */
+  
   .hero-banner {
     position: relative;
     width: 100%;
@@ -1230,7 +1283,7 @@ html {
     justify-content: flex-start;
     box-sizing: border-box;
     overflow: visible !important;
-    /* Allows Stitch to peek out cleanly */
+    
   }
 
   .hero-photo-wrap {
@@ -1241,7 +1294,7 @@ html {
     width: 220px !important;
     height: 200px !important;
     margin: 35px auto 15px auto !important;
-    /* Leaves room for Stitch's ears at the top */
+    
   }
 
   .custom-shaped-image {
@@ -1256,7 +1309,7 @@ html {
     position: absolute !important;
     width: 120px !important;
     top: -55px !important;
-    /* Rests right on the upper border on mobile */
+    
     right: 10px !important;
     left: auto !important;
     transform: none !important;
@@ -1304,7 +1357,7 @@ html {
     padding: 15px;
   }
 
-  /* 3. Hello Section */
+  
   .stitch-hello {
     width: 100px;
     bottom: 5px;
@@ -1323,7 +1376,7 @@ html {
     padding: 0 20px;
   }
 
-  /* 4. About Me & Favorites */
+  
   .hero-banner2 {
     flex-direction: column;
     width: 100%;
@@ -1353,7 +1406,8 @@ html {
     line-height: 1.5;
   }
 
-  /* 5. Section Headers & Timeline */
+
+  
   .header-name2,
   .header-name3,
   .header-name4 {
@@ -1373,7 +1427,7 @@ html {
     font-size: 17px;
   }
 
-  /* 6. Hobbies & Goals (Stacked for Mobile) */
+  
   .hobbies-container,
   .goals-container {
     margin-left: 0;
@@ -1424,7 +1478,7 @@ html {
     font-size: 18px;
   }
 
-  /* 7. Back to Top */
+  
 
   .back-home {
     right: 12px;
@@ -1446,7 +1500,7 @@ html {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -1464,7 +1518,7 @@ html {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

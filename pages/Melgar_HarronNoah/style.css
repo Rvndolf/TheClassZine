@@ -287,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Section presentation: clean default, with CSS scroll-driven reveal enhancement */
+
 .section-wrapper,
 .hero-telemetry-banner {
   opacity: 1;
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-/* Center Navigation Links & HUD Pill Capsule */
+
 .nav-links-menu {
   display: flex;
   align-items: center;
@@ -1001,7 +1001,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-secondary);
 }
 
-/* Hero Footer Telemetry Strip */
+
 .hero-telemetry-banner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1329,7 +1329,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-/* Pure CSS Radio Tab Controllers */
+
 .orbit-tab-input {
   display: none;
 }
@@ -1535,7 +1535,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.45;
 }
 
-/* Whipple Shield Anatomy Diagram */
+
 .whipple-anatomy-card {
   background: var(--color-bg-elevated);
   border: 1px solid var(--border-medium);
@@ -1882,14 +1882,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-/* ==========================================================================
-   WANDERING MOON — Unified scroll-driven moon (Hero to Footer)
-   Starts centered directly in the Hero orbit rings and smoothly travels
-   across every section as you scroll, alternating right/left, with text
-   overlapping it, and sinking behind the footer.
-   ========================================================================== */
 
-/* Sections and text content strictly stack above the wandering moon */
+
+
 .section-wrapper,
 .author-dossier-grid,
 .dossier-card,
@@ -1904,10 +1899,10 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(6.5rem + min(240px, 40vw));
   left: 50%;
-  /* Match the hero rotating moon size: 72% of max-width 480px ≈ 345px */
+  
   width: clamp(180px, 34.5vw, 345px);
   height: clamp(180px, 34.5vw, 345px);
-  z-index: 0; /* Strictly behind all text and content */
+  z-index: 0; 
   pointer-events: none;
   will-change: transform, opacity;
   display: flex;
@@ -1924,11 +1919,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-/* -----------------------------------------------------------------------
-   Moon path alternates beside each section heading, then fades into the footer.
-   ----------------------------------------------------------------------- */
+
 @keyframes moon-wander {
-  /* Hero: centered in the orbit rings. */
+  
   0%, 8% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
@@ -1936,7 +1929,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* About: right side. */
+  
   14%, 18% {
     transform: translate(calc(28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.68;
@@ -1944,7 +1937,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Origin: left side. */
+  
   24%, 28% {
     transform: translate(calc(-28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.64;
@@ -1952,7 +1945,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Hobbies: right side. */
+  
   34%, 38% {
     transform: translate(calc(28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.61;
@@ -1960,7 +1953,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Memories: left side. */
+  
   45%, 50% {
     transform: translate(calc(-28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.58;
@@ -1968,7 +1961,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Favorites: right side. */
+  
   60%, 65% {
     transform: translate(calc(28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.55;
@@ -1976,7 +1969,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Toolkit: left side. */
+  
   72%, 78% {
     transform: translate(calc(-28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.5;
@@ -1984,7 +1977,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Reflection: right side. */
+  
   85%, 91% {
     transform: translate(calc(28vw - 50%), calc(-16vh - 50%)) scale(1);
     opacity: 0.45;
@@ -1992,7 +1985,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
   }
 
-  /* Footer: return to center and fade behind the content. */
+  
   97% {
     transform: translate(-50%, calc(-5vh - 50%)) scale(1.05);
     opacity: 0.28;
@@ -2142,9 +2135,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.75rem;
 }
 
-/* ==========================================================================
-   ORIGIN TRACE — how curiosity became a Computer Science course
-   ========================================================================== */
+
 
 .origin-story-panel {
   max-width: 880px;
@@ -2302,9 +2293,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-accent-cyan);
 }
 
-/* ==========================================================================
-   TOOLKIT — quiet ledger tables for apps, tools, books, and skills
-   ========================================================================== */
+
 
 .toolkit-panel {
   max-width: 880px;
@@ -2573,9 +2562,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* ==========================================================================
-   MEMORY COLLAGE — CSS-only hover / focus slide-reveal gallery
-   ========================================================================== */
+
 
 .memory-collage-toolbar {
   display: flex;
@@ -2854,7 +2841,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Touch / narrow screens: captions stay readable without hover */
+
 @media (hover: none), (pointer: coarse), (max-width: 640px) {
   .memory-card .memory-card__media,
   .memory-card:hover .memory-card__media,
@@ -3491,7 +3478,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
 }
 
-/* Animations */
+
 @keyframes orbit-clockwise {
   from {
     transform: rotate(0deg);
@@ -3748,9 +3735,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   NAVBAR & SCROLL-DRIVEN TELEMETRY ANIMATIONS
-   -------------------------------------------------------------------------- */
+
 @keyframes nav-pill-sheen-sweep {
   0% {
     left: -120%;
@@ -3816,7 +3801,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* CSS Scroll-Driven Animations: Modern Progressive Enhancement */
+
 @supports (animation-timeline: scroll()) {
   .site-nav-header {
     animation: nav-scroll-dock auto linear;
@@ -3852,7 +3837,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Responsive layouts */
+
 @media (min-width: 1441px) {
   :root {
     --container-max: 1560px;
@@ -3903,7 +3888,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none; 
   }
 
-  /* Reveal Pure CSS Mobile Hamburger */
+  
   .mobile-hamburger-btn {
     display: flex;
   }
@@ -4227,7 +4212,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -4245,7 +4230,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

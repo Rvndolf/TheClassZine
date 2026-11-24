@@ -1,6 +1,4 @@
-/* =========================================================
-   JEANNE PAGE: FINAL PROJECT
-   ========================================================= */
+
 
 * {
   box-sizing: border-box;
@@ -19,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- LACE (image) ---------- */
+
 .lace {
   position: relative;
   z-index: 4;
@@ -32,7 +30,7 @@ body {
   pointer-events: none;
 }
 
-/* ---------- HEADER ---------- */
+
 header {
   position: relative;
   z-index: 3;
@@ -58,7 +56,7 @@ header p {
   line-height: 1.6;
 }
 
-/* ---------- NAVIGATION BUTTONS ---------- */
+
 nav {
   display: flex;
   justify-content: center;
@@ -90,7 +88,7 @@ nav a:hover {
   color: #ffffff;
 }
 
-/* ---------- LAYOUT ---------- */
+
 .layout {
   position: relative;
   z-index: 1;
@@ -99,7 +97,7 @@ nav a:hover {
   min-height: 1400px;
 }
 
-/* ---------- FILM STRIP / PHOTOGRAPHY COLLAGE (images) ---------- */
+
 .film {
   flex: 0 0 18%;
   min-width: 80px;
@@ -117,7 +115,7 @@ nav a:hover {
   box-shadow: 0 10px 20px rgba(78, 64, 0, 0.605);
 }
 
-/* ---------- MAIN CONTENT / SECTIONS ---------- */
+
 main {
   flex: 1;
   min-width: 0;
@@ -140,7 +138,7 @@ img {
   border-radius: 15px;
 }
 
-/* ---------- FLEX BOX ---------- */
+
 .media-row {
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +155,7 @@ img {
   flex: 1 1 250px;
 }
 
-/* ---------- INNER BOX ---------- */
+
 .card {
   background-color: rgba(255, 240, 190, 0.92);
   border-radius: 30px;
@@ -177,7 +175,7 @@ img {
   line-height: 1.6;
 }
 
-/* ---------- TABLE ---------- */
+
 table {
   width: 100%;
   border-spacing: 0;
@@ -215,7 +213,7 @@ tr:nth-child(odd) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* ---------- TABLE DROPDOWN FOR PROGRESS / "DONE?" ---------- */
+
 select {
   padding: 8px 12px;
   background-color: #bb00c1;
@@ -226,7 +224,7 @@ select {
   border-radius: 80px;
 }
 
-/* ---------- HOVER EFFECT (dropdowns + list items) ---------- */
+
 select:hover,
 li:hover {
   background-color: #3e2300;
@@ -236,7 +234,7 @@ li:hover {
   border-radius: 30px;
 }
 
-/* ---------- LINKS ---------- */
+
 a {
   color: #3e2300;
 }
@@ -266,7 +264,7 @@ a:hover {
   color: #ffffff;
 }
 
-/* ---------- VINYL (image) ---------- */
+
 .vinyl {
   position: fixed;
   right: 0;
@@ -281,14 +279,14 @@ a:hover {
   pointer-events: none;
 }
 
-/* ---------- FOOTER ---------- */
+
 footer {
   background-color: rgb(250, 237, 115);
   text-align: center;
   padding: 8px 20px;
 }
 
-/* ---------- AUDIO PLAYER ---------- */
+
 audio {
   position: fixed;
   bottom: 15px;
@@ -299,16 +297,12 @@ audio {
   z-index: 10;
 }
 
-/* =========================================================
-   MOBILE OPTIMIZATION
-   Everything below only applies on small screens (tablet
-   portrait / phones), so the desktop view above stays as-is.
-   ========================================================= */
 
-/* ---------- TABLETS & PHONES ---------- */
+
+
 @media (max-width: 768px) {
 
-  /* Header */
+  
   header {
     padding: 16px 12px;
   }
@@ -325,7 +319,7 @@ audio {
     letter-spacing: 1px;
   }
 
-  /* Navigation */
+  
   nav {
     margin-top: 12px;
   }
@@ -340,19 +334,19 @@ audio {
     font-size: 15px;
   }
 
-  /* Lace under the header */
+  
   .lace {
     height: 34px;
   }
 
-  /* Layout: stack the film strip on top of the content */
+  
   .layout {
     flex-direction: column;
     margin-top: -34px;
     min-height: 0;
   }
 
-  /* Film strip becomes a swipeable horizontal row */
+  
   .film {
     flex: none;
     width: 100%;
@@ -372,7 +366,7 @@ audio {
     margin-bottom: 0;
   }
 
-  /* Main content */
+  
   main {
     flex: none;
     width: 100%;
@@ -416,7 +410,7 @@ audio {
     flex: 0 1 170px;
   }
 
-  /* Table: each row becomes its own stacked card */
+  
   .table-wrap {
     border-radius: 22px;
     padding: 14px 12px 18px;
@@ -438,7 +432,7 @@ audio {
     background: transparent;
   }
 
-  /* hide the header row visually (still readable by screen readers) */
+  
   thead {
     position: absolute;
     width: 1px;
@@ -470,14 +464,14 @@ audio {
     border-bottom: none;
   }
 
-  /* first cell acts as the card's title */
+  
   td:nth-child(1) {
     background-color: #a31f6c;
     color: white;
     font-weight: bold;
   }
 
-  /* small labels, since the header row is hidden */
+  
   td::before {
     display: block;
     margin-bottom: 2px;
@@ -504,7 +498,7 @@ audio {
     content: "Done?";
   }
 
-  /* Decorations that would cover the content on a small screen */
+  
   .vinyl {
     width: 220px;
     height: 220px;
@@ -523,7 +517,7 @@ audio {
   }
 }
 
-/* ---------- SMALL PHONES ---------- */
+
 @media (max-width: 480px) {
 
   header h1 {
@@ -558,7 +552,7 @@ audio {
   }
 }
 
-/* ---------- TOUCH SCREENS: no "stuck" hover after tapping ---------- */
+
 @media (hover: none) {
 
   li:hover {
@@ -586,7 +580,7 @@ audio {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -604,7 +598,7 @@ audio {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

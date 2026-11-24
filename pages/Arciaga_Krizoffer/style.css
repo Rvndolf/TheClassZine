@@ -1,20 +1,4 @@
-/*
-=====================================================================
-  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
-  File 2 of 2: style.css  (the LOOK and LAYOUT of your page)
-=====================================================================
 
-HOW CSS WORKS
-  A CSS rule has three parts:
-
-      selector {
-        property: value;
-      }
-
-  - selector : WHICH HTML element to style (for example body, h1, nav a)
-  - property : WHAT you want to change (for example color, font-size)
-  - value    : HOW you want to change it (for example blue, 20px)
-*/
 
 
 body {
@@ -192,7 +176,7 @@ nav ul {
 .panel { display: none; }
 #interests:checked ~ .p2, #goals:checked ~ .p3 { display: block; }
  
-/* ---------- PHONES AND SMALL SCREENS ---------- */
+
 @media (max-width: 800px) {
     body {
         font-size: 15px;
@@ -352,7 +336,7 @@ footer {
      color: antiquewhite;
        }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -370,7 +354,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

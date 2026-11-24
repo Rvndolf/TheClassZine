@@ -1,25 +1,7 @@
-/*
-CHECKLIST
-  [/] Step 1: body (font, color, background)
-  [/] Step 2: headings (color, size, alignment)
-  [/] Step 3: box model (padding, margin, border)
-  [/] Step 4: Flexbox navigation menu
-  [/] Step 5: table styling
-  [/] Step 6: image and link styling
-*/
 
 
-/* ---------------------------------------------------------------
-   STEP 1: STYLE THE WHOLE PAGE (the body selector)
-   Anything you set on body is inherited by most elements inside it.
 
-   Properties to know:
-     font-family      : the typeface. List backups after the commas.
-     font-size        : size of the text (16px is the browser default).
-     line-height      : space between lines. 1.5 is easier to read.
-     color            : the TEXT color.
-     background-color : the background color.
-   --------------------------------------------------------------- */
+
 body {
      font-family: 'Times New Roman', Times, serif;
      font-size: 24px;
@@ -34,15 +16,7 @@ footer p{
      font-family: 'Comic Sans MS', cursive;
    }
 
-/* ---------------------------------------------------------------
-   STEP 2: STYLE THE HEADINGS AND TEXT
-   You can give the same style to several selectors by separating
-   them with commas.
 
-   Properties to know:
-     text-align : left, center, or right.
-     font-weight: normal or bold.
-   --------------------------------------------------------------- */
   h1 {
      color: #540ef8;
      font-size: 3rem;
@@ -76,19 +50,7 @@ footer p{
      color: #000000;
    }
 
-/* ---------------------------------------------------------------
-   STEP 3: THE BOX MODEL (spacing around elements)
-   Every HTML element is a box made of four layers, from inside out:
 
-       content > padding > border > margin
-
-   Properties to know:
-     padding : space INSIDE the box, between the content and the border.
-     border  : the line around the box. Shorthand: width style color.
-     margin  : space OUTSIDE the box, pushing other elements away.
-     max-width + margin: 0 auto : centers a block on the page.
-
-   --------------------------------------------------------------- */
 section {
      background-color: rgb(252, 209, 209);
      padding: 20px;
@@ -110,25 +72,7 @@ section {
 
 
 
-/* ---------------------------------------------------------------
-   STEP 4: FLEXBOX (REQUIRED: arrange part of your page)
-   Flexbox arranges the children of a container in a row or column.
-   You turn it on by setting display: flex on the PARENT (container).
 
-   Properties to know (set on the container):
-     display: flex            : turns on Flexbox. Children line up in a row.
-     justify-content          : spacing along the main axis (the row).
-                                Try: flex-start, center, space-between,
-                                space-around, flex-end.
-     align-items              : alignment along the cross axis (up/down).
-                                Try: center, flex-start, stretch.
-     gap                      : space between the children.
-     flex-wrap: wrap          : lets items drop to the next line on small screens.
-
-   Your nav menu is a <ul> with <li> items inside it. The <ul> is the
-   container, so you apply display: flex to "nav ul".
-
-   --------------------------------------------------------------- */
 
    nav ul {
      display: flex;
@@ -205,16 +149,7 @@ section {
 
 
 
-/* ---------------------------------------------------------------
-   STEP 5: STYLE THE TABLE
-   Properties to know:
-     border-collapse: collapse : merges the double borders into single lines.
-     width: 100%               : makes the table fill its container.
-     th, td                    : style header and data cells together.
-     tr:nth-child(even)        : selects every second row (zebra stripes).
 
-
-   --------------------------------------------------------------- */
 
  table {
      border-collapse: collapse;
@@ -241,16 +176,7 @@ section {
      background-color: #999595;
    }
 
-/* ---------------------------------------------------------------
-   STEP 6: STYLE IMAGES AND LINKS
-   Properties to know:
-     border-radius: 50%        : makes a square image into a circle.
-     max-width: 100%           : keeps images from overflowing small screens.
-     :hover                    : a style that applies when the mouse is over it.
-     text-decoration           : none, underline.
 
-
-   --------------------------------------------------------------- */
 
 nav a {
      color: #1a3c6e;
@@ -267,7 +193,7 @@ nav a {
    }
 
 
-/* --------- Allows to fit small screens ---------- */
+
 @media (max-width: 700px) {
   body { font-size: 18px; }
   h1 { font-size: 2rem; }
@@ -279,7 +205,7 @@ nav a {
   .section1 figure { width: 100%; }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -297,7 +223,7 @@ nav a {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

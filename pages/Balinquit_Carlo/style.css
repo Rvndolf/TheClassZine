@@ -1,4 +1,4 @@
-/* Universal styles (applies to single element on the entire webpage */
+
 * {
     box-sizing: border-box;
 }
@@ -18,7 +18,7 @@ img {
     height: auto;
 }
 
-/* Body styles */
+
 body {
     margin: 0;
     background-image: url("images/bg.jpg");
@@ -36,16 +36,16 @@ body {
     padding: 0 20px;
 }
 
-/* General section styles */
+
 section {
-    background-color: /* #3146a5d7*/ #243b53;
+    background-color:  #243b53;
     padding: 25px 30px;
     margin: 22px auto;
     border: 2px solid #3dacdfd7;
     border-radius: 18px;
 }
 
-/* Header styles */ 
+ 
 .header {
     background-color: rgba(61, 172, 223, 0.85); 
     backdrop-filter: blur(12px); 
@@ -64,7 +64,7 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
-    /* sticky scrolling */
+    
     position: sticky;
     top: 0;
     z-index: 1000; 
@@ -85,7 +85,7 @@ section {
     color: #e2e8f0;
 }
 
-/* Navigation styles */
+
 nav {
     display: flex;
     align-items: center;
@@ -111,7 +111,7 @@ nav a:hover {
     color: #3b536d;
 }
 
-/* Typography for sections (h2), h3, and paragraphs */
+
 h2 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
@@ -138,7 +138,7 @@ h3 {
     margin: 0;
 }
 
-/* Top grid styles (sections 1-3 on left and aside on right) */
+
 .main-layout {
     display: grid;
     grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1fr);
@@ -158,7 +158,7 @@ h3 {
     margin: 0;
 }
 
-/* 1st section styles */
+
 .hello-box {
     display: flex;
     align-items: center;
@@ -182,7 +182,7 @@ h3 {
     text-align: center;
 }
 
-/* 2nd section styles */
+
 .aboutme-top-row {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -236,7 +236,7 @@ h3 {
     text-align: left; 
 }
 
-/* auto-next slider pics */
+
 .auto-pic-box {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -266,7 +266,7 @@ h3 {
     object-position: center !important;
 }
 
-/* caption styles */
+
 .auto-pic-box::after {
     content: "Photos taken using my phone :)";
     font-family: 'Dancing Script', cursive;
@@ -289,12 +289,12 @@ h3 {
     100%       { transform: translateX(0%); }
 }
 
-/* 3rd Section styles (My Path into Computing) */
+
 #path p {
     text-align: justify;
 }
 
-/* right column and aside styles */
+
 .sidebar {
     background-color: #243b53;
     border: 2px solid #3dacdfd7;
@@ -337,7 +337,7 @@ h3 {
     display: block;
 }
 
-/* fun facts text slider styles */
+
 .auto-text-track-6 {
     display: flex;
     width: 600%;
@@ -372,7 +372,7 @@ h3 {
     100%       { transform: translateX(0%); }
 }
 
-/* GIF container styles */
+
 .aside-gif-container {
     width: 100%;
     display: flex;
@@ -393,7 +393,7 @@ h3 {
     display: block;
 }
 
-/* screeenshot photos slider */
+
 .auto-pic-track-18 {
     display: flex;
     width: 1800%; 
@@ -409,7 +409,7 @@ h3 {
     object-position: center !important;
 }
 
-/* caption override for yt music screenshots */
+
 .yt-caption::after {
     content: "Screenshots from YouTube Music" !important;
     font-family: dancing script, cursive;
@@ -437,7 +437,7 @@ h3 {
     100%         { transform: translateX(0%); }
 }
 
-/* 4th Section styles (Favorites and Skills) */
+
 .two-col-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); 
@@ -490,7 +490,7 @@ h3 {
     overflow: hidden !important;
 }
 
-/* auto-next texts styles */
+
 .auto-text-track-7 {
     display: flex;
     width: 700%; 
@@ -526,7 +526,7 @@ h3 {
     100%         { transform: translateX(0%); }
 }
 
-/* 5th Section styles (Goals) */
+
 .goals-grid {
     display: grid;
     grid-template-columns: 2fr 1fr; 
@@ -540,7 +540,7 @@ h3 {
     }
 }
 
-/* tables styles */
+
 .table-wrapper {
     width: 100%;
     max-width: 100%;
@@ -580,12 +580,12 @@ tbody tr:nth-child(even) {
     font-weight: bold;
 }
 
-/* 6th Section (Reflection) */
+
 #reflection p {
     text-align: justify;
 }
 
-/* 7th Section (Random Photos in My Gallery) */
+
 .carousel {
     margin: 15px auto 0 auto;
     width: 96%;
@@ -595,7 +595,7 @@ tbody tr:nth-child(even) {
     overflow-x: hidden;
     padding: 14px 0;
     
-    /* fade effect hehe (left and right edges) */
+    
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
@@ -646,7 +646,7 @@ tbody tr:nth-child(even) {
     to { transform: translateX(-100%); }
 }
 
-/* Footer (name, socials, cited sources, back to home button) */
+
 footer {
     background-color: rgba(61, 172, 223, 0.72) !important; 
     backdrop-filter: blur(12px) !important; 
@@ -670,14 +670,14 @@ footer {
     color: #e2e8f0;
 }
 
-/* credits styles */
+
 .asset-credits {
     font-size: 0.85rem;
     font-family: 'Dancing Script', cursive;
     align-items: left;
 }
 
-/* back to home button styles */
+
 .home-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -695,7 +695,7 @@ footer {
     color: #243b53;
 }
 
-/* styles to make it responsive in mobile screens */
+
 @media screen and (max-width: 900px) {
     
     .header h1 {
@@ -763,7 +763,7 @@ footer {
 
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -781,7 +781,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

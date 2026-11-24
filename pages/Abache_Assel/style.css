@@ -1,5 +1,4 @@
-/* PALETTE: colors come from my original theme (night forest, moss green, lantern gold).
-   Variables keep every color in one place. */
+
 :root {
   --header-h: 180px;
   --night: #202734;
@@ -13,7 +12,7 @@
   --mono: 'Courier New', Courier, monospace;
 }
 
-/* BASE: page background, body text, and smooth scrolling between sections */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20px;
@@ -41,7 +40,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADINGS: monospace headings give a code feel against the serif body */
+
 h1,
 h2,
 h3 {
@@ -79,8 +78,7 @@ em {
   color: #6879a0;
 }
 
-/* HEADER: gradient banner. The ::before pseudo-element draws a few fireflies
-   that drift slowly, like the ones in my Minecraft background. */
+
 header {
   position: relative;
   overflow: hidden;
@@ -126,7 +124,7 @@ header::before {
   }
 }
 
-/* NAVIGATION: pill links with a hover effect */
+
 nav ul {
   display: flex;
   justify-content: center;
@@ -156,7 +154,7 @@ nav a:hover {
   transition: 0.3s;
 }
 
-/* SECTIONS: each section is a frosted panel that fills most of the screen */
+
 section {
   background-color: var(--panel);
   -webkit-backdrop-filter: blur(10px);
@@ -176,7 +174,7 @@ section:hover {
   transition: 0.3s;
 }
 
-/* LINKS: visible keyboard focus and a hover color */
+
 a {
   color: var(--sage);
   transition: 0.3s;
@@ -191,10 +189,10 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* HELLO: one-sentence summary on top, quick-fact cards below */
+
 .hello-content {
   display: flex;
-  flex-direction: column;           /* stacks the sentence above the cards */
+  flex-direction: column;           
   gap: 20px;
 }
 
@@ -207,7 +205,7 @@ a:focus-visible {
 
 .fact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));  /* adds or drops columns to fit */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));  
   gap: 16px;
   margin: 0;
 }
@@ -243,7 +241,7 @@ a:focus-visible {
   font-size: 1.1rem;
 }
 
-/* ABOUT ME: portrait and text side by side */
+
 .about-content {
   display: flex;
   align-items: center;
@@ -280,7 +278,7 @@ figcaption {
   margin: 0 0 12px;
 }
 
-/* LISTS: hobbies and goals share the same dark panel */
+
 .panel-list {
   background-color: var(--night);
   border: 1px solid var(--sage);
@@ -289,7 +287,7 @@ figcaption {
   margin: 5px 0;
 }
 
-/* Favorites and skills: wrapper scrolls sideways on small screens instead of the whole page */
+
 .table-wrap {
   overflow-x: auto;
 }
@@ -347,7 +345,7 @@ td:hover a {
   color: #ffffff;
 }
 
-/* FOOTER: name, credits, and links back to home and to the top */
+
 footer {
   text-align: center;
   font-size: 0.9rem;
@@ -389,7 +387,7 @@ footer {
   margin-bottom: 0;
 }
 
-/* SMALL SCREENS: stack the layouts and let sections fit their content */
+
 @media (max-width: 600px) {
   body {
     font-size: 15px;
@@ -478,7 +476,7 @@ footer {
   }
 }
 
-/* ACCESSIBILITY: respect people who turn off animations */
+
 @media (prefers-reduced-motion: reduce) {
   header::before {
     animation: none;
@@ -509,7 +507,8 @@ footer {
 .sidebar-toggle {
   display: block;
   position: fixed;
-  top: 12px;
+  
+  top: 68px;
   left: 12px;
   z-index: 21;
   padding: 8px 15px;
@@ -564,7 +563,7 @@ nav.sidebar a {
   transform: translateX(0);
 }
 
-/* Phones: keep the menu button from covering the name */
+
 @media (max-width: 899px) {
   header {
     padding-top: 56px;
@@ -596,7 +595,7 @@ nav.sidebar a {
   }
 }
 @media (min-width: 900px) {
-  /* Wide screens: open by default, and the content makes room for it */
+  
   header,
   main,
   footer {
@@ -612,7 +611,7 @@ nav.sidebar a {
     left: 232px;
   }
 
-  /* Wide screens: checked = hidden */
+  
   #sidebar-toggle:checked ~ header nav.sidebar {
     transform: translateX(-100%);
   }
@@ -632,7 +631,7 @@ section:target {
   border-color: var(--moss);
 }
 
-/* NAV ICONS: a fixed-width box keeps the words lined up in the sidebar */
+
 .icon {
   display: inline-block;
   width: 1.4em;
@@ -640,7 +639,7 @@ section:target {
   text-align: center;
 }
 
-/* COLLAPSIBLE BOXES: <details> and <summary> hide long text until it is clicked (no JavaScript) */
+
 .fold {
   background-color: var(--night);
   border: 1px solid var(--sage);
@@ -662,25 +661,25 @@ section:target {
   font-family: var(--mono);
   color: var(--lantern);
   text-align: left;
-  list-style: none;                 /* removes the default triangle */
+  list-style: none;                 
   cursor: pointer;
   border-radius: 12px;
   transition: background-color 0.3s;
 }
 
 .fold summary::-webkit-details-marker {
-  display: none;                    /* removes the triangle in Safari */
+  display: none;                    
 }
 
 .fold summary::after {
-  content: "+";                     /* closed */
+  content: "+";                     
   font-size: 1.4rem;
   line-height: 1;
   color: var(--moss);
 }
 
 .fold[open] summary::after {
-  content: "\2212";                /* open: minus sign */
+  content: "\2212";                
 }
 
 .fold summary:hover {
@@ -692,7 +691,7 @@ section:target {
   outline-offset: 3px;
 }
 
-/* The text slides in when the box opens */
+
 .fold-body {
   padding: 4px 16px 16px;
   text-align: left;
@@ -719,7 +718,7 @@ section:target {
   }
 }
 
-/* Credits box in the footer stays small and centered */
+
 .credits-fold {
   max-width: 420px;
   margin: 0 auto 12px;
@@ -740,7 +739,7 @@ section:target {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -758,7 +757,7 @@ section:target {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

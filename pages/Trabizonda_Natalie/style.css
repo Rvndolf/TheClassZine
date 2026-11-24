@@ -1,53 +1,6 @@
-/*
-=====================================================================
-  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
-  File 2 of 2: style.css  (the LOOK and LAYOUT of your page)
-=====================================================================
 
-HOW CSS WORKS
-  A CSS rule has three parts:
 
-      selector {
-        property: value;
-      }
 
-  - selector : WHICH HTML element to style (for example body, h1, nav a)
-  - property : WHAT you want to change (for example color, font-size)
-  - value    : HOW you want to change it (for example blue, 20px)
-
-  Every declaration ends with a semicolon ( ; ).
-  A CSS comment starts with a slash followed by an asterisk, and ends
-  with an asterisk followed by a slash (like this big note you are reading).
-
-HOW TO USE THIS FILE
-  1. Work through the STEPS below, from top to bottom.
-  2. In each step there is an example inside a comment. To use it,
-     copy it BELOW the comment, then change the values to match your taste.
-     (Or remove the comment markers.) Experiment: change a value, save,
-     refresh your browser, and see what happens.
-  3. You need at least 5 different style rules for full points, and one
-     of them must use Flexbox (Step 4). Doing every step gives you more
-     than enough.
-
-TIPS
-  - Press F12 in your browser to open the developer tools. Right-click any
-    part of your page and choose "Inspect" to see which CSS applies to it.
-  - If a style does not work, check for: a missing semicolon, a missing
-    closing brace }, or a misspelled property.
-  - Colors can be written as names (steelblue), hex codes (#4682b4), or
-    rgb(70, 130, 180). Try a free color picker online to find hex codes.
-
-CHECKLIST
-  [/] Step 1: body (font, color, background)
-  [/] Step 2: headings (color, size, alignment)
-  [/] Step 3: box model (padding, margin, border)
-  [/] Step 4: Flexbox navigation menu
-  [/] Step 5: table styling
-  [ ] Step 6: image and link styling
-*/
-
-/* The body rule sets the font, text color,
- and a grid-like green background for the whole page. */
 body {
   position: relative;
   font-family: monospace;
@@ -150,12 +103,12 @@ img {
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-/* IMAGE HOVER: Adds an animation when the cursor moves over an image */
+
 img:hover {
   transform: scale(1.05);
   box-shadow: 6px 6px #a84c4c;
 }
-/* SECTIONS: Creates the main content panels */
+
 section {
   background-color: #1d1a19;
   padding: 20px;
@@ -308,7 +261,7 @@ footer {
   transform: translate(-3px, -3px);
   box-shadow: 8px 8px #a84c4c;
 }
-/* RESPONSIVE DESIGN: Adjusts the layout for smaller screens */
+
 @media (max-width: 600px) {
   header,
   section,
@@ -379,7 +332,7 @@ footer {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -397,7 +350,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

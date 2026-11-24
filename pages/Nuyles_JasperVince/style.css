@@ -1,7 +1,5 @@
 
-/* =================================
-   1. GENERAL SETTINGS
-================================= */
+
 
 * {
     margin: 0;
@@ -31,9 +29,7 @@ body {
 }
 
 
-/* =================================
-   2. HEADER AND NAVIGATION
-================================= */
+
 
 header {
     text-align: center;
@@ -86,9 +82,7 @@ nav a:hover {
 }
 
 
-/* =================================
-   3. MAIN CONTENT
-================================= */
+
 
 main {
     max-width: 1050px;
@@ -114,9 +108,7 @@ section:hover {
 }
 
 
-/* =================================
-   4. HEADINGS AND TEXT
-================================= */
+
 
 h2 {
     color: var(--light-purple);
@@ -137,9 +129,7 @@ p {
 }
 
 
-/* =================================
-   5. PROFILE IMAGE
-================================= */
+
 
 figure {
     text-align: center;
@@ -163,9 +153,7 @@ figcaption {
 }
 
 
-/* =================================
-   6. LISTS
-================================= */
+
 
 ul,
 ol {
@@ -182,9 +170,7 @@ li::marker {
 }
 
 
-/* =================================
-   7. TABLE
-================================= */
+
 
 table {
     width: 100%;
@@ -214,9 +200,7 @@ tbody tr:hover {
 }
 
 
-/* =================================
-   8. LINKS
-================================= */
+
 
 a {
     color: var(--light-purple);
@@ -229,9 +213,7 @@ p a:hover {
 }
 
 
-/* =================================
-   9. FOOTER
-================================= */
+
 
 footer {
     text-align: center;
@@ -259,9 +241,7 @@ footer a:hover {
 }
 
 
-/* =================================
-   10. MOBILE RESPONSIVENESS
-================================= */
+
 
 @media screen and (max-width: 768px) {
 
@@ -306,7 +286,7 @@ footer a:hover {
     }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -324,7 +304,7 @@ footer a:hover {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

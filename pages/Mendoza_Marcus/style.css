@@ -10,33 +10,7 @@ body
      background-position: center;
 }
 
-/* ---------------------------------------------------------------
-   STEP 2: STYLE THE HEADINGS AND TEXT
-   You can give the same style to several selectors by separating
-   them with commas.
 
-   Properties to know:
-     text-align : left, center, or right.
-     font-weight: normal or bold.
-
-   Example:
-
-   h1 {
-     color: #1a3c6e;
-     font-size: 2.5rem;
-     text-align: center;
-   }
-
-   h2, h3 {
-     color: #1a3c6e;
-   }
-
-   header {
-     background-color: #1a3c6e;
-     color: white;
-     text-align: center;
-   }
-   --------------------------------------------------------------- */
 
 h1 {
      color: #ffffff;
@@ -54,25 +28,24 @@ h1 {
      text-align: center;
    }
 
-/* ---------------------------------------------------------------
-   --------------------------------------------------------------- */
+
 .retro-card {
   border: 2px solid #b9013e;
   max-width: 800px;
   margin: 20px auto;
-  padding: 0 16px 16px 16px; /* Left, right, and bottom padding for the text */
+  padding: 0 16px 16px 16px; 
 }
 
 .retro-card h2 {
   background-color: #b9013e;
   color: #ffffff;
-  margin: 0 -16px 16px -16px; /* Negative side margins cancel out the section padding to hit the edges */
+  margin: 0 -16px 16px -16px; 
   padding: 8px 12px;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* -------------- */
+
 section {
   rotate: random(-0.5deg, 0.5deg);
     background-color: rgba(0, 0, 0, 0.6);
@@ -80,16 +53,14 @@ section {
      margin: 20px auto;
      max-width: 800px;
     border: 2px solid #b9013e; 
-     /*border-radius: 8px;*/
+     
    }
 
    header, footer {
      padding: 32px;
    }
 
-/* ---------------------------------------------------------------
 
-   --------------------------------------------------------------- */
    
 nav {
   position: sticky;
@@ -116,18 +87,18 @@ nav ul {
      text-decoration: underline;
    }
 
-/* about me flexbox */
+
 .about-content {
   display: flex;
   gap: 20px;
-  align-items: stretch; /* Makes both containers the exact same height */
+  align-items: stretch; 
 }
 
 .about-left {
   flex: 0 0 200px;
   display: flex;
-  flex-direction: column; /* Stacks the image and text vertically */
-  align-items: center;    /* Centers the image and text horizontally */
+  flex-direction: column; 
+  align-items: center;    
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px solid #b9013e; 
@@ -137,16 +108,16 @@ nav ul {
 }
 
 .about-right {
-  flex: 1; /* Takes up all the remaining space on the right */
-  /*background-color: rgb(243, 239, 227);*/
+  flex: 1; 
+  
   background-color: rgba(0, 0, 0, 0.8);
-  /*color: #000000;*/
+  
   border-radius: 8px;
   padding: 16px;
   text-align: justify;
 }
 
-/* skills flexbox */
+
 .skills-content {
   display: flex;
   gap: 20px;
@@ -156,7 +127,7 @@ nav ul {
 
 .skills-left {
   display: flex;
-  flex: 0 0 200px; /*lumiliit yung image*/
+  flex: 0 0 200px; 
 }
 
 .skills-right {
@@ -173,7 +144,7 @@ nav ul {
   margin: 0;
 }
 
-/* table */
+
 
 ul, ol {
   padding-left: 25px;
@@ -203,7 +174,7 @@ table {
      background-color: #0a0a0a80;
    }
 
-/* image and link */
+
 
 img {
      border-radius: 4%;
@@ -226,15 +197,15 @@ img {
 
    }
 
-/* hover effect */
-/*di maganda tignan pag nasa header imo*/
-/*before*/
+
+
+
 .about-right ul a { 
   
-  background-color: #b9013e; /* Soft red background block */
+  background-color: #b9013e; 
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers the text inside the button */
+  justify-content: center; 
   color: #ffffff;
   padding: 4px 8px;
   border-radius: 4px;
@@ -245,14 +216,14 @@ img {
   rotate: -1deg;
 }
 
-/* after */
+
 .about-right ul a:hover {
-  background-color: #d44b79; /* Turns solid theme red when hovered */
+  background-color: #d44b79; 
   transform: translateY(-2px);
   text-decoration: none;
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -270,7 +241,7 @@ img {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

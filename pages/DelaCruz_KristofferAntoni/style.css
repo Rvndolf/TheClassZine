@@ -1,12 +1,7 @@
-/* ==========================================================
-   STYLE.CSS - organized top to bottom:
-   1. Fonts  2. Variables  3. Base  4. Header  5. Navigation
-   6. Main sections  7. Table + dropdowns  8. Footer
-   9. Animation  10. Responsive
-   ========================================================== */
 
-/* ---------- 1. FONTS (stored in the fonts/ folder, works offline) ---------- */
-/* Fredoka: Used for headings and buttons. */
+
+
+
 @font-face {
   font-family: "Fredoka";
   src: url("fonts/fredoka.woff2") format("woff2");
@@ -14,7 +9,7 @@
   font-display: swap;
 }
 
-/* Nunito: Used for paragraphs and tables. */
+
 @font-face {
   font-family: "Nunito";
   src: url("fonts/nunito.woff2") format("woff2");
@@ -22,18 +17,18 @@
   font-display: swap;
 }
 
-/* ---------- 2. VARIABLES ---------- */
+
 :root {
   color-scheme: dark;
 
-  /* Accents */
+  
   --blue: #4d9dff;
   --blue-deep: #2468c5;
   --green: #55d69a;
   --green-deep: #21966b;
   --yellow: #ffd166;
 
-  /* Base colors */
+  
   --bg: #0c1226;
   --panel: #151d38;
   --panel-soft: #1c2646;
@@ -43,13 +38,13 @@
   --muted: #a3abc4;
   --line: rgba(163, 171, 196, 0.25);
 
-  /* Fonts with friendly backups in case a file fails to load */
+  
   --font-head: "Fredoka", "Trebuchet MS", "Segoe UI", sans-serif;
   --font-body: "Nunito", "Segoe UI", Arial, sans-serif;
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ---------- 3. BASE ---------- */
+
 * {
   box-sizing: border-box;
 }
@@ -67,7 +62,7 @@ body {
   line-height: 1.7;
 }
 
-/* Fixed background image */
+
 body::before {
   content: "";
   position: fixed;
@@ -77,7 +72,7 @@ body::before {
   opacity: 0.5;
 }
 
-/* Dark fade over the image*/
+
 body::after {
   content: "";
   position: fixed;
@@ -103,14 +98,14 @@ a:hover {
   color: var(--green);
 }
 
-/* Visible keyboard focus for accessibility */
+
 a:focus-visible,
 summary:focus-visible {
   outline: 3px solid var(--yellow);
   outline-offset: 3px;
 }
 
-/* ---------- 4. HEADER (Flexbox layout) ---------- */
+
 .site-header {
   padding: 40px clamp(20px, 6vw, 88px) 28px;
   background: rgba(21, 29, 56, 0.8);
@@ -142,7 +137,7 @@ h1 {
   font-size: 1.15rem;
 }
 
-/* Hello facts: name, program, year level */
+
 .facts {
   display: flex;
   flex-wrap: wrap;
@@ -163,7 +158,7 @@ h1 {
   font-weight: 600;
 }
 
-/* Profile photo styled like a tilted sticker */
+
 .portrait {
   flex: 0 0 auto;
   width: 210px;
@@ -195,7 +190,7 @@ figcaption {
   font-style: italic;
 }
 
-/* ---------- 5. NAVIGATION: the page's "arcade buttons" ---------- */
+
 .navbar ul {
   display: flex;
   flex-wrap: wrap;
@@ -219,7 +214,7 @@ figcaption {
   transition: transform 0.25s var(--spring), box-shadow 0.25s var(--spring), background 0.2s ease;
 }
 
-/* Hover: button rises and turns green */
+
 .navbar a:hover,
 .navbar a:focus-visible {
   color: var(--ink);
@@ -228,14 +223,14 @@ figcaption {
   transform: translateY(-3px);
 }
 
-/* Press (click or tap): button sinks into the page */
+
 .navbar a:active {
   box-shadow: 0 1px 0 var(--green-deep);
   transform: translateY(4px);
   transition-duration: 0.08s;
 }
 
-/* ---------- 6. MAIN SECTIONS ---------- */
+
 main {
   max-width: 760px;
   margin: 40px 20px 0 clamp(20px, 6vw, 88px);
@@ -251,7 +246,7 @@ section {
   scroll-margin-top: 20px;
 }
 
-/* Section titles*/
+
 h2 {
   display: inline-block;
   margin: 0 0 18px;
@@ -289,8 +284,8 @@ section li::marker {
   color: var(--green);
 }
 
-/* ---------- 7. TABLE + REFLECTION DROPDOWNS ---------- */
-/* Wrapper rounds the corners and scrolls sideways on small screens */
+
+
 .table-wrap {
   overflow-x: auto;
   border: 2px solid var(--line);
@@ -336,12 +331,12 @@ tbody tr {
   transition: background 0.2s ease;
 }
 
-/* Hover: row lights up green*/
+
 tbody tr:hover {
   background: rgba(85, 214, 154, 0.16);
 }
 
-/* Dropdowns */
+
 details {
   margin-bottom: 12px;
   background: var(--panel-soft);
@@ -363,7 +358,7 @@ summary {
   font-family: var(--font-head);
   font-size: 1.1rem;
   font-weight: 500;
-  list-style: none;          /* hides the default arrow */
+  list-style: none;          
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -372,7 +367,7 @@ summary::-webkit-details-marker {
   display: none;      
 }
 
-/* Custom "+" icon that spins into an "x" when opened */
+
 summary::after {
   content: "+";
   color: var(--green);
@@ -394,7 +389,7 @@ details p {
   padding: 0 18px 16px;
 }
 
-/* ---------- 8. FOOTER ---------- */
+
 footer {
   max-width: 760px;
   margin: 44px 20px 0 clamp(20px, 6vw, 88px);
@@ -408,19 +403,19 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* ---------- 9. ANIMATION ---------- */
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* The photo sticker bounces in, ending at its -4deg tilt */
+
 @keyframes pop {
   from { opacity: 0; transform: scale(0.6) rotate(-14deg); }
   to   { opacity: 1; transform: scale(1) rotate(-4deg); }
 }
 
-/* Page load: the one intro moment (text rises, photo pops) */
+
 .hello-text {
   animation: rise 0.6s ease both;
 }
@@ -429,12 +424,12 @@ footer p {
   animation: pop 0.7s var(--spring) 0.2s both;
 }
 
-/* Dropdown answer slides down when opened */
+
 details[open] p {
   animation: rise 0.35s ease;
 }
 
-/* Respect people who turn off motion in their device settings */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -443,9 +438,9 @@ details[open] p {
   }
 }
 
-/* ---------- 10. RESPONSIVE (mobile-friendly) ---------- */
+
 @media (max-width: 700px) {
-  /* Stack the hello text and photo vertically, photo first */
+  
   .hello {
     flex-direction: column-reverse;
     align-items: flex-start;
@@ -459,7 +454,7 @@ details[open] p {
 }
 
 
-/* Sticky Back to Home button: always visible at the bottom right */
+
 .home-btn {
   position: fixed;              
   right: max(18px, env(safe-area-inset-right));
@@ -501,7 +496,7 @@ footer {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -519,7 +514,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

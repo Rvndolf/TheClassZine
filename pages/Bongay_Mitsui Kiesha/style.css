@@ -1,4 +1,4 @@
-/* ---------- whole page ---------- */
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +13,7 @@ body {
   margin: 0;
 }
 
-/* my own highlight color when you select text */
+
 ::selection {
   background-color: #fbc0d6;
   color: #5a2a3c;
@@ -32,7 +32,7 @@ a:hover {
 }
 
 
-/* ---------- header ---------- */
+
 header {
   background-color: #ffd1e1;
   text-align: center;
@@ -58,7 +58,7 @@ h1 {
 }
 
 
-/* ---------- sticky navigation (flexbox) ---------- */
+
 nav {
   position: sticky;
   top: 0;
@@ -83,14 +83,14 @@ nav a {
   border-radius: 15px;
 }
 
-/* hover effect on the menu links */
+
 nav a:hover {
   background-color: #ffd1e1;
   color: #5a2a3c;
 }
 
 
-/* ---------- sections (white boxes) ---------- */
+
 main {
   max-width: 850px;
   margin: 0 auto;
@@ -124,7 +124,7 @@ h4 {
 }
 
 
-/* ---------- hello section (flexbox) ---------- */
+
 .hello-box {
   display: flex;
   flex-wrap: wrap;
@@ -165,7 +165,7 @@ h4 {
   font-style: italic;
 }
 
-/* sticker badges */
+
 .stickers span {
   display: inline-block;
   background-color: #ffe3ee;
@@ -177,7 +177,7 @@ h4 {
 }
 
 
-/* ---------- lists and tables ---------- */
+
 ul, ol {
   padding-left: 25px;
 }
@@ -201,7 +201,7 @@ tr:nth-child(even) {
   background-color: #fff7fa;
 }
 
-/* fun facts list */
+
 .fun-facts {
   list-style: none;
   padding-left: 5px;
@@ -212,7 +212,7 @@ tr:nth-child(even) {
 }
 
 
-/* ---------- favorites: table of clickable images ---------- */
+
 .table-wrap {
   overflow-x: auto;
   margin-bottom: 20px;
@@ -289,7 +289,7 @@ tr:nth-child(even) {
 }
 
 
-/* ---------- skill bars ---------- */
+
 .bar {
   background-color: #ffe3ee;
   border-radius: 20px;
@@ -307,7 +307,7 @@ tr:nth-child(even) {
 .coding { width: 20%; }
 
 
-/* ---------- timeline ---------- */
+
 .timeline {
   list-style: none;
   border-left: 3px dotted #f4a6c3;
@@ -327,7 +327,7 @@ tr:nth-child(even) {
 }
 
 
-/* ---------- faq (details and summary) ---------- */
+
 details {
   background-color: #fff7fa;
   border: 2px solid #fbc0d6;
@@ -347,7 +347,7 @@ summary:hover {
 }
 
 
-/* ---------- reflection quote ---------- */
+
 blockquote {
   border-left: 8px solid #f4a6c3;
   background-color: #fff7fa;
@@ -358,7 +358,7 @@ blockquote {
 }
 
 
-/* ---------- decorative form ---------- */
+
 form {
   display: flex;
   flex-direction: column;
@@ -397,7 +397,7 @@ button:hover {
 }
 
 
-/* ---------- footer ---------- */
+
 footer {
   background-color: #ffd1e1;
   text-align: center;
@@ -406,7 +406,7 @@ footer {
 }
 
 
-/* ---------- small screens ---------- */
+
 @media (max-width: 600px) {
   h1 {
     font-size: 2rem;
@@ -429,7 +429,7 @@ footer {
   }
 }
 
-/* ---------- photo gallery (flexbox) ---------- */
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -438,7 +438,7 @@ footer {
   padding: 10px 0;
 }
 
-/* every polaroid gets a different little tilt */
+
 .gallery .polaroid:nth-child(even) {
   transform: rotate(2deg);
 }
@@ -447,12 +447,12 @@ footer {
   transform: rotate(-1deg);
 }
 
-/* hover effect: the polaroid straightens up */
+
 .gallery .polaroid:hover {
   transform: rotate(0deg);
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -470,7 +470,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

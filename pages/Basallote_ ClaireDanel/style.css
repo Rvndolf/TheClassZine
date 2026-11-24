@@ -53,7 +53,7 @@ img {
   pointer-events: none;    
 }
 
-/* pink heart cursor */
+
 body, html {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff4da6' stroke='%23ffffff' stroke-width='2' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"), auto;
 }
@@ -61,7 +61,7 @@ body, html {
 a, button, .back-to-top-btn, .sources-grid a, .footer-nav a {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cpath fill='%23b31966' stroke='%23ffffff' stroke-width='2' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"), pointer;
 }
-/* ================= HEADER & NAVBAR ================= */
+
 header {
   position: fixed;
   top: 0;
@@ -129,7 +129,7 @@ nav {
     box-shadow: 0 0 25px #ffc8dd;
 }
 
-/* ================= INTRODUCTION SECTION ================= */
+
 #Introduction {
   position: relative;
   width: 100vw;
@@ -194,7 +194,7 @@ nav {
   box-shadow: 0 4px 12px #ff69b426;
 }
 
-/* ================= ABOUT SECTION ================= */
+
 .About {
   position: relative;
   width: 100%;
@@ -283,7 +283,7 @@ nav {
   }
 }
 
-/* ================= ABOUT SECTION ================= */
+
 
 .About {
   padding: 80px 5%;
@@ -316,7 +316,7 @@ nav {
   padding-top: 10px; 
 }
 
-/* stacking order of the cards */
+
 .puzzle-card:nth-child(1) { z-index: 6; }
 .puzzle-card:nth-child(2) { z-index: 5; }
 .puzzle-card:nth-child(3) { z-index: 4; }
@@ -332,7 +332,7 @@ nav {
   border-color: #ff3399; 
 }
 
-/* This is for the number badge */
+
 .number {
   display: inline-flex;
   align-items: center;
@@ -377,7 +377,7 @@ nav {
   }
 }
 
-/* ================= JOURNEY SECTION ================= */
+
 
 .Journey {
   display: flex;
@@ -429,7 +429,7 @@ nav {
   margin: 0;
 }
 
-/* Carousel */
+
 .carousel {
   flex: 1;
   min-width: 0; 
@@ -490,7 +490,7 @@ nav {
   line-height: 1.6;
   color: #4a1e35;
 }
- /*This is for the styling of scrollbar*/
+ 
 .carousel::-webkit-scrollbar-thumb {
   background-color: #ff5ca8;
   background-image: url(images/scrollbar1.jpg);
@@ -534,7 +534,7 @@ nav {
 }
 
 
-/* ================= FAVORITES SECTION ================= */
+
 .favorites-table {
   padding-top: 130px;
   padding-bottom: 80px;
@@ -590,8 +590,8 @@ nav {
   text-align: center;
 }
 
-/* ================= IMAGES ================= */
-/*For Manhwa, Color, Snack, and Dessert Cell*/
+
+
 .img-cell img {
   width: 175px; 
   height: 175px;
@@ -604,7 +604,7 @@ nav {
   transition: transform 0.3s ease;
 }
 
-/*For Anime, Animal, and App Cell*/
+
 .multi-img-cell {
   display: flex;
   flex-wrap: wrap;       
@@ -676,7 +676,7 @@ nav {
   transition: background 0.3s ease;
 }
 
-/* ================= GOALS SECTION ================= */
+
 .Goals {
   scroll-margin-top: 100px; 
   padding-top: 110px;
@@ -740,7 +740,7 @@ nav {
   line-height: 1.5;
 }
    
-/* ================= REFLECTION SECTION ================= */
+
 .Reflection {
   scroll-margin-top: 100px;
   padding: 100px 5% 80px;
@@ -819,7 +819,7 @@ nav {
 }
 
 
-/* ================= FOOTER SECTION ================= */
+
 .zine-footer {
   position: relative;
   background-color: #ff4fa3;
@@ -933,7 +933,7 @@ nav {
   border-color: #ff3399; 
 }
 
-/* ================= MOBILE OPTIMIZATION ================= */
+
 @media (max-width: 800px) {
   html,
   body,
@@ -1191,7 +1191,7 @@ nav {
   }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -1209,7 +1209,7 @@ nav {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

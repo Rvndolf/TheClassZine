@@ -12,8 +12,200 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..800,100&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  <!-- Sticky header -->
+  
+  @font-face {
+    font-family: "Zine Mario 256";
+    src:
+      url("../../fonts/SuperMario256.ttf") format("truetype"),
+      url("../fonts/SuperMario256.ttf") format("truetype"),
+      url("fonts/SuperMario256.ttf") format("truetype");
+    font-display: swap;
+  }
+
+  .zine-back-home {
+    all: unset;
+    box-sizing: border-box;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    min-height: 42px;
+    padding: 8px;
+    gap: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #fcd100;
+    border-radius: 10px;
+    background: rgba(8, 20, 38, 0.92);
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(60, 140, 230, 0.05) 0px,
+      rgba(60, 140, 230, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    box-shadow:
+      0 0 0 2px #000,
+      0 3px 0 2px #000,
+      0 0 14px rgba(10, 100, 220, 0.28);
+    color: #bce0fd;
+    font-family: "Zine Mario 256", "Super Mario 256", "Press Start 2P", monospace;
+    font-size: 0.78rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-shadow: 0 0 6px rgba(0, 130, 255, 0.4);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      min-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      padding 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      gap 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      color 0.18s ease,
+      background 0.18s ease,
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .zine-back-home:hover,
+  .zine-back-home:focus-visible {
+    width: 230px;
+    min-width: 230px;
+    padding: 8px 18px 8px 14px;
+    gap: 12px;
+    justify-content: flex-start;
+    color: #ffffff;
+    background: rgba(14, 32, 60, 0.96);
+    box-shadow:
+      0 0 0 2px #000,
+      0 3px 0 2px #000,
+      0 0 16px rgba(252, 209, 0, 0.55),
+      0 0 12px rgba(60, 150, 255, 0.45);
+    text-shadow: 0 0 8px rgba(80, 180, 255, 0.8);
+    transform: translateY(-1px);
+  }
+
+  .zine-back-home:active {
+    transform: translateY(1px);
+    box-shadow:
+      0 0 0 2px #000,
+      0 1px 0 2px #000,
+      0 0 12px rgba(10, 100, 220, 0.35);
+  }
+
+  .zine-back-home:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+  }
+
+  .zine-back-home__label {
+    display: block;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-8px);
+    white-space: nowrap;
+    transition:
+      max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.18s ease,
+      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .zine-back-home:hover .zine-back-home__label,
+  .zine-back-home:focus-visible .zine-back-home__label {
+    max-width: 170px;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.06s;
+  }
+
+  .zine-back-home__arrow {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    display: block;
+    image-rendering: pixelated;
+    transform: scaleX(-1);
+    animation: zineBackHomeArrow 0.9s infinite alternate ease-in-out;
+    transition: transform 0.2s ease;
+  }
+
+  .zine-back-home:hover .zine-back-home__arrow,
+  .zine-back-home:focus-visible .zine-back-home__arrow {
+    animation: none;
+    transform: scaleX(-1) translateX(6px);
+  }
+
+  @keyframes zineBackHomeArrow {
+    from { transform: scaleX(-1) translateX(0); }
+    to   { transform: scaleX(-1) translateX(4px); }
+  }
+
+  @media (max-width: 430px) {
+    .zine-back-home {
+      top: 0.75rem;
+      left: 0.75rem;
+      width: 38px;
+      min-width: 38px;
+      height: 38px;
+      min-height: 38px;
+      padding: 7px;
+      font-size: 0.68rem;
+    }
+
+    .zine-back-home__arrow {
+      width: 20px;
+      height: 20px;
+    }
+
+    .zine-back-home:hover,
+    .zine-back-home:focus-visible {
+      width: 210px;
+      min-width: 210px;
+      padding: 7px 12px 7px 10px;
+      gap: 9px;
+    }
+
+    .zine-back-home:hover .zine-back-home__label,
+    .zine-back-home:focus-visible .zine-back-home__label {
+      max-width: 140px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .zine-back-home,
+    .zine-back-home__label,
+    .zine-back-home__arrow {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
+
+<a class="zine-back-home" href="../../index.html">
+  <img
+    class="zine-back-home__arrow"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48c3R5bGU+LmMwe2ZpbGw6IzFhMGMwMH0uYzF7ZmlsbDojZmZkMTAwfS5jMntmaWxsOiNmZmZmZmZ9LmMze2ZpbGw6I2ZmZjg5YX0uYzR7ZmlsbDojZTcxZTA3fS5jNXtmaWxsOiNkOTZjMDB9PC9zdHlsZT48cmVjdCBjbGFzcz0iYzAiIHg9IjEwIiB5PSIxIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEyIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEzIiB5PSIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSI0IiB5PSI0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iNCIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzIiIHg9IjQiIHk9IjUiIHdpZHRoPSI2IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI1IiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNSIgeT0iNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMiIgeD0iMyIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMyIgeD0iNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iNiIgeT0iNiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMzIiB4PSIzIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSI0IiB5PSI3IiB3aWR0aD0iMTMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjgiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxOCIgeT0iOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iOSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iOSIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjkiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE5IiB5PSI5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTAiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjYiIHk9IjEwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iMTAiIHdpZHRoPSI5IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIwIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjExIiB3aWR0aD0iNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI3IiB5PSIxMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTAiIHk9IjExIiB3aWR0aD0iMTEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMjEiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTIiIHdpZHRoPSIxOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMiIgeT0iMTIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjEzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxMyIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNyIgeT0iMTMiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSIxMyIgd2lkdGg9IjExIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIxIiB5PSIxMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjE0IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI2IiB5PSIxNCIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjE0IiB3aWR0aD0iOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMCIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxNSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjExIiB5PSIxNSIgd2lkdGg9IjgiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTkiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjE2IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE4IiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjMiIHk9IjE3IiB3aWR0aD0iMTQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjE3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNSIgeD0iMyIgeT0iMTgiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNyIgeT0iMTgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjE5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM1IiB4PSI0IiB5PSIxOSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSIxOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iNCIgeT0iMjAiIHdpZHRoPSI3IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTUiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTMiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48L3N2Zz4="
+    alt=""
+    aria-hidden="true"
+  >
+  <span class="zine-back-home__label">back to home</span>
+</a>
+
+
+  
   <header class="site-nav-header" role="banner">
     <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
 
@@ -53,7 +245,7 @@
 
   <main id="main-content">
 
-    <!-- The wandering heart: it drifts across the page as you scroll, like the sticky header does -->
+    
     <div id="wandering-heart" class="wandering-heart" aria-hidden="true">
       <svg viewBox="0 0 100 100">
         <defs>
@@ -68,7 +260,7 @@
       </svg>
     </div>
 
-    <!-- HERO -->
+    
     <section id="hero" class="hero-section" aria-label="Introduction">
       <div class="container">
         <div class="hero-centered-wrap">
@@ -106,7 +298,7 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    
     <section id="about" class="section-wrapper" aria-labelledby="heading-about">
       <div class="container">
         <div class="section-header">
@@ -141,7 +333,7 @@
       </div>
     </section>
 
-    <!-- ORIGIN -->
+    
     <section id="origin" class="section-wrapper" aria-labelledby="heading-origin">
       <div class="container">
         <div class="section-header">
@@ -171,7 +363,7 @@
       </div>
     </section>
 
-    <!-- HOBBIES & GOALS -->
+    
     <section id="hobbies" class="section-wrapper" aria-labelledby="heading-hobbies">
       <div class="container">
         <div class="section-header">
@@ -235,7 +427,7 @@
       </div>
     </section>
 
-    <!-- MEMORIES -->
+    
     <section id="memories" class="section-wrapper" aria-labelledby="heading-memories">
       <div class="container">
         <div class="section-header">
@@ -358,7 +550,7 @@
       </div>
     </section>
 
-    <!-- FAVORITES -->
+    
     <section id="favorites" class="section-wrapper" aria-labelledby="heading-favorites">
       <div class="container">
         <div class="section-header">
@@ -386,7 +578,7 @@
       </div>
     </section>
 
-    <!-- TOOLKIT -->
+    
     <section id="toolkit" class="section-wrapper" aria-label="Apps, foods and books">
       <div class="container">
         <div class="toolkit-panel">
@@ -450,7 +642,7 @@
       </div>
     </section>
 
-    <!-- PLAYLIST -->
+    
     <section id="playlist" class="section-wrapper" aria-labelledby="heading-playlist">
       <div class="container">
         <div class="section-header">
@@ -468,7 +660,7 @@
       </div>
     </section>
 
-    <!-- REFLECTION -->
+    
     <section id="reflection" class="section-wrapper" aria-labelledby="heading-reflection">
       <div class="container">
         <div class="section-header">
@@ -529,101 +721,44 @@
       <div class="footer-bottom">
         <span>&copy; 2026 YANIXX</span>
         <span class="footer-status-pill"><span class="status-dot" aria-hidden="true"></span>Made with love</span>
-        <a class="back-to-home" href="../../index.html">Back to Home</a>
+        
+
+
       </div>
     </div>
   </footer>
 
-  <!-- Falling sparkles -->
-  <div id="sparkle-field" class="sparkle-field" aria-hidden="true"></div>
+  
+  <div id="sparkle-field" class="sparkle-field" aria-hidden="true">
+    <span class="sparkle" style="--x:4%;--s:12px;--fall:11.2s;--twinkle:2.1s;--delay:-3.1s;--delay2:-0.4s;--drift:26px"></span>
+    <span class="sparkle sparkle--white" style="--x:11%;--s:18px;--fall:9.4s;--twinkle:1.7s;--delay:-7.2s;--delay2:-1.1s;--drift:-32px"></span>
+    <span class="sparkle" style="--x:18%;--s:9px;--fall:13.6s;--twinkle:2.4s;--delay:-1.5s;--delay2:-0.8s;--drift:18px"></span>
+    <span class="sparkle" style="--x:24%;--s:15px;--fall:8.7s;--twinkle:1.9s;--delay:-5.8s;--delay2:-0.2s;--drift:-24px"></span>
+    <span class="sparkle sparkle--white" style="--x:31%;--s:21px;--fall:12.1s;--twinkle:2.2s;--delay:-9.4s;--delay2:-1.4s;--drift:40px"></span>
+    <span class="sparkle" style="--x:38%;--s:11px;--fall:10.3s;--twinkle:1.6s;--delay:-2.7s;--delay2:-0.6s;--drift:-18px"></span>
+    <span class="sparkle" style="--x:45%;--s:16px;--fall:14.8s;--twinkle:2.6s;--delay:-11.3s;--delay2:-1.8s;--drift:30px"></span>
+    <span class="sparkle sparkle--white" style="--x:52%;--s:8px;--fall:9.1s;--twinkle:1.8s;--delay:-4.2s;--delay2:-0.9s;--drift:-28px"></span>
+    <span class="sparkle" style="--x:59%;--s:20px;--fall:11.7s;--twinkle:2.3s;--delay:-8.1s;--delay2:-0.3s;--drift:22px"></span>
+    <span class="sparkle" style="--x:66%;--s:13px;--fall:8.4s;--twinkle:1.5s;--delay:-1.9s;--delay2:-1.2s;--drift:-36px"></span>
+    <span class="sparkle sparkle--white" style="--x:73%;--s:17px;--fall:13.2s;--twinkle:2.5s;--delay:-6.5s;--delay2:-0.5s;--drift:34px"></span>
+    <span class="sparkle" style="--x:80%;--s:10px;--fall:10.9s;--twinkle:1.9s;--delay:-10.6s;--delay2:-1.6s;--drift:-20px"></span>
+    <span class="sparkle" style="--x:87%;--s:19px;--fall:12.6s;--twinkle:2.2s;--delay:-3.4s;--delay2:-0.7s;--drift:28px"></span>
+    <span class="sparkle sparkle--white" style="--x:94%;--s:14px;--fall:9.8s;--twinkle:1.7s;--delay:-7.9s;--delay2:-1.3s;--drift:-30px"></span>
+    <span class="sparkle" style="--x:8%;--s:22px;--fall:15.1s;--twinkle:2.7s;--delay:-12.2s;--delay2:-0.1s;--drift:42px"></span>
+    <span class="sparkle" style="--x:28%;--s:7px;--fall:8.9s;--twinkle:1.6s;--delay:-5.1s;--delay2:-1.0s;--drift:-16px"></span>
+    <span class="sparkle" style="--x:48%;--s:23px;--fall:12.9s;--twinkle:2.4s;--delay:-2.2s;--delay2:-0.4s;--drift:36px"></span>
+    <span class="sparkle sparkle--white" style="--x:68%;--s:12px;--fall:10.1s;--twinkle:1.8s;--delay:-9.8s;--delay2:-1.5s;--drift:-26px"></span>
+    <span class="sparkle" style="--x:84%;--s:18px;--fall:11.5s;--twinkle:2.1s;--delay:-4.7s;--delay2:-0.8s;--drift:24px"></span>
+    <span class="sparkle" style="--x:96%;--s:9px;--fall:9.6s;--twinkle:1.7s;--delay:-8.6s;--delay2:-1.1s;--drift:-22px"></span>
+  </div>
 
-  <!-- Background music -->
-  <audio id="bg-music" src="Music/fall-in-love-alone.mp3.mp3" loop preload="auto"></audio>
-  <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play music: Fall in Love Alone by Stacey Ryan" title="Fall in Love Alone &mdash; Stacey Ryan">
-    <span class="music-icon" aria-hidden="true">&#9835;</span>
-    <span class="music-label">Fall in Love Alone</span>
-  </button>
-
-  <script>
-    // Falling sparkles
-    (function () {
-      var field = document.getElementById('sparkle-field');
-      if (!field) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var star = '<svg viewBox="0 0 24 24"><path d="M12 0 L14.6 9.4 L24 12 L14.6 14.6 L12 24 L9.4 14.6 L0 12 L9.4 9.4 Z"/></svg>';
-      var count = window.innerWidth < 600 ? 16 : 30;
-      for (var i = 0; i < count; i++) {
-        var el = document.createElement('span');
-        el.className = 'sparkle';
-        el.innerHTML = star;
-        var size = 8 + Math.random() * 16;
-        el.style.left = (Math.random() * 100).toFixed(1) + '%';
-        el.style.width = el.style.height = size.toFixed(1) + 'px';
-        el.style.animationDuration = (7 + Math.random() * 9).toFixed(1) + 's, ' + (1.4 + Math.random() * 1.8).toFixed(1) + 's';
-        el.style.animationDelay = (-Math.random() * 16).toFixed(1) + 's, ' + (-Math.random() * 3).toFixed(1) + 's';
-        el.style.setProperty('--drift', ((Math.random() - 0.5) * 80).toFixed(0) + 'px');
-        if (i % 3 === 0) el.classList.add('sparkle--white');
-        field.appendChild(el);
-      }
-    })();
-
-    // Background music: browsers block autoplay, so it starts on the first tap, click or key press
-    (function () {
-      var audio = document.getElementById('bg-music');
-      var btn = document.getElementById('music-toggle');
-      if (!audio || !btn) return;
-      audio.volume = 0.5;
-      var wantsMusic = true;
-      function setState(on) {
-        btn.classList.toggle('is-playing', on);
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        btn.setAttribute('aria-label', (on ? 'Pause' : 'Play') + ' music: Fall in Love Alone by Stacey Ryan');
-      }
-      function play() {
-        var p = audio.play();
-        if (p && p.then) p.then(function () { setState(true); }).catch(function () { setState(false); });
-      }
-      function firstGesture(e) {
-        if (e.target.closest && e.target.closest('#music-toggle')) return;
-        if (wantsMusic && audio.paused) play();
-        ['pointerdown', 'keydown', 'touchstart'].forEach(function (t) { document.removeEventListener(t, firstGesture); });
-      }
-      ['pointerdown', 'keydown', 'touchstart'].forEach(function (t) { document.addEventListener(t, firstGesture); });
-      btn.addEventListener('click', function () {
-        if (audio.paused) { wantsMusic = true; play(); }
-        else { wantsMusic = false; audio.pause(); setState(false); }
-      });
-      audio.addEventListener('error', function () { btn.title = 'Unable to load Fall in Love Alone'; });
-      play();
-    })();
-
-    // The wandering heart: glides down the page and sways side to side as you scroll.
-    (function () {
-      var heart = document.getElementById('wandering-heart');
-      if (!heart) return;
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-
-      function update() {
-        var doc = document.documentElement;
-        var max = doc.scrollHeight - window.innerHeight;
-        var p = max > 0 ? window.scrollY / max : 0;
-        var vw = window.innerWidth;
-        var x = (0.5 + 0.42 * Math.sin(p * Math.PI * 4)) * (vw - 90);
-        var y = 90 + p * (window.innerHeight - 220);
-        heart.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotate(' + (Math.sin(p * Math.PI * 6) * 14).toFixed(1) + 'deg)';
-      }
-
-      var ticking = false;
-      window.addEventListener('scroll', function () {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(function () { update(); ticking = false; });
-        }
-      }, { passive: true });
-      window.addEventListener('resize', update);
-      update();
-    })();
-  </script>
+  
+  <div class="music-widget">
+    <span class="music-widget__screen">
+      <audio class="music-widget__audio" src="Music/fall-in-love-alone.mp3.mp3" loop controls preload="auto" aria-label="Play or pause Fall in Love Alone by Stacey Ryan"></audio>
+      <span class="music-widget__note" aria-hidden="true">&#9835;</span>
+    </span>
+    <span class="music-widget__label">Fall in Love Alone</span>
+  </div>
 </body>
 </html>

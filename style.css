@@ -1,8 +1,8 @@
-/* Google Fonts: Montserrat (for all p tags) & Retro Pixel / Minecraft Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/minecraft-4');
 
-/* Global Paragraph Font: Fredoka (Nintendo-style rounded sans-serif) */
+
 p {
   font-family: "Fredoka", "Montserrat", system-ui, -apple-system, sans-serif !important;
   font-weight: 300 !important;
@@ -49,8 +49,7 @@ body {
   background: #020611;
 }
 
-/* Custom player-avatar cursor: the whole image, die-cut on transparency.
-   The face is the click hotspot, and 64px stays under browser cursor limits. */
+
 html {
     cursor: url("elements/cursor.png") 32 25, auto;
 }
@@ -63,7 +62,7 @@ summary,
     cursor: url("elements/cursor.png") 32 25, pointer;
 }
 
-/* While the mouse is held down, swap the portrait for the reaction cutout. */
+
 html:active,
 html:active *,
 a:active,
@@ -74,9 +73,7 @@ summary:active,
     cursor: url("elements/cursor-click.png") 32 23, auto !important;
 }
 
-/* Background music: arcade mini-player fixed in the bottom-right corner.
-   The plain browser audio controls are made invisible while retaining their native hit target,
-   presenting a custom 3D retro arcade push-button, CRT scanlines, and animated sound equalizer. */
+
 .music {
     position: fixed;
     bottom: clamp(.75rem, 2vw, 1.4rem);
@@ -116,7 +113,7 @@ summary:active,
         0 0 26px rgb(252 209 0 / 45%);
 }
 
-/* Custom 3D arcade push-button / CRT screen */
+
 .music__screen {
     position: relative;
     flex: none;
@@ -134,7 +131,7 @@ summary:active,
     transition: transform .08s steps(2, end), box-shadow .15s ease, border-color .15s ease;
 }
 
-/* Custom retro arcade Play triangle */
+
 .music__screen::before {
     content: "";
     position: absolute;
@@ -172,7 +169,7 @@ summary:active,
     transform: translate(-50%, -46%) scale(0.95);
 }
 
-/* Invisible native audio hit area covering the arcade button */
+
 .music__scaler {
     position: absolute;
     top: -24px;
@@ -181,7 +178,7 @@ summary:active,
     height: 56px;
     transform: scale(1.85);
     transform-origin: top left;
-    opacity: 0.001; /* Hides the plain browser player completely while preserving clickability */
+    opacity: 0.001; 
     z-index: 10;
     pointer-events: auto;
 }
@@ -193,7 +190,7 @@ summary:active,
     cursor: url("elements/cursor.png") 32 25, pointer;
 }
 
-/* Arcade CRT scanlines and glass gloss sheen */
+
 .music__scan {
     position: absolute;
     inset: 0;
@@ -226,7 +223,7 @@ summary:active,
         0 0 22px var(--mario-yellow);
 }
 
-/* Sound info and retro status LED */
+
 .music__info {
     display: flex;
     flex-direction: column;
@@ -246,7 +243,7 @@ summary:active,
     text-shadow: 2px 2px 0 #000, 0 0 8px rgb(252 209 0 / 35%);
 }
 
-/* Blinking 8-bit arcade power LED */
+
 .music__label::before {
     content: "";
     width: 6px;
@@ -270,7 +267,7 @@ summary:active,
     }
 }
 
-/* Stepped 8-bit arcade equalizer bars */
+
 .music__eq {
     display: flex;
     align-items: flex-end;
@@ -328,7 +325,7 @@ summary:active,
     }
 }
 
-/* Mobile responsive adjustments */
+
 @media (max-width: 600px) {
     .music {
         bottom: .6rem;
@@ -379,7 +376,7 @@ summary:active,
   background: #020611;
 }
 
-/* Arcade Machine Stage: Proportional wrapper for machine and screen */
+
 .title__arcade-stage {
   --stage-h: min(85vh, 85dvh, 820px, calc(92vw * (1999 / 1545)));
   position: absolute;
@@ -428,13 +425,7 @@ summary:active,
   pointer-events: none;
 }
 
-/* --------------------------------------------------------------------------
-   Arcade Screen Container & Class Picture
-   - Fits the CRT screen of elements/Arcade.webp with exact pixel precision
-     (Source image pixels: x: 293–1289 [64.47%], y: 778–1546 [38.42%])
-   - Matches the subtle rounded CRT screen bezel edge
-   - Interactive 3D pop-up hover effect with CRT phosphor illumination
-   -------------------------------------------------------------------------- */
+
 .title__arcade-screen {
   position: absolute;
   z-index: 4;
@@ -446,7 +437,7 @@ summary:active,
   isolation: isolate;
   border-radius: clamp(4px, 0.9vw, 12px);
   background: #040810;
-  /* Illuminates edges strictly inside the screen perimeter; NO outer illumination behind it */
+  
   box-shadow:
     inset 0 0 clamp(10px, 1.6vw, 22px) rgba(64, 185, 255, 0.65),
     inset 0 0 clamp(2px, 0.35vw, 6px) rgba(200, 240, 255, 0.55),
@@ -462,7 +453,7 @@ summary:active,
   will-change: transform, box-shadow;
 }
 
-/* Subtle CRT inner bezel depth shading matching rounded corners, like lore section */
+
 .title__arcade-screen::after {
   position: absolute;
   inset: 0;
@@ -476,7 +467,7 @@ summary:active,
   transition: opacity 0.35s ease;
 }
 
-/* Interactive Pop-Up Hover Effect: ONLY illuminate from behind it AFTER it is hovered */
+
 .title__arcade-screen:hover,
 .title__arcade-screen:focus-visible,
 .title:has(.title__arcade-mario-wrap:hover) .title__arcade-screen {
@@ -497,7 +488,7 @@ summary:active,
   cursor: url("elements/cursor-click.png") 32 23, auto !important;
 }
 
-/* Highly Illuminated Class Picture: Naturally set inside the CRT tube with subtle random flicker */
+
 .title__arcade-photo {
   position: absolute;
   inset: 0;
@@ -519,7 +510,7 @@ summary:active,
   animation-play-state: paused;
 }
 
-/* CRT Screen Scanlines Overlay */
+
 .title__arcade-screen-scanlines {
   position: absolute;
   inset: 0;
@@ -536,7 +527,7 @@ summary:active,
   mix-blend-mode: multiply;
 }
 
-/* CRT Glass Curvature Glare & Center Phosphor Luminescence */
+
 .title__arcade-screen-glare {
   position: absolute;
   inset: 0;
@@ -558,9 +549,7 @@ summary:active,
   mix-blend-mode: screen;
 }
 
-/* --------------------------------------------------------------------------
-   Mario Head Mascot: Sits on top of the photo, bigger than the photo, no aura
-   -------------------------------------------------------------------------- */
+
 .title__arcade-mario-wrap {
   position: absolute;
   top: 38.92%;
@@ -581,16 +570,16 @@ summary:active,
 
 .title__arcade-mario {
   display: block;
-  /* Colossal Mario Head sitting high atop the photo */
+  
   width: clamp(540px, 160%, 960px);
   height: auto;
   aspect-ratio: 200 / 168;
   object-fit: contain;
   image-rendering: auto;
-  filter: none !important; /* NO aura behind it */
+  filter: none !important; 
 }
 
-/* Hover on photo: Mario head appears sitting on top of the elevated photo */
+
 .title__arcade-screen:hover ~ .title__arcade-mario-wrap,
 .title__arcade-screen:focus-visible ~ .title__arcade-mario-wrap,
 .title:has(.title__arcade-screen:hover) .title__arcade-mario-wrap,
@@ -602,11 +591,7 @@ summary:active,
   transform: translate(-50%, -86%) scale(1.1) scaleX(calc(1 / 1.16)) rotate(-1.5deg) translateZ(40px);
 }
 
-/* --------------------------------------------------------------------------
-   Section Spotlight Dimmer: Darkens the title section when photo is hovered
-   - Focuses and spotlights both the illuminated photo and subtitle text
-   - Radial vignette effect creates dramatic theater/arcade ambiance
-   -------------------------------------------------------------------------- */
+
 .title__focus-dimmer {
   position: absolute;
   inset: 0;
@@ -623,7 +608,7 @@ summary:active,
   transition: opacity 0.45s ease;
 }
 
-/* Lower opacity and darken background elements when photo is hovered */
+
 .title:has(.title__arcade-screen:hover) .title__focus-dimmer,
 .title:has(.title__arcade-screen:focus-visible) .title__focus-dimmer,
 .title:has(.title__arcade-mario-wrap:hover) .title__focus-dimmer {
@@ -672,13 +657,7 @@ summary:active,
   transition: opacity 0.45s ease;
 }
 
-/* --------------------------------------------------------------------------
-   Sleek Subtitle Typewriter: "the beginning of a story"
-   - Sleek subtitle style below the section / photo
-   - No background, no box, no border ("dont put a background on it")
-   - Pure Minecraft text with crisp subtitle drop shadow for high contrast
-   - Types out over 5 slow seconds (24 steps for 24 characters) on photo hover
-   -------------------------------------------------------------------------- */
+
 .title__arcade-caption {
   position: absolute;
   bottom: clamp(1.2rem, 3.8vh, 3rem);
@@ -726,7 +705,7 @@ summary:active,
   padding-right: 2px;
 }
 
-/* Hover on photo reveals subtitle text & triggers slow 5-second typewriter */
+
 .title:has(.title__arcade-screen:hover) .title__arcade-caption,
 .title:has(.title__arcade-screen:focus-visible) .title__arcade-caption,
 .title:has(.title__arcade-mario-wrap:hover) .title__arcade-caption {
@@ -759,7 +738,7 @@ summary:active,
   }
 }
 
-/* Random, subtle CRT edge phosphor glow flicker (strictly inset, no outer glow) */
+
 @keyframes crtEdgeFlicker {
   0%, 100% {
     box-shadow:
@@ -826,7 +805,7 @@ summary:active,
   }
 }
 
-/* Subtle, organic CRT photo brightness & contrast micro-flicker */
+
 @keyframes crtPhotoFlicker {
   0%, 100% {
     filter: brightness(1.18) contrast(1.08) saturate(1.22);
@@ -866,7 +845,7 @@ summary:active,
   }
 }
 
-/* Lifted 3D CRT Backlight Illumination: ONLY illuminates from behind when hovered */
+
 @keyframes crtHoverBacklight {
   0%, 100% {
     box-shadow:
@@ -930,9 +909,7 @@ summary:active,
   width: 0.35em;
 }
 
-/* ==========================================================================
-   SUPER BSCS 1A Title Group (Grouped typography container)
-   ========================================================================== */
+
 .title__text-group {
   position: absolute;
   top: clamp(2.5rem, 6vh, 4.5rem);
@@ -959,7 +936,7 @@ summary:active,
     opacity 0.45s ease;
 }
 
-/* 3D Isometric Extrusion block shared across both SUPER & BSCS 1A */
+
 .title__text-group .mario-char {
   text-shadow:
     -2px 0 0 #000,
@@ -978,7 +955,7 @@ summary:active,
     0.15em 0.25em 0 #000;
 }
 
-/* Unified floating levitation for the entire title */
+
 @keyframes title-levitate {
   0% {
     transform: translateX(-50%) translateY(0);
@@ -996,7 +973,7 @@ summary:active,
   }
 }
 
-/* Interactive Hover Lift on whole title group */
+
 .title__text-group:hover {
   transform: translateX(-50%) translateY(-14px) scale(1.02);
   filter: drop-shadow(0 32px 20px rgb(0 0 0 / 58%))
@@ -1005,7 +982,7 @@ summary:active,
     drop-shadow(0 0 36px rgb(55 118 255 / 65%));
 }
 
-/* SUPER Row */
+
 .title__super {
   display: inline-flex;
   justify-content: center;
@@ -1020,7 +997,7 @@ summary:active,
   margin-right: 0;
 }
 
-/* Individual letter angles creating the slight curve for SUPER */
+
 .title__super .mario-char--s {
   transform: translateY(0.22em) rotate(-9deg);
 }
@@ -1037,7 +1014,7 @@ summary:active,
   transform: translateY(0.22em) rotate(9deg);
 }
 
-/* Interactive Hover on SUPER individual letters */
+
 .title__super .mario-char--s:hover {
   transform: translateY(calc(0.22em - 8px)) rotate(-9deg) scale(1.1) !important;
   z-index: 10;
@@ -1059,7 +1036,7 @@ summary:active,
   z-index: 10;
 }
 
-/* BSCS 1A Row - Spaced lower from SUPER */
+
 .title__bscs {
   display: inline-flex;
   justify-content: center;
@@ -1071,7 +1048,7 @@ summary:active,
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Individual letter angles for BSCS 1A */
+
 .title__bscs .mario-char--b {
   transform: rotate(-6deg) translateY(1px);
 }
@@ -1091,7 +1068,7 @@ summary:active,
   transform: rotate(5deg) translateY(-3px);
 }
 
-/* Interactive Hover on BSCS 1A individual letters */
+
 .title__bscs .mario-char--b:hover {
   transform: rotate(-6deg) translateY(-7px) scale(1.1) !important;
   z-index: 10;
@@ -1332,9 +1309,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Mario Stars (Subtle, small blinking background stars)
-   ========================================================================== */
+
 .title__mario-stars {
   position: absolute;
   inset: 0;
@@ -1367,7 +1342,7 @@ summary:active,
   display: block;
 }
 
-/* Subtle Interactive Hover for Small Background Stars */
+
 .mario-star:not(.mario-star--hero):hover {
   opacity: 0.95 !important;
   filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.95))
@@ -1375,7 +1350,7 @@ summary:active,
   transform: scale(1.3) rotate(calc(var(--star-rot, 0deg) + 15deg)) !important;
 }
 
-/* Mario Star Blink & Twinkle Animation */
+
 @keyframes mario-star-blink {
   0%,
   38%,
@@ -1407,7 +1382,7 @@ summary:active,
   }
 }
 
-/* Mario Star Eye Blink Animation */
+
 .mario-star__eye {
   transform-origin: 16px 16.5px;
   animation: mario-star-eye-blink 5.2s ease-in-out infinite;
@@ -1426,7 +1401,7 @@ summary:active,
   }
 }
 
-/* Star positions & staggered blink timing across the sky */
+
 .mario-star--1 {
   top: 13%;
   left: 8%;
@@ -1503,9 +1478,7 @@ summary:active,
   animation-duration: 5.6s;
 }
 
-/* ==========================================================================
-   Featured Hero Floating Mario Stars (Bigger, Closer to Arcade, Disaligned)
-   ========================================================================== */
+
 .mario-star--hero {
   position: absolute;
   width: clamp(58px, 6.2vw, 88px);
@@ -1517,14 +1490,14 @@ summary:active,
   -webkit-user-select: none;
 }
 
-/* Left Hero Star: Closer to Arcade, Positioned High near Marquee */
+
 .mario-star--hero-left {
   top: clamp(17%, 21vh, 25%);
   left: calc(50% - min(33vw, 385px));
   animation: mario-space-float-left 6.8s ease-in-out infinite;
 }
 
-/* Right Hero Star: Closer to Arcade, Disaligned Lower near Screen/Deck */
+
 .mario-star--hero-right {
   top: clamp(35%, 40vh, 46%);
   left: calc(50% + min(24vw, 290px));
@@ -1532,7 +1505,7 @@ summary:active,
   animation-delay: -2.3s;
 }
 
-/* Organic zero-gravity floating in space */
+
 @keyframes mario-space-float-left {
   0% {
     transform: translate3d(0, 0, 0) rotate(-14deg);
@@ -1575,7 +1548,7 @@ summary:active,
   height: 100%;
 }
 
-/* Star Sparkle: Body Blinking & Twinkle */
+
 .mario-star__sparkle {
   width: 100%;
   height: 100%;
@@ -1592,7 +1565,7 @@ summary:active,
   animation-delay: -2.1s;
 }
 
-/* Blinking twinkle glow keyframes */
+
 @keyframes mario-star-sparkle-blink {
   0%,
   100% {
@@ -1621,7 +1594,7 @@ summary:active,
   }
 }
 
-/* Eye Blink Animation for Hero Stars */
+
 .mario-star--hero-left .mario-star__eye {
   transform-origin: 16px 16.5px;
   animation: mario-hero-eye-blink 4.4s ease-in-out infinite;
@@ -1681,11 +1654,9 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Responsive Media Queries
-   ========================================================================== */
 
-/* Tablet & Medium Screens (max-width: 992px) */
+
+
 @media (max-width: 992px) {
   .title__arcade-stage {
     --stage-h: min(78vh, 78dvh, 700px, calc(94vw * (1999 / 1545)));
@@ -1768,7 +1739,7 @@ summary:active,
   }
 }
 
-/* Mobile Screens (Phones, max-width: 600px) - Scaled to match heroic desktop marquee ratio */
+
 @media (max-width: 600px) {
   :root {
     --mobile-arcade-w: min(92vw, 440px);
@@ -1784,7 +1755,7 @@ summary:active,
     padding-top: env(safe-area-inset-top, 0);
   }
 
-  /* Fit Arcade Machine cleanly to mobile section without distortion or horizontal clipping */
+  
   .title__arcade-stage {
     --stage-h: var(--mobile-arcade-h);
     transform: translateX(-50%) scaleX(1);
@@ -1830,7 +1801,7 @@ summary:active,
     filter: none !important;
   }
 
-  /* Positioned lower so it sits exactly on the top of the arcade machine */
+  
   .title__text-group {
     top: auto;
     bottom: calc(var(--mobile-arcade-h) - clamp(0.35rem, 1vh, 0.75rem));
@@ -1838,7 +1809,7 @@ summary:active,
     animation-name: title-levitate-mobile;
   }
 
-  /* Fluid arcade marquee scaling: keeps same ~75% screen presence as desktop */
+  
   .title__super {
     font-size: clamp(2.4rem, 12.5vw, 3.8rem);
   }
@@ -1848,12 +1819,12 @@ summary:active,
     margin-top: clamp(1rem, 2.6vh, 1.8rem);
   }
 
-  /* Bold, crisp outline stroke matching desktop proportion */
+  
   .mario-char {
     -webkit-text-stroke: clamp(2.5px, 0.8vw, 3.8px) var(--mario-black);
   }
 
-  /* Rich 3D extrusion shadow scaled proportionally for mobile */
+  
   .title__text-group .mario-char {
     text-shadow:
       -2px 0 0 #000,
@@ -1872,7 +1843,7 @@ summary:active,
       0.15em 0.25em 0 #000;
   }
 
-  /* Gentle mobile stars adjustment */
+  
   .mario-star:not(.mario-star--hero) {
     width: clamp(12px, 3.2vw, 17px);
     height: clamp(12px, 3.2vw, 17px);
@@ -1902,7 +1873,7 @@ summary:active,
     top: 5%;
   }
 
-  /* Gentler levitation for mobile so text stays comfortably within screen */
+  
   @keyframes title-levitate-mobile {
     0% {
       transform: translateX(-50%) translateY(0);
@@ -1919,7 +1890,7 @@ summary:active,
   }
 }
 
-/* Extra Small Screens (max-width: 380px) */
+
 @media (max-width: 380px) {
   :root {
     --mobile-arcade-w: 94vw;
@@ -1973,7 +1944,7 @@ summary:active,
   }
 }
 
-/* Mobile Landscape (Short Viewports, max-height: 520px and orientation: landscape) */
+
 @media (max-height: 520px) and (orientation: landscape) {
   .title__arcade-stage {
     --stage-h: min(90vh, 90dvh, 440px, calc(min(85vw, 420px) * (1999 / 1545)));
@@ -2014,7 +1985,7 @@ summary:active,
   }
 }
 
-/* Accessibility: Reduced Motion */
+
 @media (prefers-reduced-motion: reduce) {
   .title__arcade-screen,
   .title__arcade-photo,
@@ -2059,9 +2030,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Brick Separator + Lucky Block Coin Pop (pure CSS, no JS)
-   ========================================================================== */
+
 .separator {
   position: relative;
   z-index: 5;
@@ -2074,7 +2043,7 @@ summary:active,
   background-blend-mode: screen;
 }
 
-/* Fade the wall ends into the page */
+
 .separator::before {
   position: absolute;
   inset: 0;
@@ -2089,7 +2058,7 @@ summary:active,
   );
 }
 
-/* Square ? block sitting in the wall */
+
 .separator__block {
   position: absolute;
   top: 50%;
@@ -2174,7 +2143,7 @@ summary:active,
   image-rendering: pixelated;
 }
 
-/* The coin rises only while the linked block is pressed. */
+
 .separator__block:active .separator__coin {
   bottom: 145%;
   opacity: 1;
@@ -2258,13 +2227,9 @@ summary:active,
   opacity: 0.92;
 }
 
-/* ==========================================================================
-   About Section styles have been moved to about.css
-   ========================================================================== */
 
-/* ==========================================================================
-   Select Your Player
-   ========================================================================== */
+
+
 .select {
   position: relative;
   isolation: isolate;
@@ -2282,10 +2247,7 @@ summary:active,
   text-align: center;
 }
 
-/* Pixel clouds extracted from the supplied Mario artwork. They are spread
-   around the header like the original layout, but every cloud is anchored
-   inside the section and only drifts inward. That keeps each one whole at
-   every point of the animation instead of slicing it on a section edge. */
+
 .select__clouds {
   position: absolute;
   inset: 0;
@@ -2317,9 +2279,7 @@ summary:active,
   }
 }
 
-/* A small set of pixel clouds drifts through the section. The largest
-   pieces sit low so the header stays calm, and the mid pair only appears
-   on wide screens where the side gutters leave it fully visible. */
+
 .select__cloud--hero {
   left: clamp(12px, 1.7vw, 32px);
   bottom: clamp(0.75rem, 1.2vw, 1.25rem);
@@ -2396,7 +2356,7 @@ summary:active,
     linear-gradient(180deg, transparent 58%, rgb(16 55 115 / 18%) 100%);
 }
 
-/* The daytime sky replaces the old star field. */
+
 .select__stars {
   display: none;
 }
@@ -2456,7 +2416,7 @@ summary:active,
   margin-right: 0;
 }
 
-/* Same isometric 3D extrusion used by SUPER BSCS 1A and ABOUT US. */
+
 .select__title .mario-char {
   text-shadow:
     -2px 0 0 #000,
@@ -2521,7 +2481,7 @@ summary:active,
   width: 0.6em;
 }
 
-/* Bouncy arcade tilt across each word. */
+
 .select__title .select__word .mario-char:nth-child(odd) {
   transform: rotate(-3deg) translateY(1px);
 }
@@ -2659,7 +2619,7 @@ summary:active,
   color: #8ec5ff;
 }
 
-/* Avatar image: transparent PNG inside the portrait card */
+
 .player-card__avatar {
   position: absolute;
   inset: 0;
@@ -2673,13 +2633,13 @@ summary:active,
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Subtle lift on hover */
+
 .player-card:hover .player-card__avatar,
 .player-card:focus-visible .player-card__avatar {
   transform: scale(1.06);
 }
 
-/* When an avatar is present, hide the "?" mark */
+
 .player-card__portrait:has(.player-card__avatar) .player-card__mark {
   display: none;
 }
@@ -2753,7 +2713,7 @@ summary:active,
   text-overflow: ellipsis;
 }
 
-/* Scaled font sizes so long and extra-long names fit strictly on one line */
+
 .player-card__name--long {
   font-size: clamp(0.5rem, 0.68vw, 0.7rem);
   font-size: clamp(0.5rem, 6cqi, 0.7rem);
@@ -2837,9 +2797,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Select Screen Responsive
-   ========================================================================== */
+
 @media (max-width: 900px) {
   .players {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2847,9 +2805,7 @@ summary:active,
 }
 
 @media (max-width: 760px) {
-  /* Reserve a taller sky band so the whole cloud field sits above the
-       heading and never hides behind the lede panel. Extra bottom padding
-       keeps the large clouds below the footnote on narrow screens. */
+  
   .select {
     padding-top: 13.5rem;
     padding-bottom: 9rem;
@@ -2960,9 +2916,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   About Section Styles (about.css)
-   ========================================================================== */
+
 
 :root {
   --about-font-heading: "Super Mario 256", system-ui, sans-serif;
@@ -2974,27 +2928,21 @@ summary:active,
   --mario-black: #000000;
 }
 
-/* ==========================================================================
-   About Section Container
-   - Fits the whole section using about.webp as a high-quality background
-   ========================================================================== */
+
 .about {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  /* Show the full Mario ground/grass strip instead of cropping it. The
-     section grows with the artwork's 2000x1333 aspect ratio, which also
-     gives the Select section breathing room below it. */
-  min-height: min(max(100dvh, 66.65vw), 140dvh);
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(3.5rem, 7vw, 6.5rem) clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(2rem, 4vh, 4rem) clamp(1.25rem, 4vw, 3rem);
   box-sizing: border-box;
   overflow: hidden;
   isolation: isolate;
 
-  /* High quality background cover */
+  
   background-color: #020611;
   background-image: url("elements/about.webp");
   background-size: cover;
@@ -3007,7 +2955,7 @@ summary:active,
   transform: translateZ(0);
 }
 
-/* Subtle atmospheric overlay for depth while keeping background crisp */
+
 .about::before {
   content: "";
   position: absolute;
@@ -3021,31 +2969,27 @@ summary:active,
   z-index: 1;
 }
 
-/* ==========================================================================
-   About Content Wrapper
-   ========================================================================== */
+
 .about__inner {
   position: relative;
   z-index: 2;
-  width: min(100%, 820px);
+  width: min(100%, 860px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.5rem, 3vw, 2.6rem);
+  gap: clamp(0.9rem, 2vw, 1.5rem);
 }
 
-/* ==========================================================================
-   Header: "About Us" with 3D Lifting / Levitation Effect (like SUPER & BSCS 1A)
-   ========================================================================== */
+
 .about__header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.85rem;
-  margin-top: clamp(-3.5rem, -7vh, -1.8rem);
-  margin-bottom: clamp(0.4rem, 1.2vh, 0.8rem);
+  gap: 0.5rem;
+  margin-top: clamp(-6rem, -11vh, -3.25rem);
+  margin-bottom: 0;
 }
 
 .about__eyebrow {
@@ -3065,7 +3009,7 @@ summary:active,
   justify-content: center;
   margin: 0;
   font-family: var(--about-font-heading);
-  font-size: clamp(2.6rem, 5.8vw, 4.6rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -3094,7 +3038,7 @@ summary:active,
   width: 0.35em;
 }
 
-/* 3D Isometric Extrusion block shared across ABOUT US (matches SUPER & BSCS 1A) */
+
 .about__title .mario-char {
   text-shadow:
     -2px 0 0 #000,
@@ -3113,7 +3057,7 @@ summary:active,
     0.15em 0.25em 0 #000;
 }
 
-/* Floating levitation for ABOUT US */
+
 @keyframes about-levitate {
   0% {
     transform: translateY(0);
@@ -3131,7 +3075,7 @@ summary:active,
   }
 }
 
-/* Interactive Hover Lift on whole ABOUT US title */
+
 .about__title:hover {
   transform: translateY(-14px) scale(1.02);
   filter: drop-shadow(0 32px 20px rgb(0 0 0 / 58%))
@@ -3140,7 +3084,7 @@ summary:active,
     drop-shadow(0 0 36px rgb(55 118 255 / 65%));
 }
 
-/* Individual letter angles for ABOUT US */
+
 .mario-char--about-a {
   transform: rotate(-6deg) translateY(1px);
 }
@@ -3163,7 +3107,7 @@ summary:active,
   transform: rotate(5deg) translateY(-3px);
 }
 
-/* Interactive Hover on ABOUT US individual letters */
+
 .about__title .mario-char--about-a:hover {
   transform: rotate(-6deg) translateY(-7px) scale(1.1) !important;
   z-index: 10;
@@ -3193,17 +3137,16 @@ summary:active,
   z-index: 10;
 }
 
-/* ==========================================================================
-   About Content & Text
-   - Written directly on the blue background in crisp white font
-   - Uses the exact monospace font used in the site paragraphs
-   ========================================================================== */
+
 .about__content,
 .about__card {
   position: relative;
   width: 100%;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.6vw, 1.15rem);
   text-align: center;
   background: transparent;
   border: none;
@@ -3220,29 +3163,116 @@ summary:active,
   display: none;
 }
 
-/* Paragraph text written directly on the blue background, white font, no shadow */
+
+.about__story {
+  display: grid;
+  gap: 0.45rem;
+}
+
+
 .about__text,
 .about_text,
 .about p {
   font-family: var(--about-font-body);
-  font-size: clamp(0.95rem, 1.22vw, 1.14rem);
-  font-weight: 300;
-  line-height: 1.85;
+  font-size: clamp(0.83rem, 1.05vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.55;
   color: #ffffff;
   margin: 0;
   text-shadow: none;
+  text-align: center;
 }
 
 .about__text + .about__text,
 .about_text + .about_text {
-  margin-top: 1.25rem;
+  margin-top: 0;
 }
 
-/* Pure CSS scroll-driven opacity transition (no JS) */
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.about__stat {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 0.65rem;
+  row-gap: 0.1rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0.5rem 0.7rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(252, 209, 0, 0.35);
+  border-radius: 10px;
+  background: rgba(4, 18, 40, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.about__stat--wide {
+  grid-column: 1 / -1;
+}
+
+.about__stat-emblem {
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #fff3b0;
+  border-radius: 8px;
+  background: linear-gradient(#ffe985, #f7c52b);
+  box-shadow:
+    0 0 0 2px #5b2d00,
+    0 3px 0 2px rgba(0, 0, 0, 0.45),
+    inset 0 -3px 0 rgba(180, 95, 0, 0.5);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-family: var(--about-font-heading);
+  font-size: clamp(0.58rem, 0.75vw, 0.68rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mario-yellow);
+  text-shadow: 0 2px 0 #000;
+}
+
+.about__stat-value {
+  font-family: var(--about-font-body);
+  font-size: clamp(0.72rem, 0.9vw, 0.86rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.about .about__code {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px dashed rgba(252, 209, 0, 0.55);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.38);
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+  line-height: 1.5;
+  color: #8dff8d;
+  text-align: center;
+}
+
+
 @keyframes about-text-fade-in {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -3251,30 +3281,81 @@ summary:active,
 }
 
 @supports (animation-timeline: view()) {
-  .about__text,
-  .about_text {
+  .about__story,
+  .about__stats,
+  .about__code {
     animation: about-text-fade-in linear both;
     animation-timeline: view();
-    animation-range: entry 5% cover 45%;
+    animation-range: entry 5% cover 40%;
   }
 }
 
-/* ==========================================================================
-   Responsive & Accessibility
-   ========================================================================== */
+
 @media (max-width: 680px) {
   .about {
-    padding: clamp(2.5rem, 5vw, 4rem) 1rem;
-    min-height: 85vh;
+    padding: 1.5rem 0.8rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .about__inner {
+    gap: 0.7rem;
+  }
+
+  .about__header {
+    margin-top: clamp(-4.25rem, -8.5vh, -2rem);
+    gap: 0.3rem;
   }
 
   .about__content,
   .about__card {
     padding: 0;
+    gap: 0.55rem;
   }
 
   .about__title {
-    font-size: clamp(1.85rem, 8.5vw, 3.2rem);
+    font-size: clamp(1.6rem, 8vw, 2.6rem);
+  }
+
+  .about__text,
+  .about_text,
+  .about p {
+    font-size: clamp(0.66rem, 2.5vw, 0.78rem);
+    line-height: 1.45;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  .about__stat {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    column-gap: 0.4rem;
+    row-gap: 0.05rem;
+    padding: 0.4rem 0.45rem;
+    border-radius: 8px;
+  }
+
+  .about__stat-emblem {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+  }
+
+  .about__stat-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .about__stat-value {
+    font-size: 0.63rem;
+  }
+
+  .about .about__code {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -3291,6 +3372,9 @@ summary:active,
     transform: none !important;
   }
 
+  .about__story,
+  .about__stats,
+  .about__code,
   .about__text,
   .about_text {
     opacity: 1 !important;
@@ -3300,15 +3384,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Lore Section
-   - Positioned after the Players section
-   - Sized as big as the "About Us" section (full viewport height)
-   - Uses luckyblockbg.webp as background
-   - Wall separators stacked horizontally at the top & bottom
-   - Platform standing on bottom-right on top of the wall separator
-   - Responsive group in the middle with nintendo.webp and slanted mariohat.webp
-   ========================================================================== */
+
 .lore {
   --lore-separator-h: clamp(34px, 4.4vw, 54px);
   position: relative;
@@ -3323,7 +3399,7 @@ summary:active,
   overflow: hidden;
   isolation: isolate;
 
-  /* Lucky Block Background */
+  
   background-color: #f7a81b;
   background-image: url("elements/luckyblockbg.webp");
   background-size: cover;
@@ -3331,7 +3407,7 @@ summary:active,
   background-repeat: no-repeat;
 }
 
-/* Atmospheric depth overlay */
+
 .lore::before {
   content: "";
   position: absolute;
@@ -3345,7 +3421,7 @@ summary:active,
   z-index: 1;
 }
 
-/* Wall brick separators stacked horizontally at top and bottom */
+
 .lore__separator {
   position: relative;
   z-index: 2;
@@ -3367,7 +3443,7 @@ summary:active,
   border-top: 2px solid rgba(0, 0, 0, 0.65);
 }
 
-/* Mario animated gif on the bottom left, resting on top of the wall separator */
+
 .lore__mario {
   position: absolute;
   left: clamp(1rem, 4vw, 3.5rem);
@@ -3385,7 +3461,7 @@ summary:active,
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
-/* Platform placed on the bottom right, resting directly on top of the wall separator */
+
 .lore__platform {
   position: absolute;
   right: clamp(1rem, 4vw, 3.5rem);
@@ -3400,7 +3476,7 @@ summary:active,
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
-/* Centered container holding the logo group and simple tagline */
+
 .lore__body {
   position: relative;
   z-index: 2;
@@ -3414,7 +3490,7 @@ summary:active,
   box-sizing: border-box;
 }
 
-/* Simple Montserrat text for recent quests (smaller, no shadow) */
+
 .lore__tagline {
   font-family: "Montserrat", sans-serif;
   font-weight: 300 !important;
@@ -3427,7 +3503,7 @@ summary:active,
   user-select: none;
 }
 
-/* Responsive logo group holding nintendo.webp, mariohat.webp and the carousel */
+
 .lore__logo-group {
   position: relative;
   display: grid;
@@ -3435,15 +3511,14 @@ summary:active,
   max-width: 100%;
 }
 
-/* The Nintendo image defines the group's box; the carousel is positioned
-   inside its black screen and follows the group when it moves. */
+
 .lore__logo-group > .lore__nintendo {
   grid-area: 1 / 1;
   width: 100%;
   min-width: 0;
 }
 
-/* Nintendo console image - bigger, centered, without hover animation */
+
 .lore__nintendo {
   display: block;
   width: 100%;
@@ -3455,7 +3530,7 @@ summary:active,
   -webkit-user-select: none;
 }
 
-/* Mario hat perched and slanted on the left top tip of the Nintendo logo */
+
 .lore__mario-hat {
   position: absolute;
   z-index: 4;
@@ -3472,13 +3547,7 @@ summary:active,
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* ==========================================================================
-   Lore Carousel
-   - Fits the black screen of nintendo.webp (source image pixels
-     x 313–1112, y 51–537 of 1412×591), so the console frame stays visible
-   - 13 slides, one every 3s (39s loop), sliding in from the right and
-     out to the left so the sequence reads as a scrolling carousel
-   ========================================================================== */
+
 .lore__carousel {
   position: absolute;
   z-index: 2;
@@ -3492,7 +3561,7 @@ summary:active,
   background: #060608;
 }
 
-/* Subtle screen-depth shading above the slides */
+
 .lore__carousel::after {
   position: absolute;
   inset: 0;
@@ -3515,8 +3584,7 @@ summary:active,
   backface-visibility: hidden;
 }
 
-/* Each slide is already in place on load and hands off to the next every 3s in a 39s loop (13 slides).
-   The extra -0.8s offsets the slide-in duration so the container is never blank. */
+
 .lore__slide:nth-of-type(1) {
   animation-delay: -0.8s;
 }
@@ -3557,7 +3625,7 @@ summary:active,
   animation-delay: -3.8s;
 }
 
-/* 0.8s slide in, ~2.2s hold, 0.8s slide out = 3s per image in a 39s loop. */
+
 @keyframes lore-carousel-slide {
   0% {
     transform: translateX(100%);
@@ -3614,17 +3682,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Forum Section ("Talk To Toad")
-   - Positioned directly below the Lore section
-   - Sized the same as the Lore section (min-height: 100vh / 100dvh)
-   - Uses elements/background.jpg as the section background
-   - bubble.webp dialogue bubble
-   - toadpointing.jpeg placed to the right, overlapping bubble, lower, mirrored
-   - "Talk To Toad" text juts out on the left, mirroring the Toad's offset
-   - Bottom broken brick separator using brokenbrick.png (Lore section method)
-   - Subtle drop-shadows and clean static presentation
-   ========================================================================== */
+
 .forum {
   --forum-separator-h: clamp(34px, 4.4vw, 54px);
   position: relative;
@@ -3639,7 +3697,7 @@ summary:active,
   overflow: hidden;
   isolation: isolate;
 
-  /* Section background using optimized background.webp (reduced from 2.2MB to 343KB) */
+  
   background-color: #2bc8f3;
   background-image: url("elements/background.webp");
   background-size: cover;
@@ -3647,7 +3705,7 @@ summary:active,
   background-repeat: no-repeat;
 }
 
-/* Atmospheric depth overlay - soft and subtle */
+
 .forum::before {
   content: "";
   position: absolute;
@@ -3661,7 +3719,7 @@ summary:active,
   z-index: 1;
 }
 
-/* Centered body container matching Lore section structure */
+
 .forum__body {
   position: relative;
   z-index: 2;
@@ -3674,7 +3732,7 @@ summary:active,
   box-sizing: border-box;
 }
 
-/* Wide dialogue bubble container */
+
 .forum__container,
 .forum__bubble-wrap {
   position: relative;
@@ -3687,7 +3745,7 @@ summary:active,
   box-sizing: border-box;
 }
 
-/* Dialogue bubble graphic in the middle with subtle shadow */
+
 .forum__bubble {
   display: block;
   width: 90%;
@@ -3700,7 +3758,7 @@ summary:active,
   pointer-events: none;
 }
 
-/* QR code centered inside the white bubble area */
+
 .forum__bubble-qr {
   position: absolute;
   z-index: 5;
@@ -3737,7 +3795,7 @@ summary:active,
   font-weight: 700;
 }
 
-/* Pixel Toad sitting on top of the bottom brick separator */
+
 .forum__pixel-toad {
   position: absolute;
   z-index: 3;
@@ -3752,7 +3810,7 @@ summary:active,
   -webkit-user-select: none;
 }
 
-/* Spark messages positioned higher up on the white bubble area */
+
 .forum__bubble-text {
   position: absolute;
   z-index: 5;
@@ -3773,7 +3831,7 @@ summary:active,
   user-select: none;
 }
 
-/* Toad character - toadpointing mirrored, bigger, placed further right and lower, no hover animation */
+
 .forum__toad {
   position: absolute;
   z-index: 4;
@@ -3792,7 +3850,7 @@ summary:active,
     drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
 }
 
-/* "Talk To Toad" typography group - placed at the left side of the bubble */
+
 .forum__title-group {
   position: absolute;
   z-index: 5;
@@ -3808,12 +3866,12 @@ summary:active,
   pointer-events: none;
 }
 
-/* Stacked words overlap slightly, pulled toward the left side of the bubble */
+
 .forum__title-item + .forum__title-item {
   margin-top: -0.12em;
 }
 
-/* Individual separate word containers - bigger with subtle shadow */
+
 .forum__title-item {
   display: inline-flex;
   align-items: center;
@@ -3837,7 +3895,7 @@ summary:active,
   margin-right: 0;
 }
 
-/* 3D Isometric Extrusion matching SUPER & BSCS 1A headers */
+
 .forum__title-item .mario-char {
   text-shadow:
     -2px 0 0 #000,
@@ -3856,7 +3914,7 @@ summary:active,
     0.15em 0.25em 0 #000;
 }
 
-/* TALK tilts slightly upward, TO slopes up more, TOAD stays level */
+
 .forum__title-item--talk {
   transform: rotate(-6deg);
   animation: forum-talk-levitate 4.6s ease-in-out infinite alternate;
@@ -3890,7 +3948,7 @@ summary:active,
   filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
 }
 
-/* Random-looking per-letter tilts for a scattered, hand-drawn feel */
+
 .forum-char--t1 { transform: rotate(17deg) translateY(3px); }
 .forum-char--a1 { transform: rotate(-11deg) translateY(-4px); }
 .forum-char--l  { transform: rotate(7deg) translateY(1px); }
@@ -3904,7 +3962,7 @@ summary:active,
 .forum-char--a2 { transform: rotate(14deg) translateY(4px); }
 .forum-char--d  { transform: rotate(-7deg) translateY(-2px); }
 
-/* Interactive Hover on individual letters matching SUPER and BSCS 1A */
+
 .forum-char--t1:hover { transform: rotate(17deg) translateY(-10px) scale(1.12) !important; z-index: 10; }
 .forum-char--a1:hover { transform: rotate(-11deg) translateY(-12px) scale(1.12) !important; z-index: 10; }
 .forum-char--l:hover  { transform: rotate(7deg) translateY(-9px) scale(1.12) !important; z-index: 10; }
@@ -3918,7 +3976,7 @@ summary:active,
 .forum-char--a2:hover { transform: rotate(14deg) translateY(-9px) scale(1.12) !important; z-index: 10; }
 .forum-char--d:hover  { transform: rotate(-7deg) translateY(-11px) scale(1.12) !important; z-index: 10; }
 
-/* Levitation keeps each word's tilt while TOAD stays completely steady */
+
 @keyframes forum-talk-levitate {
   0% { transform: rotate(-6deg) translateY(0); }
   100% { transform: rotate(-6deg) translateY(-8px); }
@@ -3929,7 +3987,7 @@ summary:active,
   100% { transform: rotate(-12deg) translateY(-8px); }
 }
 
-/* Bottom broken brick separator matching Lore section method */
+
 .forum__separator {
   position: relative;
   z-index: 2;
@@ -3948,7 +4006,7 @@ summary:active,
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 900px) {
   .forum__container,
   .forum__bubble-wrap {
@@ -3987,7 +4045,7 @@ summary:active,
     padding: var(--forum-body-pad);
   }
 
-  /* Bubble is centered in the section and stretched wider */
+  
   .forum__container,
   .forum__bubble-wrap {
     width: min(96vw, 560px);
@@ -4002,7 +4060,7 @@ summary:active,
     z-index: 2;
   }
 
-  /* Big heading is centered and sits close under the brick separator above */
+  
   .forum__title-group {
     left: 50%;
     top: calc(25% - clamp(4px, 8.25vw, 50px) - clamp(4px, 1dvh, 9px));
@@ -4021,7 +4079,7 @@ summary:active,
     -webkit-text-stroke: clamp(2px, 0.6vw, 3.5px) var(--mario-black);
   }
 
-  /* Bigger toad, standing above the separator, head just reaching the bubble */
+  
   .forum__toad {
     height: var(--forum-toad-h);
     right: -2%;
@@ -4072,7 +4130,7 @@ summary:active,
 }
 
 @media (max-width: 360px) {
-  /* Keep the heading clear of the separator and bubble on very narrow phones */
+  
   .forum__title-item {
     font-size: clamp(2.6rem, 16.5vw, 5rem);
   }
@@ -4086,15 +4144,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   Credits Section
-   - Positioned directly below the Forum section
-   - min-height: 100vh / 100dvh
-   - Top half: Sky gradient
-   - Bottom half: grassblock.png stretched to fit the bottom half section
-   - Cards: tallcard.webp in middle (elevated, bigger, fits ~70% of section),
-     flanked by smallcard.webp on left and right
-   ========================================================================== */
+
 .credits {
   position: relative;
   width: 100%;
@@ -4109,7 +4159,7 @@ summary:active,
   isolation: isolate;
   border-top: 4px solid #161616;
 
-  /* Sky gradient: rich Mario blue sky filling the top half */
+  
   background-color: #5da5f8;
   background: linear-gradient(
     180deg,
@@ -4121,7 +4171,7 @@ summary:active,
   );
 }
 
-/* Atmospheric subtle vignette for depth */
+
 .credits::before {
   content: "";
   position: absolute;
@@ -4135,7 +4185,7 @@ summary:active,
   z-index: 1;
 }
 
-/* Pixel clouds drifting through the sky part (matching the select section style) */
+
 .credits__clouds {
   position: absolute;
   top: 0;
@@ -4227,7 +4277,7 @@ summary:active,
   --cloud-delay: -22s;
 }
 
-/* Bottom half grass block container */
+
 .credits__ground-wrap {
   position: absolute;
   bottom: 0;
@@ -4239,7 +4289,7 @@ summary:active,
   overflow: hidden;
 }
 
-/* grassblock.png stretched across the bottom half section */
+
 .credits__ground {
   display: block;
   width: 100%;
@@ -4251,7 +4301,7 @@ summary:active,
   pointer-events: none;
 }
 
-/* Animated Piranha Plant balanced in between left border and Mario card, planted on grass */
+
 .credits__piranha {
   position: absolute;
   left: clamp(2rem, calc((50vw - min(46vw, 540px)) / 2), 15rem);
@@ -4271,7 +4321,7 @@ summary:active,
   will-change: transform;
 }
 
-/* Top part: Wooden sign header container - lowered for clearance and sky border */
+
 .credits__header {
   position: relative;
   z-index: 3;
@@ -4284,7 +4334,7 @@ summary:active,
   box-sizing: border-box;
 }
 
-/* Outer wooden sign wrapper: handles ropes and gentle bobbing */
+
 .credits__sign {
   position: relative;
   display: inline-flex;
@@ -4307,7 +4357,7 @@ summary:active,
   }
 }
 
-/* Hanging ropes on left and right sides of the wooden sign */
+
 .credits__sign-rope {
   position: absolute;
   top: -34px;
@@ -4356,7 +4406,7 @@ summary:active,
   bottom: -5px;
 }
 
-/* Wooden board itself: elongated horizontal planks made with pure CSS */
+
 .credits__sign-board {
   position: relative;
   z-index: 2;
@@ -4368,7 +4418,7 @@ summary:active,
   padding: clamp(1.1rem, 2.2vw, 1.85rem) clamp(3.2rem, 7vw, 6.4rem);
   box-sizing: border-box;
 
-  /* Wood plank horizontal seams & natural grain tones */
+  
   background-color: #f5d68d;
   background-image:
     repeating-linear-gradient(
@@ -4390,7 +4440,7 @@ summary:active,
     ),
     linear-gradient(180deg, #fce1a6 0%, #f4d385 50%, #ebbf6a 100%);
 
-  /* Rich carved wood frame */
+  
   border: clamp(8px, 1.1vw, 14px) solid #7c350a;
   border-radius: clamp(18px, 2.2vw, 30px);
   box-shadow:
@@ -4400,7 +4450,7 @@ summary:active,
     0 6px 12px rgba(0, 0, 0, 0.22);
 }
 
-/* "Meet The Crew" Title Typography matching "Super BSCS 1A" */
+
 .credits__title {
   display: inline-flex;
   align-items: center;
@@ -4431,7 +4481,7 @@ summary:active,
   width: 0.35em;
 }
 
-/* 3D Isometric Extrusion matching SUPER & BSCS 1A headers */
+
 .credits__title .mario-char {
   text-shadow:
     -2px 0 0 #000,
@@ -4448,10 +4498,10 @@ summary:active,
     0.12em 0.2em 0 #000,
     0.135em 0.225em 0 #000,
     0.15em 0.25em 0 #000;
-  /* Hover effects removed per user request */
+  
 }
 
-/* Individual playful letter angles for MEET THE CREW */
+
 .credits-char--m  { transform: rotate(-5deg) translateY(1px); }
 .credits-char--e1 { transform: rotate(4deg) translateY(-2px); }
 .credits-char--e2 { transform: rotate(-3deg) translateY(0); }
@@ -4466,7 +4516,7 @@ summary:active,
 .credits-char--e4 { transform: rotate(3deg) translateY(-2px); }
 .credits-char--w  { transform: rotate(-5deg) translateY(1px); }
 
-/* Centered body container for credits cards */
+
 .credits__body {
   position: relative;
   z-index: 3;
@@ -4485,7 +4535,7 @@ summary:active,
   z-index: 4;
 }
 
-/* Cards row group */
+
 .credits__cards {
   display: flex;
   align-items: center;
@@ -4496,7 +4546,7 @@ summary:active,
   box-sizing: border-box;
 }
 
-/* Base card styling (HTML & CSS) */
+
 .credits__card {
   position: relative;
   box-sizing: border-box;
@@ -4518,10 +4568,10 @@ summary:active,
     0 4px 8px rgba(0, 0, 0, 0.18);
   user-select: none;
   -webkit-user-select: none;
-  /* Hover animations removed per user request */
+  
 }
 
-/* Character wrapper: elevated slightly above card and overlapping the top */
+
 .credits__card-character-wrap {
   position: absolute;
   top: 0;
@@ -4536,13 +4586,13 @@ summary:active,
   z-index: 4;
 }
 
-/* Center tall card character (Princess Peach) */
+
 .credits__card--tall .credits__card-character-wrap {
   height: 62%;
   transform: translate(-50%, -24%);
 }
 
-/* Individual character image styling */
+
 .credits__card-character {
   display: block;
   width: auto;
@@ -4566,7 +4616,7 @@ summary:active,
   transform: scale(1.02);
 }
 
-/* Inner slot for card content, text, or avatars placed under the character */
+
 .credits__card-inner {
   position: relative;
   width: 100%;
@@ -4575,7 +4625,7 @@ summary:active,
   z-index: 2;
 }
 
-/* Card content container holding role header and names - positioned under character */
+
 .credits__card-content {
   position: absolute;
   top: 45.5%;
@@ -4595,7 +4645,7 @@ summary:active,
   top: 49%;
 }
 
-/* Role header: Development, Editors, Integration */
+
 .credits__card-role {
   display: inline-flex;
   align-items: center;
@@ -4612,7 +4662,7 @@ summary:active,
   -webkit-user-select: none;
 }
 
-/* Made Development and Integration texts smaller to fit the small cards */
+
 .credits__card-role[aria-label="Development"],
 .credits__card-role[aria-label="Integration"],
 .credits__card--small .credits__card-role {
@@ -4631,7 +4681,7 @@ summary:active,
   letter-spacing: 0.03em;
 }
 
-/* 3D Isometric Extrusion matching Super BSCS 1A */
+
 .credits__card-role .mario-char {
   text-shadow:
     -1.5px 0 0 #000,
@@ -4648,7 +4698,7 @@ summary:active,
     0.12em 0.2em 0 #000;
 }
 
-/* Names list under role header */
+
 .credits__card-names {
   list-style: none;
   margin: clamp(0.85rem, 1.8vh, 1.45rem) 0 0;
@@ -4666,7 +4716,7 @@ summary:active,
   gap: clamp(6px, 1.2vh, 13px);
 }
 
-/* Names using the same font as the About Us description (Montserrat) - scaled smaller to fit better */
+
 .credits__card-name {
   font-family: var(--about-font-body);
   font-size: clamp(0.78rem, 1.12vw, 1.02rem);
@@ -4687,7 +4737,7 @@ summary:active,
   font-size: clamp(0.86rem, 1.28vw, 1.14rem);
 }
 
-/* Pixel sparkle star positioned over the top-right corner */
+
 .credits__card-star {
   position: absolute;
   top: clamp(-8px, -1vw, -14px);
@@ -4705,7 +4755,7 @@ summary:active,
   height: 100%;
 }
 
-/* Center tall card: bigger, elevated, fits about 70% of section */
+
 .credits__card--tall {
   height: clamp(340px, 70vh, 720px);
   max-height: 70dvh;
@@ -4716,7 +4766,7 @@ summary:active,
   will-change: transform;
 }
 
-/* Side small cards: smaller and lower */
+
 .credits__card--small {
   height: clamp(270px, 55vh, 560px);
   max-height: 55dvh;
@@ -4727,13 +4777,13 @@ summary:active,
   will-change: transform;
 }
 
-/* Symmetrical gentle offset between center and flanking cards */
+
 .credits__card--left,
 .credits__card--right {
   animation-delay: -0.6s;
 }
 
-/* Slow floating effect: 2s transition up, 2s transition down */
+
 @keyframes credits-float-tall {
   from {
     transform: translateY(-28px);
@@ -4752,7 +4802,7 @@ summary:active,
   }
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .credits {
     min-height: auto;
@@ -5048,9 +5098,7 @@ summary:active,
   }
 }
 
-/* ==========================================================================
-   RETRO HOLOGRAM NAVBAR (PURE HTML + CSS)
-   ========================================================================== */
+
 
 html {
   scroll-behavior: smooth;
@@ -5060,11 +5108,9 @@ section[id] {
   scroll-margin-top: 1.5rem;
 }
 
-/* ==========================================================================
-   RETRO HOLOGRAM NAVBAR (PURE HTML + CSS)
-   ========================================================================== */
 
-/* Sticky on the left side of the screen */
+
+
 .holo-nav {
   position: fixed;
   top: 50%;
@@ -5079,13 +5125,13 @@ section[id] {
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Pops up when hovered, collapses when not hovered (Desktop) */
+
 .holo-nav:hover,
 .holo-nav:focus-within {
   transform: translateY(-50%) translateX(0);
 }
 
-/* Mario Game Arrow Handle (Icon & Anchor) */
+
 .holo-nav__handle {
   display: flex;
   align-items: center;
@@ -5144,10 +5190,7 @@ section[id] {
   animation: none;
 }
 
-/* --------------------------------------------------------------------------
-   Slight Curved Hint in Pixel Font (ONLY in Desktop View)
-   Illuminates one letter at a time then unilluminates again
-   -------------------------------------------------------------------------- */
+
 .holo-nav__hint {
   display: none;
 }
@@ -5157,14 +5200,14 @@ section[id] {
     display: block;
     position: absolute;
     top: 50%;
-    left: 21px; /* Center of the 42px handle */
+    left: 21px; 
     width: 0;
     height: 0;
     pointer-events: none;
     transition: opacity 0.22s ease;
   }
 
-  /* Fades out when navbar is hovered / revealed */
+  
   .holo-nav:hover .holo-nav__hint {
     opacity: 0;
   }
@@ -5184,14 +5227,14 @@ section[id] {
     text-align: center;
     image-rendering: pixelated;
     display: inline-block;
-    /* Arranged along circular arc contour at the edge of the button */
+    
     transform: rotate(var(--r)) translate(29px) rotate(calc(90deg + var(--r)));
     color: rgba(90, 180, 255, 0.25);
     animation: hintLetterIlluminate 2.4s infinite ease-in-out;
     animation-delay: var(--delay);
   }
 
-  /* Illuminates one letter at a time, then unilluminates back to faint */
+  
   @keyframes hintLetterIlluminate {
     0%, 100% {
       color: rgba(90, 180, 255, 0.22);
@@ -5217,9 +5260,7 @@ section[id] {
   }
 }
 
-/* --------------------------------------------------------------------------
-   Hologram Panel - Simple, tinted with subtle blue
-   -------------------------------------------------------------------------- */
+
 .holo-nav__panel {
   display: flex;
   flex-direction: column;
@@ -5243,7 +5284,7 @@ section[id] {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Nav Links */
+
 .holo-nav__link {
   display: flex;
   align-items: center;
@@ -5279,7 +5320,7 @@ section[id] {
   text-shadow: 0 0 8px rgba(80, 180, 255, 0.8);
 }
 
-/* Arcade button asset for each choice (from buttons.jpeg) */
+
 .holo-nav__btn {
   width: 24px;
   height: 24px;
@@ -5310,7 +5351,7 @@ section[id] {
   background-image: url('elements/arcade-btn-yellow.png');
 }
 
-/* Fallback sprite mapping using buttons.jpeg */
+
 [data-buttons-src="buttons.jpeg"] .holo-nav__btn--red {
   background-image: url('elements/buttons.jpeg');
   background-size: 315% 288%;
@@ -5336,7 +5377,7 @@ section[id] {
   border-radius: 50%;
 }
 
-/* APPEAR WHEN HOVERED */
+
 .holo-nav__link:hover .holo-nav__btn,
 .holo-nav__link:focus .holo-nav__btn {
   opacity: 1;
@@ -5360,11 +5401,7 @@ section[id] {
   transform: scale(0.88) translateY(1px);
 }
 
-/* --------------------------------------------------------------------------
-   Mobile View
-   - Mario arrow is the collapsible icon
-   - Clicking any section button navigates and AUTOMATICALLY COLLAPSES the navbar
-   -------------------------------------------------------------------------- */
+
 .holo-nav__backdrop {
   display: none;
 }
@@ -5384,7 +5421,7 @@ section[id] {
     transform: none;
   }
 
-  /* Curved hint is strictly hidden in mobile view */
+  
   .holo-nav__hint {
     display: none !important;
   }
@@ -5396,7 +5433,7 @@ section[id] {
     box-shadow: 0 0 0 2px #000, 0 3px 0 2px #000, 0 4px 12px rgba(0, 0, 0, 0.7);
   }
 
-  /* Panel is collapsed by default on mobile */
+  
   .holo-nav__panel {
     order: 2;
     display: none;
@@ -5407,7 +5444,7 @@ section[id] {
     z-index: 1000;
   }
 
-  /* Open handle is visible when collapsed */
+  
   .holo-nav__handle--open {
     display: flex;
   }
@@ -5416,7 +5453,7 @@ section[id] {
     display: none;
   }
 
-  /* WHEN TARGETED (OPEN): Tapping the Mario arrow opened the drawer */
+  
   #holo-nav:target .holo-nav__panel {
     display: flex;
   }
@@ -5434,7 +5471,7 @@ section[id] {
     animation: none;
   }
 
-  /* Backdrop: clicking anywhere outside closes the navbar */
+  
   #holo-nav:target ~ .holo-nav__backdrop {
     display: block;
     position: fixed;
@@ -5457,7 +5494,7 @@ section[id] {
   }
 }
 
-/* Reveal section headers with the user's scroll position (no JavaScript). */
+
 @supports (animation-timeline: view()) {
   .section-header-reveal {
     animation: section-header-opacity both linear;

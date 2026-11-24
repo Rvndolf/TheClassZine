@@ -26,7 +26,7 @@ header {
   background-color: rgba(6, 18, 12, 0.85);
   color: #e8f3e8;
   text-align: center;
-  /* top padding leaves room for the floating nav bar */
+  
   padding: 110px 16px 32px;
   border-bottom: 2px solid #3f6b4f;
 }
@@ -42,7 +42,7 @@ header p {
   color: #9fc5a8;
 }
 
-/* Floating navigation bar that stays on screen while scrolling */
+
 nav {
   position: fixed;
   top: 20px;
@@ -181,19 +181,26 @@ footer p {
   margin: 0;
 }
 
-/* Scroll reveal animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
 
-.reveal.visible {
+main > section {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* Back to home button (fixed at the bottom-right corner) */
+@supports (animation-timeline: view()) {
+  main > section {
+    animation: millena-reveal both linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  @keyframes millena-reveal {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+
 .back-to-home {
   position: fixed;
   bottom: 30px;
@@ -237,10 +244,10 @@ main a.back-to-home:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  main > section {
+    animation: none;
     opacity: 1;
     transform: none;
-    transition: none;
   }
 
   .back-to-home {
@@ -282,7 +289,7 @@ main a.back-to-home:hover {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

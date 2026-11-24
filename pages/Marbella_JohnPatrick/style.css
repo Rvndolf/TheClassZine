@@ -1,4 +1,4 @@
-/*BASE*/
+
 body {
     margin: 0;
     font-family: "Times New Roman", serif;
@@ -10,7 +10,7 @@ body {
     background-attachment: fixed;
 }
 
-/*HEADINGS*/
+
 h1 {
     color: #F2F2F2;
     text-align: center;
@@ -28,7 +28,7 @@ h2 {
     padding-bottom: 8px;
 }
 
-/*HEADER*/
+
 header {
     background-color: #2B2B2B;
     color: #F2F2F2;
@@ -41,7 +41,7 @@ header p {
     color: #B2B2B2;
 }
 
-/*NAVIGATION(Flexbox)*/
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -62,7 +62,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/*SECTIONS*/
+
 section {
     background-color: #3B3B3B;
     padding: 20px;
@@ -72,12 +72,12 @@ section {
     border-radius: 8px;
 }
 
-/*LISTS*/
+
 ul, ol {
     padding-left: 20px;
 }
 
-/*TABLE*/
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -104,7 +104,7 @@ td {
     background-color: #3B3B3B;
 }
 
-/*IMAGE, CAPTION, CREDIT*/
+
 figure {
     margin: 20px auto;
     text-align: center;
@@ -130,7 +130,7 @@ figcaption {
     color: #B2B2B2;
 }
 
-/*PHOTO AND TEXT SIDE BY SIDE*/
+
 .about-content {
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@ figcaption {
     max-width: 220px;
 }
 
-/*LINKS*/
+
 a {
     color: gold;
 }
@@ -152,13 +152,13 @@ a:hover {
     color: #F2F2F2;
 }
 
-/*BACK TO HOME*/
+
 .back-home {
     text-align: center;
     margin: 20px 0;
 }
 
-/*FOOTER*/
+
 footer {
     background-color: #2B2B2B;
     color: #B2B2B2;
@@ -167,7 +167,7 @@ footer {
     padding: 20px;
 }
 
-/*Responsive for phones and small screens */
+
 @media (max-width: 600px) {
 
     nav ul {
@@ -195,7 +195,7 @@ footer {
     }
 }
 
-/* Consistent Back to Home button */
+
 .back-to-home {
   display: inline-block;
   padding: 0.65rem 1rem;
@@ -213,7 +213,7 @@ footer {
 }
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }

@@ -1,20 +1,17 @@
-/* ==========================================================================
-   CS101 Final Project: Pink Glitter & Cute Aesthetic Zine Design
-   Author: Eunarda Ysabelle J. Ete
-   ========================================================================== */
 
-/* 1. CSS Custom Properties (Pink Aesthetic Theme) */
+
+
 :root {
-  --bg-color: #FFF5F7;          /* Soft light pink background */
-  --card-bg: #FFFFFF;           /* Pure white card container */
-  --card-inner-pink: #FFE4EC;   /* Soft pink inner containers */
-  --card-pink-accent: #FFD1DC;  /* Classic cute pastel pink */
+  --bg-color: #FFF5F7;          
+  --card-bg: #FFFFFF;           
+  --card-inner-pink: #FFE4EC;   
+  --card-pink-accent: #FFD1DC;  
   
-  --text-main: #4A2E35;         /* Deep mauve/rose dark text */
-  --text-muted: #7A535E;        /* Warm muted mauve text */
-  --heading-pink: #9E4B6C;      /* Deep plum-rose heading color */
-  --border-pink: #F3B0C3;       /* Soft pink outline border */
-  --border-pink-strong: #D87093;/* Deeper rose pink border */
+  --text-main: #4A2E35;         
+  --text-muted: #7A535E;        
+  --heading-pink: #9E4B6C;      
+  --border-pink: #F3B0C3;       
+  --border-pink-strong: #D87093;
   
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -27,7 +24,7 @@
   --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 2. Global Resets & Decorative Background */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,7 +49,7 @@ body {
   padding-bottom: 2rem;
 }
 
-/* Custom Pink Scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -72,7 +69,7 @@ body {
   color: var(--heading-pink);
 }
 
-/* 3. Header Navigation */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -128,7 +125,7 @@ body {
   box-shadow: 0 6px 16px rgba(158, 75, 108, 0.4);
 }
 
-/* 4. Main Container & Hero Section */
+
 .main-container {
   max-width: 1000px;
   margin: 2.5rem auto;
@@ -176,7 +173,7 @@ body {
   max-width: 480px;
 }
 
-/* Decorative Arch Profile Frame */
+
 .profile-frame-card {
   background-color: var(--card-inner-pink);
   border: 2px dashed var(--border-pink-strong);
@@ -208,7 +205,7 @@ body {
   font-weight: 500;
 }
 
-/* 5. Card Sections */
+
 .card-section {
   background-color: var(--card-bg);
   border: 2px solid var(--border-pink);
@@ -222,7 +219,7 @@ body {
 .card-
 
 
-/* Student mobile responsiveness baseline */
+
 *, *::before, *::after { box-sizing: border-box; }
 html { max-width: 100%; }
 body { max-width: 100%; overflow-x: hidden; }
