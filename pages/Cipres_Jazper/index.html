@@ -1,338 +1,593 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>jax.exe | About me</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jazper Cipres | BS Computer Science Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Jazper Cipres, a first-year Computer Science student, singer and songwriter."
+    />
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
+  <body>
+    <a class="zine-back-home" href="../../index.html">
+      <img
+        class="zine-back-home__arrow"
+        src="../../elements/mario-arrow.svg"
+        alt=""
+        aria-hidden="true"
+      >
+      <span class="zine-back-home__label">back to home</span>
+    </a>
 
-<body>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    <a class="skip-link" href="#about">Skip to content</a>
 
-  
-  @font-face {
-    font-family: "Zine Mario 256";
-    src:
-      url("../../fonts/SuperMario256.ttf") format("truetype"),
-      url("../fonts/SuperMario256.ttf") format("truetype"),
-      url("fonts/SuperMario256.ttf") format("truetype");
-    font-display: swap;
-  }
+    <!-- Navigation: every link jumps to a section id further down this same page -->
+    <nav class="site-navigation" aria-label="Main navigation">
+      <a class="navigation-logo" href="#home">J.C.</a>
+      <ul class="navigation-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Favorites</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#computing">Computing</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ul>
+    </nav>
 
-  .zine-back-home {
-    all: unset;
-    box-sizing: border-box;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 10000;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    min-width: 42px;
-    height: 42px;
-    min-height: 42px;
-    padding: 8px;
-    gap: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 2px solid #fcd100;
-    border-radius: 10px;
-    background: rgba(8, 20, 38, 0.92);
-    background-image: repeating-linear-gradient(
-      0deg,
-      rgba(60, 140, 230, 0.05) 0px,
-      rgba(60, 140, 230, 0.05) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-    box-shadow:
-      0 0 0 2px #000,
-      0 3px 0 2px #000,
-      0 0 14px rgba(10, 100, 220, 0.28);
-    color: #bce0fd;
-    font-family: "Zine Mario 256", "Super Mario 256", "Press Start 2P", monospace;
-    font-size: 0.78rem;
-    line-height: 1;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    text-shadow: 0 0 6px rgba(0, 130, 255, 0.4);
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition:
-      width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      min-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      padding 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      gap 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      color 0.18s ease,
-      background 0.18s ease,
-      box-shadow 0.18s ease,
-      transform 0.18s ease;
-  }
+    <!-- ============ HERO / INTRODUCTION ============ -->
+    <header id="home" class="site-header">
+      <section class="hero-section" aria-labelledby="site-title">
+        <div class="hero-content">
+          <p class="hero-program">
+            BS Computer Science &nbsp;/&nbsp; First Year &nbsp;/&nbsp; Bicol
+            University
+          </p>
 
-  .zine-back-home:hover,
-  .zine-back-home:focus-visible {
-    width: 230px;
-    min-width: 230px;
-    padding: 8px 18px 8px 14px;
-    gap: 12px;
-    justify-content: flex-start;
-    color: #ffffff;
-    background: rgba(14, 32, 60, 0.96);
-    box-shadow:
-      0 0 0 2px #000,
-      0 3px 0 2px #000,
-      0 0 16px rgba(252, 209, 0, 0.55),
-      0 0 12px rgba(60, 150, 255, 0.45);
-    text-shadow: 0 0 8px rgba(80, 180, 255, 0.8);
-    transform: translateY(-1px);
-  }
+          <h1 id="site-title" class="hero-name">
+            <span class="name-first">Jazper</span>
+            <span class="name-last">Cipres</span>
+          </h1>
+          <p class="hero-tagline">
+            A first-year Computer Science student.<br />Still learning. Still
+            leveling up. Always becoming.
+          </p>
+          <p class="hero-actions">
+            <a class="button-link" href="#story">Read my story</a>
+            <a class="button-link button-link-outline" href="#goals"
+              >See my goals</a
+            >
+          </p>
+        </div>
 
-  .zine-back-home:active {
-    transform: translateY(1px);
-    box-shadow:
-      0 0 0 2px #000,
-      0 1px 0 2px #000,
-      0 0 12px rgba(10, 100, 220, 0.35);
-  }
+        <div class="hero-visual">
+          <!-- Rotating red orbit (.orbit-decoration) -->
+          <div class="orbit-decoration" aria-hidden="true">
+            <div class="ring-tilt ring-a">
+              <div class="ring-flat"><div class="ring-spin"></div></div>
+            </div>
+            <div class="ring-tilt ring-b">
+              <div class="ring-flat">
+                <div class="ring-spin ring-spin-slow"></div>
+              </div>
+            </div>
+            <div class="ring-tilt ring-c">
+              <div class="ring-flat"><div class="ring-spin"></div></div>
+            </div>
+          </div>
 
-  .zine-back-home:focus-visible {
-    outline: 3px solid #ffffff;
-    outline-offset: 4px;
-  }
-
-  .zine-back-home__label {
-    display: block;
-    max-width: 0;
-    opacity: 0;
-    transform: translateX(-8px);
-    white-space: nowrap;
-    transition:
-      max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 0.18s ease,
-      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .zine-back-home:hover .zine-back-home__label,
-  .zine-back-home:focus-visible .zine-back-home__label {
-    max-width: 170px;
-    opacity: 1;
-    transform: none;
-    transition-delay: 0.06s;
-  }
-
-  .zine-back-home__arrow {
-    width: 22px;
-    height: 22px;
-    flex: 0 0 auto;
-    display: block;
-    image-rendering: pixelated;
-    transform: scaleX(-1);
-    animation: zineBackHomeArrow 0.9s infinite alternate ease-in-out;
-    transition: transform 0.2s ease;
-  }
-
-  .zine-back-home:hover .zine-back-home__arrow,
-  .zine-back-home:focus-visible .zine-back-home__arrow {
-    animation: none;
-    transform: scaleX(-1) translateX(6px);
-  }
-
-  @keyframes zineBackHomeArrow {
-    from { transform: scaleX(-1) translateX(0); }
-    to   { transform: scaleX(-1) translateX(4px); }
-  }
-
-  @media (max-width: 430px) {
-    .zine-back-home {
-      top: 0.75rem;
-      left: 0.75rem;
-      width: 38px;
-      min-width: 38px;
-      height: 38px;
-      min-height: 38px;
-      padding: 7px;
-      font-size: 0.68rem;
-    }
-
-    .zine-back-home__arrow {
-      width: 20px;
-      height: 20px;
-    }
-
-    .zine-back-home:hover,
-    .zine-back-home:focus-visible {
-      width: 210px;
-      min-width: 210px;
-      padding: 7px 12px 7px 10px;
-      gap: 9px;
-    }
-
-    .zine-back-home:hover .zine-back-home__label,
-    .zine-back-home:focus-visible .zine-back-home__label {
-      max-width: 140px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .zine-back-home,
-    .zine-back-home__label,
-    .zine-back-home__arrow {
-      animation: none;
-      transition: none;
-    }
-  }
-</style>
-
-<a class="zine-back-home" href="../../index.html">
-  <img
-    class="zine-back-home__arrow"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48c3R5bGU+LmMwe2ZpbGw6IzFhMGMwMH0uYzF7ZmlsbDojZmZkMTAwfS5jMntmaWxsOiNmZmZmZmZ9LmMze2ZpbGw6I2ZmZjg5YX0uYzR7ZmlsbDojZTcxZTA3fS5jNXtmaWxsOiNkOTZjMDB9PC9zdHlsZT48cmVjdCBjbGFzcz0iYzAiIHg9IjEwIiB5PSIxIiB3aWR0aD0iMiIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEyIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjEzIiB5PSIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSI0IiB5PSI0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iNCIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzIiIHg9IjQiIHk9IjUiIHdpZHRoPSI2IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI1IiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNSIgeT0iNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMiIgeD0iMyIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMyIgeD0iNCIgeT0iNiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iNiIgeT0iNiIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMzIiB4PSIzIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSI0IiB5PSI3IiB3aWR0aD0iMTMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjgiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjgiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxOCIgeT0iOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iOSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iOSIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjkiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE5IiB5PSI5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTAiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjYiIHk9IjEwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMSIgeT0iMTAiIHdpZHRoPSI5IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIwIiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjExIiB3aWR0aD0iNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI3IiB5PSIxMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTAiIHk9IjExIiB3aWR0aD0iMTEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMjEiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTIiIHdpZHRoPSIxOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMiIgeT0iMTIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjEzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxMyIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNyIgeT0iMTMiIHdpZHRoPSIzIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjEwIiB5PSIxMyIgd2lkdGg9IjExIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIxIiB5PSIxMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjMiIHk9IjE0IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM0IiB4PSI2IiB5PSIxNCIgd2lkdGg9IjUiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMTEiIHk9IjE0IiB3aWR0aD0iOSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyMCIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjIiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIzIiB5PSIxNSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNCIgeD0iNiIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzEiIHg9IjExIiB5PSIxNSIgd2lkdGg9IjgiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTkiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMSIgeD0iMyIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzQiIHg9IjciIHk9IjE2IiB3aWR0aD0iMyIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMxIiB4PSIxMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE4IiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMiIgeT0iMTciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjMiIHk9IjE3IiB3aWR0aD0iMTQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTciIHk9IjE3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIyIiB5PSIxOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjNSIgeD0iMyIgeT0iMTgiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxNyIgeT0iMTgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjMiIHk9IjE5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImM1IiB4PSI0IiB5PSIxOSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzAiIHg9IjE2IiB5PSIxOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iNCIgeT0iMjAiIHdpZHRoPSI3IiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTUiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMSIgd2lkdGg9IjMiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTQiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCBjbGFzcz0iYzUiIHg9IjExIiB5PSIyMiIgd2lkdGg9IjIiIGhlaWdodD0iMSIvPjxyZWN0IGNsYXNzPSJjMCIgeD0iMTMiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgY2xhc3M9ImMwIiB4PSIxMCIgeT0iMjMiIHdpZHRoPSIyIiBoZWlnaHQ9IjEiLz48L3N2Zz4="
-    alt=""
-    aria-hidden="true"
-  >
-  <span class="zine-back-home__label">back to home</span>
-</a>
-
-    <header>
-        <h1>Jazper Cipres</h1>
-        <p class="subtitle">A first-year Computer Science student. Still learning. Still leveling up. Always becoming.
-        </p>
-        
-        <nav class="navbar">
-            <a href="#about">About Me</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#favorite">Favorite Site</a>
-            <a href="#socials">Socials</a>
-        </nav>
+          <figure class="profile-portrait">
+            <img
+              src="images/profile.png"
+              alt="Portrait of Jazper Cipres"
+              width="500"
+              height="500"
+            />
+            <figcaption>Jazper Cipres, BS Computer Science, Year 1</figcaption>
+          </figure>
+        </div>
+      </section>
     </header>
 
     <main>
-        <section id="about" class="card">
-            <h2>About Me</h2>
-            <div class="profile-container">
-                
-                <img src="images/profile.jpg" alt="Jazper Cipres' Picture" class="profile-img" />
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="content-section">
+        <div class="page-container about-layout">
+          <div>
+            <h2 class="section-heading">About me</h2>
+            <p class="section-intro">
+              I'm Jazper. Computer Science is what I study, but music is where I
+              started.
+            </p>
+            <p>
+              I love singing, songwriting and making music. I also enjoy
+              football, and Pokémon has been part of my life since I was a kid.
+            </p>
+            <p>
+              I try to learn from my mistakes instead of hiding them, and I
+              adapt quickly to wherever I am. Right now I just want to keep
+              improving and make things that actually mean something to someone.
+            </p>
+          </div>
+          <blockquote class="personal-motto">
+            <p>
+              Practice like you've never won, perform like you've never lost.
+            </p>
+            <footer>My personal motto</footer>
+          </blockquote>
+        </div>
+      </section>
 
-                <div class="bio-text">
+      <!-- ============ INTERESTS ============ -->
+      <section id="interests" class="content-section content-section-alt">
+        <div class="page-container">
+          <h2 class="section-heading">My favorites</h2>
+          <div class="interests-layout">
+            <article class="interest-card interest-card-music">
+              <h3>Music</h3>
+              <p>
+                I enjoy singing, songwriting, making music and performing. It is
+                the one thing I have done for almost as long as I can remember.
+              </p>
+              <!-- Decorative equalizer bars -->
+              <div class="equalizer-decoration" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </article>
+
+            <article class="interest-card interest-card-pokemon">
+              <h3>Pokémon</h3>
+              <p>
+                Pokémon has been with me since childhood. I enjoy the games, the
+                strategy, and the creative side of the community. These are my
+                three favorites:
+              </p>
+              <ul class="favorite-list">
+                <li class="favorite-item favorite-item-corviknight">
+                  <span class="favorite-initial" aria-hidden="true">C</span>
+                  <div>
+                    <strong>Corviknight</strong>
+                    <span class="favorite-type">Steel / Flying</span>
+                    <p>It stands for freedom and flying to me.</p>
+                  </div>
+                </li>
+                <li class="favorite-item favorite-item-metagross">
+                  <span class="favorite-initial" aria-hidden="true">M</span>
+                  <div>
+                    <strong>Metagross</strong>
+                    <span class="favorite-type">Steel / Psychic</span>
                     <p>
-                        Hello! I am <strong>Jazper Brusola Cipres</strong>, a first-year Computer Science student who
-                        loves music, making songs, playing football, and Pokémon.
-                        I enjoy learning from my mistakes and adapting to new situations.
-                        My goal is to grow into someone who can create meaningful things
-                        with technology while continuing to improve as a person.
+                      It fits my love of analytical thinking and
+                      problem-solving.
                     </p>
-                    <div class="motto-box">
-                        <p>
-                            <strong>Personal Motto:</strong> "Practice like you've never
-                            won, perform like you've never lost."
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                  </div>
+                </li>
+                <li class="favorite-item favorite-item-charizard">
+                  <span class="favorite-initial" aria-hidden="true">C</span>
+                  <div>
+                    <strong>Charizard</strong>
+                    <span class="favorite-type">Fire / Flying</span>
+                    <p>My first Pokémon, when I was around eight years old.</p>
+                  </div>
+                </li>
+              </ul>
+            </article>
 
-        <section id="hobbies" class="card">
-            <h2>My Hobbies & Goals</h2>
-            
-            <h3>Hobbies</h3>
-            <ul>
-                <li>
-                    <a href="music.html" class="interactive-btn">
-                        <img src="images/40px-Bag_Poké_Ball_SV_Sprite.png" alt="Pokéball Icon" class="icon-img" />
-                        <span>Music and songwriting</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="pokemon.html" class="interactive-btn">
-                        <img src="images/40px-Bag_Great_Ball_SV_Sprite.png" alt="Pokéball Icon" class="icon-img" />
-                        <span>Pokemon gaming and exploring strategies</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="programming.html" class="interactive-btn">
-                        <img src="images/40px-Bag_Ultra_Ball_SV_Sprite.png" alt="Pokéball Icon" class="icon-img" />
-                        <span>Programming and learning new technology</span>
-                    </a>
-                </li>
-            </ul>
+            <article class="interest-card interest-card-tech">
+              <h3>Technology and programming</h3>
+              <p>
+                I like exploring technology, learning to program, solving
+                problems and trying out different tools, even when I'm not sure
+                it will work the first time.
+              </p>
+              <p class="tool-tags">
+                C &middot; Python &middot; HTML &middot; CSS &middot; Git
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <h3>Top Goals</h3>
-            <ol>
-                <li>
-                    <a href="goal1.html" class="interactive-btn">
-                        <img src="images/Bolt_Badge.png" alt="Badge Icon" class="icon-img" />
-                        <span>Become a skilled programmer</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="goal2.html" class="interactive-btn">
-                        <img src="images/Psychic_Badge.png" alt="Badge Icon" class="icon-img" />
-                        <span>Improve my English and public speaking skills</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="goal3.html" class="interactive-btn">
-                        <img src="images/Plant_Badge.png" alt="Badge Icon" class="icon-img" />
-                        <span>Create something meaningful that helps people</span>
-                    </a>
-                </li>
-            </ol>
-        </section>
+      <!-- ============ STORY TIMELINE ============ -->
+      <section id="story" class="content-section">
+        <div class="page-container">
+          <h2 class="section-heading">My story</h2>
+          <p class="section-intro is-narrow">
+            These are the moments that shaped me, told with my own photographs.
+            I only included what I can show.
+          </p>
 
-        <section id="favorite" class="card">
-            <h2>Favorite Website</h2>
-            <p>One website I frequently visit and highly recommend is:</p>
-            <p>
-                
-                <a href="https://fmhy.net" target="_blank" class="custom-link">FMHY (FreeMediaHeckYa) - fmhy.net</a>
+          <ol class="timeline">
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Where it began</h3>
+                <p>
+                  Before the stage and the code, I was just a kid in Tabaco City
+                  with a lot of energy and a love for sound.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-journey-1.jpg"
+                  alt="Childhood photo of Jazper"
+                  loading="lazy"
+                  width="936"
+                  height="1000"
+                />
+                <figcaption>
+                  Me as a toddler.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Around age four: my parents introduced me to singing</h3>
+                <p>
+                  My parents gave me my first push into music, and I never
+                  really stopped.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-journey-2.jpg"
+                  alt="Young Jazper singing at the Baranghawon Day Care Center moving up ceremony in Tabaco City"
+                  loading="lazy"
+                  width="652"
+                  height="1000"
+                />
+                <figcaption>
+                  Holding a microphone at my day care moving up ceremony. The
+                  date printed on the photo is April 8, 2013.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Around age five: winning a singing competition</h3>
+                <p>
+                  I won a HOT FM Tabaco City singing competition. It was the
+                  first time I felt that singing could take me somewhere.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-achievement-1.jpg"
+                  alt="Young Jazper in HOT FM competition"
+                  loading="lazy"
+                  width="815"
+                  height="1000"
+                />
+                <figcaption>
+                  Me as a child wearing a number badge.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Still singing, still competing</h3>
+                <p>
+                  I kept singing and joined competitions whenever I got the
+                  chance. Some days I won, some days I learned.
+                </p>
+              </div>
+              <div class="timeline-photo-pair">
+                <figure class="timeline-photo">
+                  <img
+                    src="images/music-achievement-2.jpg"
+                    alt="Jazper receiving a trophy for winning Sta. Cruz singing competition"
+                    loading="lazy"
+                    width="750"
+                    height="1000"
+                  />
+                  <figcaption>
+                    Singing competition trophies on stage.
+                    <span class="image-credit"
+                      >Photo: personal collection of Jazper Cipres.</span
+                    >
+                  </figcaption>
+                </figure>
+                <figure class="timeline-photo">
+                  <img
+                    src="images/music-journey-3.jpg"
+                    alt="Jazper singing on stage in a white polo shirt and black pants, holding a microphone"
+                    loading="lazy"
+                    width="667"
+                    height="1000"
+                  />
+                  <figcaption>
+                    Performing at a school event.
+                    <span class="image-credit"
+                      >Photo: personal collection of Jazper Cipres.</span
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+            </li>
+
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Lead vocalist of Bandalismo</h3>
+                <p>
+                  Singing in a band is different from singing alone. You depend
+                  on each other. I became the lead vocalist of Bandalismo.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-achievement-3.jpg"
+                  alt="Bandalismo's first performance at Tabaco National High School"
+                  loading="lazy"
+                  width="1000"
+                  height="750"
+                />
+                <figcaption>
+                  Bandalismo on stage in front of the school crowd.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="timeline-entry timeline-entry-highlight">
+              <div class="timeline-text">
+                <h3>Battle of the Bands 2025 champions</h3>
+                <p>
+                  Our band won Battle of the Bands 2025. This is still one of
+                  the proudest things I have done.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-achievement-4.jpg"
+                  alt="Jazper kneeling on stage steps holding a champion trophy for Battle of The Bands"
+                  loading="lazy"
+                  width="750"
+                  height="1000"
+                />
+                <figcaption>
+                  With our champion trophy and certificate.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="timeline-entry">
+              <div class="timeline-text">
+                <h3>Now: songs, covers and a bigger dream</h3>
+                <p>
+                  I keep making songs and covers, and I hope to become a
+                  singer-songwriter one day.
+                </p>
+              </div>
+              <figure class="timeline-photo">
+                <img
+                  src="images/music-journey-4.jpg"
+                  alt="Jazper making songs in Bandlab"
+                  loading="lazy"
+                  width="1000"
+                  height="750"
+                />
+                <figcaption>
+                  My late-night setup for making music.
+                  <span class="image-credit"
+                    >Photo: personal collection of Jazper Cipres.</span
+                  >
+                </figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ PATH INTO COMPUTING ============ -->
+      <section id="computing" class="content-section content-section-alt">
+        <div class="page-container computing-layout">
+          <div>
+            <h2 class="section-heading">My path into computing</h2>
+            <p class="section-intro">
+              I'm studying Computer Science at
+              <a
+                href="https://www.bicol-u.edu.ph"
+                target="_blank"
+                rel="noopener"
+                >Bicol University</a
+              >, and I'm still at the beginning.
             </p>
             <p>
-                <strong>Why I like it:</strong> It gives me organized lists of tools
-                and websites that I can use for different learning and programming
-                purposes. It is an absolute life saver for finding reliable technical
-                resources!
+              So far I've been learning how to think like a programmer: break a
+              problem into smaller parts, follow the logic, and read what an
+              error is actually telling me. I have written a lot of code that
+              did not run on the first try.
             </p>
-        </section>
-
-        <section id="reflection" class="card">
-            <h2>Reflection</h2>
-            <h3>1. What was easy?</h3>
             <p>
-                Learning the fundamental structure of HTML turned out to be surprisingly approachable and satisfying. Understanding how markup tags like &lt;h1&gt; for primary headers, &lt;p&gt; for paragraphs, &lt;ul&gt; for lists, and &lt;table&gt; for data grids work together felt very natural, almost like fitting together building blocks to give structure to a canvas. The most rewarding part of this early phase was linking the external style.css file to index.html inside the &lt;head&gt; tag. Seeing my raw text instantly transform into a structured layout with dark backgrounds, red retro borders, and custom Google Fonts every time I saved and refreshed my browser gave me an immediate sense of accomplishment and made the initial setup feel effortless.
+              What I enjoy most is the moment something finally makes sense. I'm
+              not an expert. I'm a learner who is getting a little more
+              comfortable with technical ideas each week.
             </p>
-
-            <h3>2. What was confusing?</h3>
             <p>
-                As someone stepping into web development as a complete beginner, diving into CSS Flexbox and table alignment was an emotionally overwhelming and frustrating hurdle. I spent hours wrestling with properties like justify-content, align-items, and flex-wrap inside .navbar and .profile-container, trying to understand why elements wouldn't stay in place or why text wrapped awkwardly when resizing the window. as cell paddings and margins kept overlapping unexpectedly. There were moments of genuine self-doubt where I felt stuck and behind, constantly having to pause the tutorial video frame-by-frame and search documentation just to fix a single misplaced line of code. This constant trial-and-error significantly slowed down my pace, but pushing through those moments taught me that feeling confused is simply a natural, necessary stepping stone when building real skills from scratch.
+              I've also been experimenting outside of class. One of my creative
+              technical projects was Pokémon ROM hacking, which mixed two things
+              I love.
             </p>
+          </div>
 
-            <h3>3. What is one thing you would improve?</h3>
-            <p>
-                If I had more time to refine this project, I would love to make the user interface even more immersive and dynamic by introducing JavaScript functionality, such as a custom dark/light mode toggle switch or interactive sound effects inspired by classic Pokémon games. Visually, I would also enhance the responsive design of the interface by adding a dedicated smooth horizontal scrollbar and custom column highlights on mobile screens, ensuring that visitors on smaller devices get an equally seamless and comfortable reading experience without any layout distortion.
-            </p>
-        </section>
+          <div class="table-scroll">
+            <table class="skills-table">
+              <caption>
+                What I'm learning and the tools I've used
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Learning area</th>
+                  <th scope="col">Tool or language</th>
+                  <th scope="col">What I've done</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Programming fundamentals</td>
+                  <td>C</td>
+                  <td>Worked on C programming</td>
+                </tr>
+                <tr>
+                  <td>Programming exploration</td>
+                  <td>Python</td>
+                  <td>Explored Python</td>
+                </tr>
+                <tr>
+                  <td>Code editing</td>
+                  <td>Visual Studio Code</td>
+                  <td>Used it as my editor</td>
+                </tr>
+                <tr>
+                  <td>Command line</td>
+                  <td>PowerShell</td>
+                  <td>Used command-line tools</td>
+                </tr>
+                <tr>
+                  <td>Version control</td>
+                  <td>Git</td>
+                  <td>Explored Git</td>
+                </tr>
+                <tr>
+                  <td>Web basics</td>
+                  <td>HTML and CSS</td>
+                  <td>Built this portfolio</td>
+                </tr>
+                <tr>
+                  <td>Creative projects</td>
+                  <td>Pokémon ROM hacking</td>
+                  <td>Experimented with it</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GOALS ROADMAP ============ -->
+      <section id="goals" class="content-section">
+        <div class="page-container">
+          <h2 class="section-heading">My goals</h2>
+          <p class="section-intro is-narrow">
+            Three goals, all still in progress.
+          </p>
+
+          <div class="roadmap">
+            <article class="goal-card">
+              <h3>Become a skilled programmer</h3>
+              <p>
+                I want strong fundamentals first, then better problem-solving,
+                then data structures and algorithms. Eventually I want to build
+                apps and tools that people can use.
+              </p>
+              <ul class="goal-steps">
+                <li>Programming foundations</li>
+                <li>Improving my computational thinking</li>
+                <li>Learning programming tools and environments</li>
+                <li>Building personal projects</li>
+                <li>Exploring more advanced concepts</li>
+              </ul>
+            </article>
+
+            <article class="goal-card">
+              <h3>Improve my English and public speaking</h3>
+              <p>
+                I want to explain my ideas clearly and with confidence,
+                including technical ones. I've had practice, but this is
+                something I'm still working on.
+              </p>
+              <ul class="goal-steps">
+                <li>Delivered a commencement address as valedictorian</li>
+                <li>Performed in public and joined competitions</li>
+                <li>Took part in PAGSIBOL 2026</li>
+                <li>Presentations and class discussions</li>
+                <li>
+                  Next: vocabulary, grammar, pronunciation, articulation and
+                  speaking on the spot
+                </li>
+              </ul>
+            </article>
+
+            <article class="goal-card">
+              <h3>Create something meaningful</h3>
+              <p>
+                I want to bring Computer Science, music and creativity together,
+                and make things that matter to someone other than me.
+              </p>
+              <ul class="goal-steps">
+                <li>Useful software and digital tools</li>
+                <li>Projects that help students or communities</li>
+                <li>Music that people can relate to</li>
+                <li>
+                  Creative projects that mix technology and self-expression
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ REFLECTION ============ -->
+      <section id="reflection" class="content-section content-section-alt">
+        <div class="page-container reflection-content">
+          <h2 class="section-heading">Reflection</h2>
+          <p class="section-intro">
+            Building this website taught me that a webpage is two jobs at once.
+          </p>
+          <p>
+            HTML showed me how a page is structured: headings, sections, lists,
+            images. CSS showed me how that structure gets its look. I enjoyed
+            seeing the two connect, because a small change in one file could
+            completely change the page.
+          </p>
+          <p>
+            It was not always smooth. Flexbox and aligning tables were the
+            hardest parts for me. Many times things ended up in the wrong place
+            and I had to experiment, check my code and fix it little by little.
+            That debugging taught me more than reading ever did.
+          </p>
+          <p>
+            Next, I want to get better at responsive design, so my pages look
+            good on every screen without so much trial and error.
+          </p>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Jazper Cipres | Built for CS101 , Bicol University</p>
-        <p>jax.exe</p>
-        <p>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="page-container footer-layout">
+        <div>
+          <p class="footer-name">Jazper Cipres</p>
+          <p>BS Computer Science, First Year, Bicol University</p>
+          <p class="footer-close">
+            Thanks for reading. I'm still learning, and I'm just getting
+            started.
+          </p>
+        </div>
+        <a class="button-link button-link-outline" href="../../index.html">Back to home</a>
+      </div>
+    </footer>
 
-</p>
-</footer>
-</body>
-
+    <audio autoplay loop>
+      <source src="music/background.mp3" type="audio/mpeg" />
+    </audio>
+  </body>
 </html>
