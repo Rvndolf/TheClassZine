@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  
+  <!-- Makes the page fit phone screens instead of showing a tiny zoomed-out desktop page -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <!-- Short description of the page, used by search engines -->
   <meta name="description" content="About George N. Iglesia, a first-year BSCS student.">
   <title>About George</title>
-  
+  <!-- Connects this page to style.css, which controls how everything looks -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -206,7 +206,7 @@
 </a>
 
 
-  
+  <!-- HEADER: my name (the only h1), my program, a short intro line, and the menu -->
   <header>
     <h1>George N. Iglesia</h1>
 
@@ -214,7 +214,8 @@
 
     <p>Looking for experiences to enjoy.</p>
 
-    
+    <!-- NAV: the menu. Each link jumps to the section whose id matches the # name.
+         The CSS keeps this bar fixed at the top while scrolling. -->
     <nav aria-label="Main menu">
       <ul>
         <li><a href="#about">About</a></li>
@@ -233,11 +234,12 @@
 
   <main>
 
-    
+    <!-- ABOUT ME: my photo (with caption and credit) beside a short introduction -->
     <section id="about">
       <h2>About Me</h2>
 
-      
+      <!-- figure + figcaption keep the photo and its caption/credit together.
+           alt describes the photo for people who can't see it. -->
       <figure class="photo">
         <img src="images/profile.jpg" alt="Picture of George N. Iglesia." width="200" height="200">
         <figcaption>Photo by George.</figcaption>
@@ -251,7 +253,7 @@
       </p>
     </section>
 
-    
+    <!-- HELLO: what to call me and a bit about how I decide things -->
     <section id="hello">
       <h2>Hello</h2>
 
@@ -260,7 +262,7 @@
       </p>
     </section>
 
-    
+    <!-- HOBBIES: bulleted list of what I do for fun (order doesn't matter, so ul) -->
     <section id="hobbies">
       <h2>My Hobbies</h2>
 
@@ -272,7 +274,7 @@
       </ul>
     </section>
 
-    
+    <!-- MY PATH INTO COMPUTING: why I chose this course -->
     <section id="path">
       <h2>My Path Into Computing</h2>
 
@@ -284,7 +286,7 @@
       </p>
     </section>
 
-    
+    <!-- GOALS: what I hope to learn and do (numbered list, because the goals are in order) -->
     <section id="goals">
       <h2>Goals</h2>
 
@@ -298,13 +300,14 @@
       </ol>
     </section>
 
-    
+    <!-- FAVORITES: a table of websites I use. Each website name is a link that opens in a new tab.
+         The table-wrap div lets the table scroll sideways inside its box on small phones. -->
     <section id="favorites">
       <h2>My Favorites</h2>
 
       <div class="table-wrap">
         <table>
-          
+          <!-- thead holds the column titles, tbody holds the rows of data -->
           <thead>
             <tr>
               <th>Website</th>
@@ -332,7 +335,7 @@
       </p>
     </section>
 
-    
+    <!-- REFLECTION: what I learned and what I improved from my About Me activity -->
     <section id="reflection">
       <h2>Reflection</h2>
 
@@ -349,7 +352,7 @@
 
   </main>
 
-  
+  <!-- FOOTER: my name, plus a second Back to Home link in case the menu is crowded on a phone -->
   <footer>
     <p>Made by George N. Iglesia for CS 101, Bicol University 2026.</p>
     <p></p>

@@ -1,25 +1,88 @@
 <!DOCTYPE html>
+<!--
+=====================================================================
+  CS 101 ACTIVITY: BUILD YOUR OWN "ABOUT ME" WEB PAGE
+  File 1 of 2: index.html  (the STRUCTURE and CONTENT of your page)
+=====================================================================
 
+HOW TO USE THIS TEMPLATE
+  1. Open this file in VS Code (or Notepad).
+  2. Look for the notes that say  TODO  . Each one tells you what to
+     change or add. Replace the sample text with YOUR OWN information.
+  3. Save the file, then open it in your browser (double-click the file,
+     or right-click > Open with > Chrome). Refresh the browser (F5)
+     every time you save to see your changes.
+  4. When you finish the HTML, open style.css and follow the steps there.
+  5. Before submitting, DELETE the instruction comments you no longer need,
+     but KEEP at least 3 comments of your own that explain your code
+     (look for "YOUR COMMENT" below).
 
+REMINDER: An HTML comment starts with a less-than sign, an exclamation
+          mark, and two dashes, and ends with two dashes and a
+          greater-than sign (see the examples all over this file).
+          The browser ignores comments. They are notes for humans.
 
+CHECKLIST (matches the grading rubric)
+  [ ] Proper document structure (DOCTYPE, html, head, body)
+  [ ] Semantic tags: header, nav, main, footer
+  [ ] One h1 and at least two h2 headings
+  [ ] At least one paragraph about yourself
+  [ ] At least one image
+  [ ] At least one list
+  [ ] A table
+  [ ] At least one link to a website you like
+  [ ] style.css is linked and has at least 5 different style rules
+  [ ] Flexbox is used to arrange part of the page
+  [ ] At least 3 comments of your own explaining your code
+  [ ] Reflection written (reflection.txt)
+-->
+
+<!--
+  <!DOCTYPE html>  (above)
+  Tells the browser this is an HTML5 document. Always the first line.
+
+  <html lang="en">
+  The root element. Everything on the page goes inside it.
+  The lang attribute says what language the page is written in.
+  TODO: Change "en" to "fil" if you will write the page in Filipino.
+-->
 <html lang="en">
 
-
+<!--
+  <head> holds information ABOUT the page. It is NOT shown on the page itself.
+-->
 <head>
-  
+  <!--
+    <meta charset="UTF-8">
+    Lets the page show special characters correctly (such as ñ).
+  -->
   <meta charset="UTF-8">
 
-  
+  <!--
+    <meta name="viewport" ...>
+    Makes the page display properly on phones and small screens.
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <!--
+    <title>
+    The text shown on the browser tab.
+    TODO: Replace with your own title, for example "Juan's About Me Page".
+  -->
   <title> Ann Rose | About Me</title>
 
-  
+  <!--
+    <link rel="stylesheet" href="style.css">
+    Connects this HTML file to your CSS file. Without this line,
+    your styles will NOT work.
+    Note: href must match your CSS file's name exactly: style.css
+  -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-
+<!--
+  <body> holds everything that is VISIBLE on the page.
+-->
 <body>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -214,15 +277,28 @@
 </a>
 
 
-  
+  <!-- ===============================================================
+       HEADER
+       <header> is a semantic tag for the top part of the page
+       (title, logo, introduction).
+       <h1> is the MAIN heading. Use only ONE h1 per page.
+       ================================================================ -->
   <header>
-    
+    <!-- TODO: Replace with your name or a title for your page. -->
     <h1>Welcome to My Cozy Corner</h1>
 
-    
+    <!-- TODO: Add a short tagline about you, for example "1st Year BSCS Student". -->
     <p>Get to know me better!</p>
 
-    
+    <!-- ---------------------------------------------------------------
+         NAVIGATION
+         <nav> is a semantic tag for a group of navigation links.
+         <ul> is an UNORDERED list (bullets). <li> is one list item.
+         <a href="#about"> is a link. The # means "jump to the element
+         with this id on THIS page". The ids are set on the sections below.
+         You will turn this list into a horizontal menu using Flexbox
+         in style.css (Step 4 there).
+         ---------------------------------------------------------------- -->
    <nav>
     <ul>
       <li><a href="#hello">Hello</a></li>
@@ -238,15 +314,37 @@
   </nav>
 </header>
 
-  
+  <!-- ===============================================================
+       MAIN
+       <main> is a semantic tag for the main content of the page.
+       Use only one <main> per page.
+       <section> groups related content. The id attribute gives it a
+       unique name, which the nav links above jump to.
+       <h2> is a SUB-heading. Use h2 for each major section.
+       (Heading order: h1 > h2 > h3. Do not skip levels.)
+       ================================================================ -->
   <main>
 
-    
+    <!-- ------------- SECTION 1: HELLO ------------- -->
     <section id="hello">
       <h2>Hello!</h2>
 
-      
-      
+      <!--
+        <img> shows an image. It has no closing tag.
+          src = where the image file is (the file path)
+          alt = text describing the image (for screen readers, and
+                shown if the image fails to load). Never leave it empty.
+        TODO: Put your own photo (or any picture that represents you) in
+              the "images" folder, then change src to match your file name.
+              Example: src="images/juan.jpg"
+        TIP: Make sure the file name and extension match exactly.
+      -->
+      <!--
+        <p> is a PARAGRAPH.
+        <strong> makes text bold (important). <em> makes text italic (emphasis).
+        TODO: Write 2 to 4 sentences about yourself: where you are from,
+              why you chose BSCS, what you hope to learn.
+      -->
       <div class="about-layout">
         <figure>
           <img src="images/profile.jpg" alt="My Profile Picture" class="profile-pic">
@@ -260,17 +358,22 @@
           </p>
         </div>
       </div>
-      
+      <!-- YOUR COMMENT 1: This tag displays my profile photo on the webpage -->
     </section>
 
-    
+    <!-- -------------  SECTION 2: ABOUT ME ------------- -->
     <section id="about">  
       <h2>About Me</h2>
  
        <p>I usually come with a "free trial version" na super quiet at mahiyain, pero once you unlock the full version wala ng araw na di yan tatawa kahit sobrang lakas. My typical day looks pretty simple and chill, I am usually just at home doing tasks. 
         Keep trying and learning new things. </p>
 
-      
+      <!--
+        <ul> = UNORDERED list (bullets), used when order does not matter.
+        <ol> = ORDERED list (1, 2, 3), used when order matters.
+        <li> = one item in either kind of list.
+        TODO: Replace the sample items with your own hobbies.
+      -->
       <h3>Hobbies &amp; Interests</h3>
 
       <p class="tag-label">Hobbies</p>
@@ -320,27 +423,53 @@
 
     
      </section>
-      
-      
+      <!--
+        This is an ordered list. TODO: List your top 3 goals in order of importance.
+      -->
+      <!-- <h3>My Top 3 Goals</h3>
+      <ol>
+        <li>To graduate, survive my college journey, and finally provide for my family</li>
+        <li>To pass every subject that I am having hard time with</li>
+        <li>To have more time for my faith when I can finally focus more</li>
+      </ol>
+    </section> -->
     </section>
 
-    
+    <!-- ------------- SECTION 3: MY PATH INTO COMPUTING  ------------- -->
     <section id="path">
     <h2>My Path into Computing</h2>
 
-      
+      <!--
+        TABLE TAGS
+          <table>   the whole table
+          <thead>   the header part (column titles)
+          <tbody>   the body part (the data rows)
+          <tr>      one table ROW
+          <th>      a header CELL (bold and centered by default)
+          <td>      a regular data CELL
+        Each <tr> must have the same number of cells as the other rows.
+        TODO: Replace the sample rows with your real subjects. Add more rows
+              by copying one whole <tr>...</tr> block and pasting it below it.
+      -->
       <p>I chose Computer Science because even though I did not have a specific course in mind at first and am still trying
        to figure things out, I feel like this is where I am meant to be. Even when I do not have much time or feel lazy sometimes, I genuinely love coding and enjoy doing it. Learning more about programming has been incredibly fun and 
        fulfilling despite the stress.</p>
 
-      
+      <!-- YOUR COMMENT 2: <tr> creates a row , <th> defines a header cell, and <td> standands for standard table data -->
     </section>
 
-    
+    <!-- -------------  Section 4: Favorites & Skills  ------------- -->
     <section id="favorites-skills">
       <h2>Favorites &amp; Skills</h2>
 
-      
+      <!--
+        <a> is an ANCHOR, which creates a LINK.
+          href = where the link goes (the web address)
+          target="_blank" opens the link in a NEW tab
+          rel="noopener" is a safety setting that should go with target="_blank"
+        TODO: Replace with a website you like, and change the text between
+              the tags to describe it.
+      -->
              <table>
 
   <details class="hobby-box">
@@ -427,7 +556,7 @@
 
  </section>
  
-
+<!-- Section 5: My Goals -->
 <section id="goals">
   <h2>My Goals</h2>
 
@@ -446,11 +575,16 @@
   </ul>
 </section>
 
-       
+      <!--  <p>
+        One website I enjoy visiting is
+        <a href="https://www.youtube.com//" target="_blank" rel="noopener">YouTube</a>
+        because it is where I can stream movies and K-dramas clearly and for free.
+      </p>--> 
 
-        
+        <!-- YOUR COMMENT 3: The href attributes specifies the URL or web address the link points to 
+    </section> -->
 
-    
+    <!-- Section 6: Reflection -->
 <section id="reflection">
   <h2>Reflection</h2>
 
@@ -474,9 +608,13 @@
 
   </main>
 
-  
+  <!-- ===============================================================
+       FOOTER
+       <footer> is a semantic tag for the bottom of the page
+       (credits, contact info, copyright).
+       ================================================================ -->
   <footer>
-    
+    <!-- TODO: Replace with your name and the year. -->
     <p>Made by Ann Rose Valenzuela Morales for CS 101, Bicol University.</p>
   </footer>
 

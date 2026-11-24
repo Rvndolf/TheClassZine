@@ -199,14 +199,14 @@
   <span class="zine-back-home__label">back to home</span>
 </a>
 
-  
+  <!-- Header (h1) -->
   <header class="header" id="header">
     <div class="header-title">
       <h1>Hi! It's me, CARLO!</h1>
       <p class="smallp">I believe, therefore, I am.</p>
     </div>
     
-    
+    <!-- Navigation -->
     <nav>
       <a href="#hello" class="nav-button">Hello</a>
       <a href="#aboutme" class="nav-button">About Me</a>
@@ -218,16 +218,16 @@
     </nav>
   </header>
   
-  
+  <!-- Main -->
   <main class="container">
 
-     
+     <!-- Top Grid (sections 1-3 on left) -->
     <div class="main-layout">
       
-      
+      <!-- For left column -->
       <div class="left-stack">
 
-        
+        <!-- 1st Section (Hello)-->
         <section id="hello" class="hello-box">
           <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
           <div class="hello-text">
@@ -239,11 +239,16 @@
           </div>
         </section>
         
-        
+        <!-- COMMENT 1: The <img> tag above is an element to add image directly into this html, and it is an empty tag, therefore no </img>.
+                      Inside <img>, it consists some essential attributes. The src="" is basically the source/path of the image file, the alt="" means textual 
+                      replacement for the image, this is big help for people with visual impairement. The class="" I used is to label/identify that links the 
+                      image to set of styles I made in css. 
+
+        <!-- 2nd Section (About Me) -->
         <section id="aboutme">
           <h2>About Me</h2>
           
-          
+          <!-- Top row (pictures & texts) -->
           <div class="aboutme-top-row">
             <div class="auto-pic-box">
               <div class="auto-pic-track">
@@ -264,7 +269,7 @@
             </div>
           </div>
 
-          
+          <!-- Bottom row (interests & hobbies) -->
           <div class="aboutme-bottom-row">
             <div class="sub-box">
               <h3>Interests</h3>
@@ -308,9 +313,10 @@
           </div>
         </section>
 
-        
+        <!-- The <div> tag I used many times is simply to group elements together,
+                       which I can edit the style of the elements in easy way. It ends with </div>. -->
 
-        
+        <!-- 3rd Section (My Path into Computing) -->
         <section id="path">
           <h2>My Path Into Computing</h2>
           <p class="p2">
@@ -323,10 +329,10 @@
 
       </div>
 
-      
+      <!-- Right Column (<aside>) -->
       <aside class="sidebar">
 
-           
+           <!-- Fun Facts About Me -->
            <div class="aside-group">
              <h3>Fun Facts About Me</h3>
               <div class="auto-text-box">
@@ -341,12 +347,12 @@
               </div>
            </div>
 
-          
+          <!-- For GIF below-->
             <div class="aside-gif-container">
               <img src="images/facts.gif" alt="Fun Facts GIF" class="sidebar-gif" style="width: 90%; height: auto;"S>
             </div>
 
-          
+          <!-- Groups and Artists I Listen To (screenshot photos) -->
               <div class="aside-group">
                <h3>Groups and Artists I Listen To</h3>
                   <div class="auto-pic-box yt-caption">
@@ -373,20 +379,20 @@
                  </div>
               </div> 
 
-              
+              <!-- GIF Conatiner -->
               <div class="aside-gif-container">
                <img src="images/music.gif" alt="Music GIF" class="sidebar-gif" style="width: 80%; height: auto;">
               </div>
       </aside>
    </div>
 
-    
+    <!-- 4th Section (Favorites and Skills) -->
     <section id="favorites-skills">
       <h2>Favorites and Skills</h2>
       
       <div class="two-col-grid">
         
-        
+        <!-- Favorites (ordered list) -->
         <div class="sub-box">
           <h3>My Favorites</h3>
             <ol class="styled-list">
@@ -421,10 +427,11 @@
            </ol>
         </div>
 
-        
+        <!-- COMMENT 3: The href attribute specifies the URL/destination address that a link points to, it just basically tells the browser
+                      exactly where to take the user when they click on an element, most used inside an anchor tag <a>.. -->
 
 
-        
+        <!-- Skills ( auto-next texts) -->
         <div class="sub-box">
            <h3>My Skills</h3>
            <div class="auto-text-box skills-container">
@@ -442,13 +449,13 @@
       </div>
     </section>
 
-    
+    <!-- 5th Section (Goals) -->
     <section id="goals">
       <h2>Goals</h2>
       
       <div class="goals-grid">
 
-        
+        <!-- Table -->
         <div class="table-wrapper">
           <table>
             <thead>
@@ -494,9 +501,11 @@
          </table>
        </div>
 
-       
+       <!-- COMMENT 4: The <tr> means a table row to group cells horizontally, 
+                      <th> means a header cell which bolds and centers important labels, and
+                      <td> means a standard data cell to hold the actual information. -->
 
-       
+       <!-- Paragraph -->
         <div class="sub-box">
           <p class="p2">
             In the next few years, I hope to continuously learn about data science and how to incorporate hardware (electronics) with software (programming).
@@ -507,7 +516,7 @@
       </div>
     </section>
 
-    
+    <!-- 6th Section (Reflection) -->
     <section id="reflection">
       <h2>Reflection</h2>
       <p class="p2">
@@ -521,7 +530,7 @@
      </p>
     </section>
 
-    
+    <!-- 7th Section (Random Photos in My Gallery) -->
     <section id="gallery">
       <h2>Random Photos in My Gallery</h2>
       <div class="carousel">
@@ -547,15 +556,15 @@
 
   </main>
   
-  
+  <!-- Footer (Name, socials, cited sources and back to home button) -->
   <footer>
     <div class="footer-content">
       <div class="footer-left">
         <p>Made by <strong>Carlo Añola Balinquit</strong> for CS 101, Bicol University. 2026.</p>
         
-        
+        <!-- Row for credits w/ inline style -->
         <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 10px;">
-          
+          <!-- Credits (w/ inline style) -->
           <div class="asset-credits" style="font-size: 1.0rem; font-family: 'Dancing Script', cursive; color: bold #e2e8f0;">
             GIFs via <a href="https://tenor.com/view/music-happy-potz-memeland-gif-17472202171685093310" target="_blank" rel="noopener noreferrer" style="color: bold #f6c667; text-decoration: none;">Tenor</a> | 
             Background image via <a href="https://ph.pinterest.com/pin/1061301468435311395/" target="_blank" rel="noopener noreferrer" style="color: bold #f6c667; text-decoration: none;">Pinterest</a>

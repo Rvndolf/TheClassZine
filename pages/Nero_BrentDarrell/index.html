@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brent's About Page</title>
 
-  
+  <!-- External stylesheet (must be named style.css) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -210,7 +210,7 @@
 
   </header>
 
-  
+  <!-- Sticky navigation bar -->
   <nav>
     <ul>
       <li><a href="#hello">Hello</a></li>
@@ -225,18 +225,18 @@
 
   <main>
 
-    
+    <!-- ------------- HELLO ------------- -->
     <section id="hello">
       <h2>Hello!</h2>
       <hr>
 
-      
+      <!-- 1-2 sentence introduction -->
       <p>
         Welcome to my little corner of the web! This page is a snapshot of who I am,
         where I'm coming from, and where I hope my computing journey takes me.
       </p>
 
-      
+      <!-- Flexbox row of "info chips" -->
       <ul class="info-chips">
         <li><strong>Preferred name:</strong> Brent</li>
         <li><strong>Program:</strong> BS Computer Science</li>
@@ -244,12 +244,12 @@
       </ul>
     </section>
 
-    
+    <!-- ------------- SECTION 1: ABOUT ME ------------- -->
     <section id="about">
       <h2>About Me</h2>
       <hr>
 
-      
+      <!-- Figure wraps the original image so it can have a caption and credit -->
       <figure>
         <img src="images/profile.png" alt="Is a pciture of me (Brent)" width="200">
         <figcaption>
@@ -267,16 +267,16 @@
         I hope one day I can make an impact on society using my intrest and the skills I learned.
       </p>
 
-      
+      <!--The <img> tag is a void element used in html used to embed an iamge.-->
     </section>
 
-    
+    <!-- ------------- NEW SECTION: MY PATH INTO COMPUTING ------------- -->
     <section id="path">
       <h2>My Path into Computing</h2>
       <hr>
 
       <figure>
-        
+        <!-- Generated illustration: save as images/computing-path.svg -->
         <img class="plain-img" src="images/computing-path.svg"
           alt="A terminal window showing a C program that prints Hello, World!" width="400">
         <figcaption>
@@ -295,7 +295,7 @@
       </p>
     </section>
 
-    
+    <!-- ------------- SECTION 2: HOBBIES ------------- -->
     <section id="hobbies">
       <h2>My Hobbies</h2>
       <hr>
@@ -309,7 +309,7 @@
       </ul>
     </section>
 
-    
+    <!-- ------------- SECTION 4: FAVORITES / SKILLS (LINK) ------------- -->
     <section id="favorites">
       <h2>My Favorites and Skills</h2>
       <hr>
@@ -325,7 +325,7 @@
 
       </ul>
 
-      
+      <!-- SKILLS  -->
 
       <h3>Skills</h3>
       <div class="skills-grid">
@@ -347,10 +347,10 @@
         </div>
       </div>
 
-      
+      <!-- "href" is used as a reference on where to go when a link is clicked -->
     </section>
 
-    
+    <!-- ------------- GOALS ------------- -->
     <section id="goals">
       <h2>My Future Goals</h2>
       <hr>
@@ -363,7 +363,7 @@
       </ol>
     </section>
 
-    
+    <!-- ---------- REFLECTION ------------- -->
     <section id="reflection">
       <h2>Reflection</h2>
       <hr>
@@ -389,7 +389,7 @@
   <footer>
 
     <p>Made by Brent Darrell S. Nero 1-A for CS 101, Bicol University.</p>
-    
+    <!-- Back to Home link: jumps back to the top of index.html -->
     <p><a class="back-home" href="index.html#top"><span class="arrow">&uarr;</span> Back to top</a></p>
       <p>
 

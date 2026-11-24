@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-
+<!--
+  CS101 FINAL PROJECT — Jacken Mendoza's About Me page
+  Folder : Mendoza_Jacken
+  Rules  : Pure HTML + CSS only. No JavaScript, no frameworks, no libraries.
+  Layout : CSS Grid for the hero (two columns → one column under 700 px).
+           Flexbox only for small rows like the navbar and buttons.
+-->
 <html lang="en">
 
 <head>
@@ -7,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jacken Mendoza — first-year BSCS student at Bicol University.">
     <title>Jacken Mendoza | About Me</title>
-    
+    <!-- Connects this page to its CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -205,22 +211,26 @@
 </a>
 
 
-    
+    <!-- =====================================================================
+       SIDEBAR TOGGLE — pure CSS trick using a hidden checkbox.
+       Checking the box opens the sidebar; unchecking closes it.
+       No JavaScript needed.
+  ====================================================================== -->
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
 
-    
+    <!-- Clicking the backdrop (the dark overlay) unchecks the box → closes sidebar -->
     <label class="sidebar-backdrop" for="nav-toggle" aria-hidden="true"></label>
 
-    
+    <!-- SIDEBAR — slides in from the left on mobile -->
     <aside class="sidebar" aria-label="Navigation sidebar">
 
-        
+        <!-- Sidebar top: brand name + close (✕) button -->
         <div class="sidebar-header">
             <span class="sidebar-brand">Jacken</span>
             <label class="sidebar-close" for="nav-toggle" aria-label="Close menu">✕</label>
         </div>
 
-        
+        <!-- Nav links — each one is accented with a coolors palette color -->
         <nav class="sidebar-nav">
             <a class="sidebar-link" href="#hello">Hello</a>
             <a class="sidebar-link" href="#about">About</a>
@@ -230,7 +240,7 @@
             <a class="sidebar-link" href="#reflection">Reflection</a>
         </nav>
 
-        
+        <!-- Decorative palette strip at the bottom of the sidebar -->
         <div class="sidebar-palette" aria-hidden="true">
             <span style="background:#0a2a4a"></span>
             <span style="background:#0066ff"></span>
@@ -241,10 +251,14 @@
 
     </aside>
 
-    
+    <!-- =====================================================================
+       NAVIGATION BAR
+       Desktop: brand on the left, links on the right (pill row).
+       Mobile: brand centred, hamburger button on the left opens sidebar.
+  ====================================================================== -->
     <nav id="navbar" aria-label="Page sections">
 
-        
+        <!-- Hamburger button — only visible on mobile (hidden on desktop via CSS) -->
         <label class="hamburger" for="nav-toggle" aria-label="Open navigation menu">
             <span></span>
             <span></span>
@@ -253,7 +267,7 @@
 
         <a class="brand" href="#top">Jacken</a>
 
-        
+        <!-- Desktop links — hidden on mobile, replaced by the sidebar -->
         <ul>
             <li><a href="#hello">Hello</a></li>
             <li><a href="#about">About</a></li>
@@ -265,34 +279,38 @@
 
     </nav>
 
-    
+    <!-- =====================================================================
+       HERO / HEADER
+       CSS Grid: photo on the left (rectangular, full height), text on the right.
+       Collapses to one column on screens narrower than 700 px.
+  ====================================================================== -->
     <header id="hello-hero">
 
-        
+        <!-- Left column: profile photo — rectangular, cropped to fill the hero height -->
         <figure class="photo">
             <img src="images/profile.jpg" alt="Jacken Mendoza profile photo">
             <figcaption>Photo by Jacken Mendoza.</figcaption>
         </figure>
 
-        
+        <!-- Right column: name, tagline, intro, buttons, traits strip -->
         <div class="hero-text">
             <h1>Jacken Ismael C. Mendoza</h1>
-            
+            <!-- Updated tagline -->
             <p class="tagline">Hi, I'm Jacken, a nerdy CS student from 1A.</p>
             <p class="intro">
                 Welcome to my page! I am a first-year Computer Science student who loves coding,
                 comic books, and sports. This page shows who I am and where I want to go.
             </p>
 
-            
+            <!-- Buttons: "Meet me" = filled, "See my goals" = outline ghost -->
             <div class="actions">
                 <a class="btn" href="#about">Meet me</a>
                 <a class="btn btn-ghost" href="#goals">See my goals</a>
             </div>
 
-            
+            <!-- Small label above the traits palette strip -->
             <p class="traits-label">Traits About Me!</p>
-            
+            <!-- Coolors-style color bars: each one expands on hover and shows the trait label -->
             <div class="palette" aria-hidden="true">
                 <span data-trait="Geeky Person"></span>
                 <span data-trait="Socially Inclined"></span>
@@ -304,18 +322,23 @@
 
     </header>
 
-    
+    <!-- =====================================================================
+       MAIN CONTENT
+       Each <section> has an id that matches the navbar link.
+  ====================================================================== -->
     <main>
 
-        
+        <!-- ==================================================================
+         HELLO — quick facts cards using <dl>, plus a short blockquote.
+    =================================================================== -->
         <section id="hello" class="panel">
             <h2>Hello!</h2>
 
             <div class="panel-body">
-                
+                <!-- Small label above the facts grid -->
                 <p class="label">Quick facts</p>
 
-                
+                <!-- dl = description list; each dt+dd pair sits in its own card div -->
                 <dl class="facts">
                     <div class="fact-card">
                         <dt>Preferred name</dt>
@@ -335,7 +358,7 @@
                     </div>
                 </dl>
 
-                
+                <!-- blockquote = a one-sentence summary of who I am -->
                 <blockquote>
                     I am a curious first-year Computer Science student who loves to code,
                     collect, compete in events, and socialise with people.
@@ -343,7 +366,10 @@
             </div>
         </section>
 
-        
+        <!-- ==================================================================
+         ABOUT ME — interests list (one list, not repeated), and
+         an expandable "Ask me about" box with nested topic details.
+    =================================================================== -->
         <section id="about" class="panel">
             <h2>About Me</h2>
 
@@ -358,7 +384,7 @@
                 </p>
 
                 <h3>My Interests</h3>
-                
+                <!-- ul styled as small hover-lift tiles -->
                 <ul class="cards">
                     <li>Reading comic books</li>
                     <li>Collecting vintage nerdy stuff</li>
@@ -367,13 +393,14 @@
                     <li>Coding and programming</li>
                 </ul>
 
-                
+                <!-- details + summary = a collapsible box, no JavaScript needed.
+             Each topic inside is also a <details> so it opens individually. -->
                 <details class="more">
                     <summary>Ask me about…</summary>
 
                     <ul class="ask-list">
 
-                        
+                        <!-- Topic 1 -->
                         <li>
                             <details class="ask-item">
                                 <summary>My Favorite Comic Books</summary>
@@ -383,7 +410,7 @@
                             </details>
                         </li>
 
-                        
+                        <!-- Topic 2 -->
                         <li>
                             <details class="ask-item">
                                 <summary>My Vintage Collection</summary>
@@ -392,7 +419,7 @@
                             </details>
                         </li>
 
-                        
+                        <!-- Topic 3 -->
                         <li>
                             <details class="ask-item">
                                 <summary>Swimming and Sports</summary>
@@ -401,7 +428,7 @@
                             </details>
                         </li>
 
-                        
+                        <!-- Topic 4 -->
                         <li>
                             <details class="ask-item">
                                 <summary>Learning to Code</summary>
@@ -415,7 +442,9 @@
             </div>
         </section>
 
-        
+        <!-- ==================================================================
+         MY PATH — a vertical timeline with a thin line and a dot per step.
+    =================================================================== -->
         <section id="path" class="panel">
             <h2>My Path</h2>
 
@@ -428,7 +457,7 @@
                     Bicol University.
                 </p>
 
-                
+                <!-- ol styled as a vertical timeline -->
                 <ol class="timeline">
                     <li>
                         <strong>I fell in love with coding.</strong>
@@ -446,7 +475,10 @@
             </div>
         </section>
 
-        
+        <!-- ==================================================================
+         SKILLS — pill-shaped tags. The last tag has a dashed outline
+         because it is a skill I have not learned yet.
+    =================================================================== -->
         <section id="skills" class="panel">
             <h2>Skills</h2>
 
@@ -460,7 +492,7 @@
                 </p>
 
                 <h3>Skills I Am Building</h3>
-                
+                <!-- Pill tags; the last one uses a dashed border = not learned yet -->
                 <ul class="tags">
                     <li>HTML and CSS</li>
                     <li>C programming</li>
@@ -471,14 +503,16 @@
             </div>
         </section>
 
-        
+        <!-- ==================================================================
+         GOALS — three numbered cards side by side, each with a big number.
+    =================================================================== -->
         <section id="goals" class="panel">
             <h2>Goals</h2>
 
             <div class="panel-body">
                 <p>Here are the three goals I am working toward in the next few years.</p>
 
-                
+                <!-- Goal cards in a CSS Grid — auto-fit so they wrap on phones -->
                 <ol class="goal-cards">
                     <li class="goal-card">
                         <span class="goal-num" aria-hidden="true">01</span>
@@ -499,13 +533,17 @@
             </div>
         </section>
 
-        
+        <!-- ==================================================================
+         REFLECTION — each question is a <details> that opens on click.
+         Fixed the sentence that said "spelling mistakes like spelling mistakes
+         in the title".
+    =================================================================== -->
         <section id="reflection" class="panel">
             <h2>Reflection</h2>
 
             <div class="panel-body">
 
-                
+                <!-- Question 1 -->
                 <details class="reflect">
                     <summary>What was easy?</summary>
                     <p>
@@ -516,7 +554,7 @@
                     </p>
                 </details>
 
-                
+                <!-- Question 2 -->
                 <details class="reflect">
                     <summary>What was confusing?</summary>
                     <p>
@@ -528,7 +566,7 @@
                     </p>
                 </details>
 
-                
+                <!-- Question 3 — fixed the broken sentence about "spelling mistakes" -->
                 <details class="reflect">
                     <summary>What is one thing you would improve?</summary>
                     <p>
@@ -544,7 +582,10 @@
 
     </main>
 
-    
+    <!-- =====================================================================
+       FOOTER
+       Changed "Back to Home" → "Back to top" (#top).
+  ====================================================================== -->
     <footer>
         <p>Made by Jacken Ismael C. Mendoza for CS101, Bicol University.</p>
         <p>

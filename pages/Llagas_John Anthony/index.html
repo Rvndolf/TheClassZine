@@ -201,7 +201,12 @@
   <span class="zine-back-home__label">back to home</span>
 </a>
 
-    
+    <!-- ===============================================================
+       HEADER
+       <header> is a semantic tag for the top part of the page
+       (title, logo, introduction).
+       <h1> is the MAIN heading. Use only ONE h1 per page.  
+       ================================================================ -->
     <header>
 
         <nav>
@@ -240,18 +245,33 @@
         </div>
 
     </header>
-    
+    <!-- ===============================================================
+       MAIN
+       <main> is a semantic tag for the main content of the page.
+       Use only one <main> per page.
+       <section> groups related content. The id attribute gives it a
+       unique name, which the nav links above jump to.
+       <h2> is a SUB-heading. Use h2 for each major section.
+       (Heading order: h1 > h2 > h3. Do not skip levels.)
+       ================================================================ -->
     <main>
 
-        
+        <!-- ------------- SECTION 1: ABOUT ME ------------- -->
         <section id="about">
             <h2>About Me</h2>
-            
+            <!--
+        <img> shows an image. It has no closing tag.
+          src = where the image file is (the file path)
+          alt = text describing the image (for screen readers, and
+                shown if the image fails to load). Never leave it empty.
+
+      -->
             <div class="wrapper">
                 <div class="profile">
                     <img src="images/profile.jpg" alt="The maker of a robot" width="200">
                 </div>
-                
+                <!-- YOUR COMMENT 1: The image above shows the hardwork we put 
+         through on building a fire fighting robot for our capstone. -->
                 <div class="intro">
                     <p>
                         Hello! My name is <strong>Anthony</strong>. I am a first-year BS Computer Science
@@ -264,15 +284,23 @@
                 </div>
             </div>
 
-            
+            <!--
+      <p> is a PARAGRAPH.
+      <strong> makes text bold (important). <em> makes text italic (emphasis).
+    -->
 
         </section>
 
-        
+        <!-- ------------- SECTION 2: HOBBIES AND GOALS ------------- -->
         <section id="hobbies">
             <h2>My Hobbies</h2>
 
-            
+            <!--
+        <ul> = UNORDERED list (bullets), used when order does not matter.
+        <ol> = ORDERED list (1, 2, 3), used when order matters.
+        <li> = one item in either kind of list.
+        TODO: Replace the sample items with your own hobbies.
+      -->
             <div class="container">
                 <div class="hobbies">
                     <ul>
@@ -301,10 +329,21 @@
                 finding solutions and fixing problems whenever I can. Because of this passion for
                 problem-solving and technology, I chose to pursue a degree in Computer Science.</p>
         </section>
-        
+        <!-- ------------- SECTION 3: GOALS ------------- -->
         <section id="Goals">
             <h2>My Goals In Life</h2>
-            
+            <!--
+        TABLE TAGS
+          <table>   the whole table
+          <thead>   the header part (column titles)
+          <tbody>   the body part (the data rows)
+          <tr>      one table ROW
+          <th>      a header CELL (bold and centered by default)
+          <td>      a regular data CELL
+        Each <tr> must have the same number of cells as the other rows.
+        TODO: Replace the sample rows with your real subjects. Add more rows
+              by copying one whole <tr>...</tr> block and pasting it below it.
+      -->
             <div class="goals-table">
                 <table>
                     <thead>
@@ -355,14 +394,22 @@
                 </table>
             </div>
 
-            
+            <!-- YOUR COMMENT 2: 
+         Tr(table rows) makes a row for your table to input.Secondly, Th(Table header),
+         means it highlights the main point or title of the table. Ultimatley, Td(Table Data) is the contents
+         of the table that supports the th(table header).-->
         </section>
 
-        
+        <!-- ------------- SECTION 4: FAVORITES (LINK) ------------- -->
         <section id="favorites">
             <h2>My Favorites</h2>
 
-            
+            <!--
+        <a> is an ANCHOR, which creates a LINK.
+          href = where the link goes (the web address)
+          target="_blank" opens the link in a NEW tab
+          rel="noopener" is a safety setting that should go with target="_blank"
+      -->
 
             <p>
                 These are some of the apps and websites I frequently use for
@@ -415,7 +462,7 @@
 
 
             </div>
-            
+            <!-- The images below represent apps and websites I frequently use. -->
         </section>
         <section id="Reflection">
             <h2>Reflection</h2>
@@ -438,7 +485,11 @@
 
     </main>
 
-    
+    <!-- ===============================================================
+       FOOTER
+       <footer> is a semantic tag for the bottom of the page
+       (credits, contact info, copyright).
+       ================================================================ -->
     <footer>
         <p>Made by John Anthony C Llagas for CS 101, Bicol University.</p>
     </footer>

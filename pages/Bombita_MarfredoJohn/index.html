@@ -202,7 +202,7 @@
 </a>
 
 
-  
+  <!-- DARK MODE TOGGLE -->
   <input type="checkbox" id="theme-toggle">
   <label for="theme-toggle" class="theme-button">
     <span class="light-icon">☀️ Light Mode</span>
@@ -210,13 +210,13 @@
   </label>
 
   <header>
-    
+    <!-- Back to Home Link (Required Integration Rule) -->
     <div class="nav-back">
       
 
 
     </div>
-    
+    <!-- TYPING ANIMATION -->
     <h1>A Glimpse beyond the Starry Night</h1>
     <p class="tagline">A soft, kind-hearted, and loving person.</p>
   </header>
@@ -236,11 +236,11 @@
     </ul>
   </nav>
 
-  
+  <!-- <nav> is a semantic container that defines a section of major navigation links for jumping to different parts of the page or site. -->
 
-  
+  <!-- ------------- REQUIRED SECTION 1: HELLO ------------- -->
   <main>
-    
+    <!-- TWO-COLUMN PORTFOLIO AREA -->
     <div class="portfolio-layout">
       <div class="main-column">
 
@@ -251,7 +251,7 @@
             with you.
           </p>
           <div class="hello-container">
-            <figure class="profile-figure"> 
+            <figure class="profile-figure"> <!-- Profile Image inside Figure with Caption & Credit -->
               <img src="images/profile.jpg" alt="Photo of Marfredo John Bombita wearing formal attire" width="200">
               <figcaption>This is me on our pictorial for SHS graduation. <br> Credit: Taken by OcampoNHS.</figcaption>
             </figure>
@@ -275,11 +275,15 @@
           </div>
         </section>
 
-        
+        <!-- The <section> tag is a semantic container that groups related content sharing a single theme or topic (usually starting with a heading), 
+        helping browsers and screen readers understand the page outline. -->
 
-        
+        <!-- The <img> tag is used to insert or display an image on a webpage. The src attribute specifies the location or URL of the image, 
+        while the alt attribute provides alternative text that describes the image if it cannot be displayed. 
+        The alt text also helps people who use screen readers understand what the image represents. 
+        The <img> tag is an void element, which means it does not need a closing tag. -->
 
-        
+        <!-- ------------- REQUIRED SECTION 2: ABOUT ME ------------- -->
         <section id="about">
           <h2>About Me</h2>
           <div class="about-container">
@@ -329,7 +333,7 @@
           </div>
         </section>
 
-        
+        <!-- ------------- REQUIRED SECTION 3: MY PATH INTO COMPUTING ------------- -->
         <section id="path">
           <h2>My path into computing</h2>
           <div class="path-box">
@@ -363,7 +367,7 @@
           </div>
         </section>
 
-        
+        <!-- ------------- REQUIRED SECTION 4: FAVORITES OR SKILLS ------------- -->
       </div>
       <aside class="sidebar-column" aria-label="Personal highlights">
         <section id="skills">
@@ -401,7 +405,10 @@
               </tbody>
             </table>
 
-            
+            <!-- The <tr> tag stands for Table Row and is used to create a row in an HTML table. 
+          The <th> tag stands for Table Header and is used to define a header cell, usually containing a title or label for a column or row. 
+          The <td> tag stands for Table Data and is used to hold the actual information or content inside a table cell. 
+          These three tags work together to organize information into rows and columns, making the data easier to read and understand. -->
 
           </div>
           <h3>My Skills Progress</h3>
@@ -451,9 +458,11 @@
           </div>
         </section>
 
-        
+        <!-- The href attribute stands for Hypertext Reference and is used inside the <a> (anchor) tag to specify the destination of a link. 
+      It tells the browser where to go when a user clicks the link. The destination can be a website URL, another page within the same website, 
+      an email address, or a specific section of a webpage. Without the href attribute, the <a> tag will not function as a normal clickable link to a destination. -->
 
-        
+        <!-- ------------- REQUIRED SECTION 5: GOALS ------------- -->
         <section id="goals">
           <h2>Goals</h2>
           <div class="hobbies-goals-container">
@@ -479,7 +488,10 @@
               </div>
             </div>
 
-            
+            <!-- The <ul> tag stands for Unordered List and is used to create a list of items without a specific order, usually displayed with bullet points.
+         The <ol> tag stands for Ordered List and is used to create a list of items in a specific sequence, usually displayed with numbers or letters.
+         The <li> tag stands for List Item and is used to define each individual item within an unordered or ordered list.
+         These three tags work together to organize related information into a structured list, making the content easier to read and understand. -->
 
             <div class="right-column">
               <div class="motto-box">
@@ -504,7 +516,7 @@
       </aside>
     </div>
 
-    
+    <!-- ------------- REQUIRED SECTION 6: REFLECTION ------------- -->
     <section id="reflection">
       <h2>Reflection</h2>
       <div class="reflection-container">
@@ -535,7 +547,7 @@
       </div>
     </section>
 
-    
+    <!-- ORGANIZED MASONRY SECTIONS -->
     <div class="full-width-sections">
       <section id="must-watch-films">
         <h2>My Must-Watch Films</h2>
@@ -582,7 +594,9 @@
         </div>
       </section>
 
-      
+      <!-- The href attribute stands for Hypertext Reference and is used inside the <a> (anchor) tag to specify the destination of a link. 
+      It tells the browser where to go when a user clicks the link. The destination can be a website URL, another page within the same website, 
+      an email address, or a specific section of a webpage. Without the href attribute, the <a> tag will not function as a normal clickable link to a destination. -->
 
       <section id="gallery">
         <h2>My Photo Gallery</h2>
@@ -615,7 +629,10 @@
             Close</span></a>
       </section>
 
-      
+      <!-- The <figure> tag is used to contain self-contained content, such as images, illustrations, diagrams, or code snippets.
+      It helps group visual content with its related information or description.
+      The <figcaption> tag is used to provide a caption or explanation for the content inside the <figure> element.
+      These tags work together to organize visual content and provide additional context, making it easier to understand. -->
 
       <section id="faq">
         <h2>Get to Know Me!</h2>
@@ -651,9 +668,14 @@
         </details>
       </section>
 
-      
+      <!-- 
+      <summary> Tag Description:
+      - Defines a visible, clickable heading or label for a parent <details> element.
+      - Clicking it toggles the hidden content inside <details> open or closed WITHOUT needing JavaScript.
+      - Must be placed as the first child inside <details> and is natively keyboard-accessible.
+        -->
 
-      
+      <!-- ============= FUN FACTS SECTION ============= -->
       <section id="fun-facts">
         <h2>Fun Facts About Me</h2>
         <p class="section-intro">Hover over each card to discover more!</p>
@@ -734,7 +756,12 @@
         </div>
       </section>
 
-      
+      <!-- 
+        <div> Tag Description:
+        - Stands for "Division" and acts as a generic block-level container with no inherent semantic meaning.
+        - Used to group related elements together so they can be styled, positioned, or structured as a unit using CSS (e.g., Flexbox, Grid, boxes, or wrappers).
+        - Should be used for layout and styling wrappers when more specific semantic tags (like <section>, <article>, or <nav>) do not apply.
+      -->
 
       <section id="journey">
         <h2>My Learning Journey</h2>
@@ -771,7 +798,7 @@
       </section>
     </div>
 
-    
+    <!-- BOTTOM ROW: LEFT = SOURCES & CREDITS | RIGHT = CONTACT ME -->
     <div class="bottom-grid">
       <section id="sources">
         <h2>Sources and Credits</h2>
@@ -810,7 +837,8 @@
     <p></p>
   </footer>
 
-  
+  <!-- <footer> tag: Semantic HTML5 element placed at the bottom of the webpage to mark the closing area, typically containing copyright notices, 
+author credits, dates, or concluding info. -->
 
   <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
